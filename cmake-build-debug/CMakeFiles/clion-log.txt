@@ -1,0 +1,4 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug
