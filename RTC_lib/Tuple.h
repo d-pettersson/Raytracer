@@ -15,6 +15,8 @@ public:
     double z;
     double w;
 
+    double thisIsATest;
+
 private:
 
 };
