@@ -15,11 +15,22 @@ public:
     double z;
     double w;
 
-    double thisIsATest;
-
 private:
 
 };
 
+Tuple createPoint(double x, double y, double z);
+Tuple createVector(double x, double y, double z);
+
+Tuple tupleAbs(Tuple t1);
+
+bool isEqual(Tuple t1, Tuple t2);
+
+bool operator<(const Tuple& t1, const Tuple& t2);
+bool operator<(const Tuple& t1, const double& d1);
+bool operator==(const Tuple& t1, const Tuple& t2);
+
+Tuple operator-(const Tuple& t1, const Tuple& t2);
+Tuple operator+(const Tuple& t1, const Tuple& t2);
 
 #endif //RTC_TUPLE_H
