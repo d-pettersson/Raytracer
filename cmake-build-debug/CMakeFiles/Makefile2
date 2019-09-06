@@ -180,9 +180,9 @@ Google_tests/preinstall: Google_tests/lib/preinstall
 # Target rules for target Google_tests/CMakeFiles/Google_Tests_run.dir
 
 # All Build rule for target.
-Google_tests/CMakeFiles/Google_Tests_run.dir/all: RTC_lib/CMakeFiles/RTC_lib.dir/all
 Google_tests/CMakeFiles/Google_Tests_run.dir/all: Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/all
 Google_tests/CMakeFiles/Google_Tests_run.dir/all: Google_tests/lib/googletest/CMakeFiles/gtest.dir/all
+Google_tests/CMakeFiles/Google_Tests_run.dir/all: RTC_lib/CMakeFiles/RTC_lib.dir/all
 	$(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/depend
 	$(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=1,2 "Built target Google_Tests_run"

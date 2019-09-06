@@ -301,10 +301,12 @@ acxx_demangle.h
 -
 
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TupleTest.cpp
-gtest/gtest.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
 ../RTC_lib/Tuple.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/Tuple.h
+gtest/gtest.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
+cmath
+-
 
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/Tuple.h
 
