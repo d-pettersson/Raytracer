@@ -18,6 +18,16 @@ class Tuple {
 
 };
 
+class Color : public Tuple {
+    public:
+        Color(double r, double g, double b);
+        Color();
+
+    double r;
+    double g;
+    double b;
+};
+
 Tuple createPoint(const double &x, const double &y, const double &z);
 Tuple createVector(const double &x, const double &y, const double &z);
 
@@ -28,9 +38,9 @@ double magnitude(const Tuple& t1);
 double dot(const Tuple& t1, const Tuple& t2);
 Tuple cross(const Tuple& t1, const Tuple& t2);
 
-
 bool isEqual(const Tuple &t1, const Tuple &t2);
 
+// Tuple operators
 bool operator<(const Tuple& t1, const Tuple& t2);
 bool operator<(const Tuple& t1, const double& d1);
 bool operator==(const Tuple& t1, const Tuple& t2);
@@ -40,6 +50,12 @@ Tuple operator-(const Tuple& t1);
 Tuple operator+(const Tuple& t1, const Tuple& t2);
 Tuple operator*(const Tuple& t1, const double scalar);
 Tuple operator/(const Tuple& t1, const double scalar);
+
+// Color operators
+Color operator-(const Color& c1, const Color& c2);
+Color operator+(const Color& c1, const Color& c2);
+Color operator*(const Color& c1, const Color& c2);
+Color operator*(const Color& c1, const double scalar);
 
 } // namespace raytracer
 

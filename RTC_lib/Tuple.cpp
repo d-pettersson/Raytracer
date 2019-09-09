@@ -14,6 +14,16 @@ Tuple::Tuple()
 {
 }
 
+Color::Color(double rr, double gg, double bb)
+    :r{rr}, g{gg}, b{bb}
+{
+}
+
+Color::Color()
+    :r{0.0}, g{0.0}, b{0.0}
+{
+}
+
 bool Tuple::isPoint() {
     return w == 1.0;
 }
@@ -61,6 +71,7 @@ Tuple cross(const Tuple& t1, const Tuple& t2) {
     return result;
 }
 
+// Tuple operators
 bool operator<(const Tuple& t1, const Tuple& t2) {
     return t1.x < t2.x && t1.y < t2.y && t1.z < t2.z && t1.w < t2.w;
 }
@@ -91,6 +102,22 @@ Tuple operator*(const Tuple& t1, const double scalar) {
 
 Tuple operator/(const Tuple& t1, const double scalar) {
     return {t1.x / scalar, t1.y / scalar, t1.z / scalar, t1.w / scalar};
+}
+
+// Color operators
+Color operator-(const Color& c1, const Color& c2) {
+    return {c1.r - c2.r, c1.g - c2.g, c1.b - c2.b};
+}
+
+Color operator+(const Color& c1, const Color& c2) {
+    return {c1.r + c2.r, c1.g + c2.g, c1.b + c2.b};
+}
+
+Color operator*(const Color& c1, const Color& c2) {
+    return {c1.r * c2.r, c1.g * c2.g, c1.b * c2.b};
+}
+Color operator*(const Color& c1, const double scalar) {
+    return {c1.r * scalar, c1.g * scalar, c1.b * scalar};
 }
 
 } // namespace raytracer

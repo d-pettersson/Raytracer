@@ -10,6 +10,7 @@ protected:
     virtual void SetUp()
     {
         tuple = new raytracer::Tuple();
+        color = new raytracer::Color();
     }
 
     virtual void TearDown() {
@@ -23,6 +24,11 @@ protected:
     raytracer::Tuple t2;
     raytracer::Tuple result;
     raytracer::Tuple difference;
+
+    raytracer::Color * color;
+    raytracer::Color c1;
+    raytracer::Color c2;
+
     double scalar;
     double doubleResult;
 };
@@ -168,4 +174,34 @@ TEST_F(TupleFixture, CrossProduct2) {
     t2 = raytracer::createVector(2, 3, 4);
     result = raytracer::createVector(1, -2, 1);
     ASSERT_EQ(result, cross(t2, t1));
+}
+
+TEST_F(TupleFixture, SimpleColorTest) {
+    color = new raytracer::Color(-0.5, 0.4, 1.7);
+    ASSERT_EQ(-0.5, color->r);
+    ASSERT_EQ(0.4, color->g);
+    ASSERT_EQ(1.7, color->b);
+}
+
+TEST_F(TupleFixture, AddingColors) {
+    c1 = raytracer::Color(0.9, 0.6, 0.75);
+    c2 = raytracer::Color(0.7, 0.1, 0.25);
+    ASSERT_EQ(raytracer::Color(1.6, 0.7, 1.0), c1 + c2);
+}
+
+TEST_F(TupleFixture, SubtractingColor) {
+    c1 = raytracer::Color(0.9, 0.6, 0.75);
+    c2 = raytracer::Color(0.7, 0.1, 0.25);
+    ASSERT_EQ(raytracer::Color(0.2, 0.5, 0.5), c1 - c2);
+}
+
+TEST_F(TupleFixture, MultiplyingScalarColors) {
+    c1 = raytracer::Color(0.2, 0.3, 0.5);
+    ASSERT_EQ(raytracer::Color(0.4, 0.6, 0.8), c1 * 2);
+}
+
+TEST_F(TupleFixture, MultiplyingColors) {
+    c1 = raytracer::Color(1, 0.2, 0.4);
+    c2 = raytracer::Color(0.9, 1, 0.1);
+    ASSERT_EQ(raytracer::Color(0.9, 0.2, 0.4), c1 * c2);
 }

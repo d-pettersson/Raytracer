@@ -171,6 +171,33 @@ Google_Tests_run/fast:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/build
 .PHONY : Google_Tests_run/fast
 
+CanvasTest.o: CanvasTest.cpp.o
+
+.PHONY : CanvasTest.o
+
+# target to build an object file
+CanvasTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o
+.PHONY : CanvasTest.cpp.o
+
+CanvasTest.i: CanvasTest.cpp.i
+
+.PHONY : CanvasTest.i
+
+# target to preprocess a source file
+CanvasTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.i
+.PHONY : CanvasTest.cpp.i
+
+CanvasTest.s: CanvasTest.cpp.s
+
+.PHONY : CanvasTest.s
+
+# target to generate assembly for a file
+CanvasTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.s
+.PHONY : CanvasTest.cpp.s
+
 TupleTest.o: TupleTest.cpp.o
 
 .PHONY : TupleTest.o
@@ -211,6 +238,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Google_Tests_run"
+	@echo "... CanvasTest.o"
+	@echo "... CanvasTest.i"
+	@echo "... CanvasTest.s"
 	@echo "... TupleTest.o"
 	@echo "... TupleTest.i"
 	@echo "... TupleTest.s"

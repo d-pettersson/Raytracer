@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/RTC_lib.dir/Tuple.cpp.o"
+  "CMakeFiles/RTC_lib.dir/Canvas.cpp.o"
   "libRTC_lib.pdb"
   "libRTC_lib.a"
 )
