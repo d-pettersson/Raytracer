@@ -1,6 +1,8 @@
 #ifndef RTC_TUPLE_H
 #define RTC_TUPLE_H
 
+#include<iostream>
+
 namespace raytracer {
 
 class Tuple {
@@ -23,9 +25,10 @@ class Color : public Tuple {
         Color(double r, double g, double b);
         Color();
 
-    double r;
-    double g;
-    double b;
+        double r;
+        double g;
+        double b;
+        int maxValue = 255;
 };
 
 Tuple createPoint(const double &x, const double &y, const double &z);
@@ -48,14 +51,18 @@ bool operator==(const Tuple& t1, const Tuple& t2);
 Tuple operator-(const Tuple& t1, const Tuple& t2);
 Tuple operator-(const Tuple& t1);
 Tuple operator+(const Tuple& t1, const Tuple& t2);
-Tuple operator*(const Tuple& t1, const double scalar);
-Tuple operator/(const Tuple& t1, const double scalar);
+Tuple operator*(const Tuple& t1, const double& scalar);
+Tuple operator/(const Tuple& t1, const double& scalar);
 
 // Color operators
+bool operator==(const Color& c1, const Color& c2);
+
 Color operator-(const Color& c1, const Color& c2);
 Color operator+(const Color& c1, const Color& c2);
 Color operator*(const Color& c1, const Color& c2);
-Color operator*(const Color& c1, const double scalar);
+Color operator*(const Color& c1, const double& scalar);
+
+std::ostream& operator<<(std::ostream& out, const Color& c1);
 
 } // namespace raytracer
 

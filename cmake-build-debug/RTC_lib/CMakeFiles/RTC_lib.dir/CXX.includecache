@@ -15,7 +15,11 @@ vector
 -
 iostream
 -
-fstream
+sstream
+-
+algorithm
+-
+cmath
 -
 
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/canvas.h
@@ -25,4 +29,6 @@ vector
 -
 
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
+iostream
+-
 

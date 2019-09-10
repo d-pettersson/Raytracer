@@ -11,9 +11,11 @@ class Canvas {
         Canvas(size_t width, size_t height);
         Canvas();
 
-        void writePixel(const int& x, const int& y, const Color& color);
+        void writePixel(const int& x, const int& y, Color& color);
         Color pixelAt(const int& x, const int& y);
-        std::string canvasToPpm();
+        Color scaleColor(const Color& color, const int& maxValue);
+        std::string createPPMHeader();
+        std::string canvasToPPM();
 
         size_t width, height;
 
