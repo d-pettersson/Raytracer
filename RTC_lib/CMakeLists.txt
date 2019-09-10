@@ -1,6 +1,6 @@
 project(RTC)
 
-set(HEADER_FILES tuple.h canvas.h)
+set(HEADER_FILES tuple.h canvas.h maths.h)
 
 set(SOURCE_FILES tuple.cpp canvas.cpp)
 

@@ -1,5 +1,6 @@
 #include "canvas.h"
 #include "tuple.h"
+#include "maths.h"
 
 #include <vector>
 #include <iostream>
@@ -53,7 +54,9 @@ std::string Canvas::createPPMHeader() {
     return header;
 }
 
-// change sstringstream to ofstream to be able to export the file
+// TODO: change sstream to ofstream for file export
+// TODO: limit string size to 70 chars per line
+
 
 std::string Canvas::canvasToPPM() {
     std::stringstream ss;
@@ -61,12 +64,9 @@ std::string Canvas::canvasToPPM() {
     for (int py = 0; py < this->height; py++) {
         first ? ss << "" : ss << '\n';
         for (int px = 0; px < this->width; px++) {
-            auto cval = this->pixelAt(px, py);
-            if (px < this->width - 1) {
-                ss << " ";
-            } else {
-                ss << "";
-            }
+            auto clampedVal = this->pixelAt(px, py);
+            ss << scaleColor(clampedVal, 255);
+            px < this->width - 1 ? ss << " " : ss << "";
         }
         first = false;
     }
