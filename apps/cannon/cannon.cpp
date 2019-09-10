@@ -1,14 +1,13 @@
 #include "environment.h"
 #include "projectile.h"
-#include "tuple.h"
 
 #include <iostream>
 
-Projectile tick(const Environment& env, const Projectile& proj) {
+void tick(const Environment& env, Projectile& proj) {
     raytracer::Tuple position = proj.position + proj.velocity;
     raytracer::Tuple velocity = proj.velocity + env.gravity + env.wind;
-    Projectile projectile = Projectile(position, velocity);
-    return projectile;
+    proj.position = position;
+    proj.velocity = velocity;
 }
 
 
@@ -19,12 +18,14 @@ int main() {
     Environment env = Environment(gravity, wind);
 
     // Projectile setup
+    raytracer::Tuple position = raytracer::createPoint(0, 1, 0);
     raytracer::Tuple velocity = raytracer::normalize(raytracer::createVector(1, 1, 0));
+    Projectile proj = Projectile(position, velocity);
 
-    for (size_t y = 0; y <= 1; y+=0.01) {
-        raytracer::Tuple position = raytracer::createPoint(0, y, 0);
-        Projectile proj = Projectile(position, velocity);
+    for (float y = 0; y < 1; y+=0.01) {
+        position.y = y;
         tick(env, proj);
+        std::cout << proj << '\n';
     }
 
     return 0;

@@ -53,6 +53,8 @@ std::string Canvas::createPPMHeader() {
     return header;
 }
 
+// change sstringstream to ofstream to be able to export the file
+
 std::string Canvas::canvasToPPM() {
     std::stringstream ss;
     bool first = true;

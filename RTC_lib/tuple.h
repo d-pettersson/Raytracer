@@ -54,6 +54,8 @@ Tuple operator+(const Tuple& t1, const Tuple& t2);
 Tuple operator*(const Tuple& t1, const double& scalar);
 Tuple operator/(const Tuple& t1, const double& scalar);
 
+std::ostream& operator<<(std::ostream& out, const Tuple& t1);
+
 // Color operators
 bool operator==(const Color& c1, const Color& c2);
 

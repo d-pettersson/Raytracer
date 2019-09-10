@@ -104,6 +104,11 @@ Tuple operator/(const Tuple& t1, const double& scalar) {
     return {t1.x / scalar, t1.y / scalar, t1.z / scalar, t1.w / scalar};
 }
 
+std::ostream& operator<<(std::ostream& out, const Tuple& t1) {
+    out << '[' << t1.x << ", " << t1.y << ", " << t1.z << ", " << t1.w << ']';
+    return out;
+}
+
 // Color operators
 Color operator-(const Color& c1, const Color& c2) {
     return {c1.r - c2.r, c1.g - c2.g, c1.b - c2.b};
