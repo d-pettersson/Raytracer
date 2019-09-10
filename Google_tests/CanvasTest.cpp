@@ -1,4 +1,4 @@
-#include "../RTC_lib/Canvas.h"
+#include "canvas.h"
 
 #include "gtest/gtest.h"
 
@@ -42,6 +42,12 @@ TEST_F(CanvasFixture, WritingPixelCanvas) {
     c1 = raytracer::Color(1, 0, 0);
     canvas->writePixel(2, 3, c1);
     ASSERT_EQ(c1, canvas->pixelAt(2, 3));
+}
+
+TEST_F(CanvasFixture, PPMHeaderCheck) {
+    canvas = new raytracer::Canvas(5, 3);
+    std::string header = canvas->canvasToPpm();
+    ASSERT_EQ("P3\n5 3\n255", header);
 }
 
 

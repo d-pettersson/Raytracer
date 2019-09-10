@@ -171,59 +171,59 @@ RTC_lib/fast:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/build
 .PHONY : RTC_lib/fast
 
-Canvas.o: Canvas.cpp.o
+canvas.o: canvas.cpp.o
 
-.PHONY : Canvas.o
-
-# target to build an object file
-Canvas.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/Canvas.cpp.o
-.PHONY : Canvas.cpp.o
-
-Canvas.i: Canvas.cpp.i
-
-.PHONY : Canvas.i
-
-# target to preprocess a source file
-Canvas.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/Canvas.cpp.i
-.PHONY : Canvas.cpp.i
-
-Canvas.s: Canvas.cpp.s
-
-.PHONY : Canvas.s
-
-# target to generate assembly for a file
-Canvas.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/Canvas.cpp.s
-.PHONY : Canvas.cpp.s
-
-Tuple.o: Tuple.cpp.o
-
-.PHONY : Tuple.o
+.PHONY : canvas.o
 
 # target to build an object file
-Tuple.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/Tuple.cpp.o
-.PHONY : Tuple.cpp.o
+canvas.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.o
+.PHONY : canvas.cpp.o
 
-Tuple.i: Tuple.cpp.i
+canvas.i: canvas.cpp.i
 
-.PHONY : Tuple.i
+.PHONY : canvas.i
 
 # target to preprocess a source file
-Tuple.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/Tuple.cpp.i
-.PHONY : Tuple.cpp.i
+canvas.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.i
+.PHONY : canvas.cpp.i
 
-Tuple.s: Tuple.cpp.s
+canvas.s: canvas.cpp.s
 
-.PHONY : Tuple.s
+.PHONY : canvas.s
 
 # target to generate assembly for a file
-Tuple.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/Tuple.cpp.s
-.PHONY : Tuple.cpp.s
+canvas.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.s
+.PHONY : canvas.cpp.s
+
+tuple.o: tuple.cpp.o
+
+.PHONY : tuple.o
+
+# target to build an object file
+tuple.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.o
+.PHONY : tuple.cpp.o
+
+tuple.i: tuple.cpp.i
+
+.PHONY : tuple.i
+
+# target to preprocess a source file
+tuple.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.i
+.PHONY : tuple.cpp.i
+
+tuple.s: tuple.cpp.s
+
+.PHONY : tuple.s
+
+# target to generate assembly for a file
+tuple.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.s
+.PHONY : tuple.cpp.s
 
 # Help Target
 help:
@@ -238,12 +238,12 @@ help:
 	@echo "... RTC_lib"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Canvas.o"
-	@echo "... Canvas.i"
-	@echo "... Canvas.s"
-	@echo "... Tuple.o"
-	@echo "... Tuple.i"
-	@echo "... Tuple.s"
+	@echo "... canvas.o"
+	@echo "... canvas.i"
+	@echo "... canvas.s"
+	@echo "... tuple.o"
+	@echo "... tuple.i"
+	@echo "... tuple.s"
 .PHONY : help
 
 

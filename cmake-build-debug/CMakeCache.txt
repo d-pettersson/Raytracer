@@ -279,6 +279,12 @@ CMAKE_STRIP:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/Xcode
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
+Cannon_BINARY_DIR:STATIC=/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/apps
+
+//Value Computed by CMake
+Cannon_SOURCE_DIR:STATIC=/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/apps
+
+//Value Computed by CMake
 Google_tests_BINARY_DIR:STATIC=/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests
 
 //Value Computed by CMake
@@ -481,7 +487,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

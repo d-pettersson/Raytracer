@@ -1357,7 +1357,7 @@ Int32 Int32FromGTestEnv(const char* flag, Int32 default_value) {
   }
 
   Int32 result = default_value;
-  if (!ParseInt32(Message() << "Environment variable " << env_var,
+  if (!ParseInt32(Message() << "environment variable " << env_var,
                   string_value, &result)) {
     printf("The default value %s is used.\n",
            (Message() << default_value).GetString().c_str());

@@ -1,7 +1,7 @@
 project(RTC)
 
-set(HEADER_FILES Tuple.h Canvas.h)
+set(HEADER_FILES tuple.h canvas.h)
 
-set(SOURCE_FILES Tuple.cpp Canvas.cpp)
+set(SOURCE_FILES tuple.cpp canvas.cpp)
 
 add_library(RTC_lib STATIC ${SOURCE_FILES} ${HEADER_FILES})

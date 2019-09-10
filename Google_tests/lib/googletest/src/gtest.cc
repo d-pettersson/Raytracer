@@ -5034,7 +5034,7 @@ UnitTestImpl::~UnitTestImpl() {
   // Deletes every TestSuite.
   ForEach(test_suites_, internal::Delete<TestSuite>);
 
-  // Deletes every Environment.
+  // Deletes every environment.
   ForEach(environments_, internal::Delete<Environment>);
 
   delete os_stack_trace_getter_;

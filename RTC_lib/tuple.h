@@ -40,7 +40,7 @@ Tuple cross(const Tuple& t1, const Tuple& t2);
 
 bool isEqual(const Tuple &t1, const Tuple &t2);
 
-// Tuple operators
+// tuple operators
 bool operator<(const Tuple& t1, const Tuple& t2);
 bool operator<(const Tuple& t1, const double& d1);
 bool operator==(const Tuple& t1, const Tuple& t2);

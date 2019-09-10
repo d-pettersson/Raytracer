@@ -21,9 +21,9 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o: ../Google_tests/l
 Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o: ../Google_tests/lib/googletest/include/gtest/internal/gtest-port.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o: ../Google_tests/lib/googletest/include/gtest/internal/gtest-string.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o: ../Google_tests/lib/googletest/include/gtest/internal/gtest-type-util.h
+Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o: ../RTC_lib/canvas.h
+Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o: ../RTC_lib/tuple.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o: ../Google_tests/CanvasTest.cpp
-Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o: ../RTC_lib/Canvas.h
-Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o: ../RTC_lib/Tuple.h
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o: ../Google_tests/lib/googletest/include/gtest/gtest-death-test.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o: ../Google_tests/lib/googletest/include/gtest/gtest-matchers.h
@@ -45,6 +45,6 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o: ../Google_tests/li
 Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o: ../Google_tests/lib/googletest/include/gtest/internal/gtest-port.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o: ../Google_tests/lib/googletest/include/gtest/internal/gtest-string.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o: ../Google_tests/lib/googletest/include/gtest/internal/gtest-type-util.h
+Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o: ../RTC_lib/tuple.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o: ../Google_tests/TupleTest.cpp
-Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o: ../RTC_lib/Tuple.h
 

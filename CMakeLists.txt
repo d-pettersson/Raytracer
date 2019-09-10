@@ -12,4 +12,6 @@ target_link_libraries(RTC_run RTC_lib)
 include_directories(RTC_lib)
 add_subdirectory(RTC_lib)
 
+add_subdirectory(apps)
+
 add_subdirectory(Google_tests)

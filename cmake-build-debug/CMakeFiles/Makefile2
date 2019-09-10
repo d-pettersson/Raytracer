@@ -157,6 +157,61 @@ clean: RTC_lib/CMakeFiles/RTC_lib.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory apps
+
+# Convenience name for "all" pass in the directory.
+apps/all: apps/CMakeFiles/cannon.dir/all
+
+.PHONY : apps/all
+
+# Convenience name for "clean" pass in the directory.
+apps/clean: apps/CMakeFiles/cannon.dir/clean
+
+.PHONY : apps/clean
+
+# Convenience name for "preinstall" pass in the directory.
+apps/preinstall:
+
+.PHONY : apps/preinstall
+
+#=============================================================================
+# Target rules for target apps/CMakeFiles/cannon.dir
+
+# All Build rule for target.
+apps/CMakeFiles/cannon.dir/all:
+	$(MAKE) -f apps/CMakeFiles/cannon.dir/build.make apps/CMakeFiles/cannon.dir/depend
+	$(MAKE) -f apps/CMakeFiles/cannon.dir/build.make apps/CMakeFiles/cannon.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=9,10,11,12 "Built target cannon"
+.PHONY : apps/CMakeFiles/cannon.dir/all
+
+# Include target in all.
+all: apps/CMakeFiles/cannon.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+apps/CMakeFiles/cannon.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" 4
+	$(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/cannon.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" 0
+.PHONY : apps/CMakeFiles/cannon.dir/rule
+
+# Convenience name for target.
+cannon: apps/CMakeFiles/cannon.dir/rule
+
+.PHONY : cannon
+
+# clean rule for target.
+apps/CMakeFiles/cannon.dir/clean:
+	$(MAKE) -f apps/CMakeFiles/cannon.dir/build.make apps/CMakeFiles/cannon.dir/clean
+.PHONY : apps/CMakeFiles/cannon.dir/clean
+
+# clean rule for target.
+clean: apps/CMakeFiles/cannon.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Directory level rules for directory Google_tests
 
 # Convenience name for "all" pass in the directory.
@@ -262,7 +317,7 @@ Google_tests/lib/googlemock/preinstall: Google_tests/lib/googletest/preinstall
 Google_tests/lib/googlemock/CMakeFiles/gmock.dir/all: Google_tests/lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f Google_tests/lib/googlemock/CMakeFiles/gmock.dir/build.make Google_tests/lib/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f Google_tests/lib/googlemock/CMakeFiles/gmock.dir/build.make Google_tests/lib/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=9,10 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=13,14 "Built target gmock"
 .PHONY : Google_tests/lib/googlemock/CMakeFiles/gmock.dir/all
 
 # Include target in all.
@@ -300,7 +355,7 @@ Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/all: Google_tests/lib/goog
 Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/all: Google_tests/lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/build.make Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/build.make Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=11,12 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=15,16 "Built target gmock_main"
 .PHONY : Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Include target in all.
@@ -357,7 +412,7 @@ Google_tests/lib/googletest/preinstall:
 Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/all: Google_tests/lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/build.make Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/build.make Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=15,16 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=19,20 "Built target gtest_main"
 .PHONY : Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/all
 
 # Include target in all.
@@ -394,7 +449,7 @@ clean: Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/clean
 Google_tests/lib/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f Google_tests/lib/googletest/CMakeFiles/gtest.dir/build.make Google_tests/lib/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f Google_tests/lib/googletest/CMakeFiles/gtest.dir/build.make Google_tests/lib/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=13,14 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=17,18 "Built target gtest"
 .PHONY : Google_tests/lib/googletest/CMakeFiles/gtest.dir/all
 
 # Include target in all.

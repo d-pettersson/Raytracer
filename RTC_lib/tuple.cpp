@@ -1,6 +1,6 @@
 #include <cmath>
 
-#include "Tuple.h"
+#include "tuple.h"
 
 namespace raytracer {
 
@@ -71,7 +71,7 @@ Tuple cross(const Tuple& t1, const Tuple& t2) {
     return result;
 }
 
-// Tuple operators
+// tuple operators
 bool operator<(const Tuple& t1, const Tuple& t2) {
     return t1.x < t2.x && t1.y < t2.y && t1.z < t2.z && t1.w < t2.w;
 }

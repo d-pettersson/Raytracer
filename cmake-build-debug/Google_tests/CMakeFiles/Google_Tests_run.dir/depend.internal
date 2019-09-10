@@ -22,9 +22,9 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o
  ../Google_tests/lib/googletest/include/gtest/internal/gtest-port.h
  ../Google_tests/lib/googletest/include/gtest/internal/gtest-string.h
  ../Google_tests/lib/googletest/include/gtest/internal/gtest-type-util.h
+ ../RTC_lib/canvas.h
+ ../RTC_lib/tuple.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/CanvasTest.cpp
- /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/Canvas.h
- /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/Tuple.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o
  ../Google_tests/lib/googletest/include/gtest/gtest-death-test.h
  ../Google_tests/lib/googletest/include/gtest/gtest-matchers.h
@@ -46,5 +46,5 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o
  ../Google_tests/lib/googletest/include/gtest/internal/gtest-port.h
  ../Google_tests/lib/googletest/include/gtest/internal/gtest-string.h
  ../Google_tests/lib/googletest/include/gtest/internal/gtest-type-util.h
+ ../RTC_lib/tuple.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TupleTest.cpp
- /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/Tuple.h

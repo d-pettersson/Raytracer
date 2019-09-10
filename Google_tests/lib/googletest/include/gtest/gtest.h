@@ -456,7 +456,7 @@ class GTEST_API_ Test {
   // SetUpTestSuite or TearDownTestSuite are logged as attributes of the
   // corresponding <testsuite> element.  Calls to RecordProperty made in the
   // global context (before or after invocation of RUN_ALL_TESTS and from
-  // SetUp/TearDown method of Environment objects registered with Google
+  // SetUp/TearDown method of environment objects registered with Google
   // Test) will be output as attributes of the <testsuites> element.
   static void RecordProperty(const std::string& key, const std::string& value);
   static void RecordProperty(const std::string& key, int value);
@@ -1028,11 +1028,11 @@ class GTEST_API_ TestSuite {
   GTEST_DISALLOW_COPY_AND_ASSIGN_(TestSuite);
 };
 
-// An Environment object is capable of setting up and tearing down an
+// An environment object is capable of setting up and tearing down an
 // environment.  You should subclass this to define your own
 // environment(s).
 //
-// An Environment object does the set-up and tear-down in virtual
+// An environment object does the set-up and tear-down in virtual
 // methods SetUp() and TearDown() instead of the constructor and the
 // destructor, as:
 //
@@ -1044,7 +1044,7 @@ class GTEST_API_ TestSuite {
 //      destructor.
 class Environment {
  public:
-  // The d'tor is virtual as we need to subclass Environment.
+  // The d'tor is virtual as we need to subclass environment.
   virtual ~Environment() {}
 
   // Override this to define how to set up the environment.
@@ -1461,7 +1461,7 @@ class GTEST_API_ UnitTest {
 // starts for it to take effect.  For example, you can define a global
 // variable like this:
 //
-//   testing::Environment* const foo_env =
+//   testing::environment* const foo_env =
 //       testing::AddGlobalTestEnvironment(new FooEnvironment);
 //
 // However, we strongly recommend you to write your own main() and

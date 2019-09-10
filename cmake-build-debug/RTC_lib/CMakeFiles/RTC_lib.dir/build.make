@@ -57,42 +57,42 @@ include RTC_lib/CMakeFiles/RTC_lib.dir/progress.make
 # Include the compile flags for this target's objects.
 include RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
 
-RTC_lib/CMakeFiles/RTC_lib.dir/Tuple.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
-RTC_lib/CMakeFiles/RTC_lib.dir/Tuple.cpp.o: ../RTC_lib/Tuple.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/Tuple.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/Tuple.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/Tuple.cpp"
+RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.o: ../RTC_lib/tuple.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/tuple.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.cpp"
 
-RTC_lib/CMakeFiles/RTC_lib.dir/Tuple.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/Tuple.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/Tuple.cpp" > CMakeFiles/RTC_lib.dir/Tuple.cpp.i
+RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/tuple.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.cpp" > CMakeFiles/RTC_lib.dir/tuple.cpp.i
 
-RTC_lib/CMakeFiles/RTC_lib.dir/Tuple.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/Tuple.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/Tuple.cpp" -o CMakeFiles/RTC_lib.dir/Tuple.cpp.s
+RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/tuple.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.cpp" -o CMakeFiles/RTC_lib.dir/tuple.cpp.s
 
-RTC_lib/CMakeFiles/RTC_lib.dir/Canvas.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
-RTC_lib/CMakeFiles/RTC_lib.dir/Canvas.cpp.o: ../RTC_lib/Canvas.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/Canvas.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/Canvas.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/Canvas.cpp"
+RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.o: ../RTC_lib/canvas.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/canvas.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/canvas.cpp"
 
-RTC_lib/CMakeFiles/RTC_lib.dir/Canvas.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/Canvas.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/Canvas.cpp" > CMakeFiles/RTC_lib.dir/Canvas.cpp.i
+RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/canvas.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/canvas.cpp" > CMakeFiles/RTC_lib.dir/canvas.cpp.i
 
-RTC_lib/CMakeFiles/RTC_lib.dir/Canvas.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/Canvas.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/Canvas.cpp" -o CMakeFiles/RTC_lib.dir/Canvas.cpp.s
+RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/canvas.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/canvas.cpp" -o CMakeFiles/RTC_lib.dir/canvas.cpp.s
 
 # Object files for target RTC_lib
 RTC_lib_OBJECTS = \
-"CMakeFiles/RTC_lib.dir/Tuple.cpp.o" \
-"CMakeFiles/RTC_lib.dir/Canvas.cpp.o"
+"CMakeFiles/RTC_lib.dir/tuple.cpp.o" \
+"CMakeFiles/RTC_lib.dir/canvas.cpp.o"
 
 # External object files for target RTC_lib
 RTC_lib_EXTERNAL_OBJECTS =
 
-RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/Tuple.cpp.o
-RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/Canvas.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.o
 RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/build.make
 RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libRTC_lib.a"

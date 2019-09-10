@@ -300,19 +300,19 @@ cxxabi.h
 acxx_demangle.h
 -
 
+../RTC_lib/canvas.h
+tuple.h
+../RTC_lib/tuple.h
+vector
+-
+
+../RTC_lib/tuple.h
+
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/CanvasTest.cpp
-../RTC_lib/Canvas.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/Canvas.h
+canvas.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/canvas.h
 gtest/gtest.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
 cmath
 -
-
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/Canvas.h
-Tuple.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/Tuple.h
-vector
--
-
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/Tuple.h
 

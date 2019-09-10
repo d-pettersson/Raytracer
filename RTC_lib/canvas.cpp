@@ -1,12 +1,13 @@
-#include "Canvas.h"
-#include "Tuple.h"
+#include "canvas.h"
+#include "tuple.h"
 
 #include <vector>
 #include <iostream>
+#include <fstream>
 
 namespace raytracer {
 
-Canvas::Canvas(int w, int h)
+Canvas::Canvas(size_t w, size_t h)
     :width{w}, height{h}
 {
     colors = std::vector<std::vector<Color>>(width, std::vector<Color>(height, Color(0., 0., 0.)));
@@ -32,8 +33,16 @@ Color Canvas::pixelAt(const int& x, const int& y) {
     return colors[x][y];
 }
 
-void canvasToPpm() {
 
+std::string Canvas::canvasToPpm() {
+    std::string header = "P3\n5 3\n255";
+    unsigned int * ppmContent[width][height];
+    for (size_t px = 0; px < width; px++) {
+        for (size_t py = 0; py < height; py++) {
+
+        }
+    }
+    return header;
 }
 
 
