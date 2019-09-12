@@ -2,6 +2,7 @@
 #define RTC_PROJECTILE_H
 
 #include "tuple.h"
+#include "environment.h"
 
 #include <sstream>
 
@@ -17,6 +18,8 @@ class Projectile {
 };
 
 std::ostream& operator<<(std::ostream& out, const Projectile& proj);
+
+Projectile tick(const Environment& env, Projectile& proj);
 
 
 #endif //RTC_PROJECTILE_H

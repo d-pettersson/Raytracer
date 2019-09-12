@@ -1,6 +1,6 @@
-#include <cmath>
-
 #include "tuple.h"
+
+#include <cmath>
 
 namespace raytracer {
 
@@ -105,7 +105,7 @@ Tuple operator/(const Tuple& t1, const double& scalar) {
 }
 
 std::ostream& operator<<(std::ostream& out, const Tuple& t1) {
-    out << '[' << t1.x << ", " << t1.y << ", " << t1.z << ", " << t1.w << ']';
+    out << '[' << t1.x << ",\t" << t1.y << ",\t" << t1.z << ",\t" << t1.w << ']';
     return out;
 }
 

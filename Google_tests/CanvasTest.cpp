@@ -1,4 +1,5 @@
 #include "canvas.h"
+#include "common.h"
 
 #include "gtest/gtest.h"
 
@@ -91,7 +92,8 @@ TEST_F(CanvasFixture, PPMPixelData) {
     canvas->writePixel(2, 1, c2);
     canvas->writePixel(4, 2, c3);
     std::string output = canvas->canvasToPPM();
-    ASSERT_EQ(("255 0 0 0 0 0 0 0 0 0 0 0 0 0 0\n"
+    ASSERT_EQ(("P3\n5 3\n255\n"
+                    "255 0 0 0 0 0 0 0 0 0 0 0 0 0 0\n"
                     "0 0 0 0 0 0 0 128 0 0 0 0 0 0 0\n"
                     "0 0 0 0 0 0 0 0 0 0 0 0 0 0 255\n"), output);
 }
@@ -110,4 +112,19 @@ TEST_F(CanvasFixture, PPMLineLength) {
                     "255 204 153 255 204 153 255 204 153 255 204 153 255 204 153 255 204\n"
                     "153 255 204 153 255 204 153 255 204 153 255 204 253\n"), output);
 }
+
+TEST_F(CanvasFixture, NewLineEOF) {
+    canvas = new raytracer::Canvas(10, 2);
+    c1 = raytracer::Color(1.0, 0.8, 0.6);
+    for (size_t x = 0; x < canvas->width; x++) {
+        for (size_t y = 0; y < canvas->height; y++) {
+            canvas->writePixel(x, y, c1);
+        }
+    }
+    std::string output = canvas->canvasToPPM();
+    std::string endStr = "\n";
+    bool ending = endsWith(output, endStr);
+    ASSERT_TRUE(ending);
+}
+
 

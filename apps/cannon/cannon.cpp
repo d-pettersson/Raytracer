@@ -3,13 +3,7 @@
 
 #include <iostream>
 
-void tick(const Environment& env, Projectile& proj) {
-    raytracer::Tuple position = proj.position + proj.velocity;
-    raytracer::Tuple velocity = proj.velocity + env.gravity + env.wind;
-    proj.position = position;
-    proj.velocity = velocity;
-}
-
+// TODO fix the cannon and projectile
 
 int main() {
     // Environment setup
@@ -18,15 +12,16 @@ int main() {
     Environment env = Environment(gravity, wind);
 
     // Projectile setup
-    raytracer::Tuple position = raytracer::createPoint(0, 1, 0);
     raytracer::Tuple velocity = raytracer::normalize(raytracer::createVector(1, 1, 0));
-    Projectile proj = Projectile(position, velocity);
+    raytracer::Tuple position = raytracer::createPoint(0, 1, 0);
+    Projectile proj{velocity, position};
 
-    for (float y = 0; y < 1; y+=0.01) {
+    for (float y = 0; y < 1; y += 0.01) {
         position.y = y;
-        tick(env, proj);
-        std::cout << proj << '\n';
+        Projectile out = tick(env, proj);
+        std::cout << out << '\n';
     }
+
 
     return 0;
 }

@@ -198,6 +198,33 @@ canvas.cpp.s:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.s
 .PHONY : canvas.cpp.s
 
+matrix.o: matrix.cpp.o
+
+.PHONY : matrix.o
+
+# target to build an object file
+matrix.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.o
+.PHONY : matrix.cpp.o
+
+matrix.i: matrix.cpp.i
+
+.PHONY : matrix.i
+
+# target to preprocess a source file
+matrix.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.i
+.PHONY : matrix.cpp.i
+
+matrix.s: matrix.cpp.s
+
+.PHONY : matrix.s
+
+# target to generate assembly for a file
+matrix.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.s
+.PHONY : matrix.cpp.s
+
 tuple.o: tuple.cpp.o
 
 .PHONY : tuple.o
@@ -241,6 +268,9 @@ help:
 	@echo "... canvas.o"
 	@echo "... canvas.i"
 	@echo "... canvas.s"
+	@echo "... matrix.o"
+	@echo "... matrix.i"
+	@echo "... matrix.s"
 	@echo "... tuple.o"
 	@echo "... tuple.i"
 	@echo "... tuple.s"

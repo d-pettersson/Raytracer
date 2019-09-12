@@ -1,4 +1,4 @@
-add_executable(cannon cannon/cannon.cpp cannon/projectile.cpp cannon/environment.cpp)
+add_executable(cannon cannon/projectile.cpp cannon/environment.cpp cannon/cannon.cpp)
 
 include_directories(${CMAKE_SOURCE_DIR}/RTC_lib)
 link_directories(${CMAKE_SOURCE_DIR}/RTC_lib)

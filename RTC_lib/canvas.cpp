@@ -5,6 +5,7 @@
 #include <vector>
 #include <iostream>
 #include <sstream>
+#include <fstream>
 #include <algorithm>
 #include <cmath>
 
@@ -48,18 +49,20 @@ Color Canvas::scaleColor(const Color& color, const int& maxValue) {
 
 std::string Canvas::createPPMHeader() {
     std::stringstream ss;
-    ss << "P3\n" << this->width << ' ' << this->height << "\n255";
+    ss << "P3\n" << this->width << ' ' << this->height << "\n255\n";
     std::string header = ss.str();
     ss.clear();
     return header;
 }
 
-// TODO: change sstream to ofstream for file export
-// TODO: limit string size to 70 chars per line
-
+// TODO: test ostream version of canvasToPPM
+//  - limit string size to 70 chars per line
+//  - remove stringstream (only there for testing purposes)
 
 std::string Canvas::canvasToPPM() {
     std::stringstream ss;
+    std::ofstream os("image.ppm", std::ofstream::binary);
+    ss << createPPMHeader();
     bool first = true;
     for (int py = 0; py < this->height; py++) {
         first ? ss << "" : ss << '\n';
@@ -71,6 +74,8 @@ std::string Canvas::canvasToPPM() {
         first = false;
     }
     ss << '\n';
+    os << ss.rdbuf();
+    os.close();
     std::string output = ss.str();
     ss.clear();
     return output;
