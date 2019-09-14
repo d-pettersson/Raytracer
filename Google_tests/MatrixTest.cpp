@@ -223,27 +223,30 @@ TEST_F(MatrixFixture, DeterminantMatrix) {
 }
 
 TEST_F(MatrixFixture, Submatrix1) {
-    std::vector<double> data1 = {0, 9, 3,
-                                 9, 8, 0,
-                                 1, 8, 5};
+    std::vector<double> data1 = {1, 5, 0,
+                                 -3, 2, 7,
+                                 0, 6, 3};
     std::vector<double> data2 = {-3, 2,
                                   0, 6};
     m1 = raytracer::Matrix(3, 3);
     m1.setMatrixData(data1);
     m2 = raytracer::Matrix(2, 2);
     m2.setMatrixData(data2);
+//    std::cout << m1 << '\n' << submatrix(m1, 0, 2);
     ASSERT_EQ(m2, submatrix(m1, 0, 2));
 }
 
 TEST_F(MatrixFixture, Submatrix2) {
-    std::vector<double> data1 = {0, 9, 3,
-                                 9, 8, 0,
-                                 1, 8, 5};
-    std::vector<double> data2 = {-3, 2,
-                                 0, 6};
-    m1 = raytracer::Matrix(3, 3);
+    std::vector<double> data1 = {-6, 1, 1, 6,
+                                 -8, 5, 8, 6,
+                                 -1, 0, 8, 2,
+                                 -7, 1, -1, 1};
+    std::vector<double> data2 = {-6, 1, 6,
+                                 -8, 8, 6,
+                                 -7, -1, 1};
+    m1 = raytracer::Matrix(4, 4);
     m1.setMatrixData(data1);
-    m2 = raytracer::Matrix(2, 2);
+    m2 = raytracer::Matrix(3, 3);
     m2.setMatrixData(data2);
-    ASSERT_EQ(m2, submatrix(m1, 0, 2));
+    ASSERT_EQ(m2, submatrix(m1, 2, 1));
 }

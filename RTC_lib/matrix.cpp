@@ -99,9 +99,13 @@ double determinant(const Matrix& m1) {
 
 Matrix submatrix(const Matrix& m1, const int& r, const int& c) {
     Matrix output = Matrix(m1.getRowSize() - 1, m1.getColSize() - 1);
-    std::vector<double> data2 = {0, 0,
-                                 0, 0};
-    output.setMatrixData(data2);
+    for (int i = 0; i < output.getRowSize(); i++) {
+        size_t ni = i >= r ? i + 1 : i;
+        for (int j = 0; j < output.getColSize(); j++) {
+            size_t nj = j >= c ? j + 1 : j;
+            output(i, j) = m1(ni, nj);
+        }
+    }
     return output;
 }
 
