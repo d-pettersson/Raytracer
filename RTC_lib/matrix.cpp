@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <utility>
+#include <cmath>
 
 namespace raytracer {
 
@@ -51,22 +52,20 @@ bool Matrix::isEqual(const Matrix& m2) const {
     return true;
 }
 
-Matrix Matrix::transpose() const {
-    Matrix output(rows, cols);
-    for (int i = 0; i < this->getRowSize(); i++) {
-        for (int j = 0; j < this->getColSize(); j++) {
-            output(i, j) = matrixData[rows * j + i];
-        }
-    }
-    return output;
-}
-
 double& Matrix::operator()(size_t row, size_t col) {
     return matrixData[cols * row + col];
 }
 
 double Matrix::operator()(size_t row, size_t col) const {
     return matrixData[cols * row + col];
+}
+
+double& Matrix::operator[](size_t index) {
+    return matrixData[index];
+}
+
+double Matrix::operator[](size_t index) const {
+    return matrixData[index];
 }
 
 Matrix Matrix::operator*(const Matrix& m) {
@@ -93,21 +92,41 @@ raytracer::Tuple Matrix::operator*(const raytracer::Tuple& t) {
     return output;
 }
 
+Matrix transpose(const Matrix& m1) {
+    Matrix output(m1.getRowSize(), m1.getColSize());
+    for (int i = 0; i < m1.getRowSize(); i++) {
+        for (int j = 0; j < m1.getColSize(); j++) {
+            output(i, j) = m1[m1.getRowSize() * j + i];
+        }
+    }
+    return output;
+}
+
 double determinant(const Matrix& m1) {
     return m1(0, 0) * m1(1, 1) - m1(0, 1) * m1(1, 0);
 }
 
 Matrix submatrix(const Matrix& m1, const int& r, const int& c) {
     Matrix output = Matrix(m1.getRowSize() - 1, m1.getColSize() - 1);
-    for (int i = 0; i < output.getRowSize(); i++) {
+    for (int i = 0; i < output.getRowSize(); ++i) {
         size_t ni = i >= r ? i + 1 : i;
-        for (int j = 0; j < output.getColSize(); j++) {
+        for (int j = 0; j < output.getColSize(); ++j) {
             size_t nj = j >= c ? j + 1 : j;
             output(i, j) = m1(ni, nj);
         }
     }
     return output;
 }
+
+double minor(const Matrix& m1, const int& r, const int& c) {
+    Matrix output = submatrix(m1, r, c);
+    return determinant(output);
+}
+
+double cofactor(const Matrix& m1, const int& r, const int& c) {
+    double output = minor(m1, r, c);
+    return (r + c) % 2 != 0 ? -output : output;
+};
 
 bool operator==(const Matrix& m1, const Matrix& m2) {
     if (m1.getMatrixSize() != m2.getMatrixSize()) {

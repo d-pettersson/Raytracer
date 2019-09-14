@@ -13,6 +13,8 @@ iostream
 -
 utility
 -
+cmath
+-
 
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
 tuple.h

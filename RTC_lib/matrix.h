@@ -21,14 +21,14 @@ class Matrix {
         void setMatrixData(const std::vector<double>& data);
         bool isEqual(const Matrix& m1) const;
 
-        Matrix transpose() const;
-
         Matrix operator*(const Matrix& m);
         raytracer::Tuple operator*(const raytracer::Tuple& t);
 
         double& operator()(size_t row, size_t col);
         double operator()(size_t row, size_t col) const;
 
+        double& operator[](size_t index);
+        double operator[](size_t index) const;
 
 private:
         size_t rows;
@@ -37,8 +37,11 @@ private:
 
 };
 
+Matrix transpose(const Matrix& m1);
 double determinant(const Matrix& m1);
 Matrix submatrix(const Matrix& m1, const int& r, const int& c);
+double minor(const Matrix& m1, const int& r, const int& c);
+double cofactor(const Matrix& m1, const int& r, const int& c);
 
 bool operator==(const Matrix& m1, const Matrix& m2);
 bool operator!=(const Matrix& m1, const Matrix& m2);

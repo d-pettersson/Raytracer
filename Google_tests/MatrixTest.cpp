@@ -139,7 +139,6 @@ TEST_F(MatrixFixture, TestRowSize) {
                       9, 8, 7, 6,
                       5, 4, 3, 2};
     m1.setMatrixData(data1);
-    std::cout << m1;
 }
 
 TEST_F(MatrixFixture, Test4x4MatrixMultiplication) {
@@ -191,7 +190,6 @@ TEST_F(MatrixFixture, TestIdentityMatrixMultiplication) {
     identity = raytracer::Matrix(4, 4);
     identity.setMatrixData(identityData);
     ASSERT_EQ(m1, m1 * identity);
-    std::cout << identity * tuple;
     ASSERT_EQ(tuple, identity * tuple);
 }
 
@@ -209,7 +207,7 @@ TEST_F(MatrixFixture, TransposingMatrix) {
     m2 = raytracer::Matrix(4, 4);
     m2.setMatrixData(transposed);
     resultMatrix = raytracer::Matrix(4, 4);
-    resultMatrix = m1.transpose();
+    resultMatrix = transpose(m1);
     ASSERT_EQ(resultMatrix, m2);
 }
 
@@ -218,22 +216,23 @@ TEST_F(MatrixFixture, DeterminantMatrix) {
                                  -3, 2};
     m1 = raytracer::Matrix(2, 2);
     m1.setMatrixData(data1);
-    double determinant = 17.0;
-    ASSERT_EQ(determinant, raytracer::determinant(m1));
+    double det = raytracer::determinant(m1);
+    double result = 17.0;
+    ASSERT_EQ(result, det);
 }
 
 TEST_F(MatrixFixture, Submatrix1) {
     std::vector<double> data1 = {1, 5, 0,
                                  -3, 2, 7,
-                                 0, 6, 3};
+                                 0, 6, -3};
     std::vector<double> data2 = {-3, 2,
                                   0, 6};
     m1 = raytracer::Matrix(3, 3);
     m1.setMatrixData(data1);
     m2 = raytracer::Matrix(2, 2);
     m2.setMatrixData(data2);
-//    std::cout << m1 << '\n' << submatrix(m1, 0, 2);
-    ASSERT_EQ(m2, submatrix(m1, 0, 2));
+    raytracer::Matrix sub = submatrix(m1, 0, 2);
+    ASSERT_EQ(m2, sub);
 }
 
 TEST_F(MatrixFixture, Submatrix2) {
@@ -248,5 +247,46 @@ TEST_F(MatrixFixture, Submatrix2) {
     m1.setMatrixData(data1);
     m2 = raytracer::Matrix(3, 3);
     m2.setMatrixData(data2);
-    ASSERT_EQ(m2, submatrix(m1, 2, 1));
+    raytracer::Matrix sub = submatrix(m1, 2, 1);
+    ASSERT_EQ(m2, sub);
+}
+
+TEST_F(MatrixFixture, MinorMatrix) {
+    std::vector<double> data1 = {3, 5, 0,
+                                 2, -1, -7,
+                                 6, -1, 5};
+    m1 = raytracer::Matrix(3, 3);
+    m1.setMatrixData(data1);
+
+    m2 = raytracer::Matrix(2, 2);
+    m2 = submatrix(m1, 1, 0);
+
+    double det = determinant(m2);
+    double min = minor(m1, 1, 0);
+    double result = 25.0;
+
+    ASSERT_EQ(result, det);
+    ASSERT_EQ(result, min);
+}
+
+TEST_F(MatrixFixture, CofactorMatrix) {
+    std::vector<double> data1 = {3, 5, 0,
+                                 2, -1, -7,
+                                 6, -1, 5};
+    m1 = raytracer::Matrix(3, 3);
+    m1.setMatrixData(data1);
+
+    double min1 = minor(m1, 0, 0);
+    double result1 = -12.0;
+    double cofactor1 = cofactor(m1, 0, 0);
+
+    double min2 = minor(m1, 1, 0);
+    double resultMin2 = 25;
+    double cofactor2 = cofactor(m1, 1, 0);
+    double resultCofactor2 = -25;
+
+    ASSERT_EQ(result1, min1);
+    ASSERT_EQ(result1, cofactor1);
+    ASSERT_EQ(resultMin2, min2);
+    ASSERT_EQ(resultCofactor2, cofactor2);
 }
