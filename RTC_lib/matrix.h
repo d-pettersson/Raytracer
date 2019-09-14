@@ -1,3 +1,5 @@
+#include "tuple.h"
+
 #include <vector>
 
 #ifndef RTC_MATRIX_H
@@ -7,27 +9,41 @@ namespace raytracer {
 
 class Matrix {
     public:
-        Matrix(int rows, int cols);
+        Matrix(size_t rows, size_t cols);
         Matrix();
 
-        double getMatrixData() const;
+        Matrix(const Matrix &copy);
+
         int getMatrixSize() const;
-        void setMatrixData(double data[]);
+        int getRowSize() const;
+        int getColSize() const;
+        std::vector<double> getMatrixData() const;
+        void setMatrixData(const std::vector<double>& data);
         bool isEqual(const Matrix& m1) const;
 
-        double& operator()(int row, int col);
-        double& operator()(int row, int col) const;
+        Matrix transpose() const;
+
+        Matrix operator*(const Matrix& m);
+        raytracer::Tuple operator*(const raytracer::Tuple& t);
+
+        double& operator()(size_t row, size_t col);
+        double operator()(size_t row, size_t col) const;
 
 
-    private:
-        int rows;
-        int cols;
-        double * matrixData;
+private:
+        size_t rows;
+        size_t cols;
+        std::vector<double> matrixData;
+
 };
+
+double determinant(const Matrix& m1);
+Matrix submatrix(const Matrix& m1, const int& r, const int& c);
 
 bool operator==(const Matrix& m1, const Matrix& m2);
 bool operator!=(const Matrix& m1, const Matrix& m2);
-Matrix operator*(const Matrix& m1, const Matrix& m2);
+std::ostream& operator<<(std::ostream& os, const Matrix& m);
+
 
 } // namespace raytracer
 

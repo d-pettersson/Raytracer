@@ -24,6 +24,32 @@ Color::Color()
 {
 }
 
+double& Tuple::operator()(size_t index) {
+    switch (index) {
+        case (0):
+            return x;
+        case (1):
+            return y;
+        case (2):
+            return z;
+        case (3):
+            return w;
+    }
+}
+
+double Tuple::operator()(size_t index) const {
+    switch (index) {
+        case (0):
+            return x;
+        case (1):
+            return y;
+        case (2):
+            return z;
+        case (3):
+            return w;
+    }
+}
+
 bool Tuple::isPoint() {
     return w == 1.0;
 }
@@ -105,7 +131,7 @@ Tuple operator/(const Tuple& t1, const double& scalar) {
 }
 
 std::ostream& operator<<(std::ostream& out, const Tuple& t1) {
-    out << '[' << t1.x << ",\t" << t1.y << ",\t" << t1.z << ",\t" << t1.w << ']';
+    out << '[' << t1.x << ", " << t1.y << ", " << t1.z << ", " << t1.w << ']';
     return out;
 }
 

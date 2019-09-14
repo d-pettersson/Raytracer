@@ -18,6 +18,9 @@ class Tuple {
         double z;
         double w;
 
+        double& operator()(size_t index);
+        double operator()(size_t index) const;
+
 };
 
 class Color : public Tuple {

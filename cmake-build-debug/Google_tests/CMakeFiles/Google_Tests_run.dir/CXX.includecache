@@ -301,7 +301,13 @@ acxx_demangle.h
 -
 
 ../RTC_lib/matrix.h
+tuple.h
+../RTC_lib/tuple.h
 vector
+-
+
+../RTC_lib/tuple.h
+iostream
 -
 
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/MatrixTest.cpp

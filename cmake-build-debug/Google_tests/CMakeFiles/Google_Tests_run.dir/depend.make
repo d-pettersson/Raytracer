@@ -47,6 +47,7 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/MatrixTest.cpp.o: ../Google_tests/l
 Google_tests/CMakeFiles/Google_Tests_run.dir/MatrixTest.cpp.o: ../Google_tests/lib/googletest/include/gtest/internal/gtest-string.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/MatrixTest.cpp.o: ../Google_tests/lib/googletest/include/gtest/internal/gtest-type-util.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/MatrixTest.cpp.o: ../RTC_lib/matrix.h
+Google_tests/CMakeFiles/Google_Tests_run.dir/MatrixTest.cpp.o: ../RTC_lib/tuple.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/MatrixTest.cpp.o: ../Google_tests/MatrixTest.cpp
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o: ../Google_tests/lib/googletest/include/gtest/gtest-death-test.h
