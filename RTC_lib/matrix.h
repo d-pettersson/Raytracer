@@ -1,14 +1,17 @@
+#ifndef RTC_MATRIX_H
+#define RTC_MATRIX_H
+
 #include "tuple.h"
 
 #include <vector>
-
-#ifndef RTC_MATRIX_H
-#define RTC_MATRIX_H
 
 namespace raytracer {
 
 class Matrix {
     public:
+        ///
+        /// \param rows
+        /// \param cols
         Matrix(size_t rows, size_t cols);
         Matrix();
 
@@ -23,6 +26,8 @@ class Matrix {
 
         Matrix operator*(const Matrix& m);
         raytracer::Tuple operator*(const raytracer::Tuple& t);
+
+        Matrix& operator=(const Matrix& m1);
 
         double& operator()(size_t row, size_t col);
         double operator()(size_t row, size_t col) const;
@@ -42,6 +47,8 @@ double determinant(const Matrix& m1);
 Matrix submatrix(const Matrix& m1, const int& r, const int& c);
 double minor(const Matrix& m1, const int& r, const int& c);
 double cofactor(const Matrix& m1, const int& r, const int& c);
+Matrix inverse(const Matrix& m1);
+Matrix generateIdentity(const int& r, const int& c);
 
 bool operator==(const Matrix& m1, const Matrix& m2);
 bool operator!=(const Matrix& m1, const Matrix& m2);

@@ -7,7 +7,7 @@
 namespace raytracer {
 
 Matrix::Matrix(size_t r, size_t c)
-    :rows{r}, cols{c}, matrixData(r*c)
+    :rows{r}, cols{c}, matrixData(r * c)
 {
 }
 
@@ -19,7 +19,6 @@ Matrix::Matrix()
 Matrix::Matrix(const Matrix &copy)
     :rows{copy.rows}, cols{copy.cols}, matrixData{copy.matrixData}
 {
-
 }
 
 int Matrix::getMatrixSize() const {
@@ -43,10 +42,12 @@ void Matrix::setMatrixData(const std::vector<double>& data) {
 }
 
 bool Matrix::isEqual(const Matrix& m2) const {
+    const double epsilon = 0.0001;
     for (int i = 0; i < this->getRowSize(); i++) {
         for (int j = 0; j < this->getColSize(); j++) {
-            if (matrixData[cols * i + j] != m2(i, j))
+            if (fabs(matrixData[cols * i + j] - m2(i, j)) > epsilon) {
                 return false;
+            }
         };
     }
     return true;
@@ -83,7 +84,7 @@ Matrix Matrix::operator*(const Matrix& m) {
 
 raytracer::Tuple Matrix::operator*(const raytracer::Tuple& t) {
     raytracer::Tuple output = Tuple();
-    for (int i = 0; i < this->getRowSize(); i++) {
+    for (size_t i = 0; i < this->getRowSize(); i++) {
         output(i) = matrixData[cols * i] * t.x +
                     matrixData[cols * i + 1] * t.y +
                     matrixData[cols * i + 2] * t.z +
@@ -92,10 +93,12 @@ raytracer::Tuple Matrix::operator*(const raytracer::Tuple& t) {
     return output;
 }
 
+Matrix& Matrix::operator=(const Matrix& m1) = default;
+
 Matrix transpose(const Matrix& m1) {
     Matrix output(m1.getRowSize(), m1.getColSize());
-    for (int i = 0; i < m1.getRowSize(); i++) {
-        for (int j = 0; j < m1.getColSize(); j++) {
+    for (size_t i = 0; i < m1.getRowSize(); i++) {
+        for (size_t j = 0; j < m1.getColSize(); j++) {
             output(i, j) = m1[m1.getRowSize() * j + i];
         }
     }
@@ -103,7 +106,15 @@ Matrix transpose(const Matrix& m1) {
 }
 
 double determinant(const Matrix& m1) {
-    return m1(0, 0) * m1(1, 1) - m1(0, 1) * m1(1, 0);
+    double output = 0.0;
+    if (m1.getRowSize() <= 2) {
+        output = m1(0, 0) * m1(1, 1) - m1(0, 1) * m1(1, 0);
+    } else {
+        for(size_t i = 0; i < m1.getRowSize(); i++) {
+             output += m1(0, i) * cofactor(m1, 0, i);
+        }
+    }
+    return output;
 }
 
 Matrix submatrix(const Matrix& m1, const int& r, const int& c) {
@@ -126,7 +137,32 @@ double minor(const Matrix& m1, const int& r, const int& c) {
 double cofactor(const Matrix& m1, const int& r, const int& c) {
     double output = minor(m1, r, c);
     return (r + c) % 2 != 0 ? -output : output;
-};
+}
+
+Matrix inverse(const Matrix& m1) {
+    Matrix output = Matrix(m1.getRowSize(), m1.getColSize());
+    double co = 0.0;
+    double det = determinant(m1);;
+    if (det != 0) {
+        for (size_t i = 0; i < m1.getRowSize(); i++) {
+            for (size_t j = 0; j < m1.getColSize(); j++) {
+                co = cofactor(m1, i, j);
+                output(j, i) = co / det;
+            }
+        }
+    }
+    return output;
+}
+
+Matrix generateIdentity(const int& r, const int& c) {
+    auto output = Matrix(r, c);
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            i == j ? output(i, j) = 1.0 : output(i, j) = 0.0;
+        }
+    }
+    return output;
+}
 
 bool operator==(const Matrix& m1, const Matrix& m2) {
     if (m1.getMatrixSize() != m2.getMatrixSize()) {

@@ -225,6 +225,33 @@ matrix.cpp.s:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.s
 .PHONY : matrix.cpp.s
 
+transform.o: transform.cpp.o
+
+.PHONY : transform.o
+
+# target to build an object file
+transform.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.o
+.PHONY : transform.cpp.o
+
+transform.i: transform.cpp.i
+
+.PHONY : transform.i
+
+# target to preprocess a source file
+transform.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.i
+.PHONY : transform.cpp.i
+
+transform.s: transform.cpp.s
+
+.PHONY : transform.s
+
+# target to generate assembly for a file
+transform.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.s
+.PHONY : transform.cpp.s
+
 tuple.o: tuple.cpp.o
 
 .PHONY : tuple.o
@@ -271,6 +298,9 @@ help:
 	@echo "... matrix.o"
 	@echo "... matrix.i"
 	@echo "... matrix.s"
+	@echo "... transform.o"
+	@echo "... transform.i"
+	@echo "... transform.s"
 	@echo "... tuple.o"
 	@echo "... tuple.i"
 	@echo "... tuple.s"

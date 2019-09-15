@@ -10,9 +10,35 @@ Tuple::Tuple(double xx, double yy, double zz, double ww)
 }
 
 Tuple::Tuple()
-        :x{0.f}, y{0.f}, z{0.f}, w{0.f}
+        :x{0.0f}, y{0.0f}, z{0.0f}, w{0.0f}
 {
 }
+
+//----------------------------------------------------------------
+
+Point::Point(double x, double y, double z)
+    : Tuple(x, y, z, 1.0f)
+{
+}
+
+Point::Point()
+    : Tuple(0.0f, 0.0f, 0.0f, 1.0f)
+{
+}
+
+//----------------------------------------------------------------
+
+Vector::Vector(double x, double y, double z)
+    : Tuple(x, y, z, 0.0f)
+{
+}
+
+Vector::Vector()
+    : Tuple(0.0f, 0.0f, 0.0f, 0.0f)
+{
+}
+
+//----------------------------------------------------------------
 
 Color::Color(double rr, double gg, double bb)
     :r{rr}, g{gg}, b{bb}
@@ -20,7 +46,7 @@ Color::Color(double rr, double gg, double bb)
 }
 
 Color::Color()
-    :r{0.0}, g{0.0}, b{0.0}
+    :r{0.0f}, g{0.0f}, b{0.0f}
 {
 }
 
@@ -34,6 +60,8 @@ double& Tuple::operator()(size_t index) {
             return z;
         case (3):
             return w;
+        default:
+            break;
     }
 }
 
@@ -47,6 +75,8 @@ double Tuple::operator()(size_t index) const {
             return z;
         case (3):
             return w;
+        default:
+            break;
     }
 }
 
@@ -58,12 +88,16 @@ bool Tuple::isVector() {
     return w == 0.0;
 }
 
-bool isEqual(const Tuple &t1, const Tuple &t2) {
-    const double epsilon = 0.00001;
-    auto * difference = new Tuple();
-    * difference = t1 - t2;
-    return tupleAbs(difference) < epsilon;
-}
+//bool isEqual(const Tuple &t1, const Tuple &t2) {
+//    const double epsilon = 0.00001;
+//    auto * difference = new Tuple();
+//    * difference = t1 - t2;
+//    return tupleAbs(difference) < epsilon;
+//}
+
+//bool isEqual(const Tuple& t1, const Tuple& t2) {
+//    return t1.x == t2.x && t1.y == t2.y && t1.z == t2.z && t1.w == t2.w;
+//}
 
 Tuple createPoint(const double &x, const double &y, const double &z) {
     return {x, y, z, 1.0f};
@@ -122,6 +156,10 @@ Tuple operator+(const Tuple& t1, const Tuple& t2) {
     return {t1.x + t2.x, t1.y + t2.y, t1.z + t2.z, t1.w + t2.w};
 }
 
+Tuple operator*(const Tuple& t1, const Tuple& t2) {
+    return {t1.x * t2.x, t1.y * t2.y, t1.z * t2.z, t1.w * t2.w};
+}
+
 Tuple operator*(const Tuple& t1, const double& scalar) {
     return {t1.x * scalar, t1.y * scalar, t1.z * scalar, t1.w * scalar};
 }
@@ -136,6 +174,8 @@ std::ostream& operator<<(std::ostream& out, const Tuple& t1) {
 }
 
 // Color operators
+Color& Color::operator=(const Color& c1) = default;
+
 Color operator-(const Color& c1, const Color& c2) {
     return {c1.r - c2.r, c1.g - c2.g, c1.b - c2.b};
 }
@@ -147,6 +187,7 @@ Color operator+(const Color& c1, const Color& c2) {
 Color operator*(const Color& c1, const Color& c2) {
     return {c1.r * c2.r, c1.g * c2.g, c1.b * c2.b};
 }
+
 Color operator*(const Color& c1, const double& scalar) {
     return {c1.r * scalar, c1.g * scalar, c1.b * scalar};
 }
@@ -155,8 +196,12 @@ bool operator==(const Color& c1, const Color& c2) {
     return c1.r == c2.r && c1.g == c2.g && c1.b == c2.b;
 }
 
+bool operator!=(const Color& c1, const Color& c2) {
+    return c1.r != c2.r || c1.g != c2.g || c1.b != c2.b;
+}
+
 std::ostream& operator<<(std::ostream& out, const Color& c1) {
-    out << c1.r << " " << c1.g << " " << c1.b;
+    out << '[' << c1.r << ", " << c1.g << ", " << c1.b << ']';
     return out;
 }
 

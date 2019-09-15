@@ -8,6 +8,9 @@
 namespace raytracer {
 class Canvas {
     public:
+        ///
+        /// \param width
+        /// \param height
         Canvas(size_t width, size_t height);
         Canvas();
 
