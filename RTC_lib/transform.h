@@ -1,28 +1,21 @@
 #ifndef RTC_TRANSFORM_H
 #define RTC_TRANSFORM_H
 
-#include "tuple.h"
 #include "matrix.h"
 
 namespace raytracer {
-class Transform {
+
+class Transform : public virtual Matrix {
     public:
         Transform();
+        Transform(const Matrix& m);
 
-        Transform(double x, double y, double z);
-
-        Matrix translation(const double& x, const double& y, const double& z);
-        Matrix translation(const Transform& t);
-
-        Tuple operator*(const Tuple& tup);
-        Point operator*(const Transform& trans);
-
-        double x, y, z;
-
-    private:
-    };
-
-    std::ostream& operator<<(std::ostream& out, const Transform& t1);
+        Transform translate(const double& x, const double& y, const double& z);
+        Transform scale(const double& x, const double& y, const double& z);
+        Transform rotateX(const double& angle);
+        Transform rotateY(const double& angle);
+        Transform rotateZ(const double& angle);
+};
 
 } // namespace raytracer
 

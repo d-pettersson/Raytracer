@@ -458,6 +458,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/CanvasTest.cpp">
+			<Option target="Google_Tests_run"/>
+		</Unit>
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/MatrixTest.cpp">
 			<Option target="Google_Tests_run"/>
 		</Unit>
@@ -488,7 +491,7 @@
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/common.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/maths.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h">
 			<Option target="RTC_lib"/>
 		</Unit>
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.cpp">

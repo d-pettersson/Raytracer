@@ -1,6 +1,4 @@
 #include "canvas.h"
-#include "tuple.h"
-#include "maths.h"
 
 #include <vector>
 #include <iostream>

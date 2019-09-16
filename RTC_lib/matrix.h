@@ -26,6 +26,8 @@ class Matrix {
 
         Matrix operator*(const Matrix& m);
         raytracer::Tuple operator*(const raytracer::Tuple& t);
+        raytracer::Point operator*(const raytracer::Point& t);
+        raytracer::Vector operator*(const raytracer::Vector& t);
 
         Matrix& operator=(const Matrix& m1);
 
@@ -39,7 +41,6 @@ private:
         size_t rows;
         size_t cols;
         std::vector<double> matrixData;
-
 };
 
 Matrix transpose(const Matrix& m1);
@@ -52,6 +53,7 @@ Matrix generateIdentity(const int& r, const int& c);
 
 bool operator==(const Matrix& m1, const Matrix& m2);
 bool operator!=(const Matrix& m1, const Matrix& m2);
+
 std::ostream& operator<<(std::ostream& os, const Matrix& m);
 
 

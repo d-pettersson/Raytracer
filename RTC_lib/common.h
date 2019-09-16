@@ -1,7 +1,7 @@
-#include <iostream>
-
 #ifndef RTC_COMMON_H
 #define RTC_COMMON_H
+
+#include <iostream>
 
 bool endsWith(std::string const& value, std::string const& ending)
 {

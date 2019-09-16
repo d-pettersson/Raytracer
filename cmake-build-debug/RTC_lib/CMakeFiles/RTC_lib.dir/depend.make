@@ -3,18 +3,21 @@
 
 RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.o: ../RTC_lib/canvas.cpp
 RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.o: ../RTC_lib/canvas.h
-RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.o: ../RTC_lib/maths.h
+RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.o: ../RTC_lib/constants.h
 RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.o: ../RTC_lib/tuple.h
 
+RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.o: ../RTC_lib/constants.h
 RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.o: ../RTC_lib/matrix.cpp
 RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.o: ../RTC_lib/matrix.h
 RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.o: ../RTC_lib/tuple.h
 
+RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.o: ../RTC_lib/constants.h
 RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.o: ../RTC_lib/matrix.h
 RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.o: ../RTC_lib/transform.cpp
 RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.o: ../RTC_lib/transform.h
 RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.o: ../RTC_lib/tuple.h
 
+RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.o: ../RTC_lib/constants.h
 RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.o: ../RTC_lib/tuple.cpp
 RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.o: ../RTC_lib/tuple.h
 

@@ -1,37 +1,68 @@
 #include "transform.h"
 
+#include <cmath>
+
 namespace raytracer {
 
 Transform::Transform()
-    :x{0.f}, y{0.f}, z{0.f}
+    : Matrix(4, 4)
 {
 }
 
-Transform::Transform(double xx, double yy, double zz)
-        : x{xx}, y{yy}, z{zz}
+Transform::Transform(const Matrix& m)
+    : Matrix(m)
 {
-
 }
 
-Matrix Transform::translation(const double& x, const double& y, const double& z) {
-    return Matrix();
+Transform Transform::translate(const double& x, const double& y, const double& z) {
+    Point p = Point(x, y, z);
+    Matrix output = generateIdentity(this->getRowSize(), this->getColSize());
+    for (int i = 0; i < this->getRowSize() - 1; i++) {
+        output(i, this->getRowSize() - 1) = p(i);
+    }
+    * this = output;
+    return * this;
 }
 
-Matrix Transform::translation(const Transform& t) {
-    return Matrix();
+Transform Transform::scale(const double &x, const double &y, const double &z) {
+    Point p = Point(x, y, z);
+    Matrix output = generateIdentity(this->getRowSize(), this->getColSize());
+    for (int i = 0; i < this->getRowSize() - 1; i++) {
+        output(i, i) = p(i);
+    }
+    * this = output;
+    return * this;
 }
 
-Tuple Transform::operator*(const Tuple& tup) {
-    return {this->x * tup.x, this->y * tup.y, this->z * tup.z, tup.w};
+Transform Transform::rotateX(const double& angle) {
+    Matrix output = generateIdentity(this->getRowSize(), this->getColSize());
+    output(1, 1) = cos(angle);
+    output(1, 2) = -sin(angle);
+    output(2, 1) = sin(angle);
+    output(2, 2) = cos(angle);
+    * this = output;
+    return * this;
 }
 
-Point Transform::operator*(const Transform& trans) {
-    return {this->x * trans.x, this->y * trans.y, this->z * trans.z};
+Transform Transform::rotateY(const double &angle) {
+    Matrix output = generateIdentity(this->getRowSize(), this->getColSize());
+    output(0, 0) = cos(angle);
+    output(0, 2) = sin(angle);
+    output(2, 0) = -sin(angle);
+    output(2, 2) = cos(angle);
+    * this = output;
+    return * this;
 }
 
-std::ostream& operator<<(std::ostream& out, const Transform& t1) {
-    out << '[' << t1.x << ", " << t1.y << ", " << t1.z << ']';
-    return out;
+Transform Transform::rotateZ(const double &angle) {
+    Matrix output = generateIdentity(this->getRowSize(), this->getColSize());
+    output(0, 0) = cos(angle);
+    output(0, 1) = -sin(angle);
+    output(1, 0) = sin(angle);
+    output(1, 1) = cos(angle);
+    * this = output;
+    return * this;
 }
+
 
 } // namespace raytracer

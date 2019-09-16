@@ -5,10 +5,10 @@
  *
  * Color, Point, Vector subclass
  */
-
-
 #ifndef RTC_TUPLE_H
 #define RTC_TUPLE_H
+
+#include "constants.h"
 
 #include<iostream>
 
@@ -31,30 +31,27 @@ class Tuple {
 
         double& operator()(size_t index);
         double operator()(size_t index) const;
-
 };
 
-class Point : public Tuple {
+class Point : virtual public Tuple {
     public:
         Point(double x, double y, double z);
         Point();
 };
 
-class Vector : public Tuple {
+class Vector : virtual public Tuple {
     public:
         Vector(double x, double y, double z);
         Vector();
 };
 
-class Color : public Tuple {
+class Color : virtual public Tuple {
     public:
         Color(double r, double g, double b);
         Color();
 
         double r, g, b;
         int maxValue = 255;
-
-        Color& operator=(const Color& c1);
 };
 
 Tuple createPoint(const double &x, const double &y, const double &z);

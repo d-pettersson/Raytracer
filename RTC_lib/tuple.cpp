@@ -40,13 +40,16 @@ Vector::Vector()
 
 //----------------------------------------------------------------
 
-Color::Color(double rr, double gg, double bb)
-    :r{rr}, g{gg}, b{bb}
+Color::Color(double r, double g, double b)
+    : Tuple(r, g, b, 0.0f)
 {
+    this->r = x;
+    this->g = y;
+    this->b = z;
 }
 
 Color::Color()
-    :r{0.0f}, g{0.0f}, b{0.0f}
+    : Tuple()
 {
 }
 
@@ -131,6 +134,12 @@ Tuple cross(const Tuple& t1, const Tuple& t2) {
     return result;
 }
 
+// Point operator
+std::ostream& operator<<(std::ostream& out, const Point& p1) {
+    out << '[' << p1.x << ", " << p1.y << ", " << p1.z << ']';
+    return out;
+}
+
 // tuple operators
 bool operator<(const Tuple& t1, const Tuple& t2) {
     return t1.x < t2.x && t1.y < t2.y && t1.z < t2.z && t1.w < t2.w;
@@ -141,7 +150,9 @@ bool operator<(const Tuple& t1, const double& d1) {
 }
 
 bool operator==(const Tuple& t1, const Tuple& t2) {
-    return t1.x == t2.x && t1.y == t2.y && t1.z == t2.z && t1.w == t2.w;
+    auto * difference = new Tuple();
+    * difference = t1 - t2;
+    return tupleAbs(difference) < EPSILON;
 }
 
 Tuple operator-(const Tuple& t1, const Tuple& t2) {
@@ -174,8 +185,6 @@ std::ostream& operator<<(std::ostream& out, const Tuple& t1) {
 }
 
 // Color operators
-Color& Color::operator=(const Color& c1) = default;
-
 Color operator-(const Color& c1, const Color& c2) {
     return {c1.r - c2.r, c1.g - c2.g, c1.b - c2.b};
 }

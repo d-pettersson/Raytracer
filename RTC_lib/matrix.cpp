@@ -93,6 +93,28 @@ raytracer::Tuple Matrix::operator*(const raytracer::Tuple& t) {
     return output;
 }
 
+raytracer::Point Matrix::operator*(const raytracer::Point& t) {
+    raytracer::Point output = Point();
+    for (size_t i = 0; i < this->getRowSize(); i++) {
+        output(i) = matrixData[cols * i] * t.x +
+                    matrixData[cols * i + 1] * t.y +
+                    matrixData[cols * i + 2] * t.z +
+                    matrixData[cols * i + 3] * t.w;
+    }
+    return output;
+}
+
+raytracer::Vector Matrix::operator*(const raytracer::Vector& t) {
+    raytracer::Vector output = Vector();
+    for (size_t i = 0; i < this->getRowSize(); i++) {
+        output(i) = matrixData[cols * i] * t.x +
+                    matrixData[cols * i + 1] * t.y +
+                    matrixData[cols * i + 2] * t.z +
+                    matrixData[cols * i + 3] * t.w;
+    }
+    return output;
+}
+
 Matrix& Matrix::operator=(const Matrix& m1) = default;
 
 Matrix transpose(const Matrix& m1) {
