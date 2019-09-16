@@ -64,5 +64,19 @@ Transform Transform::rotateZ(const double &angle) {
     return * this;
 }
 
+Transform Transform::shear(const double &xy, const double &xz,
+                           const double &yx, const double &yz,
+                           const double &zx, const double &zy) {
+    Matrix output = generateIdentity(this->getRowSize(), this->getColSize());
+    output(0, 1) = xy;
+    output(0, 2) = xz;
+    output(1, 0) = yx;
+    output(1, 2) = yz;
+    output(2, 0) = zx;
+    output(2, 1) = zy;
+    * this = output;
+    return * this;
+}
+
 
 } // namespace raytracer

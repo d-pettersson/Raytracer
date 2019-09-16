@@ -120,3 +120,51 @@ TEST_F(TransformFixture, RotationZTest) {
     ASSERT_EQ(raytracer::Point(-1, 0, 0), fullQuarterRot * point);
 }
 
+TEST_F(TransformFixture, Shearing1) {
+    trans->shear(1, 0, 0, 0, 0, 0);
+    point = raytracer::Point(2, 3, 4);
+    pointMultResult = * trans * point;
+    pointResult = raytracer::Point(5, 3, 4);
+    ASSERT_EQ(pointResult, pointMultResult);
+}
+
+TEST_F(TransformFixture, Shearing2) {
+    trans->shear(0, 1, 0, 0, 0, 0);
+    point = raytracer::Point(2, 3, 4);
+    pointMultResult = * trans * point;
+    pointResult = raytracer::Point(6, 3, 4);
+    ASSERT_EQ(pointResult, pointMultResult);
+}
+
+TEST_F(TransformFixture, Shearing3) {
+    trans->shear(0, 0, 1, 0, 0, 0);
+    point = raytracer::Point(2, 3, 4);
+    pointMultResult = * trans * point;
+    pointResult = raytracer::Point(2, 5, 4);
+    ASSERT_EQ(pointResult, pointMultResult);
+}
+
+TEST_F(TransformFixture, Shearing4) {
+    trans->shear(0, 0, 0, 1, 0, 0);
+    point = raytracer::Point(2, 3, 4);
+    pointMultResult = * trans * point;
+    pointResult = raytracer::Point(2, 7, 4);
+    ASSERT_EQ(pointResult, pointMultResult);
+}
+
+TEST_F(TransformFixture, Shearing5) {
+    trans->shear(0, 0, 0, 0, 1, 0);
+    point = raytracer::Point(2, 3, 4);
+    pointMultResult = * trans * point;
+    pointResult = raytracer::Point(2, 3, 6);
+    ASSERT_EQ(pointResult, pointMultResult);
+}
+
+TEST_F(TransformFixture, Shearing6) {
+    trans->shear(0, 0, 0, 0, 0, 1);
+    point = raytracer::Point(2, 3, 4);
+    pointMultResult = * trans * point;
+    pointResult = raytracer::Point(2, 3, 7);
+    ASSERT_EQ(pointResult, pointMultResult);
+}
+

@@ -1,10 +1,12 @@
 /**
- * Raytracer
+ * The <code>Tuple</code> class is the base for all calculations inside the engine.
  *
- * Tuple class
- *
- * Color, Point, Vector subclass
+ * @param[in] double x
+ * @param[in] double y
+ * @param[in] double z
+ * @param[in] double w
  */
+
 #ifndef RTC_TUPLE_H
 #define RTC_TUPLE_H
 
@@ -16,15 +18,29 @@ namespace raytracer {
 
 class Tuple {
     public:
-        ///
-        /// \param x
-        /// \param y
-        /// \param z
-        /// \param w
+        /**
+         * Returns a <code>Tuple</code> object from the components
+         *
+         * @param[in] double x
+         * @param[in] double y
+         * @param[in] double z
+         * @param[in] double w
+         */
         Tuple(double x, double y, double z, double w);
         Tuple();
 
+        /**
+         * Checks if <code>Tuple</code> is a Point
+         *
+         * @return bool
+         */
         bool isPoint();
+
+        /**
+         * Checks if <code>Tuple</code> is a Vector
+         *
+         * @return bool
+         */
         bool isVector();
 
         double x, y, z, w;
@@ -33,18 +49,42 @@ class Tuple {
         double operator()(size_t index) const;
 };
 
+/**
+ * The <code>Point</code> class inherits from the <code>Tuple</code> class.
+ * It's @param w is hidden from view and is always 1.0f
+ *
+ * @param[in] double x
+ * @param[in] double y
+ * @param[in] double z
+ */
 class Point : virtual public Tuple {
     public:
         Point(double x, double y, double z);
         Point();
 };
 
+/**
+ * The <code>Vector</code> class inherits from the <code>Tuple</code> class.
+ * Its @param w is hidden from view and is always 0.0f
+ *
+ * @param[in] double x
+ * @param[in] double y
+ * @param[in] double z
+ */
 class Vector : virtual public Tuple {
     public:
         Vector(double x, double y, double z);
         Vector();
 };
 
+/**
+ * The <code>Color</code> class inherits from the <code>Tuple</code> class.
+ * Its @param w is hidden from view
+ *
+ * @param[in] double r
+ * @param[in] double g
+ * @param[in] double b
+ */
 class Color : virtual public Tuple {
     public:
         Color(double r, double g, double b);
@@ -54,16 +94,75 @@ class Color : virtual public Tuple {
         int maxValue = 255;
 };
 
+/**
+ * Creates a <code>Point</code> from coordinates(x, y, z)
+ *
+ * @param[in] double x
+ * @param[in] double y
+ * @param[in] double z
+ * @return Tuple{x, y, z, 1.0f}
+ */
 Tuple createPoint(const double &x, const double &y, const double &z);
+
+/**
+ * Creates a <code>Vector</code> from coordinates(x, y, z)
+ *
+ * @param[in] double x
+ * @param[in] double y
+ * @param[in] double z
+ * @return Tuple{x, y, z, 0.0f}
+ */
 Tuple createVector(const double &x, const double &y, const double &z);
 
+/**
+ * Normalizes the <code>Tuple</code> coordinates
+ *
+ * @param[in] Tuple t1
+ * @return Tuple
+ */
 Tuple normalize(const Tuple& t1);
+
+/**
+ * Return the absolute value of a <code>Tuples</code>
+ *
+ * @param[in] Tuple t1
+ * @return Tuple
+ */
 Tuple tupleAbs(Tuple *t1);
 
+/**
+ * Return the magnitude(length) of a <code>Tuple</code>
+ *
+ * @param Tuple t1
+ * @return double
+ */
 double magnitude(const Tuple& t1);
+
+/**
+ * Return the dot product from t1 . t2
+ *
+ * @param[in] Tuple t1
+ * @param[in] Tuple t2
+ * @return double
+ */
 double dot(const Tuple& t1, const Tuple& t2);
+
+/**
+ * Return the cross product of t1 X t2
+ *
+ * @param[in] Tuple t1
+ * @param[in] Tuple t2
+ * @return Tuple
+ */
 Tuple cross(const Tuple& t1, const Tuple& t2);
 
+/**
+ * Compares two <code>Tuple</code> for equality
+ *
+ * @param[in] Tuple t1
+ * @param[in] Tuple t2
+ * @return bool
+ */
 bool isEqual(const Tuple &t1, const Tuple &t2);
 
 // Tuple operators
