@@ -91,7 +91,7 @@ class Color : virtual public Tuple {
         Color();
 
         double r, g, b;
-        int maxValue = 255;
+        static const int maxValue = 255;
 };
 
 /**
@@ -163,7 +163,7 @@ Tuple cross(const Tuple& t1, const Tuple& t2);
  * @param[in] Tuple t2
  * @return bool
  */
-bool isEqual(const Tuple &t1, const Tuple &t2);
+bool isEqual(const Tuple& t1, const Tuple& t2);
 
 // Tuple operators
 bool operator<(const Tuple& t1, const Tuple& t2);

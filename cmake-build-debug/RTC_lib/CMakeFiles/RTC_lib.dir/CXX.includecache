@@ -6,23 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/canvas.cpp
+canvas.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/canvas.h
+tuple.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
+vector
+-
+iostream
+-
+sstream
+-
+fstream
+-
+algorithm
+-
+cmath
+-
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/canvas.h
 tuple.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
 vector
 -
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.cpp
-transform.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h
-cmath
--
-
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h
-matrix.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h
 
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
 constants.h

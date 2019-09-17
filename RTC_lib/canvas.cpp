@@ -1,4 +1,5 @@
 #include "canvas.h"
+#include "tuple.h"
 
 #include <vector>
 #include <iostream>
@@ -45,6 +46,10 @@ Color Canvas::scaleColor(const Color& color, const int& maxValue) {
     return * outputCol;
 }
 
+int Canvas::scaleColor(const double& d, const int& maxValue) {
+    return std::clamp((int)ceil(d * maxValue), 0, maxValue);
+}
+
 std::string Canvas::createPPMHeader() {
     std::stringstream ss;
     ss << "P3\n" << this->width << ' ' << this->height << "\n255\n";
@@ -58,16 +63,27 @@ std::string Canvas::createPPMHeader() {
 //  - remove stringstream (only there for testing purposes)
 
 std::string Canvas::canvasToPPM() {
+    int counter = 0;
     std::stringstream ss;
     std::ofstream os("image.ppm", std::ofstream::binary);
-    ss << createPPMHeader();
+//    ss << createPPMHeader();
     bool first = true;
     for (int py = 0; py < this->height; py++) {
         first ? ss << "" : ss << '\n';
+        counter = 0;
         for (int px = 0; px < this->width; px++) {
             auto clampedVal = this->pixelAt(px, py);
-            ss << scaleColor(clampedVal, 255);
-            px < this->width - 1 ? ss << " " : ss << "";
+            for (int rgb = 0; rgb < 3; rgb++) {
+                counter += 4;
+                if (counter <= 70) {
+                    ss << scaleColor(clampedVal(rgb), 255);
+                    px > this->width - 1 ? ss << "" : ss << " ";
+                } else {
+                    ss << '\n' << scaleColor(clampedVal(rgb), 255);
+                    counter = 0;
+                    px > this->width - 1 ? ss << "" : ss << " ";
+                }
+            }
         }
         first = false;
     }
