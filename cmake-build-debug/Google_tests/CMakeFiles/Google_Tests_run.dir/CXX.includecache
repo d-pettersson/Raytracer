@@ -312,6 +312,16 @@ iostream
 
 ../RTC_lib/constants.h
 
+../RTC_lib/matrix.h
+tuple.h
+../RTC_lib/tuple.h
+vector
+-
+
+../RTC_lib/transform.h
+matrix.h
+../RTC_lib/matrix.h
+
 ../RTC_lib/tuple.h
 constants.h
 ../RTC_lib/constants.h
@@ -323,6 +333,28 @@ canvas.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/canvas.h
 common.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/common.h
+gtest/gtest.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
+cmath
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/MatrixTest.cpp
+matrix.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/matrix.h
+gtest/gtest.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TransformTest.cpp
+transform.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/transform.h
+cmath
+-
+gtest/gtest.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TupleTest.cpp
+tuple.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/tuple.h
 gtest/gtest.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
 cmath

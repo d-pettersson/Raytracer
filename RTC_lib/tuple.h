@@ -91,7 +91,6 @@ class Color : virtual public Tuple {
         Color();
 
         double r, g, b;
-        static const int maxValue = 255;
 };
 
 /**
@@ -178,6 +177,10 @@ Tuple operator*(const Tuple& t1, const Tuple& t2);
 Tuple operator/(const Tuple& t1, const double& scalar);
 
 std::ostream& operator<<(std::ostream& out, const Tuple& t1);
+
+// Point operators
+std::ostream& operator<<(std::ostream& out, const Point& p1);
+
 
 // Color operators
 bool operator==(const Color& c1, const Color& c2);

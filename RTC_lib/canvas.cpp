@@ -1,5 +1,6 @@
 #include "canvas.h"
 #include "tuple.h"
+#include "constants.h"
 
 #include <vector>
 #include <iostream>
@@ -38,16 +39,16 @@ Color Canvas::pixelAt(const int& x, const int& y) {
     return this->colors[x][y];
 }
 
-Color Canvas::scaleColor(const Color& color, const int& maxValue) {
+Color Canvas::scaleColor(const Color& color, const int& colorDepth) {
     auto * outputCol = new Color;
-    outputCol->r = std::clamp((int)ceil(color.r * maxValue), 0, maxValue);
-    outputCol->g = std::clamp((int)ceil(color.g * maxValue), 0, maxValue);
-    outputCol->b = std::clamp((int)ceil(color.b * maxValue), 0, maxValue);
+    outputCol->r = std::clamp((int)ceil(color.r * colorDepth), 0, colorDepth);
+    outputCol->g = std::clamp((int)ceil(color.g * colorDepth), 0, colorDepth);
+    outputCol->b = std::clamp((int)ceil(color.b * colorDepth), 0, colorDepth);
     return * outputCol;
 }
 
-int Canvas::scaleColor(const double& d, const int& maxValue) {
-    return std::clamp((int)ceil(d * maxValue), 0, maxValue);
+int Canvas::scaleColor(const double& d, const int& colorDepth) {
+    return std::clamp((int)ceil(d * colorDepth), 0, colorDepth);
 }
 
 std::string Canvas::createPPMHeader() {
@@ -59,7 +60,6 @@ std::string Canvas::createPPMHeader() {
 }
 
 // TODO: test ostream version of canvasToPPM
-//  - limit string size to 70 chars per line
 //  - remove stringstream (only there for testing purposes)
 
 std::string Canvas::canvasToPPM() {
@@ -72,17 +72,16 @@ std::string Canvas::canvasToPPM() {
         first ? ss << "" : ss << '\n';
         counter = 0;
         for (int px = 0; px < this->width; px++) {
-            auto clampedVal = this->pixelAt(px, py);
+            auto pixelVal = this->pixelAt(px, py);
             for (int rgb = 0; rgb < 3; rgb++) {
                 counter += 4;
                 if (counter <= 70) {
-                    ss << scaleColor(clampedVal(rgb), 255);
-                    px > this->width - 1 ? ss << "" : ss << " ";
+                    ss << ' ';
                 } else {
-                    ss << '\n' << scaleColor(clampedVal(rgb), 255);
+                    ss << '\n';
                     counter = 0;
-                    px > this->width - 1 ? ss << "" : ss << " ";
                 }
+                ss << scaleColor(pixelVal(rgb), colorDepth);
             }
         }
         first = false;

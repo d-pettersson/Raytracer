@@ -1,5 +1,5 @@
 /**
- * The <code>Matrix</code> class is the base data class for transformations.
+ * The <code>Matrix</code> class is the base class for transformations.
  *
  * @param[in] size_t r
  * @param[in] size_t c

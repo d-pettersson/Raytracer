@@ -12,18 +12,37 @@ protected:
     {
         trans = new raytracer::Transform();
         inv = new raytracer::Transform();
+        transA = new raytracer::Transform();
+        transB = new raytracer::Transform();
+        transC = new raytracer::Transform();
+        transT = new raytracer::Transform();
+        p1 = new raytracer::Point();
+        p2 = new raytracer::Point();
+        p3 = new raytracer::Point();
+        p4 = new raytracer::Point();
     }
 
     virtual void TearDown() {
         delete trans;
         delete inv;
+        delete transA;
+        delete transB;
+        delete transC;
+        delete transT;
     }
 
     raytracer::Transform * trans;
-    raytracer::Transform trans1;
+    raytracer::Transform * transA;
+    raytracer::Transform * transB;
+    raytracer::Transform * transC;
+    raytracer::Transform * transT;
     raytracer::Transform * inv;
 
     raytracer::Point point;
+    raytracer::Point * p1;
+    raytracer::Point * p2;
+    raytracer::Point * p3;
+    raytracer::Point * p4;
     raytracer::Point pointMultResult;
     raytracer::Point pointResult;
 
@@ -166,5 +185,27 @@ TEST_F(TransformFixture, Shearing6) {
     pointMultResult = * trans * point;
     pointResult = raytracer::Point(2, 3, 7);
     ASSERT_EQ(pointResult, pointMultResult);
+}
+
+TEST_F(TransformFixture, ChainingTransforms) {
+    point = raytracer::Point(1, 0, 1);
+    transA->rotateX(PI / 2);
+    transB->scale(5, 5, 5);
+    transC->translate(10, 5, 7);
+    * p2 = * transA * point;
+    ASSERT_EQ(raytracer::Point(1, -1, 0), * p2);
+    * p3 = * transB * * p2;
+    ASSERT_EQ(raytracer::Point(5, -5, 0), * p3);
+    * p4 = * transC * * p3;
+    ASSERT_EQ(raytracer::Point(15, 0, 7), * p4);
+}
+
+TEST_F(TransformFixture, ReverseChainedTransforms) {
+    point = raytracer::Point(1, 0, 1);
+    transA->rotateX(PI / 2);
+    transB->scale(5, 5, 5);
+    transC->translate(10, 5, 7);
+    * transT = * transC * * transB * * transA;
+    ASSERT_EQ(raytracer::Point(15, 0, 7), * transT * point);
 }
 
