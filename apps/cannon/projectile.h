@@ -13,8 +13,6 @@ class Projectile {
 
         raytracer::Tuple position;
         raytracer::Tuple velocity;
-
-        std::stringstream ss;
 };
 
 std::ostream& operator<<(std::ostream& out, const Projectile& proj);

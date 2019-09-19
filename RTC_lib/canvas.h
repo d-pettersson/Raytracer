@@ -41,7 +41,7 @@ class Canvas {
          * @param[in] int y
          * @return Color
          */
-        Color pixelAt(const int& x, const int& y);
+        Color pixelAt(const int& x, const int& y) const;
 
         /**
          * Scales the <code>Color</code> values from range(0, 1) to (0, colorDepth)
@@ -74,11 +74,14 @@ class Canvas {
          * @return std::string (for testing purposes, production code will have not return (void))
          */
         std::string canvasToPPM();
+//        void canvasToPPM();
 
         size_t width, height;
 
         std::vector<std::vector<Color>> colors;
 };
+
+std::ostream& operator<<(std::ostream& out, const Canvas& canvas);
 
 } // namespace raytracer
 

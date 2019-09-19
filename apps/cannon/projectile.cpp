@@ -14,10 +14,9 @@ Projectile::Projectile()
 }
 
 Projectile tick(const Environment& env, Projectile& proj) {
-    Projectile output = Projectile(proj.position, proj.velocity);
-    output.position = output.position + output.velocity;
-    output.velocity = output.velocity + env.gravity + env.wind;
-    return output;
+    proj.position = proj.position + proj.velocity;
+    proj.velocity = proj.velocity + env.gravity + env.wind;
+    return proj;
 }
 
 std::ostream& operator<<(std::ostream& out, const Projectile& proj) {

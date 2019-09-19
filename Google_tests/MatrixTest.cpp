@@ -495,6 +495,5 @@ TEST_F(MatrixFixture, IdentityMatrix) {
     m1.setMatrixData(data1);
 
     m2 = raytracer::generateIdentity(4, 4);
-    std::cout << m2;
 }
 

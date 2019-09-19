@@ -4,14 +4,6 @@
 
 #include <iostream>
 
-void tick(const Environment& env, Projectile& proj) {
-    raytracer::Tuple position = proj.position + proj.velocity;
-    raytracer::Tuple velocity = proj.velocity + env.gravity + env.wind;
-    proj.position = position;
-    proj.velocity = velocity;
-}
-
-
 int main() {
     // Environment setup
     raytracer::Tuple gravity = raytracer::createVector(0., -0.1, 0);
@@ -24,13 +16,22 @@ int main() {
     Projectile proj = Projectile(position, velocity);
 
     // Canvas setup
-    raytracer::Canvas * canvas = new raytracer::Canvas(900, 500);
+    auto * canvas = new raytracer::Canvas(900, 500);
 
-    for (float y = 0; y < 1; y+=0.01) {
-        position.y -= y;
-        tick(env, proj);
-        std::cout << proj << '\n';
+    auto color = raytracer::Color(1.0, 0.0, 0.0);
+
+    double counter = 0.0;
+    for (int y = 0; y < 197; y++) {
+        counter += 0.01;
+        position.y = counter;
+        Projectile out = tick(env, proj);
+        for (int i = 0; i < canvas->width; i++) {
+            for (int j = 0; j < canvas->height; j++) {
+                canvas->writePixel((int)out.position.x, (int)(canvas->height - out.position.y), color);
+            }
+        }
     }
+    canvas->canvasToPPM();
 
     return 0;
 }

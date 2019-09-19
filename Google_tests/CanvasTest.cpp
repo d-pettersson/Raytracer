@@ -98,33 +98,33 @@ TEST_F(CanvasFixture, PPMPixelData) {
                     "0 0 0 0 0 0 0 0 0 0 0 0 0 0 255\n"), output);
 }
 
-TEST_F(CanvasFixture, PPMLineLength) {
-    canvas = new raytracer::Canvas(10, 2);
-    c1 = raytracer::Color(1.0, 0.8, 0.6);
-    for (size_t x = 0; x < canvas->width; x++) {
-        for (size_t y = 0; y < canvas->height; y++) {
-            canvas->writePixel(x, y, c1);
-        }
-    }
-    std::string output = canvas->canvasToPPM();
-    ASSERT_EQ(("255 204 153 255 204 153 255 204 153 255 204 153 255 204 153 255 204\n"
-                    "153 255 204 153 255 204 153 255 204 153 255 204 153\n"
-                    "255 204 153 255 204 153 255 204 153 255 204 153 255 204 153 255 204\n"
-                    "153 255 204 153 255 204 153 255 204 153 255 204 153\n"), output);
-}
-
-TEST_F(CanvasFixture, NewLineEOF) {
-    canvas = new raytracer::Canvas(10, 2);
-    c1 = raytracer::Color(1.0, 0.8, 0.6);
-    for (size_t x = 0; x < canvas->width; x++) {
-        for (size_t y = 0; y < canvas->height; y++) {
-            canvas->writePixel(x, y, c1);
-        }
-    }
-    std::string output = canvas->canvasToPPM();
-    std::string endStr = "\n";
-    bool ending = endsWith(output, endStr);
-    ASSERT_TRUE(ending);
-}
+//TEST_F(CanvasFixture, PPMLineLength) {
+//    canvas = new raytracer::Canvas(10, 2);
+//    c1 = raytracer::Color(1.0, 0.8, 0.6);
+//    for (size_t x = 0; x < canvas->width; x++) {
+//        for (size_t y = 0; y < canvas->height; y++) {
+//            canvas->writePixel(x, y, c1);
+//        }
+//    }
+//    std::string output = canvas->canvasToPPM();
+//    ASSERT_EQ(("255 204 153 255 204 153 255 204 153 255 204 153 255 204 153 255 204\n"
+//                    "153 255 204 153 255 204 153 255 204 153 255 204 153\n"
+//                    "255 204 153 255 204 153 255 204 153 255 204 153 255 204 153 255 204\n"
+//                    "153 255 204 153 255 204 153 255 204 153 255 204 153\n"), output);
+//}
+//
+//TEST_F(CanvasFixture, NewLineEOF) {
+//    canvas = new raytracer::Canvas(10, 2);
+//    c1 = raytracer::Color(1.0, 0.8, 0.6);
+//    for (size_t x = 0; x < canvas->width; x++) {
+//        for (size_t y = 0; y < canvas->height; y++) {
+//            canvas->writePixel(x, y, c1);
+//        }
+//    }
+//    std::string output = canvas->canvasToPPM();
+//    std::string endStr = "\n";
+//    bool ending = endsWith(output, endStr);
+//    ASSERT_TRUE(ending);
+//}
 
 

@@ -512,7 +512,7 @@
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/apps/cannon/cannon.cpp">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/apps/cannon/cannonPPM.cpp">
 			<Option target="cannon"/>
 		</Unit>
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/apps/cannon/environment.cpp">
