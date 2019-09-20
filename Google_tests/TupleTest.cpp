@@ -110,6 +110,7 @@ TEST_F(TupleFixture, PointSubstraction2) {
     p1 = raytracer::Point(3, 2, 1);
     p2 = raytracer::Point(5, 6, 7);
     difference = p1 - p2;
+    std::cout << difference;
     ASSERT_TRUE(difference.isVector());
 }
 

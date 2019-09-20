@@ -104,6 +104,16 @@ TEST_F(MatrixFixture, TestFalseEquality2) {
     ASSERT_FALSE(m1.isEqual(m2));
 }
 
+TEST_F(MatrixFixture, TestEmptyOperator) {
+    m1 = raytracer::Matrix(4, 4);
+    std::vector<double> data = {0, 0, 0, 0,
+                                0, 0, 0, 0,
+                                0, 0, 0, 0,
+                                0, 0, 0, 0};
+    m1.setMatrixData(data);
+    ASSERT_TRUE(m1.isEmpty());
+}
+
 TEST_F(MatrixFixture, TestEqualityOperator) {
     m1 = raytracer::Matrix(4, 4);
     m2 = raytracer::Matrix(4, 4);

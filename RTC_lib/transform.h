@@ -6,6 +6,8 @@
  * @param[in] Matrix m
  */
 
+// TODO: investigating chaining methods
+
 #ifndef RTC_TRANSFORM_H
 #define RTC_TRANSFORM_H
 
@@ -23,7 +25,7 @@ class Transform : public virtual Matrix {
          */
         Transform(const Matrix& m);
 
-        /**
+    /**
          * Create a translation matrix
          *
          * @param[in] double x
@@ -31,7 +33,7 @@ class Transform : public virtual Matrix {
          * @param[in] double z
          * @return Transform
          */
-        Transform translate(const double& x, const double& y, const double& z);
+        Transform& translate(const double& x, const double& y, const double& z);
 
         /**
          * Create a scaling matrix
@@ -41,7 +43,7 @@ class Transform : public virtual Matrix {
          * @param[in] double z
          * @return Transform
          */
-        Transform scale(const double& x, const double& y, const double& z);
+        Transform& scale(const double& x, const double& y, const double& z);
 
         /**
          * Create a "rotation on X" matrix
@@ -49,7 +51,7 @@ class Transform : public virtual Matrix {
          * @param[in] double angle
          * @return Transform
          */
-        Transform rotateX(const double& angle);
+        Transform& rotateX(const double& angle);
 
         /**
         * Create a "rotation on Y" matrix
@@ -57,7 +59,7 @@ class Transform : public virtual Matrix {
         * @param[in] double angle
         * @return Transform
         */
-        Transform rotateY(const double& angle);
+        Transform& rotateY(const double& angle);
 
         /**
         * Create a "rotation on Z" matrix
@@ -65,7 +67,7 @@ class Transform : public virtual Matrix {
         * @param[in] double angle
         * @return Transform
         */
-        Transform rotateZ(const double& angle);
+        Transform& rotateZ(const double& angle);
 
         /**
          * Create a shearing matrix.
@@ -80,9 +82,9 @@ class Transform : public virtual Matrix {
          * @param[in] zy
          * @return Transform
          */
-        Transform shear(const double& xy, const double& xz,
-                        const double& yx, const double& yz,
-                        const double& zx, const double& zy);
+        Transform& shear(const double& xy, const double& xz,
+                         const double& yx, const double& yz,
+                         const double& zx, const double& zy);
 };
 
 } // namespace raytracer

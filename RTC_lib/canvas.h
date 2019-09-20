@@ -73,8 +73,8 @@ class Canvas {
          *
          * @return std::string (for testing purposes, production code will have not return (void))
          */
-        std::string canvasToPPM();
-//        void canvasToPPM();
+//        std::string saveToFile();
+        void saveToFile();
 
         size_t width, height;
 

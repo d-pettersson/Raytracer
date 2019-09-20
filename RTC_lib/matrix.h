@@ -69,6 +69,7 @@ class Matrix {
          * @return bool
          */
         bool isEqual(const Matrix& m1) const;
+        bool isEmpty() const;
 
         Matrix operator*(const Matrix& m);
         raytracer::Tuple operator*(const raytracer::Tuple& t);

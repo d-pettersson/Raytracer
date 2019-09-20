@@ -183,17 +183,17 @@ RTC_lib/fast:
 .PHONY : RTC_lib/fast
 
 #=============================================================================
-# Target rules for targets named cannon
+# Target rules for targets named clock
 
 # Build rule for target.
-cannon: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cannon
-.PHONY : cannon
+clock: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 clock
+.PHONY : clock
 
 # fast build rule for target.
-cannon/fast:
-	$(MAKE) -f apps/CMakeFiles/cannon.dir/build.make apps/CMakeFiles/cannon.dir/build
-.PHONY : cannon/fast
+clock/fast:
+	$(MAKE) -f apps/CMakeFiles/clock.dir/build.make apps/CMakeFiles/clock.dir/build
+.PHONY : clock/fast
 
 #=============================================================================
 # Target rules for targets named Google_Tests_run
@@ -301,7 +301,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... RTC_lib"
-	@echo "... cannon"
+	@echo "... clock"
 	@echo "... Google_Tests_run"
 	@echo "... gmock"
 	@echo "... gmock_main"

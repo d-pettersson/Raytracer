@@ -17,7 +17,6 @@ int main() {
 
     // Canvas setup
     auto * canvas = new raytracer::Canvas(900, 500);
-
     auto color = raytracer::Color(1.0, 0.0, 0.0);
 
     double counter = 0.0;

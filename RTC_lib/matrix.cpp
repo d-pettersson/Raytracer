@@ -53,6 +53,16 @@ bool Matrix::isEqual(const Matrix& m2) const {
     return true;
 }
 
+bool Matrix::isEmpty() const {
+    for (int i = 0; i < this->getRowSize(); i++) {
+        for (int j = 0; j < this->getColSize(); j++) {
+            if ((*this)(i, j) == 0.0) {
+                return true;
+            }
+        };
+    }
+}
+
 double& Matrix::operator()(size_t row, size_t col) {
     return matrixData[cols * row + col];
 }

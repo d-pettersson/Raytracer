@@ -300,17 +300,25 @@ cxxabi.h
 acxx_demangle.h
 -
 
-../RTC_lib/canvas.h
+../RTC_lib/constants.h
+
+../RTC_lib/intersection.h
+shape.h
+../RTC_lib/shape.h
+
+../RTC_lib/ray.h
 tuple.h
 ../RTC_lib/tuple.h
 vector
 -
 
-../RTC_lib/common.h
+../RTC_lib/shape.h
+ray.h
+../RTC_lib/ray.h
 iostream
 -
-
-../RTC_lib/constants.h
+vector
+-
 
 ../RTC_lib/tuple.h
 constants.h
@@ -318,13 +326,13 @@ constants.h
 iostream
 -
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/CanvasTest.cpp
-canvas.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/canvas.h
-common.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/common.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/IntersectionTest.cpp
+ray.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/ray.h
+shape.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/shape.h
+intersection.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/intersection.h
 gtest/gtest.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
-cmath
--
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/gtest/gtest.h
 

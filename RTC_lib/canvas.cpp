@@ -61,68 +61,67 @@ std::string Canvas::createPPMHeader() {
     return header;
 }
 
-// TODO: test ostream version of canvasToPPM
+// TODO: test ostream version of saveToFile
 //  - remove stringstream (only there for testing purposes)
 
-std::string Canvas::canvasToPPM() {
-    int counter = 0;
-    std::stringstream ss;
-    std::ofstream os("image.ppm", std::ofstream::binary);
-    ss << createPPMHeader();
-    std::cout << createPPMHeader();
-    bool first = true;
-    for (int py = 0; py < this->height; py++) {
-        first ? ss << "" : ss << '\n';
-        counter = 0;
-        for (int px = 0; px < this->width; px++) {
-            auto pixelVal = this->pixelAt(px, py);
-            for (int rgb = 0; rgb < 3; rgb++) {
-                counter += 4;
-                if (counter <= 70) {
-                    ss << ' ';
-                } else {
-                    ss << '\n';
-                    counter = 0;
-                }
-                ss << scaleColor(pixelVal(rgb), colorDepth);
-            }
-        }
-        first = false;
-    }
-    ss << '\n';
-    os << ss.rdbuf();
-    os.close();
-    std::string output = ss.str();
-    ss.clear();
-    return output;
-}
-
-//void Canvas::canvasToPPM() {
+//std::string Canvas::saveToFile() {
 //    int counter = 0;
+//    std::stringstream ss;
 //    std::ofstream os("image.ppm", std::ofstream::binary);
-//    os << createPPMHeader();
+//    ss << createPPMHeader();
 //    bool first = true;
 //    for (int py = 0; py < this->height; py++) {
-//        first ? os << "" : os << '\n';
+//        first ? ss << "" : ss << '\n';
 //        counter = 0;
 //        for (int px = 0; px < this->width; px++) {
 //            auto pixelVal = this->pixelAt(px, py);
 //            for (int rgb = 0; rgb < 3; rgb++) {
 //                counter += 4;
 //                if (counter <= 70) {
-//                    os << ' ';
+//                    ss << ' ';
 //                } else {
-//                    os << '\n';
+//                    ss << '\n';
 //                    counter = 0;
 //                }
-//                os << scaleColor(pixelVal(rgb), colorDepth);
+//                ss << scaleColor(pixelVal(rgb), colorDepth);
 //            }
 //        }
 //        first = false;
 //    }
-//    os << '\n';
+//    ss << '\n';
+//    os << ss.rdbuf();
 //    os.close();
+//    std::string output = ss.str();
+//    ss.clear();
+//    return output;
 //}
+
+void Canvas::saveToFile() {
+    int counter = 0;
+    std::ofstream os("image.ppm", std::ofstream::binary);
+    os << createPPMHeader();
+    bool first = true;
+    for (int py = 0; py < this->height; py++) {
+        first ? os << "" : os << '\n';
+        counter = 0;
+        for (int px = 0; px < this->width; px++) {
+            auto pixelVal = this->pixelAt(px, py);
+            for (int rgb = 0; rgb < 3; rgb++) {
+                counter += 4;
+                if (counter <= 70) {
+                    os << ' ';
+                } else {
+                    os << '\n';
+                    counter = 0;
+                }
+                os << scaleColor(pixelVal(rgb), colorDepth);
+            }
+        }
+        first = false;
+    }
+    os << '\n';
+    os.close();
+}
 
 std::ostream& operator<<(std::ostream& out, const Canvas& canvas) {
     for (int i = 0; i < canvas.width; i++) {

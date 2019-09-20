@@ -16,25 +16,25 @@ Tuple::Tuple()
 
 //----------------------------------------------------------------
 
-Point::Point(double x, double y, double z)
-    : Tuple(x, y, z, 1.0f)
+Point::Point(double xx, double yy, double zz)
+    : Tuple{xx, yy, zz, 1.0f}
 {
 }
 
 Point::Point()
-    : Tuple(0.0f, 0.0f, 0.0f, 1.0f)
+    : Tuple()
 {
 }
 
 //----------------------------------------------------------------
 
-Vector::Vector(double x, double y, double z)
-    : Tuple(x, y, z, 0.0f)
+Vector::Vector(double xx, double yy, double zz)
+    : Tuple{xx, yy, zz, 0.0f}
 {
 }
 
 Vector::Vector()
-    : Tuple(0.0f, 0.0f, 0.0f, 0.0f)
+    : Tuple()
 {
 }
 
@@ -138,6 +138,39 @@ Tuple cross(const Tuple& t1, const Tuple& t2) {
 std::ostream& operator<<(std::ostream& out, const Point& p1) {
     out << '[' << p1.x << ", " << p1.y << ", " << p1.z << ']';
     return out;
+}
+
+Point Point::operator-() {
+    return {-(* this).x, -(* this).y, -(* this).z};
+}
+
+Point operator*(const Point& p1, const Point& p2) {
+    return {p1.x * p2.x, p1.y * p2.y, p1.z * p2.z};
+}
+
+Point operator*(const Point& p1, const Vector& p2) {
+    return {p1.x * p2.x, p1.y * p2.y, p1.z * p2.z};
+}
+
+Point operator*(const Point& p1, const double& scalar) {
+    return {p1.x * scalar, p1.y * scalar, p1.z * scalar};
+}
+
+Point operator+(const Point& p1, const Point& p2) {
+    return {p1.x + p2.x, p1.y + p2.y, p1.z + p2.z};
+}
+
+Point operator+(const Point& p1, const Vector& p2) {
+    return {p1.x + p2.x, p1.y + p2.y, p1.z + p2.z};
+}
+
+Vector operator-(const Point& p1, const Point& p2) {
+    return {p1.x - p2.x, p1.y - p2.y, p1.z - p2.z};
+}
+
+// Vector operators
+Vector operator*(const Vector& v1, const double& scalar) {
+    return {v1.x * scalar, v1.y * scalar, v1.z * scalar};
 }
 
 // Tuple operators

@@ -51,7 +51,6 @@ class Tuple {
 
 /**
  * The <code>Point</code> class inherits from the <code>Tuple</code> class.
- * It's @param w is hidden from view and is always 1.0f
  *
  * @param[in] double x
  * @param[in] double y
@@ -61,11 +60,12 @@ class Point : virtual public Tuple {
     public:
         Point(double x, double y, double z);
         Point();
+
+        Point operator-();
 };
 
 /**
  * The <code>Vector</code> class inherits from the <code>Tuple</code> class.
- * Its @param w is hidden from view and is always 0.0f
  *
  * @param[in] double x
  * @param[in] double y
@@ -179,8 +179,17 @@ Tuple operator/(const Tuple& t1, const double& scalar);
 std::ostream& operator<<(std::ostream& out, const Tuple& t1);
 
 // Point operators
+Point operator*(const Point& p1, const Point& p2);
+Point operator*(const Point& p1, const Vector& p2);
+Point operator*(const Point& p1, const double& scalar);
+Point operator+(const Point& p1, const Point& p2);
+Point operator+(const Point& p1, const Vector& p2);
+Vector operator-(const Point& p1, const Point& p2);
+
 std::ostream& operator<<(std::ostream& out, const Point& p1);
 
+// Vector operators
+Vector operator*(const Vector& p1, const double& scalar);
 
 // Color operators
 bool operator==(const Color& c1, const Color& c2);
