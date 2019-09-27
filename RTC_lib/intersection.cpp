@@ -1,31 +1,22 @@
 #include "intersection.h"
 
 namespace raytracer {
+
     Intersection::Intersection()
-        : t(0.0), shape{}, intersectionPair{}
+        : distance(), shape()
     {
     }
 
-    Intersection::Intersection(double tt, Shape * s)
-        : t(tt), shape{* s}, intersectionPair(0)
+    Intersection::Intersection(double d, std::shared_ptr<Shape const> s)
+        : distance(d), shape(s)
     {
     }
 
-    Intersections::Intersections()
-        : intersectionsColl{0}
-    {
+    std::shared_ptr<Shape const> Intersection::getObject() {
+        return shape;
     }
 
-    Intersections::Intersections(std::vector<Intersection>& intersections)
-        : intersectionsColl{intersections}
-    {
+    double Intersection::getDistance() {
+        return distance;
     }
-
-    template<typename ... Args>
-    void Intersections::intersections(const Intersection& intersection, Args ... args)
-    {
-        ((* this).intersectionsColl.push_back(args), ...);
-    }
-
-
 } // namespace raytracer

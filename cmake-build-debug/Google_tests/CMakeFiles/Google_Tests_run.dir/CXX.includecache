@@ -303,8 +303,8 @@ acxx_demangle.h
 ../RTC_lib/constants.h
 
 ../RTC_lib/intersection.h
-shape.h
-../RTC_lib/shape.h
+memory
+-
 
 ../RTC_lib/ray.h
 tuple.h
@@ -315,10 +315,18 @@ vector
 ../RTC_lib/shape.h
 ray.h
 ../RTC_lib/ray.h
+intersection.h
+../RTC_lib/intersection.h
 iostream
 -
 vector
 -
+memory
+-
+
+../RTC_lib/sphere.h
+shape.h
+../RTC_lib/shape.h
 
 ../RTC_lib/tuple.h
 constants.h
@@ -326,13 +334,13 @@ constants.h
 iostream
 -
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/IntersectionTest.cpp
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/RayTest.cpp
 ray.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/ray.h
-shape.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/shape.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/ray.h
+sphere.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/sphere.h
 intersection.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/intersection.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/intersection.h
 gtest/gtest.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/gtest/gtest.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
 

@@ -122,18 +122,18 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/RayTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Google_Tests_run.dir/RayTest.cpp.s"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/RayTest.cpp" -o CMakeFiles/Google_Tests_run.dir/RayTest.cpp.s
 
-Google_tests/CMakeFiles/Google_Tests_run.dir/lib/IntersectionTest.cpp.o: Google_tests/CMakeFiles/Google_Tests_run.dir/flags.make
-Google_tests/CMakeFiles/Google_Tests_run.dir/lib/IntersectionTest.cpp.o: ../Google_tests/lib/IntersectionTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/lib/IntersectionTest.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Google_Tests_run.dir/lib/IntersectionTest.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/IntersectionTest.cpp"
+Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o: Google_tests/CMakeFiles/Google_Tests_run.dir/flags.make
+Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o: ../Google_tests/IntersectionTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/IntersectionTest.cpp"
 
-Google_tests/CMakeFiles/Google_Tests_run.dir/lib/IntersectionTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Google_Tests_run.dir/lib/IntersectionTest.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/IntersectionTest.cpp" > CMakeFiles/Google_Tests_run.dir/lib/IntersectionTest.cpp.i
+Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/IntersectionTest.cpp" > CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.i
 
-Google_tests/CMakeFiles/Google_Tests_run.dir/lib/IntersectionTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Google_Tests_run.dir/lib/IntersectionTest.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/IntersectionTest.cpp" -o CMakeFiles/Google_Tests_run.dir/lib/IntersectionTest.cpp.s
+Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/IntersectionTest.cpp" -o CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.s
 
 # Object files for target Google_Tests_run
 Google_Tests_run_OBJECTS = \
@@ -142,7 +142,7 @@ Google_Tests_run_OBJECTS = \
 "CMakeFiles/Google_Tests_run.dir/TransformTest.cpp.o" \
 "CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o" \
 "CMakeFiles/Google_Tests_run.dir/RayTest.cpp.o" \
-"CMakeFiles/Google_Tests_run.dir/lib/IntersectionTest.cpp.o"
+"CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o"
 
 # External object files for target Google_Tests_run
 Google_Tests_run_EXTERNAL_OBJECTS =
@@ -152,7 +152,7 @@ Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/Matr
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/TransformTest.cpp.o
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/RayTest.cpp.o
-Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/lib/IntersectionTest.cpp.o
+Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/build.make
 Google_tests/Google_Tests_run: RTC_lib/libRTC_lib.a
 Google_tests/Google_Tests_run: lib/libgtestd.a

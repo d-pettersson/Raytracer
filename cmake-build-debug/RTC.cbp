@@ -461,6 +461,9 @@
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/CanvasTest.cpp">
 			<Option target="Google_Tests_run"/>
 		</Unit>
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/IntersectionTest.cpp">
+			<Option target="Google_Tests_run"/>
+		</Unit>
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/MatrixTest.cpp">
 			<Option target="Google_Tests_run"/>
 		</Unit>
@@ -471,9 +474,6 @@
 			<Option target="Google_Tests_run"/>
 		</Unit>
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TupleTest.cpp">
-			<Option target="Google_Tests_run"/>
-		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/IntersectionTest.cpp">
 			<Option target="Google_Tests_run"/>
 		</Unit>
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/googlemock/src/gmock-all.cc">
@@ -522,6 +522,12 @@
 			<Option target="RTC_lib"/>
 		</Unit>
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h">
+			<Option target="RTC_lib"/>
+		</Unit>
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.cpp">
+			<Option target="RTC_lib"/>
+		</Unit>
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.h">
 			<Option target="RTC_lib"/>
 		</Unit>
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.cpp">

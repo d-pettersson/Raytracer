@@ -1,35 +1,35 @@
 #ifndef RTC_INTERSECTION_H
 #define RTC_INTERSECTION_H
 
-#include "shape.h"
+#include <memory>
 
 namespace raytracer {
+class Shape;
+
 class Intersection {
     public:
         Intersection();
-        Intersection(double t, Shape * shape);
+        Intersection(double distance, std::shared_ptr<Shape const> shape);
 
-        double t;
-        Shape shape;
-
-    private:
-        std::vector<Intersection> intersectionPair;
-};
-
-class Intersections : public Intersection {
-    public:
-        Intersections();
-        Intersections(std::vector<Intersection>& intersections);
-
-
-        template<typename ... Args>
-        void intersections(const Intersection& intersection, Args ... args);
+        double getDistance();
+        std::shared_ptr<Shape const> getObject();
 
     private:
-        std::vector<Intersection> intersectionsColl;
-
-
+        double distance;
+        std::shared_ptr<Shape const> shape;
 };
+
+template <typename T>
+std::vector<T> intersections(T d1) {
+    return std::vector<T> {d1};
+}
+
+template <typename T, typename ...Args>
+std::vector<T> intersections(T d1, Args... d2) {
+    return std::vector<T> {d1, d2...};
+
+}
+
 } // namespace raytracer
 
 

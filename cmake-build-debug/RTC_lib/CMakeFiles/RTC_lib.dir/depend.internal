@@ -7,12 +7,8 @@ RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.o
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
 RTC_lib/CMakeFiles/RTC_lib.dir/intersection.cpp.o
- /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.cpp
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.h
- /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
- /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
- /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
 RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.o
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.cpp
@@ -25,9 +21,18 @@ RTC_lib/CMakeFiles/RTC_lib.dir/ray.cpp.o
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
 RTC_lib/CMakeFiles/RTC_lib.dir/shape.cpp.o
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.cpp
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
+RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.o
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.cpp
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
 RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.o
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h

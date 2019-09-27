@@ -306,6 +306,33 @@ shape.cpp.s:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/shape.cpp.s
 .PHONY : shape.cpp.s
 
+sphere.o: sphere.cpp.o
+
+.PHONY : sphere.o
+
+# target to build an object file
+sphere.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.o
+.PHONY : sphere.cpp.o
+
+sphere.i: sphere.cpp.i
+
+.PHONY : sphere.i
+
+# target to preprocess a source file
+sphere.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.i
+.PHONY : sphere.cpp.i
+
+sphere.s: sphere.cpp.s
+
+.PHONY : sphere.s
+
+# target to generate assembly for a file
+sphere.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.s
+.PHONY : sphere.cpp.s
+
 transform.o: transform.cpp.o
 
 .PHONY : transform.o
@@ -388,6 +415,9 @@ help:
 	@echo "... shape.o"
 	@echo "... shape.i"
 	@echo "... shape.s"
+	@echo "... sphere.o"
+	@echo "... sphere.i"
+	@echo "... sphere.s"
 	@echo "... transform.o"
 	@echo "... transform.i"
 	@echo "... transform.s"

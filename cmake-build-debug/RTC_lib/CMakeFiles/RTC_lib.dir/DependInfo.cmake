@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.o"
   "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib/CMakeFiles/RTC_lib.dir/ray.cpp.o"
   "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib/CMakeFiles/RTC_lib.dir/shape.cpp.o"
+  "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.o"
   "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.o"
   "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.o"
   )

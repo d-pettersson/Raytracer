@@ -148,6 +148,19 @@ RTC_lib/CMakeFiles/RTC_lib.dir/intersection.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/intersection.cpp.s"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.cpp" -o CMakeFiles/RTC_lib.dir/intersection.cpp.s
 
+RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.o: ../RTC_lib/sphere.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/sphere.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.cpp"
+
+RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/sphere.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.cpp" > CMakeFiles/RTC_lib.dir/sphere.cpp.i
+
+RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/sphere.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.cpp" -o CMakeFiles/RTC_lib.dir/sphere.cpp.s
+
 # Object files for target RTC_lib
 RTC_lib_OBJECTS = \
 "CMakeFiles/RTC_lib.dir/tuple.cpp.o" \
@@ -156,7 +169,8 @@ RTC_lib_OBJECTS = \
 "CMakeFiles/RTC_lib.dir/transform.cpp.o" \
 "CMakeFiles/RTC_lib.dir/ray.cpp.o" \
 "CMakeFiles/RTC_lib.dir/shape.cpp.o" \
-"CMakeFiles/RTC_lib.dir/intersection.cpp.o"
+"CMakeFiles/RTC_lib.dir/intersection.cpp.o" \
+"CMakeFiles/RTC_lib.dir/sphere.cpp.o"
 
 # External object files for target RTC_lib
 RTC_lib_EXTERNAL_OBJECTS =
@@ -168,9 +182,10 @@ RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.o
 RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/ray.cpp.o
 RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/shape.cpp.o
 RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/intersection.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.o
 RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/build.make
 RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libRTC_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library libRTC_lib.a"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && $(CMAKE_COMMAND) -P CMakeFiles/RTC_lib.dir/cmake_clean_target.cmake
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RTC_lib.dir/link.txt --verbose=$(VERBOSE)
 

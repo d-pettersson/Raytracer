@@ -198,6 +198,33 @@ CanvasTest.cpp.s:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.s
 .PHONY : CanvasTest.cpp.s
 
+IntersectionTest.o: IntersectionTest.cpp.o
+
+.PHONY : IntersectionTest.o
+
+# target to build an object file
+IntersectionTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o
+.PHONY : IntersectionTest.cpp.o
+
+IntersectionTest.i: IntersectionTest.cpp.i
+
+.PHONY : IntersectionTest.i
+
+# target to preprocess a source file
+IntersectionTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.i
+.PHONY : IntersectionTest.cpp.i
+
+IntersectionTest.s: IntersectionTest.cpp.s
+
+.PHONY : IntersectionTest.s
+
+# target to generate assembly for a file
+IntersectionTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.s
+.PHONY : IntersectionTest.cpp.s
+
 MatrixTest.o: MatrixTest.cpp.o
 
 .PHONY : MatrixTest.o
@@ -306,33 +333,6 @@ TupleTest.cpp.s:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.s
 .PHONY : TupleTest.cpp.s
 
-lib/IntersectionTest.o: lib/IntersectionTest.cpp.o
-
-.PHONY : lib/IntersectionTest.o
-
-# target to build an object file
-lib/IntersectionTest.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/lib/IntersectionTest.cpp.o
-.PHONY : lib/IntersectionTest.cpp.o
-
-lib/IntersectionTest.i: lib/IntersectionTest.cpp.i
-
-.PHONY : lib/IntersectionTest.i
-
-# target to preprocess a source file
-lib/IntersectionTest.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/lib/IntersectionTest.cpp.i
-.PHONY : lib/IntersectionTest.cpp.i
-
-lib/IntersectionTest.s: lib/IntersectionTest.cpp.s
-
-.PHONY : lib/IntersectionTest.s
-
-# target to generate assembly for a file
-lib/IntersectionTest.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/lib/IntersectionTest.cpp.s
-.PHONY : lib/IntersectionTest.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -349,6 +349,9 @@ help:
 	@echo "... CanvasTest.o"
 	@echo "... CanvasTest.i"
 	@echo "... CanvasTest.s"
+	@echo "... IntersectionTest.o"
+	@echo "... IntersectionTest.i"
+	@echo "... IntersectionTest.s"
 	@echo "... MatrixTest.o"
 	@echo "... MatrixTest.i"
 	@echo "... MatrixTest.s"
@@ -361,9 +364,6 @@ help:
 	@echo "... TupleTest.o"
 	@echo "... TupleTest.i"
 	@echo "... TupleTest.s"
-	@echo "... lib/IntersectionTest.o"
-	@echo "... lib/IntersectionTest.i"
-	@echo "... lib/IntersectionTest.s"
 .PHONY : help
 
 
