@@ -279,6 +279,33 @@ RayTest.cpp.s:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/RayTest.cpp.s
 .PHONY : RayTest.cpp.s
 
+SphereTest.o: SphereTest.cpp.o
+
+.PHONY : SphereTest.o
+
+# target to build an object file
+SphereTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.o
+.PHONY : SphereTest.cpp.o
+
+SphereTest.i: SphereTest.cpp.i
+
+.PHONY : SphereTest.i
+
+# target to preprocess a source file
+SphereTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.i
+.PHONY : SphereTest.cpp.i
+
+SphereTest.s: SphereTest.cpp.s
+
+.PHONY : SphereTest.s
+
+# target to generate assembly for a file
+SphereTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.s
+.PHONY : SphereTest.cpp.s
+
 TransformTest.o: TransformTest.cpp.o
 
 .PHONY : TransformTest.o
@@ -358,6 +385,9 @@ help:
 	@echo "... RayTest.o"
 	@echo "... RayTest.i"
 	@echo "... RayTest.s"
+	@echo "... SphereTest.o"
+	@echo "... SphereTest.i"
+	@echo "... SphereTest.s"
 	@echo "... TransformTest.o"
 	@echo "... TransformTest.i"
 	@echo "... TransformTest.s"

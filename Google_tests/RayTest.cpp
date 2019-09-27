@@ -1,6 +1,7 @@
 #include "ray.h"
 #include "sphere.h"
 #include "intersection.h"
+#include "transform.h"
 
 #include "gtest/gtest.h"
 
@@ -10,17 +11,29 @@ protected:
     virtual void SetUp()
     {
         ray = new raytracer::Ray();
+        ray2 = new raytracer::Ray();
+        transformation = new raytracer::Transform();
+        translate = new raytracer::Transform();
+        scale = new raytracer::Transform();
     }
 
     virtual void TearDown() {
         delete ray;
+        delete ray2;
+        delete transformation;
+        delete translate;
+        delete scale;
     }
 
     raytracer::Ray * ray;
+    raytracer::Ray * ray2;
     std::shared_ptr<raytracer::Shape> sphere = std::make_shared<raytracer::Sphere>();
     raytracer::Point origin;
     raytracer::Vector direction;
     std::vector<raytracer::Intersection> xs;
+    raytracer::Transform * transformation;
+    raytracer::Transform * translate;
+    raytracer::Transform * scale;
 };
 
 TEST_F(RayFixture, RayCreationAndQuery) {
@@ -106,4 +119,20 @@ TEST_F(RayFixture, IntersectObject) {
     ASSERT_EQ(2, xs.size());
     ASSERT_EQ(sphere, xs[0].getObject());
     ASSERT_EQ(sphere, xs[1].getObject());
+}
+
+TEST_F(RayFixture, RayTranslation) {
+    * ray = raytracer::Ray(raytracer::Point(1, 2, 3), raytracer::Vector(0, 1, 0));
+    translate->translate(3, 4, 5);
+    * ray2 = transform(* ray, * translate);
+    ASSERT_EQ(ray2->getOrigin(), raytracer::Point(4, 6, 8));
+    ASSERT_EQ(ray2->getDirection(), raytracer::Vector(0, 1, 0));
+}
+
+TEST_F(RayFixture, RayScaling) {
+    * ray = raytracer::Ray(raytracer::Point(1, 2, 3), raytracer::Vector(0, 1, 0));
+    scale->scale(2, 3, 4);
+    * ray2 = transform(* ray, * scale);
+    ASSERT_EQ(ray2->getOrigin(), raytracer::Point(2, 6, 12));
+    ASSERT_EQ(ray2->getDirection(), raytracer::Vector(0, 3, 0));
 }

@@ -2,6 +2,7 @@
 #define RTC_INTERSECTION_H
 
 #include <memory>
+#include <vector>
 
 namespace raytracer {
 class Shape;
@@ -14,19 +15,30 @@ class Intersection {
         double getDistance();
         std::shared_ptr<Shape const> getObject();
 
-    private:
+    bool operator<(const Intersection &rhs) const;
+    bool operator>(const Intersection &rhs) const;
+    bool operator<=(const Intersection &rhs) const;
+    bool operator>=(const Intersection &rhs) const;
+
+private:
         double distance;
         std::shared_ptr<Shape const> shape;
 };
 
+Intersection hit(std::vector<Intersection>const& h);
+
 template <typename T>
 std::vector<T> intersections(T d1) {
-    return std::vector<T> {d1};
+    std::vector<T> xs{d1};
+    std::sort(xs.begin(), xs.end());
+    return xs;
 }
 
 template <typename T, typename ...Args>
 std::vector<T> intersections(T d1, Args... d2) {
-    return std::vector<T> {d1, d2...};
+    std::vector<T> xs{d1, d2...};
+    std::sort(xs.begin(), xs.end());
+    return xs;
 
 }
 

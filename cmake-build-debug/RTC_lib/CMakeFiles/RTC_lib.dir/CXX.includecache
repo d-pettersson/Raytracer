@@ -11,17 +11,21 @@
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.h
 memory
 -
+vector
+-
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
 tuple.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
 vector
 -
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.cpp
-shape.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
-cmath
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
+tuple.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
+transform.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h
+vector
 -
 
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
@@ -29,6 +33,8 @@ ray.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
 intersection.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.h
+transform.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h
 iostream
 -
 vector
@@ -45,6 +51,10 @@ cmath
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.h
 shape.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h
+matrix.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
 
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
 constants.h

@@ -96,22 +96,9 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/TransformTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Google_Tests_run.dir/TransformTest.cpp.s"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TransformTest.cpp" -o CMakeFiles/Google_Tests_run.dir/TransformTest.cpp.s
 
-Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o: Google_tests/CMakeFiles/Google_Tests_run.dir/flags.make
-Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o: ../Google_tests/TupleTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TupleTest.cpp"
-
-Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TupleTest.cpp" > CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.i
-
-Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TupleTest.cpp" -o CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.s
-
 Google_tests/CMakeFiles/Google_Tests_run.dir/RayTest.cpp.o: Google_tests/CMakeFiles/Google_Tests_run.dir/flags.make
 Google_tests/CMakeFiles/Google_Tests_run.dir/RayTest.cpp.o: ../Google_tests/RayTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/RayTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/RayTest.cpp.o"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Google_Tests_run.dir/RayTest.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/RayTest.cpp"
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/RayTest.cpp.i: cmake_force
@@ -121,6 +108,19 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/RayTest.cpp.i: cmake_force
 Google_tests/CMakeFiles/Google_Tests_run.dir/RayTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Google_Tests_run.dir/RayTest.cpp.s"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/RayTest.cpp" -o CMakeFiles/Google_Tests_run.dir/RayTest.cpp.s
+
+Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o: Google_tests/CMakeFiles/Google_Tests_run.dir/flags.make
+Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o: ../Google_tests/TupleTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TupleTest.cpp"
+
+Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TupleTest.cpp" > CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.i
+
+Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TupleTest.cpp" -o CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.s
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o: Google_tests/CMakeFiles/Google_Tests_run.dir/flags.make
 Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o: ../Google_tests/IntersectionTest.cpp
@@ -135,14 +135,28 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.s"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/IntersectionTest.cpp" -o CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.s
 
+Google_tests/CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.o: Google_tests/CMakeFiles/Google_Tests_run.dir/flags.make
+Google_tests/CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.o: ../Google_tests/SphereTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/SphereTest.cpp"
+
+Google_tests/CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/SphereTest.cpp" > CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.i
+
+Google_tests/CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/SphereTest.cpp" -o CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.s
+
 # Object files for target Google_Tests_run
 Google_Tests_run_OBJECTS = \
 "CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o" \
 "CMakeFiles/Google_Tests_run.dir/MatrixTest.cpp.o" \
 "CMakeFiles/Google_Tests_run.dir/TransformTest.cpp.o" \
-"CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o" \
 "CMakeFiles/Google_Tests_run.dir/RayTest.cpp.o" \
-"CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o"
+"CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o" \
+"CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o" \
+"CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.o"
 
 # External object files for target Google_Tests_run
 Google_Tests_run_EXTERNAL_OBJECTS =
@@ -150,16 +164,17 @@ Google_Tests_run_EXTERNAL_OBJECTS =
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/MatrixTest.cpp.o
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/TransformTest.cpp.o
-Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/RayTest.cpp.o
+Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o
+Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.o
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/build.make
 Google_tests/Google_Tests_run: RTC_lib/libRTC_lib.a
 Google_tests/Google_Tests_run: lib/libgtestd.a
 Google_tests/Google_Tests_run: lib/libgtest_maind.a
 Google_tests/Google_Tests_run: lib/libgtestd.a
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Google_Tests_run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Google_Tests_run"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Google_Tests_run.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

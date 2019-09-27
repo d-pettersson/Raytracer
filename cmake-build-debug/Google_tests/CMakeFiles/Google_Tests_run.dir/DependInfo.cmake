@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/IntersectionTest.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o"
   "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/MatrixTest.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/Google_Tests_run.dir/MatrixTest.cpp.o"
   "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/RayTest.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/Google_Tests_run.dir/RayTest.cpp.o"
+  "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/SphereTest.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.o"
   "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TransformTest.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/Google_Tests_run.dir/TransformTest.cpp.o"
   "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TupleTest.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o"
   )

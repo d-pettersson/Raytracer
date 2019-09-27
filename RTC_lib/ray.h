@@ -2,6 +2,7 @@
 #define RTC_RAY_H
 
 #include "tuple.h"
+#include "transform.h"
 
 #include <vector>
 
@@ -25,6 +26,9 @@ class Ray {
         raytracer::Point origin;
         raytracer::Vector direction;
 };
+
+
+Ray transform(const Ray& ray, Transform& t);
 
 } // namespace raytracer
 

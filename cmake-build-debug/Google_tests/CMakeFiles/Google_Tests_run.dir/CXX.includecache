@@ -305,10 +305,20 @@ acxx_demangle.h
 ../RTC_lib/intersection.h
 memory
 -
+vector
+-
+
+../RTC_lib/matrix.h
+tuple.h
+../RTC_lib/tuple.h
+vector
+-
 
 ../RTC_lib/ray.h
 tuple.h
 ../RTC_lib/tuple.h
+transform.h
+../RTC_lib/transform.h
 vector
 -
 
@@ -317,6 +327,8 @@ ray.h
 ../RTC_lib/ray.h
 intersection.h
 ../RTC_lib/intersection.h
+transform.h
+../RTC_lib/transform.h
 iostream
 -
 vector
@@ -328,19 +340,21 @@ memory
 shape.h
 ../RTC_lib/shape.h
 
+../RTC_lib/transform.h
+matrix.h
+../RTC_lib/matrix.h
+
 ../RTC_lib/tuple.h
 constants.h
 ../RTC_lib/constants.h
 iostream
 -
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/RayTest.cpp
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/SphereTest.cpp
 ray.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/ray.h
 sphere.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/sphere.h
-intersection.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/intersection.h
 gtest/gtest.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
 

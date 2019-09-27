@@ -4,12 +4,14 @@
 #include "shape.h"
 
 namespace raytracer {
-    class Sphere : public Shape {
+class Sphere : public Shape {
     public:
         Sphere();
 
         void intersect(const Ray &ray, std::vector<Intersection>& xs) const override;
     };
+
+    bool operator==(const Sphere& s1, const Sphere& s2);
 }
 
 #endif //RTC_SPHERE_H

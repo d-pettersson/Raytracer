@@ -3,6 +3,7 @@
 
 #include "ray.h"
 #include "intersection.h"
+#include "transform.h"
 
 #include <iostream>
 #include <vector>
@@ -17,15 +18,15 @@ class Shape : public std::enable_shared_from_this<Shape> {
 
         virtual void intersect(const Ray &ray, std::vector<Intersection>& xs) const = 0;
 
-
-        double& operator[](const int &index);
-        double operator[](const int &index) const;
+        Transform getTransform() const;
+        void setTransform(const Transform& t);
 
     protected:
         static size_t nextId;
 
     private:
         std::shared_ptr<Shape> shapePtr;
+        Transform transformMat;
 
 
 };
