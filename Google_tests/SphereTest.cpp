@@ -1,7 +1,11 @@
 #include "ray.h"
 #include "sphere.h"
+#include "tuple.h"
+#include "transform.h"
 
 #include "gtest/gtest.h"
+
+#include <cmath>
 
 class SphereFixture : public ::testing::Test {
 
@@ -11,14 +15,18 @@ protected:
         ray = new raytracer::Ray();
         transformation = new raytracer::Transform();
         translate = new raytracer::Transform();
+        rotate = new raytracer::Transform();
         scale = new raytracer::Transform();
+        normal = new raytracer::Vector();
     }
 
     virtual void TearDown() {
         delete ray;
         delete transformation;
         delete translate;
+        delete rotate;
         delete scale;
+        delete normal;
     }
 
     raytracer::Ray * ray;
@@ -26,7 +34,9 @@ protected:
     std::vector<raytracer::Intersection> xs;
     raytracer::Transform * transformation;
     raytracer::Transform * translate;
+    raytracer::Transform * rotate;
     raytracer::Transform * scale;
+    raytracer::Vector * normal;
 };
 
 TEST_F(SphereFixture, DefaultTransformation) {
@@ -56,3 +66,45 @@ TEST_F(SphereFixture, IntersectingTranslatedSphere) {
     sphere->intersect(* ray, xs);
     ASSERT_EQ(xs.size(), 0);
 }
+
+TEST_F(SphereFixture, NormalSphereX) {
+    * normal = sphere->getNormal(raytracer::Point(1, 0, 0));
+    ASSERT_EQ(* normal, raytracer::Vector(1, 0, 0));
+}
+
+TEST_F(SphereFixture, NormalSphereY) {
+    * normal = sphere->getNormal(raytracer::Point(0, 1, 0));
+    ASSERT_EQ(* normal, raytracer::Vector(0, 1, 0));
+}
+
+TEST_F(SphereFixture, NormalSphereZ) {
+    * normal = sphere->getNormal(raytracer::Point(0, 0, 1));
+    ASSERT_EQ(* normal, raytracer::Vector(0, 0, 1));
+}
+
+TEST_F(SphereFixture, NormalSphereNonAxial) {
+    * normal = sphere->getNormal(raytracer::Point(sqrt(3) / 3, sqrt(3) / 3, sqrt(3) / 3));
+    ASSERT_EQ(* normal, raytracer::Vector(sqrt(3) / 3, sqrt(3) / 3, sqrt(3) / 3));
+}
+
+TEST_F(SphereFixture, NormalSphereAlwaysNormalized) {
+    * normal = sphere->getNormal(raytracer::Point(sqrt(3) / 3, sqrt(3) / 3, sqrt(3) / 3));
+    ASSERT_EQ(* normal, normalize(* normal));
+}
+
+TEST_F(SphereFixture, NormalTranslatedSphere) {
+    translate->translate(0, 1, 0);
+    sphere->setTransform(* translate);
+    * normal = sphere->getNormal(raytracer::Point(0, 1.70711, -0.70711));
+    ASSERT_EQ(* normal, raytracer::Vector(0, 0.70711, -0.70711));
+}
+
+TEST_F(SphereFixture, NormalTransformedSphere) {
+    scale->scale(1, 0.5, 1);
+    rotate->rotateZ(PI / 5);
+    * transformation = * scale * * rotate;
+    sphere->setTransform(* transformation);
+    * normal = sphere->getNormal(raytracer::Point(0, sqrt(2) / 2, -sqrt(2) / 2));
+    ASSERT_EQ(* normal, raytracer::Vector(0, 0.97014, -0.24254));
+}
+

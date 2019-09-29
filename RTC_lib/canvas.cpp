@@ -9,7 +9,7 @@
 #include <algorithm>
 #include <cmath>
 
-// TODO: rewrite canvas data type to std::vector<Color>
+// TODO: rewrite canvas data type to std::vector<Color> for performance
 
 namespace raytracer {
 
@@ -21,6 +21,18 @@ Canvas::Canvas(size_t w, size_t h)
 Canvas::Canvas()
         : width{0}, height{0}
 {
+}
+
+Color Canvas::scaleColor(const Color &color, const int &colorDepth) {
+    auto *outputCol = new Color;
+    outputCol->r = std::clamp((int) ceil(color.r * colorDepth), 0, colorDepth);
+    outputCol->g = std::clamp((int) ceil(color.g * colorDepth), 0, colorDepth);
+    outputCol->b = std::clamp((int) ceil(color.b * colorDepth), 0, colorDepth);
+    return * outputCol;
+}
+
+int Canvas::scaleColor(const double &d, const int &colorDepth) {
+    return std::clamp((int) ceil(d * colorDepth), 0, colorDepth);
 }
 
 void Canvas::writePixel(const int& x, const int& y, Color& color) {
@@ -39,18 +51,6 @@ Color Canvas::pixelAt(const int& x, const int& y) const {
         std::cerr << "x and y have to be positive";
     }
     return this->colors[x][y];
-}
-
-Color Canvas::scaleColor(const Color &color, const int &colorDepth) {
-    auto *outputCol = new Color;
-    outputCol->r = std::clamp((int) ceil(color.r * colorDepth), 0, colorDepth);
-    outputCol->g = std::clamp((int) ceil(color.g * colorDepth), 0, colorDepth);
-    outputCol->b = std::clamp((int) ceil(color.b * colorDepth), 0, colorDepth);
-    return *outputCol;
-}
-
-int Canvas::scaleColor(const double &d, const int &colorDepth) {
-    return std::clamp((int) ceil(d * colorDepth), 0, colorDepth);
 }
 
 std::string Canvas::createPPMHeader() {
@@ -98,6 +98,7 @@ std::string Canvas::createPPMHeader() {
 
 void Canvas::saveToFile() {
     int counter = 0;
+    Color pixelVal;
     std::ofstream os("image.ppm", std::ofstream::binary);
     os << createPPMHeader();
     bool first = true;
@@ -105,7 +106,7 @@ void Canvas::saveToFile() {
         first ? os << "" : os << '\n';
         counter = 0;
         for (int px = 0; px < this->width; px++) {
-            auto pixelVal = this->pixelAt(px, py);
+            pixelVal = this->pixelAt(px, py);
             for (int rgb = 0; rgb < 3; rgb++) {
                 counter += 4;
                 if (counter <= 70) {

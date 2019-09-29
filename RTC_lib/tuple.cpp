@@ -114,6 +114,10 @@ Tuple normalize(const Tuple& t1) {
     return {t1.x / magnitude(t1), t1.y / magnitude(t1), t1.z / magnitude(t1), t1.w / magnitude(t1)};
 }
 
+Vector normalize(const Vector& v1) {
+    return {v1.x / magnitude(v1), v1.y / magnitude(v1), v1.z / magnitude(v1)};
+}
+
 Tuple tupleAbs(Tuple *t1) {
     return {abs(t1->x), abs(t1->y), abs(t1->z), abs(t1->w)};
 }
@@ -132,6 +136,11 @@ Tuple cross(const Tuple& t1, const Tuple& t2) {
             t1.z * t2.x - t1.x * t2.z,
             t1.x * t2.y - t1.y * t2.x);
     return result;
+}
+
+
+Vector reflect(const Vector& v, const Vector& n) {
+    return v - n * 2 * dot(v, n);
 }
 
 // Point operator
@@ -171,6 +180,10 @@ Vector operator-(const Point& p1, const Point& p2) {
 // Vector operators
 Vector operator*(const Vector& v1, const double& scalar) {
     return {v1.x * scalar, v1.y * scalar, v1.z * scalar};
+}
+
+Vector operator-(const Vector& v1, const Vector& v2) {
+    return {v1.x - v2.x, v1.y - v2.y, v1.z - v2.z};
 }
 
 // Tuple operators

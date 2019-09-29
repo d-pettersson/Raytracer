@@ -78,7 +78,9 @@ class Canvas {
 
         size_t width, height;
 
-        std::vector<std::vector<Color>> colors;
+        std::vector<std::vector<Color> > colors;
+
+//        std::vector<std::vector<Color>> colors;
 };
 
 std::ostream& operator<<(std::ostream& out, const Canvas& canvas);

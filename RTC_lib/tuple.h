@@ -12,7 +12,7 @@
 
 #include "constants.h"
 
-#include<iostream>
+#include <iostream>
 
 namespace raytracer {
 
@@ -122,6 +122,14 @@ Tuple createVector(const double &x, const double &y, const double &z);
 Tuple normalize(const Tuple& t1);
 
 /**
+ * Normalizes the <code>Vector</code> coordinates
+ *
+ * @param[in] Vector v1
+ * @return Vector
+ */
+Vector normalize(const Vector& v1);
+
+    /**
  * Return the absolute value of a <code>Tuples</code>
  *
  * @param[in] Tuple t1
@@ -154,6 +162,15 @@ double dot(const Tuple& t1, const Tuple& t2);
  * @return Tuple
  */
 Tuple cross(const Tuple& t1, const Tuple& t2);
+
+/**
+ * Return the reflect vector of v
+ *
+ * @param[in] Vector v
+ * @param[in] Vector n
+ * @return Vector
+ */
+Vector reflect(const Vector& v, const Vector& n);
 
 /**
  * Compares two <code>Tuple</code> for equality
@@ -189,7 +206,8 @@ Vector operator-(const Point& p1, const Point& p2);
 std::ostream& operator<<(std::ostream& out, const Point& p1);
 
 // Vector operators
-Vector operator*(const Vector& p1, const double& scalar);
+Vector operator*(const Vector& v1, const double& scalar);
+Vector operator-(const Vector& v1, const Vector& v2);
 
 // Color operators
 bool operator==(const Color& c1, const Color& c2);

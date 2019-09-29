@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o"
   "CMakeFiles/Google_Tests_run.dir/MatrixTest.cpp.o"
   "CMakeFiles/Google_Tests_run.dir/TransformTest.cpp.o"
   "CMakeFiles/Google_Tests_run.dir/RayTest.cpp.o"

@@ -40,7 +40,7 @@ TEST_F(CanvasFixture, TestCanvasColor) {
     canvas = new raytracer::Canvas(10, 20);
     for (size_t w = 0; w < canvas->width; w++) {
         for (size_t h = 0; h < canvas->height; h++) {
-            ASSERT_EQ(raytracer::Color(0., 0., 0.), canvas->colors[w][h]);
+            ASSERT_EQ(raytracer::Color(0., 0., 0.), canvas->colors[w + h * canvas->width]);
         }
     }
 }

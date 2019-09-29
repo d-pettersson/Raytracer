@@ -183,17 +183,17 @@ RTC_lib/fast:
 .PHONY : RTC_lib/fast
 
 #=============================================================================
-# Target rules for targets named clock
+# Target rules for targets named silhouette
 
 # Build rule for target.
-clock: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 clock
-.PHONY : clock
+silhouette: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 silhouette
+.PHONY : silhouette
 
 # fast build rule for target.
-clock/fast:
-	$(MAKE) -f apps/CMakeFiles/clock.dir/build.make apps/CMakeFiles/clock.dir/build
-.PHONY : clock/fast
+silhouette/fast:
+	$(MAKE) -f apps/CMakeFiles/silhouette.dir/build.make apps/CMakeFiles/silhouette.dir/build
+.PHONY : silhouette/fast
 
 #=============================================================================
 # Target rules for targets named Google_Tests_run
@@ -301,7 +301,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... RTC_lib"
-	@echo "... clock"
+	@echo "... silhouette"
 	@echo "... Google_Tests_run"
 	@echo "... gmock"
 	@echo "... gmock_main"

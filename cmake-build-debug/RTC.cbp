@@ -165,8 +165,8 @@
 					<DistClean command="/usr/local/bin/gmake -j8 -f &quot;/Users/davidp/Desktop/CODE/OSSU/Raytracer\ challenge/RTC/cmake-build-debug/RTC_lib/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="clock">
-				<Option output="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/apps/clock" prefix_auto="0" extension_auto="0"/>
+			<Target title="silhouette">
+				<Option output="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/apps/silhouette" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/apps"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -181,14 +181,14 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/local/bin/gmake -j8 -f &quot;/Users/davidp/Desktop/CODE/OSSU/Raytracer\ challenge/RTC/cmake-build-debug/apps/Makefile&quot;  VERBOSE=1 clock"/>
+					<Build command="/usr/local/bin/gmake -j8 -f &quot;/Users/davidp/Desktop/CODE/OSSU/Raytracer\ challenge/RTC/cmake-build-debug/apps/Makefile&quot;  VERBOSE=1 silhouette"/>
 					<CompileFile command="/usr/local/bin/gmake -j8 -f &quot;/Users/davidp/Desktop/CODE/OSSU/Raytracer\ challenge/RTC/cmake-build-debug/apps/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/local/bin/gmake -j8 -f &quot;/Users/davidp/Desktop/CODE/OSSU/Raytracer\ challenge/RTC/cmake-build-debug/apps/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/local/bin/gmake -j8 -f &quot;/Users/davidp/Desktop/CODE/OSSU/Raytracer\ challenge/RTC/cmake-build-debug/apps/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="clock/fast">
-				<Option output="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/apps/clock" prefix_auto="0" extension_auto="0"/>
+			<Target title="silhouette/fast">
+				<Option output="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/apps/silhouette" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/apps"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -203,7 +203,7 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/local/bin/gmake -j8 -f &quot;/Users/davidp/Desktop/CODE/OSSU/Raytracer\ challenge/RTC/cmake-build-debug/apps/Makefile&quot;  VERBOSE=1 clock/fast"/>
+					<Build command="/usr/local/bin/gmake -j8 -f &quot;/Users/davidp/Desktop/CODE/OSSU/Raytracer\ challenge/RTC/cmake-build-debug/apps/Makefile&quot;  VERBOSE=1 silhouette/fast"/>
 					<CompileFile command="/usr/local/bin/gmake -j8 -f &quot;/Users/davidp/Desktop/CODE/OSSU/Raytracer\ challenge/RTC/cmake-build-debug/apps/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/local/bin/gmake -j8 -f &quot;/Users/davidp/Desktop/CODE/OSSU/Raytracer\ challenge/RTC/cmake-build-debug/apps/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/local/bin/gmake -j8 -f &quot;/Users/davidp/Desktop/CODE/OSSU/Raytracer\ challenge/RTC/cmake-build-debug/apps/Makefile&quot;  VERBOSE=1 clean"/>
@@ -458,9 +458,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/CanvasTest.cpp">
-			<Option target="Google_Tests_run"/>
-		</Unit>
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/IntersectionTest.cpp">
 			<Option target="Google_Tests_run"/>
 		</Unit>
@@ -545,8 +542,8 @@
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/apps/clock/clock.cpp">
-			<Option target="clock"/>
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/apps/silhouette/silhouette.cpp">
+			<Option target="silhouette"/>
 		</Unit>
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/main.cpp">
 			<Option target="RTC_run"/>

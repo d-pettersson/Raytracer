@@ -9,6 +9,8 @@ class Sphere : public Shape {
         Sphere();
 
         void intersect(const Ray &ray, std::vector<Intersection>& xs) const override;
+
+        Vector getNormal(Point worldPoint) const override;
     };
 
     bool operator==(const Sphere& s1, const Sphere& s2);

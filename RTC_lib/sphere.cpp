@@ -33,6 +33,14 @@ void Sphere::intersect(const Ray& ray, std::vector<Intersection>& xs) const {
     }
 }
 
+Vector Sphere::getNormal(Point worldPoint) const {
+    raytracer::Point objectPoint = inverse(this->getTransform()) * worldPoint;
+    raytracer::Vector objectNormal = objectPoint - Point(0, 0, 0);
+    raytracer::Vector worldNormal = transpose(inverse(this->getTransform())) * objectNormal;
+    worldNormal.w = 0;
+    return normalize(worldNormal);
+}
+
 bool operator==(const Sphere& s1, const Sphere& s2) {
     return typeid(s1) == typeid(s2);
 }

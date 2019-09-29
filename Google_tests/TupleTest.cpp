@@ -325,3 +325,17 @@ TEST_F(TupleFixture, MultiplyingColors) {
     c2 = raytracer::Color(0.9, 1.0, 0.1);
     ASSERT_EQ(raytracer::Color(0.9, 0.2, 0.04), c1 * c2);
 }
+
+TEST_F(TupleFixture, ReflectingVector45) {
+    vector = raytracer::Vector(1, -1, 0);
+    v1 = raytracer::Vector(0, 1, 0);
+    v2 = reflect(vector, v1);
+    ASSERT_EQ(v2, raytracer::Vector(1, 1, 0));
+}
+
+TEST_F(TupleFixture, ReflectingVectorSlanted) {
+    vector = raytracer::Vector(0, -1, 0);
+    v1 = raytracer::Vector(sqrt(2) / 2, sqrt(2) / 2, 0);
+    v2 = reflect(vector, v1);
+    ASSERT_EQ(v2, raytracer::Vector(1, 0, 0));
+}
