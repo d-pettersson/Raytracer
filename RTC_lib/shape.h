@@ -4,6 +4,7 @@
 #include "ray.h"
 #include "intersection.h"
 #include "transform.h"
+#include "material.h"
 
 #include <iostream>
 #include <vector>
@@ -14,7 +15,6 @@ namespace raytracer {
 class Shape : public std::enable_shared_from_this<Shape> {
     public:
         Shape();
-        size_t id;
 
         virtual void intersect(const Ray &ray, std::vector<Intersection>& xs) const = 0;
         virtual Vector getNormal(Point worldPoint) const = 0;
@@ -22,13 +22,15 @@ class Shape : public std::enable_shared_from_this<Shape> {
         Transform getTransform() const;
         void setTransform(const Transform& t);
 
+        size_t id;
+        Material material;
+
     protected:
         static size_t nextId;
 
     private:
         std::shared_ptr<Shape> shapePtr;
         Transform transformMat;
-
 
 };
 

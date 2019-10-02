@@ -225,6 +225,60 @@ intersection.cpp.s:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/intersection.cpp.s
 .PHONY : intersection.cpp.s
 
+light.o: light.cpp.o
+
+.PHONY : light.o
+
+# target to build an object file
+light.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/light.cpp.o
+.PHONY : light.cpp.o
+
+light.i: light.cpp.i
+
+.PHONY : light.i
+
+# target to preprocess a source file
+light.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/light.cpp.i
+.PHONY : light.cpp.i
+
+light.s: light.cpp.s
+
+.PHONY : light.s
+
+# target to generate assembly for a file
+light.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/light.cpp.s
+.PHONY : light.cpp.s
+
+material.o: material.cpp.o
+
+.PHONY : material.o
+
+# target to build an object file
+material.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/material.cpp.o
+.PHONY : material.cpp.o
+
+material.i: material.cpp.i
+
+.PHONY : material.i
+
+# target to preprocess a source file
+material.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/material.cpp.i
+.PHONY : material.cpp.i
+
+material.s: material.cpp.s
+
+.PHONY : material.s
+
+# target to generate assembly for a file
+material.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/material.cpp.s
+.PHONY : material.cpp.s
+
 matrix.o: matrix.cpp.o
 
 .PHONY : matrix.o
@@ -406,6 +460,12 @@ help:
 	@echo "... intersection.o"
 	@echo "... intersection.i"
 	@echo "... intersection.s"
+	@echo "... light.o"
+	@echo "... light.i"
+	@echo "... light.s"
+	@echo "... material.o"
+	@echo "... material.i"
+	@echo "... material.s"
 	@echo "... matrix.o"
 	@echo "... matrix.i"
 	@echo "... matrix.s"

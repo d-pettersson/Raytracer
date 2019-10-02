@@ -208,6 +208,8 @@ std::ostream& operator<<(std::ostream& out, const Point& p1);
 // Vector operators
 Vector operator*(const Vector& v1, const double& scalar);
 Vector operator-(const Vector& v1, const Vector& v2);
+Vector operator-(const Vector& v1);
+
 
 // Color operators
 bool operator==(const Color& c1, const Color& c2);

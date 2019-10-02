@@ -18,6 +18,7 @@ protected:
         rotate = new raytracer::Transform();
         scale = new raytracer::Transform();
         normal = new raytracer::Vector();
+        material = new raytracer::Material();
     }
 
     virtual void TearDown() {
@@ -27,6 +28,7 @@ protected:
         delete rotate;
         delete scale;
         delete normal;
+        delete material;
     }
 
     raytracer::Ray * ray;
@@ -37,6 +39,7 @@ protected:
     raytracer::Transform * rotate;
     raytracer::Transform * scale;
     raytracer::Vector * normal;
+    raytracer::Material * material;
 };
 
 TEST_F(SphereFixture, DefaultTransformation) {
@@ -106,5 +109,15 @@ TEST_F(SphereFixture, NormalTransformedSphere) {
     sphere->setTransform(* transformation);
     * normal = sphere->getNormal(raytracer::Point(0, sqrt(2) / 2, -sqrt(2) / 2));
     ASSERT_EQ(* normal, raytracer::Vector(0, 0.97014, -0.24254));
+}
+
+TEST_F(SphereFixture, DefaultMaterialSphere) {
+    ASSERT_EQ(sphere->material, raytracer::Material());
+}
+
+TEST_F(SphereFixture, AssignMaterialSphere) {
+    material->ambient = 1;
+    sphere->material = * material;
+    ASSERT_EQ(sphere->material, * material);
 }
 

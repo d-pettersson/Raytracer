@@ -6,13 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h
-
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.cpp
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/common.h
 tuple.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
+iostream
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
+tuple.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.cpp
+material.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h
+common.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/common.h
 cmath
 -
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h
+tuple.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
+light.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
 
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
 constants.h

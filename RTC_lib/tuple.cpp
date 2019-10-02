@@ -186,6 +186,10 @@ Vector operator-(const Vector& v1, const Vector& v2) {
     return {v1.x - v2.x, v1.y - v2.y, v1.z - v2.z};
 }
 
+Vector operator-(const Vector& v1) {
+    return {-v1.x, -v1.y, -v1.z};
+}
+
 // Tuple operators
 bool operator<(const Tuple& t1, const Tuple& t2) {
     return t1.x < t2.x && t1.y < t2.y && t1.z < t2.z && t1.w < t2.w;
@@ -248,11 +252,15 @@ Color operator*(const Color& c1, const double& scalar) {
 }
 
 bool operator==(const Color& c1, const Color& c2) {
-    return c1.r == c2.r && c1.g == c2.g && c1.b == c2.b;
+    auto * difference = new Color();
+    * difference = c1 - c2;
+    return tupleAbs(difference) < EPSILON;
 }
 
 bool operator!=(const Color& c1, const Color& c2) {
-    return c1.r != c2.r || c1.g != c2.g || c1.b != c2.b;
+    auto * difference = new Color();
+    * difference = c1 - c2;
+    return !(tupleAbs(difference) < EPSILON);
 }
 
 std::ostream& operator<<(std::ostream& out, const Color& c1) {

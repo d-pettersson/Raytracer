@@ -15,7 +15,7 @@ Transform::Transform(const Matrix& m)
 {
 }
 
-Transform& Transform::translate(const double& x, const double& y, const double& z) {
+Transform& Transform::translate(const double &x, const double &y, const double &z) {
     Point p = Point(x, y, z);
     for (int i = 0; i < this->getRowSize() - 1; i++) {
         (* this)(i, this->getRowSize() - 1) = p(i);
@@ -31,7 +31,7 @@ Transform& Transform::scale(const double &x, const double &y, const double &z) {
     return * this;
 }
 
-Transform& Transform::rotateX(const double& angle) {
+Transform& Transform::rotateX(const double &angle) {
     (* this)(1, 1) = cos(angle);
     (* this)(1, 2) = -sin(angle);
     (* this)(2, 1) = sin(angle);
@@ -56,8 +56,8 @@ Transform& Transform::rotateZ(const double &angle) {
 }
 
 Transform& Transform::shear(const double &xy, const double &xz,
-                           const double &yx, const double &yz,
-                           const double &zx, const double &zy) {
+                            const double &yx, const double &yz,
+                            const double &zx, const double &zy) {
     (*this)(0, 1) = xy;
     (*this)(0, 2) = xz;
     (*this)(1, 0) = yx;

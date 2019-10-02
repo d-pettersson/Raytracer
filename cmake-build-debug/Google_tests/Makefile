@@ -198,6 +198,60 @@ IntersectionTest.cpp.s:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.s
 .PHONY : IntersectionTest.cpp.s
 
+LightTest.o: LightTest.cpp.o
+
+.PHONY : LightTest.o
+
+# target to build an object file
+LightTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/LightTest.cpp.o
+.PHONY : LightTest.cpp.o
+
+LightTest.i: LightTest.cpp.i
+
+.PHONY : LightTest.i
+
+# target to preprocess a source file
+LightTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/LightTest.cpp.i
+.PHONY : LightTest.cpp.i
+
+LightTest.s: LightTest.cpp.s
+
+.PHONY : LightTest.s
+
+# target to generate assembly for a file
+LightTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/LightTest.cpp.s
+.PHONY : LightTest.cpp.s
+
+MaterialTest.o: MaterialTest.cpp.o
+
+.PHONY : MaterialTest.o
+
+# target to build an object file
+MaterialTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.o
+.PHONY : MaterialTest.cpp.o
+
+MaterialTest.i: MaterialTest.cpp.i
+
+.PHONY : MaterialTest.i
+
+# target to preprocess a source file
+MaterialTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.i
+.PHONY : MaterialTest.cpp.i
+
+MaterialTest.s: MaterialTest.cpp.s
+
+.PHONY : MaterialTest.s
+
+# target to generate assembly for a file
+MaterialTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.s
+.PHONY : MaterialTest.cpp.s
+
 MatrixTest.o: MatrixTest.cpp.o
 
 .PHONY : MatrixTest.o
@@ -349,6 +403,12 @@ help:
 	@echo "... IntersectionTest.o"
 	@echo "... IntersectionTest.i"
 	@echo "... IntersectionTest.s"
+	@echo "... LightTest.o"
+	@echo "... LightTest.i"
+	@echo "... LightTest.s"
+	@echo "... MaterialTest.o"
+	@echo "... MaterialTest.i"
+	@echo "... MaterialTest.s"
 	@echo "... MatrixTest.o"
 	@echo "... MatrixTest.i"
 	@echo "... MatrixTest.s"

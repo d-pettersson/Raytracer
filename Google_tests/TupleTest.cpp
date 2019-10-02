@@ -305,8 +305,6 @@ TEST_F(TupleFixture, AddingColors) {
     ASSERT_EQ(raytracer::Color(1.6, 0.7, 1.0), c1 + c2);
 }
 
-// TODO value returned is correct, bool indicates the contrary, fp precision?
-
 TEST_F(TupleFixture, SubtractingColor) {
     c1 = raytracer::Color(0.9, 0.6, 0.75);
     c2 = raytracer::Color(0.7, 0.1, 0.25);
@@ -318,7 +316,6 @@ TEST_F(TupleFixture, MultiplyingScalarColors) {
     ASSERT_EQ(raytracer::Color(0.4, 0.6, 0.8), c1 * 2.0);
 }
 
-// TODO value returned is correct, bool indicates the contrary, fp precision?
 
 TEST_F(TupleFixture, MultiplyingColors) {
     c1 = raytracer::Color(1.0, 0.2, 0.4);
