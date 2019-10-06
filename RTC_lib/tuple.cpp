@@ -138,6 +138,12 @@ Tuple cross(const Tuple& t1, const Tuple& t2) {
     return result;
 }
 
+Vector cross(const Vector &v1, const Vector &v2) {
+    return raytracer::Vector(v1.y * v2.z - v1.z * v2.y,
+                             v1.z * v2.x - v1.x * v2.z,
+                             v1.x * v2.y - v1.y * v2.x);
+}
+
 
 Vector reflect(const Vector& v, const Vector& n) {
     return v - n * 2 * dot(v, n);
@@ -189,6 +195,11 @@ Vector operator-(const Vector& v1, const Vector& v2) {
 Vector operator-(const Vector& v1) {
     return {-v1.x, -v1.y, -v1.z};
 }
+
+Vector operator/(const Vector& v1, const double& scalar) {
+    return {v1.x / scalar, v1.y / scalar, v1.z / scalar};
+}
+
 
 // Tuple operators
 bool operator<(const Tuple& t1, const Tuple& t2) {

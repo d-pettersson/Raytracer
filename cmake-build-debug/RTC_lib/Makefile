@@ -171,6 +171,33 @@ RTC_lib/fast:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/build
 .PHONY : RTC_lib/fast
 
+camera.o: camera.cpp.o
+
+.PHONY : camera.o
+
+# target to build an object file
+camera.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.o
+.PHONY : camera.cpp.o
+
+camera.i: camera.cpp.i
+
+.PHONY : camera.i
+
+# target to preprocess a source file
+camera.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.i
+.PHONY : camera.cpp.i
+
+camera.s: camera.cpp.s
+
+.PHONY : camera.s
+
+# target to generate assembly for a file
+camera.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.s
+.PHONY : camera.cpp.s
+
 canvas.o: canvas.cpp.o
 
 .PHONY : canvas.o
@@ -441,6 +468,33 @@ tuple.cpp.s:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.s
 .PHONY : tuple.cpp.s
 
+world.o: world.cpp.o
+
+.PHONY : world.o
+
+# target to build an object file
+world.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.o
+.PHONY : world.cpp.o
+
+world.i: world.cpp.i
+
+.PHONY : world.i
+
+# target to preprocess a source file
+world.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.i
+.PHONY : world.cpp.i
+
+world.s: world.cpp.s
+
+.PHONY : world.s
+
+# target to generate assembly for a file
+world.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.s
+.PHONY : world.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -454,6 +508,9 @@ help:
 	@echo "... RTC_lib"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... camera.o"
+	@echo "... camera.i"
+	@echo "... camera.s"
 	@echo "... canvas.o"
 	@echo "... canvas.i"
 	@echo "... canvas.s"
@@ -484,6 +541,9 @@ help:
 	@echo "... tuple.o"
 	@echo "... tuple.i"
 	@echo "... tuple.s"
+	@echo "... world.o"
+	@echo "... world.i"
+	@echo "... world.s"
 .PHONY : help
 
 

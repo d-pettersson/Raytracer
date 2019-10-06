@@ -12,13 +12,13 @@
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib/CMakeFiles/RTC_lib.dir
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib/CMakeFiles/rebuild_cache.dir
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib/CMakeFiles/edit_cache.dir
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/apps/CMakeFiles/install/local.dir
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/apps/CMakeFiles/install/strip.dir
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/apps/CMakeFiles/install.dir
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/apps/CMakeFiles/list_install_components.dir
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/apps/CMakeFiles/rebuild_cache.dir
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/apps/CMakeFiles/edit_cache.dir
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/apps/CMakeFiles/silhouette.dir
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/apps/CMakeFiles/install/local.dir
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/apps/CMakeFiles/trisphere.dir
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/install/local.dir
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/install/strip.dir
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/install.dir

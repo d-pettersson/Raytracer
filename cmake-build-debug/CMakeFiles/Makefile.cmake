@@ -84,7 +84,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/RTC_run.dir/DependInfo.cmake"
   "RTC_lib/CMakeFiles/RTC_lib.dir/DependInfo.cmake"
-  "apps/CMakeFiles/silhouette.dir/DependInfo.cmake"
+  "apps/CMakeFiles/trisphere.dir/DependInfo.cmake"
   "Google_tests/CMakeFiles/Google_Tests_run.dir/DependInfo.cmake"
   "Google_tests/lib/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
   "Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"

@@ -266,6 +266,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/CameraTest.cpp">
+			<Option target="Google_Tests_run"/>
+		</Unit>
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/IntersectionTest.cpp">
 			<Option target="Google_Tests_run"/>
 		</Unit>
@@ -288,6 +291,9 @@
 			<Option target="Google_Tests_run"/>
 		</Unit>
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TupleTest.cpp">
+			<Option target="Google_Tests_run"/>
+		</Unit>
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/WorldTest.cpp">
 			<Option target="Google_Tests_run"/>
 		</Unit>
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/googlemock/src/gmock-all.cc">

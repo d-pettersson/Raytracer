@@ -26,7 +26,7 @@ namespace raytracer {
         return !(rhs == *this);
     }
 
-    Color Material::setPhongLighting(const Light &light, const Point &point, const Vector &eye, const Vector &normal) {
+    Color Material::setPhongLighting(const Light &light, const Point &point, const Vector &eye, const Vector &normal, const float &inShadow) const {
         raytracer::Color dif, spec;
         raytracer::Color effectiveColor = this->color * light.intensity;
         raytracer::Vector lightVector = normalize(light.position - point);
@@ -46,8 +46,7 @@ namespace raytracer {
                 spec = light.intensity * this->specular * factor;
             }
         }
-        raytracer::Color output = amb + dif + spec;
-        return output;
+        return raytracer::Color(amb + (dif * inShadow) + (spec * inShadow));
     }
 } // namespace raytracer
 

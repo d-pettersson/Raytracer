@@ -1,11 +1,26 @@
 #ifndef RTC_INTERSECTION_H
 #define RTC_INTERSECTION_H
 
+#include "tuple.h"
+#include "ray.h"
+
 #include <memory>
 #include <vector>
 
 namespace raytracer {
 class Shape;
+
+struct IntersectionData {
+    double distance = 0;
+    std::shared_ptr<Shape const> object;
+    Point point;
+    Point overPoint;
+    Vector eye;
+    Vector normal;
+    bool inside;
+    bool inShadow = false;
+
+};
 
 class Intersection {
     public:
@@ -15,10 +30,12 @@ class Intersection {
         double getDistance();
         std::shared_ptr<Shape const> getObject();
 
-    bool operator<(const Intersection &rhs) const;
-    bool operator>(const Intersection &rhs) const;
-    bool operator<=(const Intersection &rhs) const;
-    bool operator>=(const Intersection &rhs) const;
+        IntersectionData prepareComputations(const Ray &ray);
+
+        bool operator<(const Intersection &rhs) const;
+        bool operator>(const Intersection &rhs) const;
+        bool operator<=(const Intersection &rhs) const;
+        bool operator>=(const Intersection &rhs) const;
 
 private:
         double distance;

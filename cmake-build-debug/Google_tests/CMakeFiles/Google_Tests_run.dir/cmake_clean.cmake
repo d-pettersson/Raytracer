@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.o"
   "CMakeFiles/Google_Tests_run.dir/LightTest.cpp.o"
   "CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.o"
+  "CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o"
+  "CMakeFiles/Google_Tests_run.dir/CameraTest.cpp.o"
   "Google_Tests_run.pdb"
   "Google_Tests_run"
 )

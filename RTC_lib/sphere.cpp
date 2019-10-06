@@ -23,9 +23,7 @@ void Sphere::intersect(const Ray& ray, std::vector<Intersection>& xs) const {
 
     double discriminant = pow(b, 2) - 4 * a * c;
 
-    if (discriminant < 0) {
-        xs.clear();
-    } else {
+    if (discriminant > 0) {
         double t1 = (-b - sqrt(discriminant)) / (2 * a);
         double t2 = (-b + sqrt(discriminant)) / (2 * a);
         xs.emplace_back(t1, shared_from_this());

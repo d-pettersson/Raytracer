@@ -1,5 +1,7 @@
 #include "material.h"
 #include "light.h"
+#include "world.h"
+#include "shape.h"
 
 #include <cmath>
 
@@ -16,6 +18,7 @@ protected:
         normal = new raytracer::Vector();
         light = new raytracer::Light();
         result = new raytracer::Color();
+        world = new raytracer::World();
     }
 
     virtual void TearDown() {
@@ -25,6 +28,7 @@ protected:
         delete normal;
         delete light;
         delete result;
+        delete world;
     }
 
     raytracer::Material * material;
@@ -33,6 +37,9 @@ protected:
     raytracer::Vector * normal;
     raytracer::Light * light;
     raytracer::Color * result;
+    bool inShadow = false;
+    raytracer::World * world;
+    std::shared_ptr<raytracer::Shape> shape = std::make_shared<raytracer::Sphere>();
 };
 
 TEST_F(MaterialFixture, MemberAccess) {
@@ -48,7 +55,7 @@ TEST_F(MaterialFixture, EyeBetweenLightAndSurface) {
     * eye = raytracer::Vector(0, 0, -1);
     * normal = raytracer::Vector(0, 0, -1);
     light->setPointLight(raytracer::Point(0, 0, -10), raytracer::Color(1, 1, 1));
-    * result = material->setPhongLighting(* light, * position, * eye, * normal);
+    * result = material->setPhongLighting(* light, * position, * eye, * normal, inShadow);
     ASSERT_EQ(* result, raytracer::Color(1.9, 1.9, 1.9));
 }
 
@@ -57,7 +64,7 @@ TEST_F(MaterialFixture, EyeBetweenLightAndSurfaceOffset) {
     * eye = raytracer::Vector(0, sqrt(2)/2, -sqrt(2)/2);
     * normal = raytracer::Vector(0, 0, -1);
     light->setPointLight(raytracer::Point(0, 0, -10), raytracer::Color(1, 1, 1));
-    * result = material->setPhongLighting(* light, * position, * eye, * normal);
+    * result = material->setPhongLighting(* light, * position, * eye, * normal, inShadow);
     ASSERT_EQ(* result, raytracer::Color(1.0, 1.0, 1.0));
 }
 
@@ -66,7 +73,7 @@ TEST_F(MaterialFixture, EyeOppositeSurfaceOffset) {
     * eye = raytracer::Vector(0, 0, -1);
     * normal = raytracer::Vector(0, 0, -1);
     light->setPointLight(raytracer::Point(0, 10, -10), raytracer::Color(1, 1, 1));
-    * result = material->setPhongLighting(* light, * position, * eye, * normal);
+    * result = material->setPhongLighting(* light, * position, * eye, * normal, inShadow);
     ASSERT_EQ(* result, raytracer::Color(0.7364, 0.7364, 0.7364));
 }
 
@@ -75,7 +82,7 @@ TEST_F(MaterialFixture, EyeInPathReflection) {
     * eye = raytracer::Vector(0, -sqrt(2)/2, -sqrt(2)/2);
     * normal = raytracer::Vector(0, 0, -1);
     light->setPointLight(raytracer::Point(0, 10, -10), raytracer::Color(1, 1, 1));
-    * result = material->setPhongLighting(* light, * position, * eye, * normal);
+    * result = material->setPhongLighting(* light, * position, * eye, * normal, inShadow);
     ASSERT_EQ(* result, raytracer::Color(1.63644, 1.6364, 1.6364));
 }
 
@@ -84,6 +91,34 @@ TEST_F(MaterialFixture, LightingBehindSurface) {
     * eye = raytracer::Vector(0, 0, -1);
     * normal = raytracer::Vector(0, 0, -1);
     light->setPointLight(raytracer::Point(0, 0, 10), raytracer::Color(1, 1, 1));
-    * result = material->setPhongLighting(* light, * position, * eye, * normal);
+    * result = material->setPhongLighting(* light, * position, * eye, * normal, inShadow);
     ASSERT_EQ(* result, raytracer::Color(0.1, 0.1, 0.1));
+}
+
+TEST_F(MaterialFixture, LightingSurfaceShadow) {
+    * position = raytracer::Point(0, 0, 0);
+    * eye = raytracer::Vector(0, 0, -1);
+    * normal = raytracer::Vector(0, 0, -1);
+    light->setPointLight(raytracer::Point(0, 0, -10), raytracer::Color(1, 1, 1));
+    inShadow = true;
+    * result = material->setPhongLighting(* light, * position, * eye, * normal, inShadow);
+    ASSERT_EQ(* result, raytracer::Color(0.1, 0.1, 0.1));
+}
+
+TEST_F(MaterialFixture, LightIntensityShadow) {
+    world->defaultWorld();
+    world->light = raytracer::Light(raytracer::Point(0, 0, -10), raytracer::Color(1, 1, 1));
+    world->shapes[0]->material.ambient = 0.1;
+    world->shapes[0]->material.diffuse = 0.9;
+    world->shapes[0]->material.specular = 0;
+    world->shapes[0]->material.color = raytracer::Color(1, 1, 1);
+    raytracer::Point point = raytracer::Point(0, 0, -1);
+    raytracer::Vector eye = raytracer::Vector(0, 0, -1);
+    raytracer::Vector normal = raytracer::Vector(0, 0, -1);
+    * result = world->shapes[0]->material.setPhongLighting(world->light, point, eye, normal, 1.0);
+    ASSERT_EQ(raytracer::Color(1, 1, 1), * result);
+    * result = world->shapes[0]->material.setPhongLighting(world->light, point, eye, normal, 0.5);
+    ASSERT_EQ(raytracer::Color(0.55, 0.55, 0.55), * result);
+    * result = world->shapes[0]->material.setPhongLighting(world->light, point, eye, normal, 0.0);
+    ASSERT_EQ(raytracer::Color(0.1, 0.1, 0.1), * result);
 }

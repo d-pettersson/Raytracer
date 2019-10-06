@@ -4,10 +4,12 @@
 #include "sphere.h"
 #include "intersection.h"
 
+int percent = 0;
+
 double wallZ = 10;
 double wallSize = 7.0;
 
-int canvasPixels = 100;
+int canvasPixels = 1000;
 double pixelSize = wallSize / canvasPixels;
 double half = wallSize / 2;
 
@@ -39,9 +41,9 @@ int main() {
                 raytracer::Vector eye = -ray.getDirection();
                 * color = sphere->material.setPhongLighting(* light, point, eye, normal);
                 canvas->writePixel(x, y, * color);
-                canvas->saveToFile();
             }
         }
     }
+    canvas->saveToFile();
     return 0;
 }

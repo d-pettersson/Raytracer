@@ -18,6 +18,8 @@ protected:
         intersection4 = new raytracer::Intersection();
         hitIntersection = new raytracer::Intersection();
         xs = new std::vector<raytracer::Intersection>;
+        intersectionData = new raytracer::IntersectionData();
+        transform = new raytracer::Transform();
     }
 
     virtual void TearDown() {
@@ -28,6 +30,8 @@ protected:
         delete intersection4;
         delete hitIntersection;
         delete xs;
+        delete intersectionData;
+        delete transform;
     }
 
     raytracer::Ray * ray;
@@ -40,6 +44,8 @@ protected:
     raytracer::Intersection * intersection4;
     raytracer::Intersection * hitIntersection;
     std::vector<raytracer::Intersection> * xs;
+    raytracer::IntersectionData * intersectionData;
+    raytracer::Transform * transform;
 };
 
 TEST_F(IntersectionFixture, EncapsulationTest) {
@@ -94,4 +100,43 @@ TEST_F(IntersectionFixture, Hit4) {
     ASSERT_EQ(hitIntersection->getDistance(), intersection4->getDistance());
     ASSERT_EQ(hitIntersection->getObject(), intersection4->getObject());
 }
+
+TEST_F(IntersectionFixture, PrecomputingIntersectionState) {
+    * ray = raytracer::Ray(raytracer::Point(0, 0, -5), raytracer::Vector(0, 0, 1));
+    * intersection = raytracer::Intersection(4, sphere);
+    * intersectionData = intersection->prepareComputations(* ray);
+    ASSERT_EQ(intersectionData->distance, intersection->getDistance());
+    ASSERT_EQ(intersectionData->object, intersection->getObject());
+    ASSERT_EQ(intersectionData->point, raytracer::Point(0, 0, -1));
+    ASSERT_EQ(intersectionData->eye, raytracer::Vector(0, 0, -1));
+    ASSERT_EQ(intersectionData->normal, raytracer::Vector(0, 0, -1));
+}
+
+TEST_F(IntersectionFixture, TestOutside) {
+    * ray = raytracer::Ray(raytracer::Point(0, 0, -5), raytracer::Vector(0, 0, 1));
+    * intersection = raytracer::Intersection(4, sphere);
+    * intersectionData = intersection->prepareComputations(* ray);
+    ASSERT_FALSE(intersectionData->inside);
+}
+
+TEST_F(IntersectionFixture, TestInside) {
+    * ray = raytracer::Ray(raytracer::Point(0, 0, 0), raytracer::Vector(0, 0, 1));
+    * intersection = raytracer::Intersection(1, sphere);
+    * intersectionData = intersection->prepareComputations(* ray);
+    ASSERT_EQ(intersectionData->point, raytracer::Point(0, 0, 1));
+    ASSERT_EQ(intersectionData->eye, raytracer::Vector(0, 0, -1));
+    ASSERT_TRUE(intersectionData->inside);
+    ASSERT_EQ(intersectionData->normal, raytracer::Vector(0, 0, -1));
+}
+
+TEST_F(IntersectionFixture, PointOffset) {
+    * ray = raytracer::Ray(raytracer::Point(0, 0, -5), raytracer::Vector(0, 0, 1));
+    sphere->setTransform(transform->translate(0, 0, 1));
+    * intersection = raytracer::Intersection(5, sphere);
+    raytracer::IntersectionData intersectionData = intersection->prepareComputations(* ray);
+    ASSERT_TRUE(intersectionData.overPoint.z < -EPSILON / 2);
+    ASSERT_TRUE(intersectionData.point.z > intersectionData.overPoint.z);
+}
+
+
 

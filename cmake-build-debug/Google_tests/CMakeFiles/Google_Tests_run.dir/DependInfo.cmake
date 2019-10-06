@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/CameraTest.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/Google_Tests_run.dir/CameraTest.cpp.o"
   "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/IntersectionTest.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o"
   "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/LightTest.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/Google_Tests_run.dir/LightTest.cpp.o"
   "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/MaterialTest.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.o"
@@ -12,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/SphereTest.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.o"
   "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TransformTest.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/Google_Tests_run.dir/TransformTest.cpp.o"
   "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TupleTest.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o"
+  "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/WorldTest.cpp" "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

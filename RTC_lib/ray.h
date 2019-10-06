@@ -20,7 +20,7 @@ class Ray {
         Point getOrigin() const;
         Point& getOrigin();
 
-        Point position(const double& t);
+        Point position(const double& t) const;
 
     private:
         raytracer::Point origin;

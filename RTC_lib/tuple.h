@@ -164,6 +164,15 @@ double dot(const Tuple& t1, const Tuple& t2);
 Tuple cross(const Tuple& t1, const Tuple& t2);
 
 /**
+ * Return the cross product of v1 X v2
+ *
+ * @param[in] Vector v1
+ * @param[in] Vector v2
+ * @return Vector
+ */
+Vector cross(const Vector &v1, const Vector &v2);
+
+/**
  * Return the reflect vector of v
  *
  * @param[in] Vector v
@@ -209,6 +218,7 @@ std::ostream& operator<<(std::ostream& out, const Point& p1);
 Vector operator*(const Vector& v1, const double& scalar);
 Vector operator-(const Vector& v1, const Vector& v2);
 Vector operator-(const Vector& v1);
+Vector operator/(const Vector& v1, const double& scalar);
 
 
 // Color operators

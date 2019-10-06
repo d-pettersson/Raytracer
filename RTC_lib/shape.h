@@ -2,9 +2,9 @@
 #define RTC_SHAPE_H
 
 #include "ray.h"
-#include "intersection.h"
 #include "transform.h"
 #include "material.h"
+#include "intersection.h"
 
 #include <iostream>
 #include <vector>

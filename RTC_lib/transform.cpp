@@ -67,5 +67,25 @@ Transform& Transform::shear(const double &xy, const double &xz,
     return * this;
 }
 
+Transform viewTransform(const Point &from, const Point &to, const Vector &up) {
+    auto * forward = new raytracer::Vector();
+    auto * left = new raytracer::Vector();
+    auto * trueUp = new raytracer::Vector();
+    auto * orientationData = new std::vector<double>(16);
+    auto * orientationMatrix = new raytracer::Matrix(4, 4);
+    auto * transform = new raytracer::Transform();
+
+    * forward = normalize(to - from);
+    * left = cross(* forward, normalize(up));
+    * trueUp = cross(* left, * forward);
+    * orientationData = std::vector<double>{left->x, left->y, left->z, 0,
+                                            trueUp->x, trueUp->y, trueUp->z, 0,
+                                            -forward->x, -forward->y, -forward->z, 0,
+                                            0, 0, 0, 1};
+    orientationMatrix->setMatrixData(* orientationData);
+    auto * orientation = new raytracer::Transform(* orientationMatrix);
+    return * orientation * transform->translate(-from.x, -from.y, -from.z);
+}
+
 
 } // namespace raytracer

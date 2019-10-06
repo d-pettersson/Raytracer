@@ -187,6 +187,32 @@ RTC_lib/CMakeFiles/RTC_lib.dir/material.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/material.cpp.s"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.cpp" -o CMakeFiles/RTC_lib.dir/material.cpp.s
 
+RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.o: ../RTC_lib/world.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/world.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/world.cpp"
+
+RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/world.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/world.cpp" > CMakeFiles/RTC_lib.dir/world.cpp.i
+
+RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/world.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/world.cpp" -o CMakeFiles/RTC_lib.dir/world.cpp.s
+
+RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.o: ../RTC_lib/camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/camera.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/camera.cpp"
+
+RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/camera.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/camera.cpp" > CMakeFiles/RTC_lib.dir/camera.cpp.i
+
+RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/camera.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/camera.cpp" -o CMakeFiles/RTC_lib.dir/camera.cpp.s
+
 # Object files for target RTC_lib
 RTC_lib_OBJECTS = \
 "CMakeFiles/RTC_lib.dir/tuple.cpp.o" \
@@ -198,7 +224,9 @@ RTC_lib_OBJECTS = \
 "CMakeFiles/RTC_lib.dir/intersection.cpp.o" \
 "CMakeFiles/RTC_lib.dir/sphere.cpp.o" \
 "CMakeFiles/RTC_lib.dir/light.cpp.o" \
-"CMakeFiles/RTC_lib.dir/material.cpp.o"
+"CMakeFiles/RTC_lib.dir/material.cpp.o" \
+"CMakeFiles/RTC_lib.dir/world.cpp.o" \
+"CMakeFiles/RTC_lib.dir/camera.cpp.o"
 
 # External object files for target RTC_lib
 RTC_lib_EXTERNAL_OBJECTS =
@@ -213,9 +241,11 @@ RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/intersection.cpp.o
 RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.o
 RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/light.cpp.o
 RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/material.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.o
 RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/build.make
 RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX static library libRTC_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX static library libRTC_lib.a"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && $(CMAKE_COMMAND) -P CMakeFiles/RTC_lib.dir/cmake_clean_target.cmake
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RTC_lib.dir/link.txt --verbose=$(VERBOSE)
 

@@ -183,17 +183,17 @@ RTC_lib/fast:
 .PHONY : RTC_lib/fast
 
 #=============================================================================
-# Target rules for targets named silhouette
+# Target rules for targets named trisphere
 
 # Build rule for target.
-silhouette: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 silhouette
-.PHONY : silhouette
+trisphere: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trisphere
+.PHONY : trisphere
 
 # fast build rule for target.
-silhouette/fast:
-	$(MAKE) -f apps/CMakeFiles/silhouette.dir/build.make apps/CMakeFiles/silhouette.dir/build
-.PHONY : silhouette/fast
+trisphere/fast:
+	$(MAKE) -f apps/CMakeFiles/trisphere.dir/build.make apps/CMakeFiles/trisphere.dir/build
+.PHONY : trisphere/fast
 
 #=============================================================================
 # Target rules for targets named Google_Tests_run
@@ -301,7 +301,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... RTC_lib"
-	@echo "... silhouette"
+	@echo "... trisphere"
 	@echo "... Google_Tests_run"
 	@echo "... gmock"
 	@echo "... gmock_main"

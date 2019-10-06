@@ -11,7 +11,7 @@ class Material {
 
     Material();
 
-    Color setPhongLighting(const Light& light, const Point& position, const Vector& eye, const Vector& normal);
+    Color setPhongLighting(const Light& light, const Point& position, const Vector& eye, const Vector& normal, const float &inShadow) const;
 
     Color color;
     double ambient;

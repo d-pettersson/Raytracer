@@ -20,6 +20,11 @@ protected:
         p2 = new raytracer::Point();
         p3 = new raytracer::Point();
         p4 = new raytracer::Point();
+        from = new raytracer::Point();
+        to = new raytracer::Point();
+        up = new raytracer::Vector();
+        identity = new raytracer::Matrix();
+        matrix = new raytracer::Matrix(4, 4);
     }
 
     virtual void TearDown() {
@@ -29,6 +34,11 @@ protected:
         delete transB;
         delete transC;
         delete transT;
+        delete from;
+        delete to;
+        delete up;
+        delete identity;
+        delete matrix;
     }
 
     raytracer::Transform * trans;
@@ -43,12 +53,18 @@ protected:
     raytracer::Point * p2;
     raytracer::Point * p3;
     raytracer::Point * p4;
+    raytracer::Point * from;
+    raytracer::Point * to;
     raytracer::Point pointMultResult;
     raytracer::Point pointResult;
 
     raytracer::Vector vector;
+    raytracer::Vector * up;
     raytracer::Vector vecMultResult;
     raytracer::Vector vectorResult;
+
+    raytracer::Matrix * identity;
+    raytracer::Matrix * matrix;
 };
 
 TEST_F(TransformFixture, PointTranslationTest) {
@@ -207,5 +223,41 @@ TEST_F(TransformFixture, ReverseChainedTransforms) {
     transC->translate(10, 5, 7);
     * transT = * transC * * transB * * transA;
     ASSERT_EQ(raytracer::Point(15, 0, 7), * transT * point);
+}
+
+TEST_F(TransformFixture, DefaultOrientation) {
+    * from = raytracer::Point(0, 0, 0);
+    * to = raytracer::Point(0, 0, -1);
+    * up = raytracer::Vector(0, 1, 0);
+    * trans = viewTransform(* from, * to, * up);
+    * identity = raytracer::generateIdentity(4, 4);
+    ASSERT_EQ(* identity, * trans);
+}
+
+TEST_F(TransformFixture, ViewTransformPositiveZDirection) {
+    * from = raytracer::Point(0, 0, 0);
+    * to = raytracer::Point(0, 0, 1);
+    * up = raytracer::Vector(0, 1, 0);
+    * trans = viewTransform(* from, * to, * up);
+    ASSERT_EQ(* trans, trans->scale(-1, 1, -1));
+}
+
+TEST_F(TransformFixture, ViewTransformationMovesWorld) {
+    * from = raytracer::Point(0, 0, 8);
+    * to = raytracer::Point(0, 0, 1);
+    * up = raytracer::Vector(0, 1, 0);
+    * trans = viewTransform(* from, * to, * up);
+    ASSERT_EQ(* trans, trans->translate(0, 0, -8));
+}
+
+TEST_F(TransformFixture, ArbitraryViewTransformation) {
+    * from = raytracer::Point(1, 3, 2);
+    * to = raytracer::Point(4, -2, 8);
+    * up = raytracer::Vector(1, 1, 0);
+    * trans = viewTransform(* from, * to, * up);
+    std::vector<double> data{-0.50709, 0.50709, 0.67612, -2.36643, 0.76772, 0.60609, 0.12122, -2.82843, -0.35857, 0.59761, -0.71714, 0.00000, 0.00000, 0.00000, 0.00000, 1.00000};
+    matrix->setMatrixData(data);
+    transA = new raytracer::Transform(* matrix);
+    ASSERT_EQ(* trans, * transA);
 }
 

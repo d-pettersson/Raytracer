@@ -6,25 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/common.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.h
 tuple.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
-iostream
+ray.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
+memory
+-
+vector
 -
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.cpp
+light.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
+world.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/world.h
 
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
 tuple.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
-
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.cpp
-material.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h
-common.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/common.h
-cmath
--
 
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h
 tuple.h
@@ -32,9 +34,59 @@ tuple.h
 light.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
 
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
+tuple.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
+vector
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
+tuple.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
+transform.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h
+vector
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
+ray.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
+transform.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h
+material.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h
+intersection.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.h
+iostream
+-
+vector
+-
+memory
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.h
+shape.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h
+matrix.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
+
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
 constants.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h
 iostream
 -
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/world.h
+light.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
+sphere.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.h
+tuple.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
+transform.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h
+intersection.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.h
 

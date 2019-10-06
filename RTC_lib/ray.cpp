@@ -1,12 +1,14 @@
 #include "ray.h"
 
+#include <utility>
+
 namespace raytracer {
 Ray::Ray()
 {
 }
 
 Ray::Ray(raytracer::Point ori, raytracer::Vector dir)
-        : origin(ori), direction(dir)
+        : origin(std::move(ori)), direction(std::move(dir))
 {
 }
 
@@ -35,7 +37,7 @@ Point& Ray::getOrigin() {
     return (* this).origin;
 }
 
-Point Ray::position(const double& t) {
+Point Ray::position(const double& t) const {
     return (* this).origin + (* this).direction * t;
 }
 

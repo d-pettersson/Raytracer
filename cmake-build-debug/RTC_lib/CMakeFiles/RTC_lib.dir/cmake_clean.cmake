@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/RTC_lib.dir/sphere.cpp.o"
   "CMakeFiles/RTC_lib.dir/light.cpp.o"
   "CMakeFiles/RTC_lib.dir/material.cpp.o"
+  "CMakeFiles/RTC_lib.dir/world.cpp.o"
+  "CMakeFiles/RTC_lib.dir/camera.cpp.o"
   "libRTC_lib.pdb"
   "libRTC_lib.a"
 )

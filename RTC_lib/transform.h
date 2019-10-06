@@ -18,6 +18,7 @@ namespace raytracer {
 class Transform : public virtual Matrix {
     public:
         Transform();
+
         /**
          * Returns a <code>Transform</code> object containing (chained) transformations
          *
@@ -25,7 +26,7 @@ class Transform : public virtual Matrix {
          */
         Transform(const Matrix& m);
 
-    /**
+        /**
          * Create a translation matrix
          *
          * @param[in] double x
@@ -85,7 +86,10 @@ class Transform : public virtual Matrix {
         Transform& shear(const double& xy, const double& xz,
                          const double& yx, const double& yz,
                          const double& zx, const double& zy);
+
 };
+
+Transform viewTransform(const Point &from, const Point &to, const Vector &up);
 
 } // namespace raytracer
 

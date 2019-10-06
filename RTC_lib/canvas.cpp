@@ -35,15 +35,15 @@ int Canvas::scaleColor(const double &d, const int &colorDepth) {
     return std::clamp((int) ceil(d * colorDepth), 0, colorDepth);
 }
 
-void Canvas::writePixel(const int& x, const int& y, Color& color) {
+void Canvas::writePixel(const int& x, const int& y, Color * color) {
     if (x < 0 || y < 0) {
         std::cerr << "x and y have to be positive";
     }
-    color.r < 0 ? color.r = 0 : color.r;
-    color.g < 0 ? color.g = 0 : color.g;
-    color.b < 0 ? color.b = 0 : color.b;
+    color->r < 0 ? color->r = 0 : color->r;
+    color->g < 0 ? color->g = 0 : color->g;
+    color->b < 0 ? color->b = 0 : color->b;
 
-    this->colors[x][y] = color;
+    this->colors[x][y] = * color;
 }
 
 Color Canvas::pixelAt(const int& x, const int& y) const {
