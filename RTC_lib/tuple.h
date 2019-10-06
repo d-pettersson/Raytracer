@@ -216,9 +216,12 @@ std::ostream& operator<<(std::ostream& out, const Point& p1);
 
 // Vector operators
 Vector operator*(const Vector& v1, const double& scalar);
+Vector operator+(const Vector &v1, const Vector &v2);
 Vector operator-(const Vector& v1, const Vector& v2);
 Vector operator-(const Vector& v1);
 Vector operator/(const Vector& v1, const double& scalar);
+
+std::ostream& operator<<(std::ostream& out, const Vector& v1);
 
 
 // Color operators
@@ -229,6 +232,7 @@ Color operator-(const Color& c1, const Color& c2);
 Color operator+(const Color& c1, const Color& c2);
 Color operator*(const Color& c1, const Color& c2);
 Color operator*(const Color& c1, const double& scalar);
+Color operator/(const Color& c1, const double& scalar);
 
 std::ostream& operator<<(std::ostream& out, const Color& c1);
 

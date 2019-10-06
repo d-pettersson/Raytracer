@@ -13,7 +13,7 @@ public:
     Camera(int hsize, int vsize, double fieldOfView);
 
     Ray rayForPixel(const int &x, const int &y);
-    Canvas render(const World& world);
+    Canvas render(World& world);
 
     int hsize;
     int vsize;

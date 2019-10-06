@@ -42,7 +42,7 @@ Ray Camera::rayForPixel(const int &x, const int &y) {
 
 }
 
-Canvas Camera::render(const World& world) {
+Canvas Camera::render(World& world) {
     auto * ray = new Ray();
     auto * color = new Color();
     auto * image = new Canvas(this->hsize, this->vsize);

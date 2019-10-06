@@ -13,7 +13,7 @@ void World::intersectWorld(const raytracer::Ray &ray, std::vector<Intersection> 
     std::sort(xs->begin(), xs->end());
 }
 
-Color World::shadeHit(const IntersectionData &intersectionData) const {
+Color World::shadeHit(const IntersectionData &intersectionData) {
 //    bool shadowed = this->isShadowed(intersectionData.overPoint, this->light.position);
     float shadowed = this->light.intensityAt(intersectionData.overPoint, * this);
 
@@ -24,7 +24,7 @@ Color World::shadeHit(const IntersectionData &intersectionData) const {
                                                               shadowed);
 }
 
-Color World::colorAt(const Ray &ray) const {
+Color World::colorAt(const Ray &ray) {
     auto * xs = new std::vector<Intersection>();
     this->intersectWorld(ray, xs);
     auto intersection = hit(* xs);

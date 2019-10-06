@@ -61,6 +61,7 @@ bool Matrix::isEmpty() const {
             }
         };
     }
+    return false;
 }
 
 double& Matrix::operator()(size_t row, size_t col) {
@@ -199,17 +200,15 @@ Matrix generateIdentity(const int& r, const int& c) {
 bool operator==(const Matrix& m1, const Matrix& m2) {
     if (m1.getMatrixSize() != m2.getMatrixSize()) {
         std::cerr << "Matrices need to be the same size.";
-    } else {
-        return m1.isEqual(m2);
     }
+    return m1.isEqual(m2);
 }
 
 bool operator!=(const Matrix& m1, const Matrix& m2) {
     if (m1.getMatrixSize() != m2.getMatrixSize()) {
         std::cerr << "Matrices need to be the same size.";
-    } else {
-        return !m1.isEqual(m2);
     }
+    return !m1.isEqual(m2);
 }
 
 std::ostream& operator<<(std::ostream &os, const Matrix& m1) {

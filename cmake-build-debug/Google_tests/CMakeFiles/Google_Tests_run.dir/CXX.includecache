@@ -315,6 +315,10 @@ vector
 ../RTC_lib/light.h
 tuple.h
 ../RTC_lib/tuple.h
+utils.h
+../RTC_lib/utils.h
+vector
+-
 
 ../RTC_lib/material.h
 tuple.h
@@ -366,6 +370,10 @@ constants.h
 iostream
 -
 
+../RTC_lib/utils.h
+vector
+-
+
 ../RTC_lib/world.h
 light.h
 ../RTC_lib/light.h
@@ -383,14 +391,8 @@ light.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/light.h
 world.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/world.h
-gtest/gtest.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
-
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/WorldTest.cpp
-world.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/world.h
-intersection.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/intersection.h
+utils.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/utils.h
 gtest/gtest.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
 

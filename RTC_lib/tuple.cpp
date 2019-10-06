@@ -188,6 +188,10 @@ Vector operator*(const Vector& v1, const double& scalar) {
     return {v1.x * scalar, v1.y * scalar, v1.z * scalar};
 }
 
+Vector operator+(const Vector &v1, const Vector &v2) {
+    return {v1.x + v2.x, v1.y + v2.y, v1.z + v2.z};
+}
+
 Vector operator-(const Vector& v1, const Vector& v2) {
     return {v1.x - v2.x, v1.y - v2.y, v1.z - v2.z};
 }
@@ -198,6 +202,11 @@ Vector operator-(const Vector& v1) {
 
 Vector operator/(const Vector& v1, const double& scalar) {
     return {v1.x / scalar, v1.y / scalar, v1.z / scalar};
+}
+
+std::ostream& operator<<(std::ostream& out, const Vector& v1) {
+    out << '[' << v1.x << ", " << v1.y << ", " << v1.z << ']';
+    return out;
 }
 
 
@@ -260,6 +269,10 @@ Color operator*(const Color& c1, const Color& c2) {
 
 Color operator*(const Color& c1, const double& scalar) {
     return {c1.r * scalar, c1.g * scalar, c1.b * scalar};
+}
+
+Color operator/(const Color& c1, const double& scalar) {
+    return {c1.x / scalar, c1.y / scalar, c1.z / scalar};
 }
 
 bool operator==(const Color& c1, const Color& c2) {

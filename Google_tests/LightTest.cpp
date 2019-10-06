@@ -1,5 +1,6 @@
 #include "light.h"
 #include "world.h"
+#include "utils.h"
 
 #include "gtest/gtest.h"
 
@@ -13,6 +14,7 @@ protected:
         position = new raytracer::Point();
         point = new raytracer::Point();
         world = new raytracer::World();
+        gen = new raytracer::Gen();
     }
 
     virtual void TearDown() {
@@ -21,6 +23,7 @@ protected:
         delete position;
         delete point;
         delete world;
+        delete gen;
     }
 
     raytracer::Light * light;
@@ -28,8 +31,11 @@ protected:
     raytracer::Point * position;
     raytracer::Point * point;
     raytracer::World * world;
+    raytracer::Gen * gen;
 
 };
+
+// the following tests work with an fixed offset in the light position of 0.5 instead of a random pos
 
 TEST_F(LightFixture, PointLight) {
     * intensity = raytracer::Color(1, 1, 1);
@@ -140,4 +146,30 @@ TEST_F(LightFixture, AreaLightIntensityAt) {
     pt = raytracer::Point(0, 0, -2);
     intensity = light->intensityAt(pt, * world);
     ASSERT_EQ(1.0, intensity);
+}
+
+// this test works with this->uVec * (u + 0.3), and this->vVec * (v + 0.7)
+// actual function works with a random number generator
+
+TEST_F(LightFixture, AreaLightNoiseDistribution) {
+    world->defaultWorld();
+    * point = raytracer::Point(0, 0, 0);
+    auto v1 = raytracer::Vector(2, 0, 0);
+    auto v2 = raytracer::Vector(0, 0, 1);
+    light->setAreaLight(* point, v1, 4, v2, 2, raytracer::Color(1, 1, 1));
+
+    auto pt = light->pointOnLight(0, 0);
+    EXPECT_EQ(raytracer::Point(0.15, 0, 0.35), pt);
+
+    pt = light->pointOnLight(1, 0);
+    EXPECT_EQ(raytracer::Point(0.65, 0, 0.35), pt);
+
+    pt = light->pointOnLight(0, 1);
+    EXPECT_EQ(raytracer::Point(0.15, 0, 0.85), pt);
+
+    pt = light->pointOnLight(2, 0);
+    EXPECT_EQ(raytracer::Point(1.15, 0, 0.35), pt);
+
+    pt = light->pointOnLight(3, 1);
+    EXPECT_EQ(raytracer::Point(1.65, 0, 0.85), pt);
 }

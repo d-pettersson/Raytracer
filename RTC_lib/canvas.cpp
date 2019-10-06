@@ -24,7 +24,7 @@ Canvas::Canvas()
 }
 
 Color Canvas::scaleColor(const Color &color, const int &colorDepth) {
-    auto *outputCol = new Color;
+    auto * outputCol = new Color();
     outputCol->r = std::clamp((int) ceil(color.r * colorDepth), 0, colorDepth);
     outputCol->g = std::clamp((int) ceil(color.g * colorDepth), 0, colorDepth);
     outputCol->b = std::clamp((int) ceil(color.b * colorDepth), 0, colorDepth);

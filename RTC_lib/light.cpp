@@ -1,6 +1,9 @@
 #include "light.h"
 #include "world.h"
 
+#include <random>
+#include <memory>
+
 namespace raytracer {
 Light::Light(const raytracer::Point &position, const raytracer::Color &intensity)
     : position(position), intensity(intensity)
@@ -27,7 +30,7 @@ void Light::setAreaLight(const Point &corn, const Vector &fullUVec, const int &u
     this->position = raytracer::Point(1, 0, 0.5);
 }
 
-float Light::intensityAt(const Point &point, const World &world) const {
+float Light::intensityAt(const Point &point, const World &world) {
     float total = 0.0;
     for (int v = 0; v < this->vSteps; v++) {
         for (int u = 0; u < this->uSteps; u++) {
@@ -40,7 +43,11 @@ float Light::intensityAt(const Point &point, const World &world) const {
 }
 
 Point Light::pointOnLight(const double &u, const double &v) const {
-    return this->corner + this->uVec * (u + 0.5) + this->vVec * (v + 0.5);
+    std::random_device dev;
+    std::mt19937 rng(dev());
+    std::uniform_int_distribution<std::mt19937::result_type> dist(0,10);
+
+    return this->corner + this->uVec * (u + (double)dist(rng) * 0.1) + this->vVec * (v + (double)dist(rng) * 0.1);;
 }
 
 

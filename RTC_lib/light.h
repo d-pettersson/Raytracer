@@ -2,6 +2,9 @@
 #define RTC_LIGHT_H
 
 #include "tuple.h"
+#include "utils.h"
+
+#include <vector>
 
 namespace raytracer{
 
@@ -16,10 +19,11 @@ public:
     void setAreaLight(const Point &corner, const Vector &fullUVec, const int &uSteps, const Vector &fullVVec, const int &vSteps, const Color &intensity);
 
     Point pointOnLight(const double &u, const double &v) const;
-    float intensityAt(const Point &point, const World &world) const;
+    float intensityAt(const Point &point, const World &world);
 
     Color intensity;
     Point position;
+
     Point corner;
     Vector uVec;
     int uSteps;

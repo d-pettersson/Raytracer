@@ -15,7 +15,7 @@ int main() {
     auto * camera = new raytracer::Camera();
 
     auto * world = new raytracer::World();
-    auto * canvas = new raytracer::Canvas(1000, 500);
+    auto * canvas = new raytracer::Canvas(500, 250);
 
     auto * transform = new raytracer::Transform();
     auto * translation = new raytracer::Transform();
@@ -29,7 +29,6 @@ int main() {
     floor->material.color = raytracer::Color(1, 0.9, 0.9);
     floor->material.specular = 0;
     world->addObject(floor);
-    std::cout << world->shapes[0]->material.color;
 
     // left wall
     translation->translate(0, 0, 5);
@@ -78,11 +77,11 @@ int main() {
 
     // light source
 //    light->setPointLight(raytracer::Point(-10, 10, -10), raytracer::Color(1, 1, 1));
-    light->setAreaLight(raytracer::Point(-10, 10, -10), raytracer::Vector(1, 0, 0), 2, raytracer::Vector(0, 1, 0), 2, raytracer::Color(1, 1, 1));
+    light->setAreaLight(raytracer::Point(-2, 1, -10), raytracer::Vector(1, 0, 0), 8, raytracer::Vector(0, 1, 0), 8, raytracer::Color(1, 1, 1));
     world->light = * light;
 
     // camera
-    * camera = raytracer::Camera(1000, 500, PI/3);
+    * camera = raytracer::Camera(500, 250, PI/3);
     * transform = viewTransform(raytracer::Point(1.f, 1.5, -5.f), raytracer::Point(0.f, 1.f, 0.f), raytracer::Vector(0.f, 1.f, 0.f));
     camera->transform = * transform;
     * canvas = camera->render(* world);
