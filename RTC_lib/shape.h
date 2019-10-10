@@ -3,8 +3,8 @@
 
 #include "ray.h"
 #include "transform.h"
-#include "material.h"
 #include "intersection.h"
+#include "material.h"
 
 #include <iostream>
 #include <vector>

@@ -5,7 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/RTC_lib.dir/light.cpp.o"
   "CMakeFiles/RTC_lib.dir/material.cpp.o"
   "CMakeFiles/RTC_lib.dir/matrix.cpp.o"
-  "CMakeFiles/RTC_lib.dir/patterns.cpp.o"
+  "CMakeFiles/RTC_lib.dir/pattern.cpp.o"
   "CMakeFiles/RTC_lib.dir/plane.cpp.o"
   "CMakeFiles/RTC_lib.dir/ray.cpp.o"
   "CMakeFiles/RTC_lib.dir/shape.cpp.o"

@@ -26,6 +26,7 @@ int main() {
     
     // floor
     world->addObject(floor);
+    floor->material.pattern.createStripePattern(raytracer::Color(1, 0, 0), raytracer::Color(1, 1, 1));
 
     // middle sphere
     translation->translate(-0.5, 1, 0.5);
@@ -33,6 +34,7 @@ int main() {
     middle->material.color = raytracer::Color(0.1, 1, 0.5);
     middle->material.diffuse = 0.7;
     middle->material.specular = 0.3;
+    middle->material.pattern.createStripePattern(raytracer::Color(0, 0, 0), raytracer::Color(1, 1, 1));
     world->addObject(middle);
 
     // right sphere

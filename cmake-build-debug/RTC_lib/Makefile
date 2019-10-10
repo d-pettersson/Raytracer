@@ -333,32 +333,32 @@ matrix.cpp.s:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.s
 .PHONY : matrix.cpp.s
 
-patterns.o: patterns.cpp.o
+pattern.o: pattern.cpp.o
 
-.PHONY : patterns.o
+.PHONY : pattern.o
 
 # target to build an object file
-patterns.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/patterns.cpp.o
-.PHONY : patterns.cpp.o
+pattern.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/pattern.cpp.o
+.PHONY : pattern.cpp.o
 
-patterns.i: patterns.cpp.i
+pattern.i: pattern.cpp.i
 
-.PHONY : patterns.i
+.PHONY : pattern.i
 
 # target to preprocess a source file
-patterns.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/patterns.cpp.i
-.PHONY : patterns.cpp.i
+pattern.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/pattern.cpp.i
+.PHONY : pattern.cpp.i
 
-patterns.s: patterns.cpp.s
+pattern.s: pattern.cpp.s
 
-.PHONY : patterns.s
+.PHONY : pattern.s
 
 # target to generate assembly for a file
-patterns.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/patterns.cpp.s
-.PHONY : patterns.cpp.s
+pattern.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/pattern.cpp.s
+.PHONY : pattern.cpp.s
 
 plane.o: plane.cpp.o
 
@@ -580,9 +580,9 @@ help:
 	@echo "... matrix.o"
 	@echo "... matrix.i"
 	@echo "... matrix.s"
-	@echo "... patterns.o"
-	@echo "... patterns.i"
-	@echo "... patterns.s"
+	@echo "... pattern.o"
+	@echo "... pattern.i"
+	@echo "... pattern.s"
 	@echo "... plane.o"
 	@echo "... plane.i"
 	@echo "... plane.s"

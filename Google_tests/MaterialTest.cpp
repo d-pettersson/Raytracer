@@ -19,6 +19,7 @@ protected:
         light = new raytracer::Light();
         result = new raytracer::Color();
         world = new raytracer::World();
+        pattern = new raytracer::Pattern();
     }
 
     virtual void TearDown() {
@@ -29,6 +30,7 @@ protected:
         delete light;
         delete result;
         delete world;
+        delete pattern;
     }
 
     raytracer::Material * material;
@@ -40,7 +42,10 @@ protected:
     bool inShadow = false;
     raytracer::World * world;
     std::shared_ptr<raytracer::Shape> shape = std::make_shared<raytracer::Sphere>();
+    raytracer::Pattern * pattern;
 };
+
+// TODO: fix the test, pass a sphere to the phong lighting function
 
 TEST_F(MaterialFixture, MemberAccess) {
     ASSERT_EQ(material->color, raytracer::Color(1, 1, 1));
@@ -147,5 +152,19 @@ TEST_F(MaterialFixture, NewPhongLighting) {
     normalv = raytracer::Vector(pt->x, pt->y, pt->z);
     * result = shape->material.setPhongLighting(* light, * pt, eyev, normalv, 1.0);
     ASSERT_EQ(raytracer::Color(0.6232, 0.6232, 0.6232), * result);
+}
+
+TEST_F(MaterialFixture, LightingWithPattern) {
+    material->pattern = pattern->createStripePattern(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
+    material->ambient = 1;
+    material->diffuse = 0;
+    material->specular = 0;
+    * eye = raytracer::Vector(0, 0, -1);
+    * normal = raytracer::Vector(0, 0, -1);
+    light->setPointLight(raytracer::Point(0, 0, -10), raytracer::Color(1, 1, 1));
+    raytracer::Color c1 = material->setPhongLighting(* light, raytracer::Point(0.9, 0, 0), * eye, * normal, false);
+    raytracer::Color c2 = material->setPhongLighting(* light, raytracer::Point(1.1, 0, 0), * eye, * normal, false);
+    EXPECT_EQ(c1, raytracer::Color(1, 1, 1));
+    ASSERT_EQ(c2, raytracer::Color(0, 0, 0));
 }
 

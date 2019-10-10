@@ -12,5 +12,5 @@ bool endsWith(std::string const& value, std::string const& ending)
 }
 
 raytracer::Color black = raytracer::Color(0.0, 0.0, 0.0);
-
+raytracer::Color white = raytracer::Color(1.0, 1.0, 1.0);
 #endif //RTC_COMMON_H

@@ -94,6 +94,8 @@ TEST_F(LightFixture, PointLightEvaluationAtGivenPoint6) {
     ASSERT_EQ(0.0, intens);
 }
 
+// Area light test (random position)
+
 TEST_F(LightFixture, CreatingAreaLight) {
     * point = raytracer::Point(0, 0, 0);
     auto v1 = raytracer::Vector(2, 0, 0);

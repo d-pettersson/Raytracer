@@ -10,6 +10,7 @@ RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.o
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.h
@@ -29,6 +30,7 @@ RTC_lib/CMakeFiles/RTC_lib.dir/intersection.cpp.o
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h
@@ -41,6 +43,7 @@ RTC_lib/CMakeFiles/RTC_lib.dir/light.cpp.o
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.h
@@ -54,6 +57,9 @@ RTC_lib/CMakeFiles/RTC_lib.dir/material.cpp.o
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.cpp
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/utils.h
 RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.o
@@ -61,12 +67,26 @@ RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.o
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.cpp
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
+RTC_lib/CMakeFiles/RTC_lib.dir/pattern.cpp.o
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.cpp
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/utils.h
 RTC_lib/CMakeFiles/RTC_lib.dir/plane.cpp.o
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/plane.cpp
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/plane.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
@@ -87,6 +107,7 @@ RTC_lib/CMakeFiles/RTC_lib.dir/shape.cpp.o
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.cpp
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
@@ -99,6 +120,7 @@ RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.o
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.cpp
@@ -122,6 +144,7 @@ RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.o
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
+ /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
  /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.h

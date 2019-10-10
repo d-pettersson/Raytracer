@@ -1,5 +1,7 @@
 #include "world.h"
 
+#include <memory>
+
 namespace raytracer {
 World::World()
     : light(Light()), shapes(std::vector<std::shared_ptr<Shape> >())
@@ -17,7 +19,8 @@ Color World::shadeHit(const IntersectionData &intersectionData) {
 //    bool shadowed = this->isShadowed(intersectionData.overPoint, this->light.position);
     float shadowed = this->light.intensityAt(intersectionData.overPoint, * this);
 
-    return intersectionData.object->material.setPhongLighting(this->light,
+    return intersectionData.object->material.setPhongLighting(intersectionData.object,
+                                                              this->light,
                                                               intersectionData.overPoint,
                                                               intersectionData.eye,
                                                               intersectionData.normal,
