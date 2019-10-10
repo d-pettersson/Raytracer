@@ -19,8 +19,6 @@ protected:
     raytracer::Matrix m2;
     raytracer::Matrix identity;
     raytracer::Matrix resultMatrix;
-
-
 };
 
 TEST_F(MatrixFixture, Test4x4Matrix) {

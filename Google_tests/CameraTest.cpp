@@ -3,7 +3,6 @@
 #include "canvas.h"
 #include "world.h"
 
-
 #include <cmath>
 
 #include "gtest/gtest.h"

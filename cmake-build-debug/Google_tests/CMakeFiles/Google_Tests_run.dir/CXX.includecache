@@ -311,6 +311,8 @@ memory
 -
 vector
 -
+algorithm
+-
 
 ../RTC_lib/light.h
 tuple.h
@@ -331,6 +333,10 @@ tuple.h
 ../RTC_lib/tuple.h
 vector
 -
+
+../RTC_lib/plane.h
+shape.h
+../RTC_lib/shape.h
 
 ../RTC_lib/ray.h
 tuple.h
@@ -356,10 +362,6 @@ vector
 memory
 -
 
-../RTC_lib/sphere.h
-shape.h
-../RTC_lib/shape.h
-
 ../RTC_lib/transform.h
 matrix.h
 ../RTC_lib/matrix.h
@@ -374,25 +376,17 @@ iostream
 vector
 -
 
-../RTC_lib/world.h
-light.h
-../RTC_lib/light.h
-sphere.h
-../RTC_lib/sphere.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/PlaneTest.cpp
+ray.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/ray.h
+plane.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/plane.h
 tuple.h
-../RTC_lib/tuple.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/tuple.h
 transform.h
-../RTC_lib/transform.h
-intersection.h
-../RTC_lib/intersection.h
-
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/LightTest.cpp
-light.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/light.h
-world.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/world.h
-utils.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/utils.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/transform.h
 gtest/gtest.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
+cmath
+-
 

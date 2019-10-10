@@ -7,7 +7,7 @@
 namespace raytracer {
 class Material {
     public:
-    Material(const Color &color, const double ambient, const double& specular, const double& shininess, const double& diffuse);
+    Material(const Color &color, const double &ambient, const double& specular, const double& shininess, const double& diffuse);
 
     Material();
 

@@ -1,7 +1,6 @@
 #include "matrix.h"
 
 #include <iostream>
-#include <utility>
 #include <cmath>
 
 namespace raytracer {

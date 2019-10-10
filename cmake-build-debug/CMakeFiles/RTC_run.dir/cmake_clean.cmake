@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/RTC_run.dir/main.cpp.o"
-  "RTC_run.pdb"
   "RTC_run"
+  "RTC_run.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -4,7 +4,7 @@
 #include <cmath>
 
 namespace raytracer {
-Material::Material(const raytracer::Color &color, const double ambient, const double& diffuse, const double& specular, const double& shininess)
+Material::Material(const raytracer::Color &color, const double &ambient, const double& diffuse, const double& specular, const double& shininess)
     : color(color), ambient(ambient), diffuse(diffuse), specular(specular), shininess(shininess)
 {
 }

@@ -2,6 +2,7 @@
 
 #include <utility>
 #include <cmath>
+#include <omp.h>
 
 namespace raytracer {
 Camera::Camera()

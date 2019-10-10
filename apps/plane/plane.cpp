@@ -2,52 +2,30 @@
 #include "material.h"
 #include "camera.h"
 #include "canvas.h"
+#include "plane.h"
 
 #include <chrono>
 
 int main() {
-    auto floor = std::make_shared<raytracer::Sphere>();
-    auto leftWall = std::make_shared<raytracer::Sphere>();
-    auto rightWall = std::make_shared<raytracer::Sphere>();
+    auto floor = std::make_shared<raytracer::Plane>();
     auto middle = std::make_shared<raytracer::Sphere>();
     auto right = std::make_shared<raytracer::Sphere>();
     auto left = std::make_shared<raytracer::Sphere>();
-
+    
     auto * light = new raytracer::Light();
     auto * camera = new raytracer::Camera();
-
+    
     auto * world = new raytracer::World();
-    auto * canvas = new raytracer::Canvas(500, 250);
+    auto * canvas = new raytracer::Canvas();
 
     auto * transform = new raytracer::Transform();
     auto * translation = new raytracer::Transform();
     auto * rotationY = new raytracer::Transform();
     auto * rotationX = new raytracer::Transform();
     auto * scaling = new raytracer::Transform();
-
+    
     // floor
-    scaling->scale(10, 0.01, 10);
-    floor->setTransform(* scaling);
-    floor->material.color = raytracer::Color(1, 0.9, 0.9);
-    floor->material.specular = 0;
     world->addObject(floor);
-
-    // left wall
-    translation->translate(0, 0, 5);
-    rotationY->rotateY(-PI/4);
-    rotationX->rotateX(PI/2);
-    scaling->scale(10, 0.01, 10);
-    * transform = * translation * * rotationY * * rotationX * * scaling;
-    leftWall->setTransform(* transform);
-    leftWall->material = floor->material;
-    world->addObject(leftWall);
-
-    // right wall
-    rotationY->rotateY(PI/4);
-    * transform = * translation * * rotationY * * rotationX * * scaling;
-    rightWall->setTransform(* transform);
-    rightWall->material = floor->material;
-    world->addObject(rightWall);
 
     // middle sphere
     translation->translate(-0.5, 1, 0.5);
@@ -77,8 +55,6 @@ int main() {
     left->material.specular = 0.3;
     world->addObject(left);
 
-    // light source
-//    light->setPointLight(raytracer::Point(-10, 10, -10), raytracer::Color(1, 1, 1));
     light->setAreaLight(raytracer::Point(-2, 10, -10), raytracer::Vector(2, 0, 0), 1, raytracer::Vector(0, 2, 0), 1, raytracer::Color(1, 1, 1));
     world->light = * light;
 

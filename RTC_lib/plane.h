@@ -1,18 +1,18 @@
-#ifndef RTC_SPHERE_H
-#define RTC_SPHERE_H
+#ifndef RTC_PLANE_H
+#define RTC_PLANE_H
 
 #include "shape.h"
 
 namespace raytracer {
-class Sphere : public Shape {
+class Plane : public Shape {
     public:
-        Sphere();
+        Plane();
 
         void intersect(const Ray &ray, std::vector<Intersection>& xs) const override;
         Vector getNormal(Point worldPoint) const override;
-    };
+};
 
-    bool operator==(const Sphere& s1, const Sphere& s2);
 }
 
-#endif //RTC_SPHERE_H
+
+#endif //RTC_PLANE_H
