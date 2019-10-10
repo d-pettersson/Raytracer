@@ -19,7 +19,6 @@ protected:
         light = new raytracer::Light();
         result = new raytracer::Color();
         world = new raytracer::World();
-        pattern = new raytracer::Pattern();
     }
 
     virtual void TearDown() {
@@ -30,7 +29,6 @@ protected:
         delete light;
         delete result;
         delete world;
-        delete pattern;
     }
 
     raytracer::Material * material;
@@ -42,7 +40,7 @@ protected:
     bool inShadow = false;
     raytracer::World * world;
     std::shared_ptr<raytracer::Shape> shape = std::make_shared<raytracer::Sphere>();
-    raytracer::Pattern * pattern;
+    std::shared_ptr<raytracer::Pattern> pattern = std::make_shared<raytracer::Pattern>();
 };
 
 // TODO: fix the test, pass a sphere to the phong lighting function
@@ -155,7 +153,7 @@ TEST_F(MaterialFixture, NewPhongLighting) {
 }
 
 TEST_F(MaterialFixture, LightingWithPattern) {
-    material->pattern = pattern->createStripePattern(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
+    material->pattern = raytracer::StripePattern(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
     material->ambient = 1;
     material->diffuse = 0;
     material->specular = 0;

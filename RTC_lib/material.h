@@ -19,7 +19,7 @@ class Material {
         double specular;
         double shininess;
         double diffuse;
-        Pattern pattern;
+        std::shared_ptr<Pattern> pattern;
 
         bool operator==(const Material &rhs) const;
         bool operator!=(const Material &rhs) const;

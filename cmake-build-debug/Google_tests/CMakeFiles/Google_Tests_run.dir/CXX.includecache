@@ -386,29 +386,11 @@ iostream
 vector
 -
 
-../RTC_lib/world.h
-light.h
-../RTC_lib/light.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/PatternTest.cpp
+pattern.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/pattern.h
 sphere.h
-../RTC_lib/sphere.h
-tuple.h
-../RTC_lib/tuple.h
-transform.h
-../RTC_lib/transform.h
-intersection.h
-../RTC_lib/intersection.h
-
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/MaterialTest.cpp
-material.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/material.h
-light.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/light.h
-world.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/world.h
-shape.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/shape.h
-cmath
--
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/sphere.h
 gtest/gtest.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
 

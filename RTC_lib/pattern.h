@@ -9,25 +9,47 @@
 namespace raytracer {
 class Shape;
 
-class Pattern {
+class Pattern : public std::enable_shared_from_this<Shape>{
     public:
         Pattern();
-        Pattern(const Color &c1, const Color &c2);
 
-        Pattern createStripePattern(const Color &stripeC1, const Color &stripeC2);
-        Color stripeAt(const Point &p) const;
-        Color stripeAtObject(const std::shared_ptr<Shape const> &s, const Point &p) const;
+        virtual Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const = 0;
+        virtual Color patternAt(const Point &p) const = 0;
+
         void setPatternTransform(const Transform &t);
         Transform getPatternTransform() const;
+
+        bool hasPattern;
+
+    private:
+        Transform transformMat;
+        std::shared_ptr<Pattern> patternPtr;
+};
+
+class StripePattern : public Pattern {
+    public:
+        StripePattern();
+        StripePattern(const Color &c1, const Color &c2);
+
+        Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const override;
+        Color patternAt(const Point &p) const override;
 
         Color c1;
         Color c2;
         bool hasPattern;
-        Transform transformMat;
 };
 
-class StripePattern : public Pattern {
+class GradientPattern : public Pattern {
+    public:
+        GradientPattern();
+        GradientPattern(const Color &c1, const Color &c2);
 
+        Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const override;
+        Color patternAt(const Point &p) const override;
+
+        Color c1;
+        Color c2;
+        bool hasPattern;
 };
 } // namespace raytracer
 

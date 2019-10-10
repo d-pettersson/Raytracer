@@ -52,8 +52,8 @@ bool Material::operator!=(const Material &rhs) const {
 Color Material::setPhongLighting(const std::shared_ptr<Shape const> &s, const Light &light, const Point &position, const Vector &eye, const Vector &normal, const float &intensity) const {
     raytracer::Color dif, spec, effectiveColor;
 
-    if (this->pattern.hasPattern) {
-        Color newColor = this->pattern.stripeAtObject(s, position);
+    if (this->pattern->hasPattern) {
+        Color newColor = this->pattern->patternAtShape(s, position);
         effectiveColor = newColor * light.intensity;
     } else {
         effectiveColor = this->color * light.intensity;
