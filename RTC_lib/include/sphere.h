@@ -7,6 +7,7 @@ namespace raytracer {
 class Sphere : public Shape {
     public:
         Sphere();
+        ~Sphere() override;
 
         void intersect(const Ray &ray, std::vector<Intersection>& xs) const override;
         Vector getNormal(Point worldPoint) const override;

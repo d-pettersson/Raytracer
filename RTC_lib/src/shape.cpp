@@ -11,6 +11,8 @@ Shape::Shape()
     transformMat = generateIdentity(4, 4);
 }
 
+Shape::~Shape() = default;
+
 size_t Shape::nextId = 0;
 
 Transform Shape::getTransform() const {

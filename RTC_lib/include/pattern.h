@@ -15,6 +15,7 @@ class Shape;
 class Pattern : public std::enable_shared_from_this<Pattern>{
     public:
         Pattern();
+        virtual ~Pattern();
         Pattern(const Color &c1, const Color& c2);
 
         virtual Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const = 0;
@@ -33,9 +34,19 @@ class Pattern : public std::enable_shared_from_this<Pattern>{
         std::shared_ptr<Pattern> patternPtr;
 };
 
+class NoPattern : public Pattern {
+    public:
+        NoPattern();
+        ~NoPattern() override;
+
+        Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const override;
+        Color patternAt(const Point &p) const override;
+};
+
 class StripePattern : public Pattern {
     public:
         StripePattern();
+        ~StripePattern() override;
         StripePattern(const Color &c1, const Color& c2);
 
         Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const override;
@@ -45,6 +56,7 @@ class StripePattern : public Pattern {
 class GradientPattern : public Pattern {
     public:
         GradientPattern();
+        ~GradientPattern() override;
         GradientPattern(const Color &c1, const Color& c2);
 
         Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const override;
@@ -54,6 +66,7 @@ class GradientPattern : public Pattern {
 class RingPattern : public Pattern {
     public:
         RingPattern();
+        ~RingPattern() override;
         RingPattern(const Color &c1, const Color& c2);
 
         Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const override;
@@ -63,6 +76,7 @@ class RingPattern : public Pattern {
 class CheckerPattern : public Pattern {
     public:
         CheckerPattern();
+        ~CheckerPattern() override;
         CheckerPattern(const Color &c1, const Color &c2);
 
         Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const override;

@@ -8,17 +8,29 @@
 namespace raytracer {
 class Material {
     public:
-        Material(const Color &color, const double &ambient, const double& specular, const double& shininess, const double& diffuse);
+        Material(const raytracer::Color &color,
+                 const double &ambient,
+                 const double &diffuse,
+                 const double &specular,
+                 const double &reflection,
+                 const double &shininess);
 
         Material();
 
-        Color setPhongLighting(const std::shared_ptr<Shape const> &s, const Light& light, const Point& position, const Vector& eye, const Vector& normal, const float &intensity) const;
+        Color setPhongLighting(const std::shared_ptr<Shape const> &s,
+                               const Light& light,
+                               const Point& position,
+                               const Vector& eye,
+                               const Vector& normal,
+                               const float &intensity) const;
 
         Color color;
         double ambient;
         double specular;
         double shininess;
         double diffuse;
+        double reflection;
+
         std::shared_ptr<Pattern> pattern;
 
         bool operator==(const Material &rhs) const;

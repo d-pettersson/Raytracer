@@ -11,6 +11,9 @@ Pattern::Pattern()
     transformMat = generateIdentity(4, 4);
 }
 
+Pattern::~Pattern() = default;
+
+
 Pattern::Pattern(const Color &c1, const Color &c2)
     : c1(c1), c2(c2), hasPattern()
 {
@@ -24,6 +27,23 @@ Transform Pattern::getPatternTransform() const {
     return transformMat;
 }
 
+// No pattern
+
+NoPattern::NoPattern()
+    : Pattern()
+{
+}
+
+NoPattern::~NoPattern() = default;
+
+Color NoPattern::patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const {
+    return Color();
+}
+
+Color NoPattern::patternAt(const Point &p) const {
+    return Color();
+}
+
 // Stripe pattern
 
 StripePattern::StripePattern()
@@ -31,6 +51,8 @@ StripePattern::StripePattern()
 {
     this->hasPattern = true;
 }
+
+StripePattern::~StripePattern() = default;
 
 StripePattern::StripePattern(const Color &c1, const Color& c2)
     : Pattern(c1, c2)
@@ -55,6 +77,8 @@ GradientPattern::GradientPattern()
 {
     this->hasPattern = true;
 }
+
+GradientPattern::~GradientPattern() = default;
 
 GradientPattern::GradientPattern(const Color &c1, const Color& c2)
     : Pattern(c1, c2)
@@ -82,6 +106,8 @@ RingPattern::RingPattern()
     this->hasPattern = true;
 }
 
+RingPattern::~RingPattern() = default;
+
 RingPattern::RingPattern(const Color &c1, const Color& c2)
     : Pattern(c1, c2)
 {
@@ -105,6 +131,8 @@ CheckerPattern::CheckerPattern()
 {
     this->hasPattern = true;
 }
+
+CheckerPattern::~CheckerPattern() = default;
 
 CheckerPattern::CheckerPattern(const Color &c1, const Color &c2)
     : Pattern(c1, c2)

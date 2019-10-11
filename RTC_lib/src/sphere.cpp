@@ -9,6 +9,8 @@ Sphere::Sphere()
 {
 }
 
+Sphere::~Sphere() = default;
+
 void Sphere::intersect(const Ray& ray, std::vector<Intersection>& xs) const {
     Transform sphereTransform = this->getTransform();
     Transform invertedTransform = inverse(sphereTransform);
