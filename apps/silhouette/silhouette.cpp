@@ -1,8 +1,8 @@
-#include "canvas.h"
-#include "ray.h"
-#include "tuple.h"
-#include "sphere.h"
-#include "intersection.h"
+#include "include/canvas.h"
+#include "include/ray.h"
+#include "include/tuple.h"
+#include "include/sphere.h"
+#include "include/intersection.h"
 
 double wallZ = 10;
 double wallSize = 7.0;

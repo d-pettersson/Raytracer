@@ -1,6 +1,6 @@
-#include "tuple.h"
-#include "transform.h"
-#include "canvas.h"
+#include "include/tuple.h"
+#include "include/transform.h"
+#include "include/canvas.h"
 
 #include <iostream>
 

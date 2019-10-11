@@ -1,7 +1,7 @@
-#include "ray.h"
-#include "sphere.h"
-#include "intersection.h"
-#include "transform.h"
+#include "include/ray.h"
+#include "include/sphere.h"
+#include "include/intersection.h"
+#include "include/transform.h"
 
 #include "gtest/gtest.h"
 

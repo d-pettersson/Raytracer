@@ -171,383 +171,383 @@ RTC_lib/fast:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/build
 .PHONY : RTC_lib/fast
 
-camera.o: camera.cpp.o
+src/camera.o: src/camera.cpp.o
 
-.PHONY : camera.o
-
-# target to build an object file
-camera.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.o
-.PHONY : camera.cpp.o
-
-camera.i: camera.cpp.i
-
-.PHONY : camera.i
-
-# target to preprocess a source file
-camera.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.i
-.PHONY : camera.cpp.i
-
-camera.s: camera.cpp.s
-
-.PHONY : camera.s
-
-# target to generate assembly for a file
-camera.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.s
-.PHONY : camera.cpp.s
-
-canvas.o: canvas.cpp.o
-
-.PHONY : canvas.o
+.PHONY : src/camera.o
 
 # target to build an object file
-canvas.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.o
-.PHONY : canvas.cpp.o
+src/camera.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/camera.cpp.o
+.PHONY : src/camera.cpp.o
 
-canvas.i: canvas.cpp.i
+src/camera.i: src/camera.cpp.i
 
-.PHONY : canvas.i
+.PHONY : src/camera.i
 
 # target to preprocess a source file
-canvas.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.i
-.PHONY : canvas.cpp.i
+src/camera.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/camera.cpp.i
+.PHONY : src/camera.cpp.i
 
-canvas.s: canvas.cpp.s
+src/camera.s: src/camera.cpp.s
 
-.PHONY : canvas.s
+.PHONY : src/camera.s
 
 # target to generate assembly for a file
-canvas.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.s
-.PHONY : canvas.cpp.s
+src/camera.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/camera.cpp.s
+.PHONY : src/camera.cpp.s
 
-intersection.o: intersection.cpp.o
+src/canvas.o: src/canvas.cpp.o
 
-.PHONY : intersection.o
+.PHONY : src/canvas.o
 
 # target to build an object file
-intersection.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/intersection.cpp.o
-.PHONY : intersection.cpp.o
+src/canvas.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/canvas.cpp.o
+.PHONY : src/canvas.cpp.o
 
-intersection.i: intersection.cpp.i
+src/canvas.i: src/canvas.cpp.i
 
-.PHONY : intersection.i
+.PHONY : src/canvas.i
 
 # target to preprocess a source file
-intersection.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/intersection.cpp.i
-.PHONY : intersection.cpp.i
+src/canvas.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/canvas.cpp.i
+.PHONY : src/canvas.cpp.i
 
-intersection.s: intersection.cpp.s
+src/canvas.s: src/canvas.cpp.s
 
-.PHONY : intersection.s
+.PHONY : src/canvas.s
 
 # target to generate assembly for a file
-intersection.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/intersection.cpp.s
-.PHONY : intersection.cpp.s
+src/canvas.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/canvas.cpp.s
+.PHONY : src/canvas.cpp.s
 
-light.o: light.cpp.o
+src/intersection.o: src/intersection.cpp.o
 
-.PHONY : light.o
+.PHONY : src/intersection.o
 
 # target to build an object file
-light.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/light.cpp.o
-.PHONY : light.cpp.o
+src/intersection.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/intersection.cpp.o
+.PHONY : src/intersection.cpp.o
 
-light.i: light.cpp.i
+src/intersection.i: src/intersection.cpp.i
 
-.PHONY : light.i
+.PHONY : src/intersection.i
 
 # target to preprocess a source file
-light.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/light.cpp.i
-.PHONY : light.cpp.i
+src/intersection.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/intersection.cpp.i
+.PHONY : src/intersection.cpp.i
 
-light.s: light.cpp.s
+src/intersection.s: src/intersection.cpp.s
 
-.PHONY : light.s
+.PHONY : src/intersection.s
 
 # target to generate assembly for a file
-light.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/light.cpp.s
-.PHONY : light.cpp.s
+src/intersection.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/intersection.cpp.s
+.PHONY : src/intersection.cpp.s
 
-material.o: material.cpp.o
+src/light.o: src/light.cpp.o
 
-.PHONY : material.o
+.PHONY : src/light.o
 
 # target to build an object file
-material.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/material.cpp.o
-.PHONY : material.cpp.o
+src/light.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/light.cpp.o
+.PHONY : src/light.cpp.o
 
-material.i: material.cpp.i
+src/light.i: src/light.cpp.i
 
-.PHONY : material.i
+.PHONY : src/light.i
 
 # target to preprocess a source file
-material.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/material.cpp.i
-.PHONY : material.cpp.i
+src/light.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/light.cpp.i
+.PHONY : src/light.cpp.i
 
-material.s: material.cpp.s
+src/light.s: src/light.cpp.s
 
-.PHONY : material.s
+.PHONY : src/light.s
 
 # target to generate assembly for a file
-material.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/material.cpp.s
-.PHONY : material.cpp.s
+src/light.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/light.cpp.s
+.PHONY : src/light.cpp.s
 
-matrix.o: matrix.cpp.o
+src/material.o: src/material.cpp.o
 
-.PHONY : matrix.o
+.PHONY : src/material.o
 
 # target to build an object file
-matrix.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.o
-.PHONY : matrix.cpp.o
+src/material.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/material.cpp.o
+.PHONY : src/material.cpp.o
 
-matrix.i: matrix.cpp.i
+src/material.i: src/material.cpp.i
 
-.PHONY : matrix.i
+.PHONY : src/material.i
 
 # target to preprocess a source file
-matrix.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.i
-.PHONY : matrix.cpp.i
+src/material.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/material.cpp.i
+.PHONY : src/material.cpp.i
 
-matrix.s: matrix.cpp.s
+src/material.s: src/material.cpp.s
 
-.PHONY : matrix.s
+.PHONY : src/material.s
 
 # target to generate assembly for a file
-matrix.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.s
-.PHONY : matrix.cpp.s
+src/material.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/material.cpp.s
+.PHONY : src/material.cpp.s
 
-pattern.o: pattern.cpp.o
+src/matrix.o: src/matrix.cpp.o
 
-.PHONY : pattern.o
+.PHONY : src/matrix.o
 
 # target to build an object file
-pattern.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/pattern.cpp.o
-.PHONY : pattern.cpp.o
+src/matrix.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/matrix.cpp.o
+.PHONY : src/matrix.cpp.o
 
-pattern.i: pattern.cpp.i
+src/matrix.i: src/matrix.cpp.i
 
-.PHONY : pattern.i
+.PHONY : src/matrix.i
 
 # target to preprocess a source file
-pattern.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/pattern.cpp.i
-.PHONY : pattern.cpp.i
+src/matrix.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/matrix.cpp.i
+.PHONY : src/matrix.cpp.i
 
-pattern.s: pattern.cpp.s
+src/matrix.s: src/matrix.cpp.s
 
-.PHONY : pattern.s
+.PHONY : src/matrix.s
 
 # target to generate assembly for a file
-pattern.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/pattern.cpp.s
-.PHONY : pattern.cpp.s
+src/matrix.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/matrix.cpp.s
+.PHONY : src/matrix.cpp.s
 
-plane.o: plane.cpp.o
+src/pattern.o: src/pattern.cpp.o
 
-.PHONY : plane.o
+.PHONY : src/pattern.o
 
 # target to build an object file
-plane.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/plane.cpp.o
-.PHONY : plane.cpp.o
+src/pattern.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/pattern.cpp.o
+.PHONY : src/pattern.cpp.o
 
-plane.i: plane.cpp.i
+src/pattern.i: src/pattern.cpp.i
 
-.PHONY : plane.i
+.PHONY : src/pattern.i
 
 # target to preprocess a source file
-plane.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/plane.cpp.i
-.PHONY : plane.cpp.i
+src/pattern.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/pattern.cpp.i
+.PHONY : src/pattern.cpp.i
 
-plane.s: plane.cpp.s
+src/pattern.s: src/pattern.cpp.s
 
-.PHONY : plane.s
+.PHONY : src/pattern.s
 
 # target to generate assembly for a file
-plane.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/plane.cpp.s
-.PHONY : plane.cpp.s
+src/pattern.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/pattern.cpp.s
+.PHONY : src/pattern.cpp.s
 
-ray.o: ray.cpp.o
+src/plane.o: src/plane.cpp.o
 
-.PHONY : ray.o
+.PHONY : src/plane.o
 
 # target to build an object file
-ray.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/ray.cpp.o
-.PHONY : ray.cpp.o
+src/plane.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/plane.cpp.o
+.PHONY : src/plane.cpp.o
 
-ray.i: ray.cpp.i
+src/plane.i: src/plane.cpp.i
 
-.PHONY : ray.i
+.PHONY : src/plane.i
 
 # target to preprocess a source file
-ray.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/ray.cpp.i
-.PHONY : ray.cpp.i
+src/plane.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/plane.cpp.i
+.PHONY : src/plane.cpp.i
 
-ray.s: ray.cpp.s
+src/plane.s: src/plane.cpp.s
 
-.PHONY : ray.s
+.PHONY : src/plane.s
 
 # target to generate assembly for a file
-ray.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/ray.cpp.s
-.PHONY : ray.cpp.s
+src/plane.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/plane.cpp.s
+.PHONY : src/plane.cpp.s
 
-shape.o: shape.cpp.o
+src/ray.o: src/ray.cpp.o
 
-.PHONY : shape.o
+.PHONY : src/ray.o
 
 # target to build an object file
-shape.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/shape.cpp.o
-.PHONY : shape.cpp.o
+src/ray.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/ray.cpp.o
+.PHONY : src/ray.cpp.o
 
-shape.i: shape.cpp.i
+src/ray.i: src/ray.cpp.i
 
-.PHONY : shape.i
+.PHONY : src/ray.i
 
 # target to preprocess a source file
-shape.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/shape.cpp.i
-.PHONY : shape.cpp.i
+src/ray.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/ray.cpp.i
+.PHONY : src/ray.cpp.i
 
-shape.s: shape.cpp.s
+src/ray.s: src/ray.cpp.s
 
-.PHONY : shape.s
+.PHONY : src/ray.s
 
 # target to generate assembly for a file
-shape.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/shape.cpp.s
-.PHONY : shape.cpp.s
+src/ray.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/ray.cpp.s
+.PHONY : src/ray.cpp.s
 
-sphere.o: sphere.cpp.o
+src/shape.o: src/shape.cpp.o
 
-.PHONY : sphere.o
+.PHONY : src/shape.o
 
 # target to build an object file
-sphere.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.o
-.PHONY : sphere.cpp.o
+src/shape.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/shape.cpp.o
+.PHONY : src/shape.cpp.o
 
-sphere.i: sphere.cpp.i
+src/shape.i: src/shape.cpp.i
 
-.PHONY : sphere.i
+.PHONY : src/shape.i
 
 # target to preprocess a source file
-sphere.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.i
-.PHONY : sphere.cpp.i
+src/shape.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/shape.cpp.i
+.PHONY : src/shape.cpp.i
 
-sphere.s: sphere.cpp.s
+src/shape.s: src/shape.cpp.s
 
-.PHONY : sphere.s
+.PHONY : src/shape.s
 
 # target to generate assembly for a file
-sphere.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.s
-.PHONY : sphere.cpp.s
+src/shape.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/shape.cpp.s
+.PHONY : src/shape.cpp.s
 
-transform.o: transform.cpp.o
+src/sphere.o: src/sphere.cpp.o
 
-.PHONY : transform.o
+.PHONY : src/sphere.o
 
 # target to build an object file
-transform.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.o
-.PHONY : transform.cpp.o
+src/sphere.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/sphere.cpp.o
+.PHONY : src/sphere.cpp.o
 
-transform.i: transform.cpp.i
+src/sphere.i: src/sphere.cpp.i
 
-.PHONY : transform.i
+.PHONY : src/sphere.i
 
 # target to preprocess a source file
-transform.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.i
-.PHONY : transform.cpp.i
+src/sphere.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/sphere.cpp.i
+.PHONY : src/sphere.cpp.i
 
-transform.s: transform.cpp.s
+src/sphere.s: src/sphere.cpp.s
 
-.PHONY : transform.s
+.PHONY : src/sphere.s
 
 # target to generate assembly for a file
-transform.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.s
-.PHONY : transform.cpp.s
+src/sphere.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/sphere.cpp.s
+.PHONY : src/sphere.cpp.s
 
-tuple.o: tuple.cpp.o
+src/transform.o: src/transform.cpp.o
 
-.PHONY : tuple.o
+.PHONY : src/transform.o
 
 # target to build an object file
-tuple.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.o
-.PHONY : tuple.cpp.o
+src/transform.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/transform.cpp.o
+.PHONY : src/transform.cpp.o
 
-tuple.i: tuple.cpp.i
+src/transform.i: src/transform.cpp.i
 
-.PHONY : tuple.i
+.PHONY : src/transform.i
 
 # target to preprocess a source file
-tuple.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.i
-.PHONY : tuple.cpp.i
+src/transform.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/transform.cpp.i
+.PHONY : src/transform.cpp.i
 
-tuple.s: tuple.cpp.s
+src/transform.s: src/transform.cpp.s
 
-.PHONY : tuple.s
+.PHONY : src/transform.s
 
 # target to generate assembly for a file
-tuple.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.s
-.PHONY : tuple.cpp.s
+src/transform.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/transform.cpp.s
+.PHONY : src/transform.cpp.s
 
-world.o: world.cpp.o
+src/tuple.o: src/tuple.cpp.o
 
-.PHONY : world.o
+.PHONY : src/tuple.o
 
 # target to build an object file
-world.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.o
-.PHONY : world.cpp.o
+src/tuple.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/tuple.cpp.o
+.PHONY : src/tuple.cpp.o
 
-world.i: world.cpp.i
+src/tuple.i: src/tuple.cpp.i
 
-.PHONY : world.i
+.PHONY : src/tuple.i
 
 # target to preprocess a source file
-world.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.i
-.PHONY : world.cpp.i
+src/tuple.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/tuple.cpp.i
+.PHONY : src/tuple.cpp.i
 
-world.s: world.cpp.s
+src/tuple.s: src/tuple.cpp.s
 
-.PHONY : world.s
+.PHONY : src/tuple.s
 
 # target to generate assembly for a file
-world.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.s
-.PHONY : world.cpp.s
+src/tuple.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/tuple.cpp.s
+.PHONY : src/tuple.cpp.s
+
+src/world.o: src/world.cpp.o
+
+.PHONY : src/world.o
+
+# target to build an object file
+src/world.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/world.cpp.o
+.PHONY : src/world.cpp.o
+
+src/world.i: src/world.cpp.i
+
+.PHONY : src/world.i
+
+# target to preprocess a source file
+src/world.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/world.cpp.i
+.PHONY : src/world.cpp.i
+
+src/world.s: src/world.cpp.s
+
+.PHONY : src/world.s
+
+# target to generate assembly for a file
+src/world.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/src/world.cpp.s
+.PHONY : src/world.cpp.s
 
 # Help Target
 help:
@@ -562,48 +562,48 @@ help:
 	@echo "... RTC_lib"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... camera.o"
-	@echo "... camera.i"
-	@echo "... camera.s"
-	@echo "... canvas.o"
-	@echo "... canvas.i"
-	@echo "... canvas.s"
-	@echo "... intersection.o"
-	@echo "... intersection.i"
-	@echo "... intersection.s"
-	@echo "... light.o"
-	@echo "... light.i"
-	@echo "... light.s"
-	@echo "... material.o"
-	@echo "... material.i"
-	@echo "... material.s"
-	@echo "... matrix.o"
-	@echo "... matrix.i"
-	@echo "... matrix.s"
-	@echo "... pattern.o"
-	@echo "... pattern.i"
-	@echo "... pattern.s"
-	@echo "... plane.o"
-	@echo "... plane.i"
-	@echo "... plane.s"
-	@echo "... ray.o"
-	@echo "... ray.i"
-	@echo "... ray.s"
-	@echo "... shape.o"
-	@echo "... shape.i"
-	@echo "... shape.s"
-	@echo "... sphere.o"
-	@echo "... sphere.i"
-	@echo "... sphere.s"
-	@echo "... transform.o"
-	@echo "... transform.i"
-	@echo "... transform.s"
-	@echo "... tuple.o"
-	@echo "... tuple.i"
-	@echo "... tuple.s"
-	@echo "... world.o"
-	@echo "... world.i"
-	@echo "... world.s"
+	@echo "... src/camera.o"
+	@echo "... src/camera.i"
+	@echo "... src/camera.s"
+	@echo "... src/canvas.o"
+	@echo "... src/canvas.i"
+	@echo "... src/canvas.s"
+	@echo "... src/intersection.o"
+	@echo "... src/intersection.i"
+	@echo "... src/intersection.s"
+	@echo "... src/light.o"
+	@echo "... src/light.i"
+	@echo "... src/light.s"
+	@echo "... src/material.o"
+	@echo "... src/material.i"
+	@echo "... src/material.s"
+	@echo "... src/matrix.o"
+	@echo "... src/matrix.i"
+	@echo "... src/matrix.s"
+	@echo "... src/pattern.o"
+	@echo "... src/pattern.i"
+	@echo "... src/pattern.s"
+	@echo "... src/plane.o"
+	@echo "... src/plane.i"
+	@echo "... src/plane.s"
+	@echo "... src/ray.o"
+	@echo "... src/ray.i"
+	@echo "... src/ray.s"
+	@echo "... src/shape.o"
+	@echo "... src/shape.i"
+	@echo "... src/shape.s"
+	@echo "... src/sphere.o"
+	@echo "... src/sphere.i"
+	@echo "... src/sphere.s"
+	@echo "... src/transform.o"
+	@echo "... src/transform.i"
+	@echo "... src/transform.s"
+	@echo "... src/tuple.o"
+	@echo "... src/tuple.i"
+	@echo "... src/tuple.s"
+	@echo "... src/world.o"
+	@echo "... src/world.i"
+	@echo "... src/world.s"
 .PHONY : help
 
 

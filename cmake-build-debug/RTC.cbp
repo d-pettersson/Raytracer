@@ -554,97 +554,97 @@
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/lib/googletest/src/gtest_main.cc">
 			<Option target="gtest_main"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/camera.cpp">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/camera.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/camera.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/canvas.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/canvas.cpp">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/common.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/canvas.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/constants.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/common.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/intersection.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/light.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.cpp">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/material.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/matrix.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.cpp">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/pattern.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/plane.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.cpp">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/ray.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/shape.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.cpp">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/sphere.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/transform.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.cpp">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/tuple.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/utils.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/plane.cpp">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/include/world.h">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/plane.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/camera.cpp">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.cpp">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/canvas.cpp">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/intersection.cpp">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.cpp">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/light.cpp">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/material.cpp">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.cpp">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/matrix.cpp">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/pattern.cpp">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.cpp">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/plane.cpp">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/ray.cpp">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.cpp">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/shape.cpp">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/sphere.cpp">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/utils.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/transform.cpp">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/world.cpp">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/tuple.cpp">
 			<Option target="RTC_lib"/>
 		</Unit>
-		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/world.h">
+		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/world.cpp">
 			<Option target="RTC_lib"/>
 		</Unit>
 		<Unit filename="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/apps/plane/plane.cpp">

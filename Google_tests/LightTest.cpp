@@ -1,6 +1,6 @@
-#include "light.h"
-#include "world.h"
-#include "utils.h"
+#include "include/light.h"
+#include "include/world.h"
+#include "include/utils.h"
 
 #include "gtest/gtest.h"
 

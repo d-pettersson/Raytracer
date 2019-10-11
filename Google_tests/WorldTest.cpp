@@ -1,5 +1,5 @@
-#include "world.h"
-#include "intersection.h"
+#include "include/world.h"
+#include "include/intersection.h"
 
 #include "gtest/gtest.h"
 

@@ -57,222 +57,222 @@ include RTC_lib/CMakeFiles/RTC_lib.dir/progress.make
 # Include the compile flags for this target's objects.
 include RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
 
-RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
-RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.o: ../RTC_lib/tuple.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/tuple.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.cpp"
+RTC_lib/CMakeFiles/RTC_lib.dir/src/tuple.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/src/tuple.cpp.o: ../RTC_lib/src/tuple.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/src/tuple.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/src/tuple.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/tuple.cpp"
 
-RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/tuple.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.cpp" > CMakeFiles/RTC_lib.dir/tuple.cpp.i
+RTC_lib/CMakeFiles/RTC_lib.dir/src/tuple.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/src/tuple.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/tuple.cpp" > CMakeFiles/RTC_lib.dir/src/tuple.cpp.i
 
-RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/tuple.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.cpp" -o CMakeFiles/RTC_lib.dir/tuple.cpp.s
+RTC_lib/CMakeFiles/RTC_lib.dir/src/tuple.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/src/tuple.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/tuple.cpp" -o CMakeFiles/RTC_lib.dir/src/tuple.cpp.s
 
-RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
-RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.o: ../RTC_lib/canvas.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/canvas.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/canvas.cpp"
+RTC_lib/CMakeFiles/RTC_lib.dir/src/canvas.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/src/canvas.cpp.o: ../RTC_lib/src/canvas.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/src/canvas.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/src/canvas.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/canvas.cpp"
 
-RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/canvas.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/canvas.cpp" > CMakeFiles/RTC_lib.dir/canvas.cpp.i
+RTC_lib/CMakeFiles/RTC_lib.dir/src/canvas.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/src/canvas.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/canvas.cpp" > CMakeFiles/RTC_lib.dir/src/canvas.cpp.i
 
-RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/canvas.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/canvas.cpp" -o CMakeFiles/RTC_lib.dir/canvas.cpp.s
+RTC_lib/CMakeFiles/RTC_lib.dir/src/canvas.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/src/canvas.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/canvas.cpp" -o CMakeFiles/RTC_lib.dir/src/canvas.cpp.s
 
-RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
-RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.o: ../RTC_lib/matrix.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/matrix.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.cpp"
+RTC_lib/CMakeFiles/RTC_lib.dir/src/matrix.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/src/matrix.cpp.o: ../RTC_lib/src/matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/src/matrix.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/src/matrix.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/matrix.cpp"
 
-RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/matrix.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.cpp" > CMakeFiles/RTC_lib.dir/matrix.cpp.i
+RTC_lib/CMakeFiles/RTC_lib.dir/src/matrix.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/src/matrix.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/matrix.cpp" > CMakeFiles/RTC_lib.dir/src/matrix.cpp.i
 
-RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/matrix.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.cpp" -o CMakeFiles/RTC_lib.dir/matrix.cpp.s
+RTC_lib/CMakeFiles/RTC_lib.dir/src/matrix.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/src/matrix.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/matrix.cpp" -o CMakeFiles/RTC_lib.dir/src/matrix.cpp.s
 
-RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
-RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.o: ../RTC_lib/transform.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/transform.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.cpp"
+RTC_lib/CMakeFiles/RTC_lib.dir/src/transform.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/src/transform.cpp.o: ../RTC_lib/src/transform.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/src/transform.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/src/transform.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/transform.cpp"
 
-RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/transform.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.cpp" > CMakeFiles/RTC_lib.dir/transform.cpp.i
+RTC_lib/CMakeFiles/RTC_lib.dir/src/transform.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/src/transform.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/transform.cpp" > CMakeFiles/RTC_lib.dir/src/transform.cpp.i
 
-RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/transform.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.cpp" -o CMakeFiles/RTC_lib.dir/transform.cpp.s
+RTC_lib/CMakeFiles/RTC_lib.dir/src/transform.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/src/transform.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/transform.cpp" -o CMakeFiles/RTC_lib.dir/src/transform.cpp.s
 
-RTC_lib/CMakeFiles/RTC_lib.dir/ray.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
-RTC_lib/CMakeFiles/RTC_lib.dir/ray.cpp.o: ../RTC_lib/ray.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/ray.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/ray.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.cpp"
+RTC_lib/CMakeFiles/RTC_lib.dir/src/ray.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/src/ray.cpp.o: ../RTC_lib/src/ray.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/src/ray.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/src/ray.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/ray.cpp"
 
-RTC_lib/CMakeFiles/RTC_lib.dir/ray.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/ray.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.cpp" > CMakeFiles/RTC_lib.dir/ray.cpp.i
+RTC_lib/CMakeFiles/RTC_lib.dir/src/ray.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/src/ray.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/ray.cpp" > CMakeFiles/RTC_lib.dir/src/ray.cpp.i
 
-RTC_lib/CMakeFiles/RTC_lib.dir/ray.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/ray.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.cpp" -o CMakeFiles/RTC_lib.dir/ray.cpp.s
+RTC_lib/CMakeFiles/RTC_lib.dir/src/ray.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/src/ray.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/ray.cpp" -o CMakeFiles/RTC_lib.dir/src/ray.cpp.s
 
-RTC_lib/CMakeFiles/RTC_lib.dir/shape.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
-RTC_lib/CMakeFiles/RTC_lib.dir/shape.cpp.o: ../RTC_lib/shape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/shape.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/shape.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.cpp"
+RTC_lib/CMakeFiles/RTC_lib.dir/src/shape.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/src/shape.cpp.o: ../RTC_lib/src/shape.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/src/shape.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/src/shape.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/shape.cpp"
 
-RTC_lib/CMakeFiles/RTC_lib.dir/shape.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/shape.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.cpp" > CMakeFiles/RTC_lib.dir/shape.cpp.i
+RTC_lib/CMakeFiles/RTC_lib.dir/src/shape.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/src/shape.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/shape.cpp" > CMakeFiles/RTC_lib.dir/src/shape.cpp.i
 
-RTC_lib/CMakeFiles/RTC_lib.dir/shape.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/shape.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.cpp" -o CMakeFiles/RTC_lib.dir/shape.cpp.s
+RTC_lib/CMakeFiles/RTC_lib.dir/src/shape.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/src/shape.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/shape.cpp" -o CMakeFiles/RTC_lib.dir/src/shape.cpp.s
 
-RTC_lib/CMakeFiles/RTC_lib.dir/intersection.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
-RTC_lib/CMakeFiles/RTC_lib.dir/intersection.cpp.o: ../RTC_lib/intersection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/intersection.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/intersection.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.cpp"
+RTC_lib/CMakeFiles/RTC_lib.dir/src/intersection.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/src/intersection.cpp.o: ../RTC_lib/src/intersection.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/src/intersection.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/src/intersection.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/intersection.cpp"
 
-RTC_lib/CMakeFiles/RTC_lib.dir/intersection.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/intersection.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.cpp" > CMakeFiles/RTC_lib.dir/intersection.cpp.i
+RTC_lib/CMakeFiles/RTC_lib.dir/src/intersection.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/src/intersection.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/intersection.cpp" > CMakeFiles/RTC_lib.dir/src/intersection.cpp.i
 
-RTC_lib/CMakeFiles/RTC_lib.dir/intersection.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/intersection.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.cpp" -o CMakeFiles/RTC_lib.dir/intersection.cpp.s
+RTC_lib/CMakeFiles/RTC_lib.dir/src/intersection.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/src/intersection.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/intersection.cpp" -o CMakeFiles/RTC_lib.dir/src/intersection.cpp.s
 
-RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
-RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.o: ../RTC_lib/sphere.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/sphere.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.cpp"
+RTC_lib/CMakeFiles/RTC_lib.dir/src/sphere.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/src/sphere.cpp.o: ../RTC_lib/src/sphere.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/src/sphere.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/src/sphere.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/sphere.cpp"
 
-RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/sphere.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.cpp" > CMakeFiles/RTC_lib.dir/sphere.cpp.i
+RTC_lib/CMakeFiles/RTC_lib.dir/src/sphere.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/src/sphere.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/sphere.cpp" > CMakeFiles/RTC_lib.dir/src/sphere.cpp.i
 
-RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/sphere.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/sphere.cpp" -o CMakeFiles/RTC_lib.dir/sphere.cpp.s
+RTC_lib/CMakeFiles/RTC_lib.dir/src/sphere.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/src/sphere.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/sphere.cpp" -o CMakeFiles/RTC_lib.dir/src/sphere.cpp.s
 
-RTC_lib/CMakeFiles/RTC_lib.dir/light.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
-RTC_lib/CMakeFiles/RTC_lib.dir/light.cpp.o: ../RTC_lib/light.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/light.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/light.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.cpp"
+RTC_lib/CMakeFiles/RTC_lib.dir/src/light.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/src/light.cpp.o: ../RTC_lib/src/light.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/src/light.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/src/light.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/light.cpp"
 
-RTC_lib/CMakeFiles/RTC_lib.dir/light.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/light.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.cpp" > CMakeFiles/RTC_lib.dir/light.cpp.i
+RTC_lib/CMakeFiles/RTC_lib.dir/src/light.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/src/light.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/light.cpp" > CMakeFiles/RTC_lib.dir/src/light.cpp.i
 
-RTC_lib/CMakeFiles/RTC_lib.dir/light.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/light.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.cpp" -o CMakeFiles/RTC_lib.dir/light.cpp.s
+RTC_lib/CMakeFiles/RTC_lib.dir/src/light.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/src/light.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/light.cpp" -o CMakeFiles/RTC_lib.dir/src/light.cpp.s
 
-RTC_lib/CMakeFiles/RTC_lib.dir/material.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
-RTC_lib/CMakeFiles/RTC_lib.dir/material.cpp.o: ../RTC_lib/material.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/material.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/material.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.cpp"
+RTC_lib/CMakeFiles/RTC_lib.dir/src/material.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/src/material.cpp.o: ../RTC_lib/src/material.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/src/material.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/src/material.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/material.cpp"
 
-RTC_lib/CMakeFiles/RTC_lib.dir/material.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/material.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.cpp" > CMakeFiles/RTC_lib.dir/material.cpp.i
+RTC_lib/CMakeFiles/RTC_lib.dir/src/material.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/src/material.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/material.cpp" > CMakeFiles/RTC_lib.dir/src/material.cpp.i
 
-RTC_lib/CMakeFiles/RTC_lib.dir/material.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/material.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.cpp" -o CMakeFiles/RTC_lib.dir/material.cpp.s
+RTC_lib/CMakeFiles/RTC_lib.dir/src/material.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/src/material.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/material.cpp" -o CMakeFiles/RTC_lib.dir/src/material.cpp.s
 
-RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
-RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.o: ../RTC_lib/world.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/world.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/world.cpp"
+RTC_lib/CMakeFiles/RTC_lib.dir/src/world.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/src/world.cpp.o: ../RTC_lib/src/world.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/src/world.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/src/world.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/world.cpp"
 
-RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/world.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/world.cpp" > CMakeFiles/RTC_lib.dir/world.cpp.i
+RTC_lib/CMakeFiles/RTC_lib.dir/src/world.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/src/world.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/world.cpp" > CMakeFiles/RTC_lib.dir/src/world.cpp.i
 
-RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/world.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/world.cpp" -o CMakeFiles/RTC_lib.dir/world.cpp.s
+RTC_lib/CMakeFiles/RTC_lib.dir/src/world.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/src/world.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/world.cpp" -o CMakeFiles/RTC_lib.dir/src/world.cpp.s
 
-RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
-RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.o: ../RTC_lib/camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/camera.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/camera.cpp"
+RTC_lib/CMakeFiles/RTC_lib.dir/src/camera.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/src/camera.cpp.o: ../RTC_lib/src/camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/src/camera.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/src/camera.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/camera.cpp"
 
-RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/camera.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/camera.cpp" > CMakeFiles/RTC_lib.dir/camera.cpp.i
+RTC_lib/CMakeFiles/RTC_lib.dir/src/camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/src/camera.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/camera.cpp" > CMakeFiles/RTC_lib.dir/src/camera.cpp.i
 
-RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/camera.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/camera.cpp" -o CMakeFiles/RTC_lib.dir/camera.cpp.s
+RTC_lib/CMakeFiles/RTC_lib.dir/src/camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/src/camera.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/camera.cpp" -o CMakeFiles/RTC_lib.dir/src/camera.cpp.s
 
-RTC_lib/CMakeFiles/RTC_lib.dir/plane.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
-RTC_lib/CMakeFiles/RTC_lib.dir/plane.cpp.o: ../RTC_lib/plane.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/plane.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/plane.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/plane.cpp"
+RTC_lib/CMakeFiles/RTC_lib.dir/src/plane.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/src/plane.cpp.o: ../RTC_lib/src/plane.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/src/plane.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/src/plane.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/plane.cpp"
 
-RTC_lib/CMakeFiles/RTC_lib.dir/plane.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/plane.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/plane.cpp" > CMakeFiles/RTC_lib.dir/plane.cpp.i
+RTC_lib/CMakeFiles/RTC_lib.dir/src/plane.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/src/plane.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/plane.cpp" > CMakeFiles/RTC_lib.dir/src/plane.cpp.i
 
-RTC_lib/CMakeFiles/RTC_lib.dir/plane.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/plane.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/plane.cpp" -o CMakeFiles/RTC_lib.dir/plane.cpp.s
+RTC_lib/CMakeFiles/RTC_lib.dir/src/plane.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/src/plane.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/plane.cpp" -o CMakeFiles/RTC_lib.dir/src/plane.cpp.s
 
-RTC_lib/CMakeFiles/RTC_lib.dir/pattern.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
-RTC_lib/CMakeFiles/RTC_lib.dir/pattern.cpp.o: ../RTC_lib/pattern.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/pattern.cpp.o"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/pattern.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.cpp"
+RTC_lib/CMakeFiles/RTC_lib.dir/src/pattern.cpp.o: RTC_lib/CMakeFiles/RTC_lib.dir/flags.make
+RTC_lib/CMakeFiles/RTC_lib.dir/src/pattern.cpp.o: ../RTC_lib/src/pattern.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object RTC_lib/CMakeFiles/RTC_lib.dir/src/pattern.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTC_lib.dir/src/pattern.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/pattern.cpp"
 
-RTC_lib/CMakeFiles/RTC_lib.dir/pattern.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/pattern.cpp.i"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.cpp" > CMakeFiles/RTC_lib.dir/pattern.cpp.i
+RTC_lib/CMakeFiles/RTC_lib.dir/src/pattern.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTC_lib.dir/src/pattern.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/pattern.cpp" > CMakeFiles/RTC_lib.dir/src/pattern.cpp.i
 
-RTC_lib/CMakeFiles/RTC_lib.dir/pattern.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/pattern.cpp.s"
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.cpp" -o CMakeFiles/RTC_lib.dir/pattern.cpp.s
+RTC_lib/CMakeFiles/RTC_lib.dir/src/pattern.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTC_lib.dir/src/pattern.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/RTC_lib" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/pattern.cpp" -o CMakeFiles/RTC_lib.dir/src/pattern.cpp.s
 
 # Object files for target RTC_lib
 RTC_lib_OBJECTS = \
-"CMakeFiles/RTC_lib.dir/tuple.cpp.o" \
-"CMakeFiles/RTC_lib.dir/canvas.cpp.o" \
-"CMakeFiles/RTC_lib.dir/matrix.cpp.o" \
-"CMakeFiles/RTC_lib.dir/transform.cpp.o" \
-"CMakeFiles/RTC_lib.dir/ray.cpp.o" \
-"CMakeFiles/RTC_lib.dir/shape.cpp.o" \
-"CMakeFiles/RTC_lib.dir/intersection.cpp.o" \
-"CMakeFiles/RTC_lib.dir/sphere.cpp.o" \
-"CMakeFiles/RTC_lib.dir/light.cpp.o" \
-"CMakeFiles/RTC_lib.dir/material.cpp.o" \
-"CMakeFiles/RTC_lib.dir/world.cpp.o" \
-"CMakeFiles/RTC_lib.dir/camera.cpp.o" \
-"CMakeFiles/RTC_lib.dir/plane.cpp.o" \
-"CMakeFiles/RTC_lib.dir/pattern.cpp.o"
+"CMakeFiles/RTC_lib.dir/src/tuple.cpp.o" \
+"CMakeFiles/RTC_lib.dir/src/canvas.cpp.o" \
+"CMakeFiles/RTC_lib.dir/src/matrix.cpp.o" \
+"CMakeFiles/RTC_lib.dir/src/transform.cpp.o" \
+"CMakeFiles/RTC_lib.dir/src/ray.cpp.o" \
+"CMakeFiles/RTC_lib.dir/src/shape.cpp.o" \
+"CMakeFiles/RTC_lib.dir/src/intersection.cpp.o" \
+"CMakeFiles/RTC_lib.dir/src/sphere.cpp.o" \
+"CMakeFiles/RTC_lib.dir/src/light.cpp.o" \
+"CMakeFiles/RTC_lib.dir/src/material.cpp.o" \
+"CMakeFiles/RTC_lib.dir/src/world.cpp.o" \
+"CMakeFiles/RTC_lib.dir/src/camera.cpp.o" \
+"CMakeFiles/RTC_lib.dir/src/plane.cpp.o" \
+"CMakeFiles/RTC_lib.dir/src/pattern.cpp.o"
 
 # External object files for target RTC_lib
 RTC_lib_EXTERNAL_OBJECTS =
 
-RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/tuple.cpp.o
-RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/canvas.cpp.o
-RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/matrix.cpp.o
-RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/transform.cpp.o
-RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/ray.cpp.o
-RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/shape.cpp.o
-RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/intersection.cpp.o
-RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/sphere.cpp.o
-RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/light.cpp.o
-RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/material.cpp.o
-RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/world.cpp.o
-RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/camera.cpp.o
-RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/plane.cpp.o
-RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/pattern.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/src/tuple.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/src/canvas.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/src/matrix.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/src/transform.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/src/ray.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/src/shape.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/src/intersection.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/src/sphere.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/src/light.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/src/material.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/src/world.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/src/camera.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/src/plane.cpp.o
+RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/src/pattern.cpp.o
 RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/build.make
 RTC_lib/libRTC_lib.a: RTC_lib/CMakeFiles/RTC_lib.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX static library libRTC_lib.a"

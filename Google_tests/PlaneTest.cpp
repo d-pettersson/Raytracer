@@ -1,7 +1,7 @@
-#include "ray.h"
-#include "plane.h"
-#include "tuple.h"
-#include "transform.h"
+#include "include/ray.h"
+#include "include/plane.h"
+#include "include/tuple.h"
+#include "include/transform.h"
 
 #include "gtest/gtest.h"
 

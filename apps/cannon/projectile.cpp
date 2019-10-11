@@ -1,6 +1,6 @@
 #include "projectile.h"
 #include "environment.h"
-#include "tuple.h"
+#include "include/tuple.h"
 
 #include <sstream>
 

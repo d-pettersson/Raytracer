@@ -1,7 +1,7 @@
 project(RTC)
 
-set(HEADER_FILES tuple.h canvas.h constants.h common.h matrix.h transform.h ray.h shape.h intersection.h sphere.h light.h material.h world.h camera.h utils.h plane.h pattern.h)
+set(HEADER_FILES include/tuple.h include/canvas.h include/constants.h include/common.h include/matrix.h include/transform.h include/ray.h include/shape.h include/intersection.h include/sphere.h include/light.h include/material.h include/world.h include/camera.h include/utils.h include/plane.h include/pattern.h)
 
-set(SOURCE_FILES tuple.cpp canvas.cpp matrix.cpp transform.cpp ray.cpp shape.cpp intersection.cpp sphere.cpp light.cpp material.cpp world.cpp camera.cpp plane.cpp pattern.cpp)
+set(SOURCE_FILES src/tuple.cpp src/canvas.cpp src/matrix.cpp src/transform.cpp src/ray.cpp src/shape.cpp src/intersection.cpp src/sphere.cpp src/light.cpp src/material.cpp src/world.cpp src/camera.cpp src/plane.cpp src/pattern.cpp)
 
 add_library(RTC_lib STATIC ${SOURCE_FILES} ${HEADER_FILES})

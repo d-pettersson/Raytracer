@@ -1,8 +1,8 @@
-#include "transform.h"
-#include "material.h"
-#include "camera.h"
-#include "canvas.h"
-#include "plane.h"
+#include "include/transform.h"
+#include "include/material.h"
+#include "include/camera.h"
+#include "include/canvas.h"
+#include "include/plane.h"
 
 #include <chrono>
 
@@ -26,7 +26,7 @@ int main() {
     
     // floor
     world->addObject(floor);
-    floor->material.pattern.createStripePattern(raytracer::Color(1, 0, 0), raytracer::Color(1, 1, 1));
+    floor->material.pattern = std::make_shared<raytracer::StripePattern>(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
 
     // middle sphere
     translation->translate(-0.5, 1, 0.5);
@@ -34,7 +34,7 @@ int main() {
     middle->material.color = raytracer::Color(0.1, 1, 0.5);
     middle->material.diffuse = 0.7;
     middle->material.specular = 0.3;
-    middle->material.pattern.createStripePattern(raytracer::Color(0, 0, 0), raytracer::Color(1, 1, 1));
+    middle->material.pattern = std::make_shared<raytracer::StripePattern>(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
     world->addObject(middle);
 
     // right sphere
@@ -45,6 +45,7 @@ int main() {
     right->material.color = raytracer::Color(0.5, 1, 0.1);
     right->material.diffuse = 0.7;
     right->material.specular = 0.3;
+//    right->material.pattern = std::make_shared<raytracer::StripePattern>(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
     world->addObject(right);
 
     // left sphere
@@ -55,6 +56,7 @@ int main() {
     left->material.color = raytracer::Color(1, 0.8, 0.1);
     left->material.diffuse = 0.7;
     left->material.specular = 0.3;
+//    left->material.pattern = std::make_shared<raytracer::StripePattern>(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
     world->addObject(left);
 
     light->setAreaLight(raytracer::Point(-2, 10, -10), raytracer::Vector(2, 0, 0), 1, raytracer::Vector(0, 2, 0), 1, raytracer::Color(1, 1, 1));
@@ -70,9 +72,9 @@ int main() {
     canvas->saveToFile();
 
     auto stop = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+    auto duration = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
 
-    std::cout << "Time of render: " << duration.count() << " ms" << '\n';
+    std::cout << "Time of render: " << duration.count() << " s" << '\n';
 
     delete light;
     delete camera;

@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h
+../RTC_lib/include/constants.h
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.h
+../RTC_lib/include/intersection.h
 tuple.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
+../RTC_lib/include/tuple.h
 ray.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
+../RTC_lib/include/ray.h
 memory
 -
 vector
@@ -20,61 +20,53 @@ vector
 algorithm
 -
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
+../RTC_lib/include/light.h
 tuple.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
+../RTC_lib/include/tuple.h
 utils.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/utils.h
+../RTC_lib/include/utils.h
 vector
 -
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h
-tuple.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
-light.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/light.h
-pattern.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.h
+../RTC_lib/include/material.h
+include/tuple.h
+../RTC_lib/include/include/tuple.h
+include/light.h
+../RTC_lib/include/include/light.h
+include/pattern.h
+../RTC_lib/include/include/pattern.h
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
+../RTC_lib/include/matrix.h
 tuple.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
+../RTC_lib/include/tuple.h
 vector
 -
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.cpp
-pattern.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.h
-shape.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
-cmath
--
-
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/pattern.h
-tuple.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
-transform.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h
+../RTC_lib/include/pattern.h
+include/tuple.h
+../RTC_lib/include/include/tuple.h
+include/transform.h
+../RTC_lib/include/include/transform.h
 memory
 -
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
+../RTC_lib/include/ray.h
 tuple.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
+../RTC_lib/include/tuple.h
 transform.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h
+../RTC_lib/include/transform.h
 vector
 -
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/shape.h
+../RTC_lib/include/shape.h
 ray.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/ray.h
+../RTC_lib/include/ray.h
 transform.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h
+../RTC_lib/include/transform.h
 intersection.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/intersection.h
+../RTC_lib/include/intersection.h
 material.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/material.h
+../RTC_lib/include/material.h
 iostream
 -
 vector
@@ -82,17 +74,25 @@ vector
 memory
 -
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/transform.h
+../RTC_lib/include/transform.h
 matrix.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/matrix.h
+../RTC_lib/include/matrix.h
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/tuple.h
-constants.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/constants.h
+../RTC_lib/include/tuple.h
+include/constants.h
+../RTC_lib/include/include/constants.h
 iostream
 -
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/utils.h
+../RTC_lib/include/utils.h
 vector
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/pattern.cpp
+include/pattern.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/pattern.h
+include/shape.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/shape.h
+cmath
 -
 

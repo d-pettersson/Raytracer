@@ -1,7 +1,7 @@
-#include "transform.h"
-#include "material.h"
-#include "camera.h"
-#include "canvas.h"
+#include "include/transform.h"
+#include "include/material.h"
+#include "include/camera.h"
+#include "include/canvas.h"
 
 #include <chrono>
 

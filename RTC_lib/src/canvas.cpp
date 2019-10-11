@@ -1,6 +1,6 @@
-#include "canvas.h"
-#include "tuple.h"
-#include "constants.h"
+#include "include/canvas.h"
+#include "include/tuple.h"
+#include "include/constants.h"
 
 #include <vector>
 #include <iostream>

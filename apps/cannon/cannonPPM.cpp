@@ -1,6 +1,6 @@
 #include "environment.h"
 #include "projectile.h"
-#include "canvas.h"
+#include "include/canvas.h"
 
 #include <iostream>
 

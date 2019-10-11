@@ -1,7 +1,7 @@
-#include "material.h"
-#include "light.h"
-#include "world.h"
-#include "shape.h"
+#include "include/material.h"
+#include "include/light.h"
+#include "include/world.h"
+#include "include/shape.h"
 
 #include <cmath>
 

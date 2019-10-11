@@ -1,16 +1,16 @@
-#include "material.h"
-#include "common.h"
+#include "include/material.h"
+#include "include/common.h"
 
 #include <cmath>
 
 namespace raytracer {
 Material::Material(const raytracer::Color &color, const double &ambient, const double& diffuse, const double& specular, const double& shininess)
-    : color(color), ambient(ambient), diffuse(diffuse), specular(specular), shininess(shininess)
+    : color(color), ambient(ambient), diffuse(diffuse), specular(specular), shininess(shininess), pattern()
 {
 }
 
 Material::Material()
-    : color(raytracer::Color(1, 1, 1)), ambient(0.1), diffuse(0.9), specular(0.9), shininess(200.0)
+    : color(raytracer::Color(1, 1, 1)), ambient(0.1), diffuse(0.9), specular(0.9), shininess(200.0), pattern()
 {
 }
 
@@ -50,7 +50,7 @@ bool Material::operator!=(const Material &rhs) const {
 //    }
 
 Color Material::setPhongLighting(const std::shared_ptr<Shape const> &s, const Light &light, const Point &position, const Vector &eye, const Vector &normal, const float &intensity) const {
-    raytracer::Color dif, spec, effectiveColor;
+    Color dif, spec, effectiveColor;
 
     if (this->pattern->hasPattern) {
         Color newColor = this->pattern->patternAtShape(s, position);
@@ -59,12 +59,12 @@ Color Material::setPhongLighting(const std::shared_ptr<Shape const> &s, const Li
         effectiveColor = this->color * light.intensity;
     }
 
-    raytracer::Color amb = effectiveColor * this->ambient;
+    Color amb = effectiveColor * this->ambient;
 
-    auto * lightVector = new raytracer::Vector();
+    auto * lightVector = new Vector();
     double lightDotNormal;
 
-    raytracer::Color sum = black;
+    Color sum = black;
 
     for (int i = 0; i < light.samples; i++) {
         * lightVector = normalize(light.pointOnLight(i % light.uSteps, i / light.vSteps) - position);

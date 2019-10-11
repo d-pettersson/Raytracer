@@ -1,6 +1,6 @@
-#include "intersection.h"
-#include "ray.h"
-#include "shape.h"
+#include "include/intersection.h"
+#include "include/ray.h"
+#include "include/shape.h"
 
 #include <utility>
 

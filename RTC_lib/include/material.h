@@ -1,9 +1,9 @@
 #ifndef RTC_MATERIAL_H
 #define RTC_MATERIAL_H
 
-#include "tuple.h"
-#include "light.h"
-#include "pattern.h"
+#include "include/tuple.h"
+#include "include/light.h"
+#include "include/pattern.h"
 
 namespace raytracer {
 class Material {

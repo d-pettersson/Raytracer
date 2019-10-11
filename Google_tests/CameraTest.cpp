@@ -1,7 +1,7 @@
-#include "camera.h"
-#include "ray.h"
-#include "canvas.h"
-#include "world.h"
+#include "include/camera.h"
+#include "include/ray.h"
+#include "include/canvas.h"
+#include "include/world.h"
 
 #include <cmath>
 
