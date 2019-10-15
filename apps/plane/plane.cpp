@@ -34,7 +34,6 @@ int main() {
     middle->material.color = raytracer::Color(0.1, 1, 0.5);
     middle->material.diffuse = 0.7;
     middle->material.specular = 0.3;
-    middle->material.pattern = std::make_shared<raytracer::StripePattern>(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
     world->addObject(middle);
 
     // right sphere
@@ -59,7 +58,7 @@ int main() {
 //    left->material.pattern = std::make_shared<raytracer::StripePattern>(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
     world->addObject(left);
 
-    light->setAreaLight(raytracer::Point(-2, 10, -10), raytracer::Vector(2, 0, 0), 1, raytracer::Vector(0, 2, 0), 1, raytracer::Color(1, 1, 1));
+    light->setAreaLight(raytracer::Point(-2, 10, -10), raytracer::Vector(2, 0, 0), 2, raytracer::Vector(0, 2, 0), 2, raytracer::Color(1, 1, 1));
     world->light = * light;
 
     auto start = std::chrono::high_resolution_clock::now();

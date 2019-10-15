@@ -52,21 +52,21 @@ bool Material::operator!=(const Material &rhs) const {
 //    }
 
 Color Material::setPhongLighting(const std::shared_ptr<Shape const> &s, const Light &light, const Point &position, const Vector &eye, const Vector &normal, const float &intensity) const {
-    Color dif, spec, effectiveColor;
+    Color amb, dif, spec, sum, effectiveColor, newColor;
 
     if (this->pattern->hasPattern) {
-        Color newColor = this->pattern->patternAtShape(s, position);
+        newColor = this->pattern->patternAtShape(s, position);
         effectiveColor = newColor * light.intensity;
     } else {
         effectiveColor = this->color * light.intensity;
     }
 
-    Color amb = effectiveColor * this->ambient;
+    amb = effectiveColor * this->ambient;
 
     auto * lightVector = new Vector();
     double lightDotNormal;
 
-    Color sum = black;
+    sum = black;
 
     for (int i = 0; i < light.samples; i++) {
         * lightVector = normalize(light.pointOnLight(i % light.uSteps, i / light.vSteps) - position);

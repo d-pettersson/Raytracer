@@ -1,8 +1,10 @@
 #include "include/ray.h"
 #include "include/sphere.h"
+#include "include/plane.h"
 #include "include/intersection.h"
 
 #include <memory>
+#include <cmath>
 
 #include "gtest/gtest.h"
 
@@ -36,6 +38,7 @@ protected:
 
     raytracer::Ray * ray;
     std::shared_ptr<raytracer::Shape> sphere = std::make_shared<raytracer::Sphere>();
+    std::shared_ptr<raytracer::Shape> plane = std::make_shared<raytracer::Plane>();
     raytracer::Point origin;
     raytracer::Vector direction;
     raytracer::Intersection * intersection;
@@ -136,6 +139,13 @@ TEST_F(IntersectionFixture, PointOffset) {
     raytracer::IntersectionData intersectionData = intersection->prepareComputations(* ray);
     ASSERT_TRUE(intersectionData.overPoint.z < -EPSILON / 2);
     ASSERT_TRUE(intersectionData.point.z > intersectionData.overPoint.z);
+}
+
+TEST_F(IntersectionFixture, ComputeReflectVector) {
+    * ray = raytracer::Ray(raytracer::Point(0, 1, -1), raytracer::Vector(0, -sqrt(2)/2, sqrt(2)/2));
+    * intersection = raytracer::Intersection(sqrt(2), plane);
+    raytracer::IntersectionData intersectionData = intersection->prepareComputations(* ray);
+    ASSERT_EQ(intersectionData.reflect, raytracer::Vector(0, sqrt(2)/2, sqrt(2)/2));
 }
 
 

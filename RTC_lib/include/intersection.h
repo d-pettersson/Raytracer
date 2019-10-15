@@ -12,12 +12,13 @@ namespace raytracer {
 class Shape;
 
 struct IntersectionData {
-    double distance = 0;
+    double distance = 0.0;
     std::shared_ptr<Shape const> object;
     Point point;
     Point overPoint;
     Vector eye;
     Vector normal;
+    Vector reflect;
     bool inside;
     bool inShadow = false;
 

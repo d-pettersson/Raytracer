@@ -1,7 +1,10 @@
 #include "include/world.h"
 #include "include/intersection.h"
+#include "include/plane.h"
 
 #include "gtest/gtest.h"
+
+#include <cmath>
 
 class WorldFixture : public ::testing::Test {
 
@@ -191,3 +194,27 @@ TEST_F(WorldFixture, OcclusionTestBetweenTwoPoints4) {
     ASSERT_FALSE(world->isShadowed(lightPosition, point));
 }
 
+TEST_F(WorldFixture, ReflectedColorForNonReflectiveMaterial) {
+    world->defaultWorld();
+    auto ray = raytracer::Ray(raytracer::Point(0, 0, 0), raytracer::Vector(0, 0, 1));
+    s1 = world->shapes[1];
+    s1->material.ambient = 1;
+    * intersection = raytracer::Intersection(1, s1);
+    auto intersectionData = intersection->prepareComputations(ray);
+    auto color = world->reflectedColor(intersectionData);
+    ASSERT_EQ(color, raytracer::Color(0, 0, 0));
+}
+
+TEST_F(WorldFixture, ReflectedColorForReflectiveMaterial) {
+    world->defaultWorld();
+    s1 = std::make_shared<raytracer::Plane>();
+    s1->material.reflection = 0.5;
+    transform->translate(0, -1, 0);
+    s1->setTransform(* transform);
+    world->addObject(s1);
+    auto ray = raytracer::Ray(raytracer::Point(0, 0, -3), raytracer::Vector(0, -sqrt(2)/2, sqrt(2)/2));
+    * intersection = raytracer::Intersection(sqrt(2), s1);
+    auto intersectionData = intersection->prepareComputations(ray);
+    auto color = world->reflectedColor(intersectionData);
+    ASSERT_EQ(color, raytracer::Color(0.19032, 0.2379, 0.14274));
+}

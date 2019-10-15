@@ -17,7 +17,9 @@ class World {
         void intersectWorld(const Ray &ray, std::vector<Intersection> * xs) const;
         Color shadeHit(const IntersectionData &intersectionData);
         Color colorAt(const Ray &ray);
+        Color reflectedColor(const IntersectionData &xs);
         bool isShadowed(const Point &lightPosition, const Point& point) const;
+
 
         void addObject(const std::shared_ptr<Shape>& shape);
 

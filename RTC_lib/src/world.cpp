@@ -72,4 +72,15 @@ bool World::isShadowed(const Point &lightPosition, const Point &point) const {
     * h = hit(* xs);
     return h->getObject() != nullptr && h->getDistance() < distance;
 }
+
+Color World::reflectedColor(const IntersectionData &xs) {
+    if (xs.object->material.reflection == 0.0) {
+        return Color(0.0, 0.0, 0.0);
+    } else {
+        auto reflectRay = Ray(xs.overPoint, xs.reflect);
+        auto color = this->colorAt(reflectRay);
+        return color * xs.object->material.reflection;
+    }
+
+}
 }

@@ -215,6 +215,8 @@ Vector operator-(const Point& p1, const Point& p2);
 std::ostream& operator<<(std::ostream& out, const Point& p1);
 
 // Vector operators
+bool operator==(const Vector &v1, const Vector &v2);
+
 Vector operator*(const Vector& v1, const double& scalar);
 Vector operator+(const Vector &v1, const Vector &v2);
 Vector operator-(const Vector& v1, const Vector& v2);

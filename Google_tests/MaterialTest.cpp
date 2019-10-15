@@ -166,3 +166,8 @@ TEST_F(MaterialFixture, LightingWithPattern) {
     ASSERT_EQ(c2, raytracer::Color(0, 0, 0));
 }
 
+TEST_F(MaterialFixture, CheckingForReflectivePar) {
+    material->reflection = 0.0;
+    ASSERT_EQ(material->reflection, 0.0);
+}
+

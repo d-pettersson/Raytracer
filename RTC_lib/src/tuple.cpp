@@ -119,7 +119,7 @@ Vector normalize(const Vector& v1) {
 }
 
 Tuple tupleAbs(Tuple *t1) {
-    return {abs(t1->x), abs(t1->y), abs(t1->z), abs(t1->w)};
+    return {fabs(t1->x), fabs(t1->y), fabs(t1->z), fabs(t1->w)};
 }
 
 double magnitude(const Tuple& t1) {
@@ -184,6 +184,10 @@ Vector operator-(const Point& p1, const Point& p2) {
 }
 
 // Vector operators
+bool operator==(const Vector &v1, const Vector &v2) {
+    return v1.x == v2.x && v1.y == v2.y && v1.z == v2.z;
+}
+
 Vector operator*(const Vector& v1, const double& scalar) {
     return {v1.x * scalar, v1.y * scalar, v1.z * scalar};
 }

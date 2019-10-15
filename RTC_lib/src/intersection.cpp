@@ -67,6 +67,7 @@ IntersectionData Intersection::prepareComputations(const Ray &ray) {
         intersectionData->inside = false;
     }
     intersectionData->overPoint = intersectionData->point + intersectionData->normal * EPSILON;
+    intersectionData->reflect = reflect(ray.getDirection(), intersectionData->normal);
     return * intersectionData;
 }
 

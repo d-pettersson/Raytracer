@@ -6,7 +6,7 @@
 
 namespace raytracer {
 Light::Light(const raytracer::Point &position, const raytracer::Color &intensity)
-    : position(position), intensity(intensity)
+    : position(position), intensity(intensity), uSteps(1), vSteps(1), samples(1)
 {
 }
 
@@ -14,9 +14,13 @@ Light::Light()
 {
 }
 
+//void Light::setPointLight(const raytracer::Point &pos, const raytracer::Color &intens) {
+//    this->position = pos;
+//    this->intensity = intens;
+//}
+
 void Light::setPointLight(const raytracer::Point &pos, const raytracer::Color &intens) {
-    this->position = pos;
-    this->intensity = intens;
+    this->setAreaLight(pos, Vector(1, 0, 0), 1, Vector(0, 1, 0), 1, intens);
 }
 
 void Light::setAreaLight(const Point &corn, const Vector &fullUVec, const int &uSt, const Vector &fullVVec, const int &vSt, const Color &intens) {
@@ -27,7 +31,7 @@ void Light::setAreaLight(const Point &corn, const Vector &fullUVec, const int &u
     this->vVec = fullVVec / vSt;
     this->samples = uSteps * vSteps;
     this->intensity = intens;
-    this->position = raytracer::Point(1, 0, 0.5);
+//    this->position = raytracer::Point(1, 0, 0.5);
 }
 
 float Light::intensityAt(const Point &point, const World &world) {
