@@ -57,6 +57,8 @@ transform.h
 ../RTC_lib/include/transform.h
 vector
 -
+ostream
+-
 
 ../RTC_lib/include/shape.h
 ray.h
@@ -104,13 +106,9 @@ transform.h
 intersection.h
 ../RTC_lib/include/intersection.h
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/light.cpp
-include/light.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/light.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/world.cpp
 include/world.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/world.h
-random
--
 memory
 -
 

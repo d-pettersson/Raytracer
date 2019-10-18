@@ -15,10 +15,12 @@ class World {
         void defaultWorld();
 
         void intersectWorld(const Ray &ray, std::vector<Intersection> * xs) const;
-        Color shadeHit(const IntersectionData &intersectionData);
-        Color colorAt(const Ray &ray);
-        Color reflectedColor(const IntersectionData &xs);
-        bool isShadowed(const Point &lightPosition, const Point& point) const;
+        Color shadeHit(const IntersectionData &intersectionData, int remaining = 5);
+        Color colorAt(const Ray &ray, int remaining = 5);
+        Color reflectedColor(const IntersectionData &xs, int remaining = 5);
+        Color refractedColor(const IntersectionData &xs, int remaining = 5);
+//        bool isShadowed(const Point &lightPosition, const Point& point) const;
+        bool isShadowed(const Point& point) const;
 
 
         void addObject(const std::shared_ptr<Shape>& shape);
@@ -26,7 +28,6 @@ class World {
         Light light;
         std::vector<std::shared_ptr<Shape> > shapes;
         Transform transform;
-
     };
 } // namespace raytracer
 

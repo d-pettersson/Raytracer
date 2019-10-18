@@ -87,6 +87,7 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o: ../RTC_lib/
 Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o: ../RTC_lib/include/material.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o: ../RTC_lib/include/matrix.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o: ../RTC_lib/include/pattern.h
+Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o: ../RTC_lib/include/plane.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o: ../RTC_lib/include/ray.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o: ../RTC_lib/include/shape.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o: ../RTC_lib/include/sphere.h
@@ -402,6 +403,7 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o: ../RTC_lib/include
 Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o: ../RTC_lib/include/material.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o: ../RTC_lib/include/matrix.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o: ../RTC_lib/include/pattern.h
+Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o: ../RTC_lib/include/plane.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o: ../RTC_lib/include/ray.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o: ../RTC_lib/include/shape.h
 Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o: ../RTC_lib/include/sphere.h

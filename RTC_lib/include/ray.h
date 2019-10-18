@@ -5,6 +5,7 @@
 #include "transform.h"
 
 #include <vector>
+#include <ostream>
 
 namespace raytracer {
 class Ray {
@@ -23,10 +24,9 @@ class Ray {
         Point position(const double& t) const;
 
     private:
-        raytracer::Point origin;
-        raytracer::Vector direction;
+        Point origin;
+        Vector direction;
 };
-
 
 Ray transform(const Ray& ray, Transform& t);
 

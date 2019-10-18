@@ -2,6 +2,7 @@
 #include "include/sphere.h"
 #include "include/tuple.h"
 #include "include/transform.h"
+#include "include/matrix.h"
 
 #include "gtest/gtest.h"
 
@@ -119,5 +120,13 @@ TEST_F(SphereFixture, AssignMaterialSphere) {
     material->ambient = 1;
     sphere->material = * material;
     ASSERT_EQ(sphere->material, * material);
+}
+
+TEST_F(SphereFixture, SphereWithGlassyMaterial) {
+    sphere->createGlass();
+    auto identity = raytracer::generateIdentity(4, 4);
+    EXPECT_EQ(identity, sphere->getTransform());
+    EXPECT_EQ(sphere->material.transparency, 1.0);
+    ASSERT_EQ(sphere->material.refractiveIndex, 1.5);
 }
 

@@ -9,6 +9,8 @@ class Sphere : public Shape {
         Sphere();
         ~Sphere() override;
 
+        void createGlass() override;
+
         void intersect(const Ray &ray, std::vector<Intersection>& xs) const override;
         Vector getNormal(Point worldPoint) const override;
     };

@@ -16,12 +16,14 @@ struct IntersectionData {
     std::shared_ptr<Shape const> object;
     Point point;
     Point overPoint;
+    Point underPoint;
     Vector eye;
     Vector normal;
     Vector reflect;
     bool inside;
     bool inShadow = false;
-
+    double n1;
+    double n2;
 };
 
 class Intersection {
@@ -32,7 +34,10 @@ class Intersection {
         double getDistance();
         std::shared_ptr<Shape const> getObject();
 
-        IntersectionData prepareComputations(const Ray &ray);
+        IntersectionData prepareComputations(const Ray &ray, const std::vector<Intersection> &xs);
+
+        bool operator==(const Intersection &rhs) const;
+        bool operator!=(const Intersection &rhs) const;
 
         bool operator<(const Intersection &rhs) const;
         bool operator>(const Intersection &rhs) const;

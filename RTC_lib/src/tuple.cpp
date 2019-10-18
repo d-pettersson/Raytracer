@@ -155,6 +155,12 @@ std::ostream& operator<<(std::ostream& out, const Point& p1) {
     return out;
 }
 
+bool operator==(const Point &p1, const Point &p2) {
+    auto * difference = new Vector();
+    * difference = p1 - p2;
+    return tupleAbs(difference) < EPSILON;
+}
+
 Point Point::operator-() {
     return {-(* this).x, -(* this).y, -(* this).z};
 }
@@ -175,8 +181,12 @@ Point operator+(const Point& p1, const Point& p2) {
     return {p1.x + p2.x, p1.y + p2.y, p1.z + p2.z};
 }
 
-Point operator+(const Point& p1, const Vector& p2) {
-    return {p1.x + p2.x, p1.y + p2.y, p1.z + p2.z};
+Point operator+(const Point& p1, const Vector& v2) {
+    return {p1.x + v2.x, p1.y + v2.y, p1.z + v2.z};
+}
+
+Point operator-(const Point& p1, const Vector& v2) {
+    return {p1.x - v2.x, p1.y - v2.y, p1.z - v2.z};
 }
 
 Vector operator-(const Point& p1, const Point& p2) {
@@ -185,7 +195,9 @@ Vector operator-(const Point& p1, const Point& p2) {
 
 // Vector operators
 bool operator==(const Vector &v1, const Vector &v2) {
-    return v1.x == v2.x && v1.y == v2.y && v1.z == v2.z;
+    auto * difference = new Vector();
+    * difference = v1 - v2;
+    return tupleAbs(difference) < EPSILON;
 }
 
 Vector operator*(const Vector& v1, const double& scalar) {

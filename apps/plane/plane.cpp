@@ -26,7 +26,9 @@ int main() {
     
     // floor
     world->addObject(floor);
-    floor->material.pattern = std::make_shared<raytracer::StripePattern>(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
+//    floor->material.pattern = std::make_shared<raytracer::StripePattern>(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
+    floor->material.color = raytracer::Color(1, 1, 1);
+    floor->material.reflection = 0.5;
 
     // middle sphere
     translation->translate(-0.5, 1, 0.5);
@@ -58,7 +60,8 @@ int main() {
 //    left->material.pattern = std::make_shared<raytracer::StripePattern>(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
     world->addObject(left);
 
-    light->setAreaLight(raytracer::Point(-2, 10, -10), raytracer::Vector(2, 0, 0), 2, raytracer::Vector(0, 2, 0), 2, raytracer::Color(1, 1, 1));
+//    light->setAreaLight(raytracer::Point(-2, 10, -10), raytracer::Vector(2, 0, 0), 2, raytracer::Vector(0, 2, 0), 2, raytracer::Color(1, 1, 1));
+    light->setPointLight(raytracer::Point(-2, 10, -10), raytracer::Color(1, 1, 1));
     world->light = * light;
 
     auto start = std::chrono::high_resolution_clock::now();

@@ -9,6 +9,14 @@ Plane::Plane()
 {
 }
 
+Plane::~Plane() = default;
+
+
+void Plane::createGlass() {
+    this->material.transparency = 1.0;
+    this->material.refractiveIndex = 1.5;
+}
+
 void Plane::intersect(const Ray &ray, std::vector<Intersection> &xs) const {
     if (std::abs(ray.getDirection().y) < EPSILON) {
         return;
@@ -22,6 +30,7 @@ void Plane::intersect(const Ray &ray, std::vector<Intersection> &xs) const {
 Vector Plane::getNormal(Point worldPoint) const {
     return Vector(0, 1, 0);
 }
+
 
 
 } // namespace raytracer

@@ -78,8 +78,8 @@ int main() {
     world->addObject(left);
 
     // light source
-//    light->setPointLight(raytracer::Point(-10, 10, -10), raytracer::Color(1, 1, 1));
-    light->setAreaLight(raytracer::Point(-2, 10, -10), raytracer::Vector(2, 0, 0), 1, raytracer::Vector(0, 2, 0), 1, raytracer::Color(1, 1, 1));
+    light->setPointLight(raytracer::Point(-10, 10, -10), raytracer::Color(1, 1, 1));
+//    light->setAreaLight(raytracer::Point(-2, 10, -10), raytracer::Vector(2, 0, 0), 1, raytracer::Vector(0, 2, 0), 1, raytracer::Color(1, 1, 1));
     world->light = * light;
 
     auto start = std::chrono::high_resolution_clock::now();

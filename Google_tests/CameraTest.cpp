@@ -93,12 +93,12 @@ TEST_F(CameraFixture, RayCameraTransformed) {
 }
 
 TEST_F(CameraFixture, RenderWorldCamera) {
-    * camera = raytracer::Camera(110, 110, PI/2);
+    world->defaultWorld();
+    * camera = raytracer::Camera(11, 11, PI/2);
     * from = raytracer::Point(0, 0, -5);
     * to = raytracer::Point(0, 0, 0);
     * up = raytracer::Vector(0, 1, 0);
     camera->transform = viewTransform(* from, * to, * up);
     * image = camera->render(* world);
-    image->saveToFile();
     ASSERT_EQ(image->pixelAt(5, 5), raytracer::Color(0.38066, 0.47583, 0.2855));
 }

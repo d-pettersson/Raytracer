@@ -205,11 +205,14 @@ Tuple operator/(const Tuple& t1, const double& scalar);
 std::ostream& operator<<(std::ostream& out, const Tuple& t1);
 
 // Point operators
+bool operator==(const Point &p1, const Point &p2);
+
 Point operator*(const Point& p1, const Point& p2);
 Point operator*(const Point& p1, const Vector& p2);
 Point operator*(const Point& p1, const double& scalar);
 Point operator+(const Point& p1, const Point& p2);
 Point operator+(const Point& p1, const Vector& p2);
+Point operator-(const Point& p1, const Vector& p2);
 Vector operator-(const Point& p1, const Point& p2);
 
 std::ostream& operator<<(std::ostream& out, const Point& p1);

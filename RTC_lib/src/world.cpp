@@ -15,19 +15,20 @@ void World::intersectWorld(const raytracer::Ray &ray, std::vector<Intersection> 
     std::sort(xs->begin(), xs->end());
 }
 
-Color World::shadeHit(const IntersectionData &intersectionData) {
-//    bool shadowed = this->isShadowed(intersectionData.overPoint, this->light.position);
-    float shadowed = this->light.intensityAt(intersectionData.overPoint, * this);
+Color World::shadeHit(const IntersectionData &intersectionData, int remaining) {
+    bool shadowed = this->isShadowed(intersectionData.overPoint);
+//    float shadowed = this->light.intensityAt(intersectionData.overPoint, * this); // area light related
 
     return intersectionData.object->material.setPhongLighting(intersectionData.object,
                                                               this->light,
                                                               intersectionData.overPoint,
                                                               intersectionData.eye,
                                                               intersectionData.normal,
-                                                              shadowed);
+                                                              shadowed)
+                                                              + this->reflectedColor(intersectionData, remaining);
 }
 
-Color World::colorAt(const Ray &ray) {
+Color World::colorAt(const Ray &ray, int remaining) {
     auto * xs = new std::vector<Intersection>();
     this->intersectWorld(ray, xs);
     auto intersection = hit(* xs);
@@ -35,13 +36,11 @@ Color World::colorAt(const Ray &ray) {
     if (intersection.getObject() == nullptr && intersection.getDistance() == 0.f) {
         return Color(0, 0, 0);
     }
-
-    auto * intersectionData = new IntersectionData();
-    * intersectionData = intersection.prepareComputations(ray);
-    return this->shadeHit(* intersectionData);
+    std::cout << remaining;
+    return this->shadeHit(intersection.prepareComputations(ray, * xs), remaining);
 }
 
-void World::addObject(const std::shared_ptr<Shape>& shape) {
+void World::addObject(const std::shared_ptr<Shape> &shape) {
     shapes.push_back(shape);
 }
 
@@ -59,10 +58,23 @@ void World::defaultWorld() {
     shapes[1]->setTransform(transform.scale(0.5, 0.5, 0.5));
 }
 
-bool World::isShadowed(const Point &lightPosition, const Point &point) const {
-//    auto vector = this->light.position - point;
-    auto vector = lightPosition - point;
-    double distance = magnitude(vector);
+//bool World::isShadowed(const Point &lightPosition, const Point &point) const {
+////    auto vector = this->light.position - point;
+//    auto vector = lightPosition - point;
+//    double distance = magnitude(vector);
+//    auto direction = normalize(vector);
+//
+//    auto ray = Ray(point, direction);
+//    auto * xs = new std::vector<Intersection>();
+//    intersectWorld(ray, xs);
+//    auto * h = new Intersection();
+//    * h = hit(* xs);
+//    return h->getObject() != nullptr && h->getDistance() < distance;
+//}
+
+bool World::isShadowed(const Point &point) const {
+    auto vector = this->light.position - point;
+    auto distance = magnitude(vector);
     auto direction = normalize(vector);
 
     auto ray = Ray(point, direction);
@@ -73,14 +85,19 @@ bool World::isShadowed(const Point &lightPosition, const Point &point) const {
     return h->getObject() != nullptr && h->getDistance() < distance;
 }
 
-Color World::reflectedColor(const IntersectionData &xs) {
-    if (xs.object->material.reflection == 0.0) {
+Color World::reflectedColor(const IntersectionData &intersectionData, int remaining) {
+    if (intersectionData.object->material.reflection == 0.0 || remaining <= 0) {
         return Color(0.0, 0.0, 0.0);
-    } else {
-        auto reflectRay = Ray(xs.overPoint, xs.reflect);
-        auto color = this->colorAt(reflectRay);
-        return color * xs.object->material.reflection;
     }
+    auto * reflectRay = new Ray(intersectionData.overPoint, intersectionData.reflect);
+    auto color = this->colorAt(* reflectRay, remaining - 1);
+    return color * intersectionData.object->material.reflection;
+}
 
+Color World::refractedColor(const IntersectionData &xs, int remaining) {
+    if (xs.object->material.transparency == 0 || remaining == 0) {
+        return Color(0, 0, 0);
+    }
+    return Color(1, 1, 1);
 }
 }

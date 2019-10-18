@@ -11,17 +11,20 @@ Light::Light(const raytracer::Point &position, const raytracer::Color &intensity
 }
 
 Light::Light()
+    : uSteps(1), vSteps(1), samples(1)
 {
 }
 
-//void Light::setPointLight(const raytracer::Point &pos, const raytracer::Color &intens) {
-//    this->position = pos;
-//    this->intensity = intens;
-//}
+void Light::setPointLight(const raytracer::Point &pos, const raytracer::Color &intens) {
+    this->position = pos;
+    this->intensity = intens;
+}
 
+/* Area light related
 void Light::setPointLight(const raytracer::Point &pos, const raytracer::Color &intens) {
     this->setAreaLight(pos, Vector(1, 0, 0), 1, Vector(0, 1, 0), 1, intens);
 }
+
 
 void Light::setAreaLight(const Point &corn, const Vector &fullUVec, const int &uSt, const Vector &fullVVec, const int &vSt, const Color &intens) {
     this->corner = corn;
@@ -31,7 +34,7 @@ void Light::setAreaLight(const Point &corn, const Vector &fullUVec, const int &u
     this->vVec = fullVVec / vSt;
     this->samples = uSteps * vSteps;
     this->intensity = intens;
-//    this->position = raytracer::Point(1, 0, 0.5);
+    this->position = raytracer::Point(1, 0, 0.5);
 }
 
 float Light::intensityAt(const Point &point, const World &world) {
@@ -53,7 +56,7 @@ Point Light::pointOnLight(const double &u, const double &v) const {
 
     return this->corner + this->uVec * (u + (double)dist(rng) * 0.1) + this->vVec * (v + (double)dist(rng) * 0.1);;
 }
-
+*/
 
 bool Light::operator==(const Light &rhs) const {
     return intensity == rhs.intensity &&

@@ -7,6 +7,9 @@ namespace raytracer {
 class Plane : public Shape {
     public:
         Plane();
+        ~Plane() override;
+
+        void createGlass() override;
 
         void intersect(const Ray &ray, std::vector<Intersection>& xs) const override;
         Vector getNormal(Point worldPoint) const override;

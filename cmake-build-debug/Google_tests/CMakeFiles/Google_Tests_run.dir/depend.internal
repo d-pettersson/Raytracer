@@ -88,6 +88,7 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o
  ../RTC_lib/include/material.h
  ../RTC_lib/include/matrix.h
  ../RTC_lib/include/pattern.h
+ ../RTC_lib/include/plane.h
  ../RTC_lib/include/ray.h
  ../RTC_lib/include/shape.h
  ../RTC_lib/include/sphere.h
@@ -403,6 +404,7 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o
  ../RTC_lib/include/material.h
  ../RTC_lib/include/matrix.h
  ../RTC_lib/include/pattern.h
+ ../RTC_lib/include/plane.h
  ../RTC_lib/include/ray.h
  ../RTC_lib/include/shape.h
  ../RTC_lib/include/sphere.h

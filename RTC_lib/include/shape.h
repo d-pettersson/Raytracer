@@ -17,6 +17,8 @@ class Shape : public std::enable_shared_from_this<Shape> {
         Shape();
         virtual ~Shape();
 
+        virtual void createGlass() = 0;
+
         virtual void intersect(const Ray &ray, std::vector<Intersection>& xs) const = 0;
         virtual Vector getNormal(Point worldPoint) const = 0;
 

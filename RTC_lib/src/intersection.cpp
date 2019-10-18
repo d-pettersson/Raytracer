@@ -3,6 +3,7 @@
 #include "include/shape.h"
 
 #include <utility>
+#include <algorithm>
 
 namespace raytracer {
 
@@ -51,7 +52,7 @@ bool Intersection::operator>=(const raytracer::Intersection &rhs) const {
     return !(*this < rhs);
 }
 
-IntersectionData Intersection::prepareComputations(const Ray &ray) {
+IntersectionData Intersection::prepareComputations(const Ray &ray, const std::vector<Intersection> &xs) {
     auto * intersectionData = new IntersectionData();
     intersectionData->distance = this->getDistance();
     intersectionData->object = this->getObject();
@@ -67,8 +68,47 @@ IntersectionData Intersection::prepareComputations(const Ray &ray) {
         intersectionData->inside = false;
     }
     intersectionData->overPoint = intersectionData->point + intersectionData->normal * EPSILON;
+    intersectionData->underPoint = intersectionData->point - intersectionData->normal * EPSILON;
     intersectionData->reflect = reflect(ray.getDirection(), intersectionData->normal);
+
+    auto containers = std::vector<std::shared_ptr<Shape const> >();
+
+    for (auto i : xs) {
+        if (i == (* this)) {
+            if (containers.empty()) {
+                intersectionData->n1 = 1.0;
+            } else {
+                intersectionData->n1 = containers.back()->material.refractiveIndex;
+            }
+        }
+
+        if (std::find(containers.begin(), containers.end(), i.getObject()) != containers.end()) {
+            auto it = std::find(containers.begin(), containers.end(), i.getObject());
+            int index = std::distance(containers.begin(), it);
+            containers.erase(containers.begin() + index);
+        } else {
+            containers.emplace_back(i.getObject());
+        }
+
+        if (i == (* this)) {
+            if (containers.empty()) {
+                intersectionData->n2 = 1.0;
+            } else {
+                intersectionData->n2 = containers.back()->material.refractiveIndex;
+            }
+        }
+    }
+
     return * intersectionData;
+}
+
+bool Intersection::operator==(const Intersection &rhs) const {
+    return distance == rhs.distance &&
+           shape == rhs.shape;
+}
+
+bool Intersection::operator!=(const Intersection &rhs) const {
+    return !(rhs == *this);
 }
 
 

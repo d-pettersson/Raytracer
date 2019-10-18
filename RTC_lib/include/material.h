@@ -13,16 +13,25 @@ class Material {
                  const double &diffuse,
                  const double &specular,
                  const double &reflection,
-                 const double &shininess);
+                 const double &shininess,
+                 const double &transparency,
+                 const double &refractiveIndex);
 
         Material();
+
+//        Color setPhongLighting(const std::shared_ptr<Shape const> &s,
+//                               const Light& light,
+//                               const Point& position,
+//                               const Vector& eye,
+//                               const Vector& normal,
+//                               const float &intensity) const;
 
         Color setPhongLighting(const std::shared_ptr<Shape const> &s,
                                const Light& light,
                                const Point& position,
                                const Vector& eye,
                                const Vector& normal,
-                               const float &intensity) const;
+                               const bool &isShadowed) const;
 
         Color color;
         double ambient;
@@ -30,6 +39,8 @@ class Material {
         double shininess;
         double diffuse;
         double reflection;
+        double transparency;
+        double refractiveIndex;
 
         std::shared_ptr<Pattern> pattern;
 

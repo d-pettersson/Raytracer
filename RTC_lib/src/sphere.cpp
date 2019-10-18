@@ -41,6 +41,11 @@ Vector Sphere::getNormal(Point worldPoint) const {
     return normalize(worldNormal);
 }
 
+void Sphere::createGlass() {
+    this->material.transparency = 1.0;
+    this->material.refractiveIndex = 1.5;
+}
+
 bool operator==(const Sphere& s1, const Sphere& s2) {
     return typeid(s1) == typeid(s2);
 }
