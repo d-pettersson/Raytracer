@@ -82,6 +82,40 @@ TEST_F(PatternFixture, StripesWithObjectAndPatternTransformation) {
     ASSERT_EQ(* color, raytracer::Color(1, 1, 1));
 }
 
+TEST_F(PatternFixture, DefaultPatternTransformation) {
+    pattern = std::make_shared<raytracer::TestPattern>();
+    auto identity = raytracer::generateIdentity(4, 4);
+    ASSERT_EQ(identity, pattern->getPatternTransform());
+}
+
+TEST_F(PatternFixture, PatternWithObjectTransformation) {
+    pattern = std::make_shared<raytracer::TestPattern>();
+    pattern->setPatternTransform(translate->translate(1, 2, 3));
+    ASSERT_EQ(pattern->getPatternTransform(), translate->translate(1, 2, 3));
+}
+
+TEST_F(PatternFixture, ObjectTransformation) {
+    sphere->setTransform(scaling->scale(2, 2, 2));
+    pattern = std::make_shared<raytracer::TestPattern>();
+    * color = pattern->patternAtShape(sphere, raytracer::Point(2, 3, 4));
+    ASSERT_EQ(* color, raytracer::Color(1, 1.5, 2));
+}
+
+TEST_F(PatternFixture, PatternTransformation) {
+    pattern = std::make_shared<raytracer::TestPattern>();
+    pattern->setPatternTransform(scaling->scale(2, 2, 2));
+    * color = pattern->patternAtShape(sphere, raytracer::Point(2, 3, 4));
+    ASSERT_EQ(* color, raytracer::Color(1, 1.5, 2));
+}
+
+TEST_F(PatternFixture, ObjectAndPatternTransformation) {
+    sphere->setTransform(scaling->scale(2, 2, 2));
+    pattern = std::make_shared<raytracer::TestPattern>();
+    pattern->setPatternTransform(translate->translate(0.5, 1, 1.5));
+    * color = pattern->patternAtShape(sphere, raytracer::Point(2.5, 3, 3.5));
+    ASSERT_EQ(* color, raytracer::Color(0.75, 0.5, 0.25));
+}
+
 TEST_F(PatternFixture, GradientPattern) {
     pattern = std::make_shared<raytracer::GradientPattern>(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
     EXPECT_EQ(pattern->patternAt(raytracer::Point(0, 0, 0)), raytracer::Color(1, 1, 1));

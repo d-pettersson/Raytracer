@@ -293,3 +293,54 @@ TEST_F(WorldFixture, RefractedColorMaximumRecursiveDepth) {
     auto color = world->refractedColor(* comps, 0);
     ASSERT_EQ(color, raytracer::Color(0, 0, 0));
 }
+
+TEST_F(WorldFixture, RefractedColorUnderTotalInternalReflection) {
+    world->defaultWorld();
+    world->shapes[0]->material.transparency = 1.0;
+    world->shapes[0]->material.refractiveIndex = 1.5;
+    auto ray = raytracer::Ray(raytracer::Point(0, 0, sqrt(2)/2), raytracer::Vector(0, 1, 0));
+    auto i1 = raytracer::Intersection(-sqrt(2)/2, world->shapes[0]);
+    auto i2 = raytracer::Intersection(sqrt(2)/2, world->shapes[0]);
+    auto xs = intersections(i1, i2);
+    auto comps = new raytracer::IntersectionData();
+    * comps = xs[1].prepareComputations(ray, xs);
+    auto color = world->refractedColor(* comps, 5);
+    ASSERT_EQ(color, raytracer::Color(0, 0, 0));
+}
+
+TEST_F(WorldFixture, RefractedColorRefractedRay) {
+    world->defaultWorld();
+    world->shapes[0]->material.ambient = 1.0;
+    world->shapes[0]->material.pattern = std::make_shared<raytracer::TestPattern>();
+    world->shapes[1]->material.transparency = 1.0;
+    world->shapes[1]->material.refractiveIndex = 1.5;
+    auto ray = raytracer::Ray(raytracer::Point(0, 0, 0.1), raytracer::Vector(0, 1, 0));
+    auto i1 = raytracer::Intersection(-0.9899, world->shapes[0]);
+    auto i2 = raytracer::Intersection(-0.4899, world->shapes[1]);
+    auto i3 = raytracer::Intersection(0.4899, world->shapes[1]);
+    auto i4 = raytracer::Intersection(0.9899, world->shapes[0]);
+    auto xs = intersections(i1, i2, i3, i4);
+    auto comps = xs[2].prepareComputations(ray, xs);
+    * color = world->refractedColor(comps, 5);
+    ASSERT_EQ(* color, raytracer::Color(0, 0.99888, 0.04725));
+}
+
+TEST_F(WorldFixture, ShadeHitWithTransparentMaterial) {
+    world->defaultWorld();
+    auto floor = std::make_shared<raytracer::Plane>();
+    floor->material.transparency = 0.5;
+    floor->material.refractiveIndex = 1.5;
+    floor->setTransform(transform->translate(0, -1, 0));
+    world->addObject(floor);
+    auto ball = std::make_shared<raytracer::Sphere>();
+    ball->material.color = raytracer::Color(1, 0, 0);
+    ball->material.ambient = 0.5;
+    ball->setTransform(transform->translate(0, -3.5, -0.5));
+    world->addObject(ball);
+    auto ray = raytracer::Ray(raytracer::Point(0, 0, -3), raytracer::Vector(0, -sqrt(2)/2, sqrt(2)/2));
+    auto i1 = raytracer::Intersection(sqrt(2), floor);
+    auto xs = intersections(i1);
+    auto comps = xs[0].prepareComputations(ray, xs);
+    * color = world->shadeHit(comps, 5);
+    ASSERT_EQ(* color, raytracer::Color(0.93642, 0.68642, 0.68642));
+}

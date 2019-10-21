@@ -2,10 +2,11 @@
 #include "include/common.h"
 
 #include <cmath>
+#include <utility>
 
 namespace raytracer {
-Material::Material(const raytracer::Color &color, const double &ambient, const double &diffuse, const double &specular, const double &reflection, const double &shininess, const double &transparency, const double &refractiveIndex)
-    : color(color), ambient(ambient), diffuse(diffuse), specular(specular), shininess(shininess), reflection(reflection), pattern(), transparency(transparency), refractiveIndex(refractiveIndex)
+Material::Material(Color color, const double &ambient, const double &diffuse, const double &specular, const double &reflection, const double &shininess, const double &transparency, const double &refractiveIndex)
+    : color(std::move(color)), ambient(ambient), diffuse(diffuse), specular(specular), shininess(shininess), reflection(reflection), pattern(), transparency(transparency), refractiveIndex(refractiveIndex)
 {
     this->pattern = std::make_shared<NoPattern>(); // set an "empty" shared_ptr as instantiation of the abstract base class is not allowed
 }

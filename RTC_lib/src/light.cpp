@@ -3,10 +3,11 @@
 
 #include <random>
 #include <memory>
+#include <utility>
 
 namespace raytracer {
-Light::Light(const raytracer::Point &position, const raytracer::Color &intensity)
-    : position(position), intensity(intensity), uSteps(1), vSteps(1), samples(1)
+Light::Light(Point position, Color intensity)
+    : position(std::move(position)), intensity(std::move(intensity)), uSteps(1), vSteps(1), samples(1)
 {
 }
 
@@ -15,7 +16,7 @@ Light::Light()
 {
 }
 
-void Light::setPointLight(const raytracer::Point &pos, const raytracer::Color &intens) {
+void Light::setPointLight(const Point &pos, const Color &intens) {
     this->position = pos;
     this->intensity = intens;
 }

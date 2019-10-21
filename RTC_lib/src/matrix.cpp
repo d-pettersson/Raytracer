@@ -92,8 +92,8 @@ Matrix Matrix::operator*(const Matrix& m) {
     return output;
 }
 
-raytracer::Tuple Matrix::operator*(const raytracer::Tuple& t) {
-    raytracer::Tuple output = Tuple();
+Tuple Matrix::operator*(const raytracer::Tuple& t) {
+    Tuple output = Tuple();
     for (size_t i = 0; i < this->getRowSize(); i++) {
         output(i) = matrixData[cols * i] * t.x +
                     matrixData[cols * i + 1] * t.y +
@@ -103,8 +103,8 @@ raytracer::Tuple Matrix::operator*(const raytracer::Tuple& t) {
     return output;
 }
 
-raytracer::Point Matrix::operator*(const raytracer::Point& t) {
-    raytracer::Point output = Point();
+Point Matrix::operator*(const raytracer::Point& t) {
+    Point output = Point();
     for (size_t i = 0; i < this->getRowSize(); i++) {
         output(i) = matrixData[cols * i] * t.x +
                     matrixData[cols * i + 1] * t.y +
@@ -114,8 +114,8 @@ raytracer::Point Matrix::operator*(const raytracer::Point& t) {
     return output;
 }
 
-raytracer::Vector Matrix::operator*(const raytracer::Vector& t) {
-    raytracer::Vector output = Vector();
+Vector Matrix::operator*(const raytracer::Vector& t) {
+    Vector output = Vector();
     for (size_t i = 0; i < this->getRowSize(); i++) {
         output(i) = matrixData[cols * i] * t.x +
                     matrixData[cols * i + 1] * t.y +

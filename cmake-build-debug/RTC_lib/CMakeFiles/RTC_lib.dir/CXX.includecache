@@ -111,4 +111,6 @@ include/world.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/world.h
 memory
 -
+cmath
+-
 

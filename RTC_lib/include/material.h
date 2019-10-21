@@ -8,7 +8,7 @@
 namespace raytracer {
 class Material {
     public:
-        Material(const raytracer::Color &color,
+        Material(raytracer::Color color,
                  const double &ambient,
                  const double &diffuse,
                  const double &specular,

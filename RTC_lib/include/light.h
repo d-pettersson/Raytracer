@@ -13,7 +13,7 @@ class World;
 class Light {
 public:
     Light();
-    Light(const Point &position, const Color &intensity);
+    Light(Point position, Color intensity);
 
     void setPointLight(const Point &position, const Color &intensity);
 //    void setAreaLight(const Point &corner, const Vector &fullUVec, const int &uSteps, const Vector &fullVVec, const int &vSteps, const Color &intensity);

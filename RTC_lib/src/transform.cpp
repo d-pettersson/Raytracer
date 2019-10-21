@@ -68,12 +68,12 @@ Transform& Transform::shear(const double &xy, const double &xz,
 }
 
 Transform viewTransform(const Point &from, const Point &to, const Vector &up) {
-    auto * forward = new raytracer::Vector();
-    auto * left = new raytracer::Vector();
-    auto * trueUp = new raytracer::Vector();
+    auto * forward = new Vector();
+    auto * left = new Vector();
+    auto * trueUp = new Vector();
     auto * orientationData = new std::vector<double>(16);
-    auto * orientationMatrix = new raytracer::Matrix(4, 4);
-    auto * transform = new raytracer::Transform();
+    auto * orientationMatrix = new Matrix(4, 4);
+    auto * transform = new Transform();
 
     * forward = normalize(to - from);
     * left = cross(* forward, normalize(up));

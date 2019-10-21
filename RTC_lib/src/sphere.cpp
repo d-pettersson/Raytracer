@@ -1,4 +1,5 @@
 #include "include/sphere.h"
+//#include "include/common.h"
 
 #include <cmath>
 
@@ -14,10 +15,10 @@ Sphere::~Sphere() = default;
 void Sphere::intersect(const Ray& ray, std::vector<Intersection>& xs) const {
     Transform sphereTransform = this->getTransform();
     Transform invertedTransform = inverse(sphereTransform);
-    raytracer::Ray newRay = transform(ray, invertedTransform);
+    Ray newRay = transform(ray, invertedTransform);
 
-    raytracer::Point center = raytracer::Point(0, 0, 0);
-    raytracer::Vector sphereToRay = newRay.getOrigin() - center;
+    Point center = Point(0, 0, 0);
+    Vector sphereToRay = newRay.getOrigin() - center;
 
     double a = dot(newRay.getDirection(), newRay.getDirection());
     double b = 2 * dot(newRay.getDirection(), sphereToRay);
@@ -34,9 +35,9 @@ void Sphere::intersect(const Ray& ray, std::vector<Intersection>& xs) const {
 }
 
 Vector Sphere::getNormal(Point worldPoint) const {
-    raytracer::Point objectPoint = inverse(this->getTransform()) * worldPoint;
-    raytracer::Vector objectNormal = objectPoint - Point(0, 0, 0);
-    raytracer::Vector worldNormal = transpose(inverse(this->getTransform())) * objectNormal;
+    Point objectPoint = inverse(this->getTransform()) * worldPoint;
+    Vector objectNormal = objectPoint - Point(0, 0, 0);
+    Vector worldNormal = transpose(inverse(this->getTransform())) * objectNormal;
     worldNormal.w = 0;
     return normalize(worldNormal);
 }

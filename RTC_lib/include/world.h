@@ -1,3 +1,8 @@
+/**
+ * The <code>World</code> class renders 3D objects.
+ *
+ */
+
 #ifndef RTC_WORLD_H
 #define RTC_WORLD_H
 
@@ -15,10 +20,10 @@ class World {
         void defaultWorld();
 
         void intersectWorld(const Ray &ray, std::vector<Intersection> * xs) const;
-        Color shadeHit(const IntersectionData &intersectionData, int remaining = 5);
+        Color shadeHit(const IntersectionData &comps, int remaining = 5);
         Color colorAt(const Ray &ray, int remaining = 5);
-        Color reflectedColor(const IntersectionData &xs, int remaining = 5);
-        Color refractedColor(const IntersectionData &xs, int remaining = 5);
+        Color reflectedColor(const IntersectionData &comps, int remaining = 5);
+        Color refractedColor(const IntersectionData &comps, int remaining = 5);
 //        bool isShadowed(const Point &lightPosition, const Point& point) const;
         bool isShadowed(const Point& point) const;
 

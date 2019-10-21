@@ -16,7 +16,7 @@ int main() {
     auto * camera = new raytracer::Camera();
     
     auto * world = new raytracer::World();
-    auto * canvas = new raytracer::Canvas();
+    auto canvas = raytracer::Canvas();
 
     auto * transform = new raytracer::Transform();
     auto * translation = new raytracer::Transform();
@@ -70,8 +70,8 @@ int main() {
     * camera = raytracer::Camera(500, 250, PI/3);
     * transform = viewTransform(raytracer::Point(1.f, 1.5, -5.f), raytracer::Point(0.f, 1.f, 0.f), raytracer::Vector(0.f, 1.f, 0.f));
     camera->transform = * transform;
-    * canvas = camera->render(* world);
-    canvas->saveToFile();
+    canvas = camera->render(* world);
+    canvas.saveToFile();
 
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
@@ -81,7 +81,6 @@ int main() {
     delete light;
     delete camera;
     delete world;
-    delete canvas;
     delete transform;
     delete translation;
     delete rotationX;

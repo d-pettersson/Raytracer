@@ -102,7 +102,7 @@ void Canvas::saveToFile() {
     std::ofstream os("image.ppm", std::ofstream::binary);
     os << createPPMHeader();
     bool first = true;
-    for (int py = 0; py < this->height; py++) {
+    for (size_t py = 0; py < this->height; py++) {
         first ? os << "" : os << '\n';
         counter = 0;
         for (int px = 0; px < this->width; px++) {

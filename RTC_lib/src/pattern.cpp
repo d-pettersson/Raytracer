@@ -2,6 +2,7 @@
 #include "include/shape.h"
 
 #include <cmath>
+#include <utility>
 
 namespace raytracer {
 
@@ -14,8 +15,8 @@ Pattern::Pattern()
 Pattern::~Pattern() = default;
 
 
-Pattern::Pattern(const Color &c1, const Color &c2)
-    : c1(c1), c2(c2), hasPattern()
+Pattern::Pattern(Color c1, Color c2)
+    : c1(std::move(c1)), c2(std::move(c2)), hasPattern()
 {
 }
 
@@ -30,7 +31,7 @@ Transform Pattern::getPatternTransform() const {
 // No pattern
 
 NoPattern::NoPattern()
-    : Pattern()
+        : Pattern()
 {
 }
 
@@ -42,6 +43,26 @@ Color NoPattern::patternAtShape(const std::shared_ptr<Shape const> &s, const Poi
 
 Color NoPattern::patternAt(const Point &p) const {
     return Color();
+}
+
+// Test pattern
+
+TestPattern::TestPattern()
+    : Pattern()
+{
+    this->hasPattern = true;
+}
+
+TestPattern::~TestPattern() = default;
+
+Color TestPattern::patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const {
+    Point objectPoint = inverse(s->getTransform()) * p;
+    Point patternPoint = inverse(this->getPatternTransform()) * objectPoint;
+    return this->patternAt(patternPoint);
+}
+
+Color TestPattern::patternAt(const Point &p) const {
+    return Color(p.x, p.y, p.z);
 }
 
 // Stripe pattern
