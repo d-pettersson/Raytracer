@@ -1,7 +1,6 @@
 #include "include/pattern.h"
 #include "include/shape.h"
 
-#include <cmath>
 #include <utility>
 
 namespace raytracer {
@@ -15,8 +14,8 @@ Pattern::Pattern()
 Pattern::~Pattern() = default;
 
 
-Pattern::Pattern(Color c1, Color c2)
-    : c1(std::move(c1)), c2(std::move(c2)), hasPattern()
+Pattern::Pattern(const Color& c1, Color c2)
+    : c1(c1), c2(c2), hasPattern()
 {
 }
 

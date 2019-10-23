@@ -1,7 +1,6 @@
 #include "include/camera.h"
 
 #include <utility>
-#include <cmath>
 #include <omp.h>
 
 namespace raytracer {
@@ -51,7 +50,7 @@ Canvas Camera::render(World& world) {
         for (int x = 0; x < this->hsize; x++) {
             * ray = this->rayForPixel(x, y);
             * color = world.colorAt(* ray);
-            image->writePixel(x, y, color);
+            image->writePixel(x, y, * color);
         }
     }
     return * image;

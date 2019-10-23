@@ -1,8 +1,6 @@
 #include "include/sphere.h"
 //#include "include/common.h"
 
-#include <cmath>
-
 namespace raytracer {
 
 Sphere::Sphere()

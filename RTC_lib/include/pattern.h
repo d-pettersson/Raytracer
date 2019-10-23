@@ -15,7 +15,7 @@ class Pattern : public std::enable_shared_from_this<Pattern>{
     public:
         Pattern();
         virtual ~Pattern();
-        Pattern(Color c1, Color  c2);
+        Pattern(const Color& c1, Color  c2);
 
         virtual Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const = 0;
         virtual Color patternAt(const Point &p) const = 0;

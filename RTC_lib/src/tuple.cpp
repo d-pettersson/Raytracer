@@ -1,23 +1,35 @@
 #include "include/tuple.h"
 
-#include <cmath>
 
 namespace raytracer {
 
-Tuple::Tuple(double xx, double yy, double zz, double ww)
-        :x{xx}, y{yy}, z{zz}, w{ww}
+Tuple::Tuple(double _x, double _y, double _z, double _w)
+    : x{_x}, y{_y}, z{_z}, w{_w}
 {
 }
 
 Tuple::Tuple()
-        :x{0.0f}, y{0.0f}, z{0.0f}, w{0.0f}
+    : x{0.0}, y{0.0}, z{0.0}, w{0.0}
 {
 }
 
+Tuple abs(const Tuple &t) {
+    return {fabs(t.x), fabs(t.y), fabs(t.z), fabs(t.w)};
+}
+
+bool Tuple::operator==(const Tuple& rhs) const {
+    auto difference = * this - rhs;
+    return abs(difference) < EPSILON;
+}
+
+bool Tuple::operator!=(const Tuple& rhs) const {
+    return !operator==(rhs);
+};
+
 //----------------------------------------------------------------
 
-Point::Point(double xx, double yy, double zz)
-    : Tuple{xx, yy, zz, 1.0f}
+Point::Point(double _x, double _y, double _z)
+    : Tuple{_x, _y, _z, 1.0}
 {
 }
 
@@ -26,10 +38,25 @@ Point::Point()
 {
 }
 
+Point::~Point() = default;
+
+Point abs(const Point &p) {
+    return {fabs(p.x), fabs(p.y), fabs(p.z)};
+}
+
+bool Point::operator==(const Point& rhs) const {
+    auto difference = * this - rhs;
+    return abs(difference) < EPSILON;
+}
+
+bool Point::operator!=(const Point& rhs) const {
+    return !operator==(rhs);
+}
+
 //----------------------------------------------------------------
 
-Vector::Vector(double xx, double yy, double zz)
-    : Tuple{xx, yy, zz, 0.0f}
+Vector::Vector(double _x, double _y, double _z)
+    : Tuple{_x, _y, _z, 0.0}
 {
 }
 
@@ -38,19 +65,46 @@ Vector::Vector()
 {
 }
 
+Vector::~Vector() = default;
+
+Vector abs(const Vector& v) {
+    return {fabs(v.x), fabs(v.y), fabs(v.z)};
+}
+
+bool Vector::operator==(const Vector& rhs) const {
+    auto difference = * this - rhs;
+    return abs(difference) < EPSILON;
+}
+
+bool Vector::operator!=(const Vector& rhs) const {
+    return !operator==(rhs);
+}
+
 //----------------------------------------------------------------
 
-Color::Color(double r, double g, double b)
-    : Tuple(r, g, b, 0.0f)
+Color::Color(double &_r, double &_g, double &_b)
+    : Tuple(_r, _g, _b, 0.0), r(&x), g(&y), b(&z)
 {
-    this->r = x;
-    this->g = y;
-    this->b = z;
 }
 
 Color::Color()
-    : Tuple()
+    : Tuple(), r(), g(), b()
 {
+}
+
+Color::~Color() = default;
+
+Color abs(const Color &c) {
+    return {fabs(* c.r), fabs(* c.g), fabs(* c.b)};
+}
+
+bool Color::operator==(const Color& rhs) const {
+    auto difference = * this - rhs;
+    return abs(difference) < EPSILON;
+}
+
+bool Color::operator!=(const Color& rhs) const {
+    return !operator==(rhs);
 }
 
 double& Tuple::operator()(size_t index) {
@@ -155,11 +209,11 @@ std::ostream& operator<<(std::ostream& out, const Point& p1) {
     return out;
 }
 
-bool operator==(const Point &p1, const Point &p2) {
-    auto * difference = new Vector();
-    * difference = p1 - p2;
-    return tupleAbs(difference) < EPSILON;
-}
+//bool operator==(const Point &p1, const Point &p2) {
+//    auto * difference = new Vector();
+//    * difference = p1 - p2;
+//    return tupleAbs(difference) < EPSILON;
+//}
 
 Point Point::operator-() {
     return {-(* this).x, -(* this).y, -(* this).z};
@@ -194,11 +248,11 @@ Vector operator-(const Point& p1, const Point& p2) {
 }
 
 // Vector operators
-bool operator==(const Vector &v1, const Vector &v2) {
-    auto * difference = new Vector();
-    * difference = v1 - v2;
-    return tupleAbs(difference) < EPSILON;
-}
+//bool operator==(const Vector &v1, const Vector &v2) {
+//    auto * difference = new Vector();
+//    * difference = v1 - v2;
+//    return tupleAbs(difference) < EPSILON;
+//}
 
 Vector operator*(const Vector& v1, const double& scalar) {
     return {v1.x * scalar, v1.y * scalar, v1.z * scalar};
@@ -235,11 +289,11 @@ bool operator<(const Tuple& t1, const double& d1) {
     return t1.x < d1 && t1.y < d1 && t1.z < d1 && t1.w < d1;
 }
 
-bool operator==(const Tuple& t1, const Tuple& t2) {
-    auto * difference = new Tuple();
-    * difference = t1 - t2;
-    return tupleAbs(difference) < EPSILON;
-}
+//bool operator==(const Tuple& t1, const Tuple& t2) {
+//    auto * difference = new Tuple();
+//    * difference = t1 - t2;
+//    return tupleAbs(difference) < EPSILON;
+//}
 
 Tuple operator-(const Tuple& t1, const Tuple& t2) {
     return {t1.x - t2.x, t1.y - t2.y, t1.z - t2.z, t1.w - t2.w};
@@ -272,39 +326,39 @@ std::ostream& operator<<(std::ostream& out, const Tuple& t1) {
 
 // Color operators
 Color operator-(const Color& c1, const Color& c2) {
-    return {c1.r - c2.r, c1.g - c2.g, c1.b - c2.b};
+    return {* c1.r - * c2.r, * c1.g - * c2.g, * c1.b - * c2.b};
 }
 
 Color operator+(const Color& c1, const Color& c2) {
-    return {c1.r + c2.r, c1.g + c2.g, c1.b + c2.b};
+    return {* c1.r + * c2.r, * c1.g + * c2.g, * c1.b + * c2.b};
 }
 
 Color operator*(const Color& c1, const Color& c2) {
-    return {c1.r * c2.r, c1.g * c2.g, c1.b * c2.b};
+    return {* c1.r * * c2.r, * c1.g * * c2.g, * c1.b * * c2.b};
 }
 
 Color operator*(const Color& c1, const double& scalar) {
-    return {c1.r * scalar, c1.g * scalar, c1.b * scalar};
+    return {* c1.r * scalar, * c1.g * scalar, * c1.b * scalar};
 }
 
 Color operator/(const Color& c1, const double& scalar) {
     return {c1.x / scalar, c1.y / scalar, c1.z / scalar};
 }
 
-bool operator==(const Color& c1, const Color& c2) {
-    auto * difference = new Color();
-    * difference = c1 - c2;
-    return tupleAbs(difference) < EPSILON;
-}
-
-bool operator!=(const Color& c1, const Color& c2) {
-    auto * difference = new Color();
-    * difference = c1 - c2;
-    return !(tupleAbs(difference) < EPSILON);
-}
+//bool operator==(const Color& c1, const Color& c2) {
+//    auto * difference = new Color();
+//    * difference = c1 - c2;
+//    return tupleAbs(difference) < EPSILON;
+//}
+//
+//bool operator!=(const Color& c1, const Color& c2) {
+//    auto * difference = new Color();
+//    * difference = c1 - c2;
+//    return !(tupleAbs(difference) < EPSILON);
+//}
 
 std::ostream& operator<<(std::ostream& out, const Color& c1) {
-    out << '[' << c1.r << ", " << c1.g << ", " << c1.b << ']';
+    out << '[' << * c1.r << ", " << * c1.g << ", " << * c1.b << ']';
     return out;
 }
 

@@ -1,7 +1,5 @@
 #include "include/shape.h"
 
-#include <cmath>
-
 namespace raytracer {
 
 Shape::Shape()

@@ -54,14 +54,14 @@ protected:
 
 TEST_F(WorldFixture, DefaultWorld) {
     world->defaultWorld();
-    s1->material.color = raytracer::Color(0.8, 1.0, 0.6);
+//    s1->material.color = raytracer::Color(0.8, 1.0, 0.6);
     s1->material.diffuse = 0.7;
     s1->material.specular = 0.2;
     s2->setTransform(transform->scale(0.5, 0.5, 0.5));
-    ASSERT_EQ(raytracer::Light(raytracer::Point(-10, 10, -10), raytracer::Color(1, 1, 1)), world->light);
-    ASSERT_EQ(s1->material.diffuse, world->shapes[0]->material.diffuse);
-    ASSERT_EQ(s1->material.color, world->shapes[0]->material.color);
-    ASSERT_EQ(s1->material.specular, world->shapes[0]->material.specular);
+    EXPECT_EQ(raytracer::Light(raytracer::Point(-10, 10, -10), raytracer::Color(1, 1, 1)), world->light);
+    EXPECT_EQ(s1->material.diffuse, world->shapes[0]->material.diffuse);
+    EXPECT_EQ(s1->material.color, world->shapes[0]->material.color);
+    EXPECT_EQ(s1->material.specular, world->shapes[0]->material.specular);
     ASSERT_EQ(s2->getTransform(), world->shapes[1]->getTransform());
 }
 

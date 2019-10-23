@@ -7,14 +7,13 @@
 #include <sstream>
 #include <fstream>
 #include <algorithm>
-#include <cmath>
 
 // TODO: rewrite canvas data type to std::vector<Color> for performance
 
 namespace raytracer {
 
 Canvas::Canvas(size_t w, size_t h)
-        : width{w}, height{h}, colors{std::vector<std::vector<Color>>(width, std::vector<Color>(height, Color(0., 0., 0.)))}
+        : width{w}, height{h}, colors{std::vector<std::vector<Color>>(width, std::vector<Color>(height, Color(0.0, 0.0, 0.0)))}
 {
 }
 
@@ -24,29 +23,28 @@ Canvas::Canvas()
 }
 
 Color Canvas::scaleColor(const Color &color, const int &colorDepth) {
-    auto * outputCol = new Color();
-    outputCol->r = std::clamp((int) ceil(color.r * colorDepth), 0, colorDepth);
-    outputCol->g = std::clamp((int) ceil(color.g * colorDepth), 0, colorDepth);
-    outputCol->b = std::clamp((int) ceil(color.b * colorDepth), 0, colorDepth);
-    return * outputCol;
+    Color output;
+    * output.r = std::clamp((int) ceil(* color.r * colorDepth), 0, colorDepth);
+    * output.g = std::clamp((int) ceil(* color.g * colorDepth), 0, colorDepth);
+    * output.b = std::clamp((int) ceil(* color.b * colorDepth), 0, colorDepth);
+    return output;
 }
 
 int Canvas::scaleColor(const double &d, const int &colorDepth) {
     return std::clamp((int) ceil(d * colorDepth), 0, colorDepth);
 }
 
-void Canvas::writePixel(const int& x, const int& y, Color * color) {
+void Canvas::writePixel(const int& x, const int& y, const Color& color) {
     if (x < 0 || y < 0) {
         std::cerr << "x and y have to be positive";
     }
-    color->r < 0 ? color->r = 0 : color->r;
-    color->g < 0 ? color->g = 0 : color->g;
-    color->b < 0 ? color->b = 0 : color->b;
-
-    this->colors[x][y] = * color;
+    * color.r < 0.0 ? * color.r = 0.0 : * color.r;
+    * color.g < 0.0 ? * color.g = 0.0 : * color.g;
+    * color.b < 0.0 ? * color.b = 0.0 : * color.b;
+    this->colors[x][y] = color;
 }
 
-Color Canvas::pixelAt(const int& x, const int& y) const {
+Color Canvas::pixelAt(const int& x, const int& y) {
     if (x < 0 || y < 0) {
         std::cerr << "x and y have to be positive";
     }
@@ -124,7 +122,7 @@ void Canvas::saveToFile() {
     os.close();
 }
 
-std::ostream& operator<<(std::ostream& out, const Canvas& canvas) {
+std::ostream& operator<<(std::ostream& out, Canvas& canvas) {
     for (int i = 0; i < canvas.width; i++) {
         for (int j = 0; j < canvas.height; j++) {
             out << "pixel: " << canvas.pixelAt(i, j) << ' ';

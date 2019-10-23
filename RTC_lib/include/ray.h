@@ -1,7 +1,7 @@
 #ifndef RTC_RAY_H
 #define RTC_RAY_H
 
-#include "tuple.h"
+//#include "tuple.h"
 #include "transform.h"
 
 #include <vector>
@@ -11,7 +11,7 @@ namespace raytracer {
 class Ray {
     public:
         Ray();
-        Ray(Point origin, Vector direction);
+        Ray(const Point &_origin, const Vector &_direction);
 
         void setDirection(const Vector& vector);
         Vector getDirection() const;

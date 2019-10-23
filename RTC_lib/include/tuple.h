@@ -13,6 +13,8 @@
 #include "include/constants.h"
 
 #include <iostream>
+#include <memory>
+#include <cmath>
 
 namespace raytracer {
 
@@ -26,7 +28,7 @@ class Tuple {
          * @param[in] double z
          * @param[in] double w
          */
-        Tuple(double x, double y, double z, double w);
+        Tuple(double _x, double _y, double _z, double _w);
         Tuple();
 
         /**
@@ -45,9 +47,14 @@ class Tuple {
 
         double x, y, z, w;
 
+        bool operator!=(const Tuple& rhs) const;
+        bool operator==(const Tuple& rhs) const;
+
         double& operator()(size_t index);
         double operator()(size_t index) const;
 };
+
+Tuple abs(const Tuple &t);
 
 /**
  * The <code>Point</code> class inherits from the <code>Tuple</code> class.
@@ -56,13 +63,19 @@ class Tuple {
  * @param[in] double y
  * @param[in] double z
  */
-class Point : virtual public Tuple {
+class Point : public Tuple {
     public:
-        Point(double x, double y, double z);
+        Point(double _x, double _y, double _z);
         Point();
+        ~Point();
 
         Point operator-();
+
+        bool operator!=(const Point& rhs) const;
+        bool operator==(const Point& rhs) const;
 };
+
+Point abs(const Point &p);
 
 /**
  * The <code>Vector</code> class inherits from the <code>Tuple</code> class.
@@ -71,11 +84,17 @@ class Point : virtual public Tuple {
  * @param[in] double y
  * @param[in] double z
  */
-class Vector : virtual public Tuple {
+class Vector : public Tuple {
     public:
-        Vector(double x, double y, double z);
+        Vector(double _x, double _y, double _z);
         Vector();
+        ~Vector();
+
+        bool operator!=(const Vector& rhs) const;
+        bool operator==(const Vector& rhs) const;
 };
+
+Vector abs(const Vector &p);
 
 /**
  * The <code>Color</code> class inherits from the <code>Tuple</code> class.
@@ -85,13 +104,19 @@ class Vector : virtual public Tuple {
  * @param[in] double g
  * @param[in] double b
  */
-class Color : virtual public Tuple {
+class Color : public Tuple {
     public:
-        Color(double r, double g, double b);
+        Color(double &_r, double &_g, double &_b);
         Color();
+        ~Color();
 
-        double r, g, b;
+        bool operator!=(const Color& rhs) const;
+        bool operator==(const Color& rhs) const;
+
+        double * r, * g, * b;
 };
+
+//Color abs(const Color &c);
 
 /**
  * Creates a <code>Point</code> from coordinates(x, y, z)
@@ -193,7 +218,7 @@ bool isEqual(const Tuple& t1, const Tuple& t2);
 // Tuple operators
 bool operator<(const Tuple& t1, const Tuple& t2);
 bool operator<(const Tuple& t1, const double& d1);
-bool operator==(const Tuple& t1, const Tuple& t2);
+//bool operator==(const Tuple& t1, const Tuple& t2);
 
 Tuple operator-(const Tuple& t1, const Tuple& t2);
 Tuple operator-(const Tuple& t1);
@@ -205,7 +230,7 @@ Tuple operator/(const Tuple& t1, const double& scalar);
 std::ostream& operator<<(std::ostream& out, const Tuple& t1);
 
 // Point operators
-bool operator==(const Point &p1, const Point &p2);
+//bool operator==(const Point &p1, const Point &p2);
 
 Point operator*(const Point& p1, const Point& p2);
 Point operator*(const Point& p1, const Vector& p2);
@@ -218,7 +243,7 @@ Vector operator-(const Point& p1, const Point& p2);
 std::ostream& operator<<(std::ostream& out, const Point& p1);
 
 // Vector operators
-bool operator==(const Vector &v1, const Vector &v2);
+//bool operator==(const Vector &v1, const Vector &v2);
 
 Vector operator*(const Vector& v1, const double& scalar);
 Vector operator+(const Vector &v1, const Vector &v2);
@@ -230,8 +255,8 @@ std::ostream& operator<<(std::ostream& out, const Vector& v1);
 
 
 // Color operators
-bool operator==(const Color& c1, const Color& c2);
-bool operator!=(const Color& c1, const Color& c2);
+//bool operator==(const Color& c1, const Color& c2);
+//bool operator!=(const Color& c1, const Color& c2);
 
 Color operator-(const Color& c1, const Color& c2);
 Color operator+(const Color& c1, const Color& c2);

@@ -7,8 +7,8 @@ Ray::Ray()
 {
 }
 
-Ray::Ray(raytracer::Point ori, raytracer::Vector dir)
-        : origin(std::move(ori)), direction(std::move(dir))
+Ray::Ray(const raytracer::Point& _origin, const raytracer::Vector& _direction)
+        : origin(_origin), direction(_direction)
 {
 }
 

@@ -8,14 +8,14 @@
 namespace raytracer {
 class Material {
     public:
-        Material(raytracer::Color color,
-                 const double &ambient,
-                 const double &diffuse,
-                 const double &specular,
-                 const double &reflection,
-                 const double &shininess,
-                 const double &transparency,
-                 const double &refractiveIndex);
+        Material(const Color &_color,
+                 const double &_ambient,
+                 const double &_diffuse,
+                 const double &_specular,
+                 const double &_reflection,
+                 const double &_shininess,
+                 const double &_transparency,
+                 const double &_refractiveIndex);
 
         Material();
 

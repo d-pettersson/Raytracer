@@ -1,7 +1,5 @@
 #include "include/plane.h"
 
-#include <cmath>
-
 namespace raytracer {
 
 Plane::Plane()

@@ -287,10 +287,10 @@ TEST_F(TupleFixture, CrossProduct4) {
 }
 
 TEST_F(TupleFixture, SimpleColorTest) {
-    color = new raytracer::Color(-0.5, 0.4, 1.7);
-    ASSERT_EQ(-0.5, color->r);
-    ASSERT_EQ(0.4, color->g);
-    ASSERT_EQ(1.7, color->b);
+    * color = raytracer::Color(-0.5, 0.4, 1.7);
+    ASSERT_EQ(-0.5, * color->r);
+    ASSERT_EQ(0.4, * color->g);
+    ASSERT_EQ(1.7, * color->b);
 }
 
 TEST_F(TupleFixture, ColorEquality) {

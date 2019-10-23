@@ -1,11 +1,10 @@
 #include "include/world.h"
 
 #include <memory>
-#include <cmath>
 
 namespace raytracer {
 World::World()
-    : light(Light()), shapes(std::vector<std::shared_ptr<Shape> >())
+    : light(), shapes(std::vector<std::shared_ptr<Shape> >())
 {
 }
 
@@ -16,7 +15,7 @@ void World::intersectWorld(const raytracer::Ray &ray, std::vector<Intersection> 
     std::sort(xs->begin(), xs->end());
 }
 
-Color World::shadeHit(const IntersectionData &comps, int remaining) {
+Color World::shadeHit(const IntersectionData &comps, const int& remaining) {
     bool shadowed = this->isShadowed(comps.overPoint);
 //    float shadowed = this->light.intensityAt(comps.overPoint, * this); // area light related
 
@@ -30,8 +29,8 @@ Color World::shadeHit(const IntersectionData &comps, int remaining) {
                                                    + this->refractedColor(comps, remaining);
 }
 
-Color World::colorAt(const Ray &ray, int remaining) {
-    auto * xs = new std::vector<Intersection>();
+Color World::colorAt(const Ray &ray, const int& remaining) {
+    auto xs = new std::vector<Intersection>();
     this->intersectWorld(ray, xs);
     auto intersection = hit(* xs);
 
@@ -46,7 +45,7 @@ void World::addObject(const std::shared_ptr<Shape> &shape) {
 }
 
 void World::defaultWorld() {
-    this->light = Light(Point(-10.0, 10.0, -10.0), Color(1, 1, 1));
+    this->light = Light(Point(-10.0, 10.0, -10.0), Color(1.0, 1.0, 1.0));
 
     this->shapes = std::vector<std::shared_ptr<Shape> >{2};
     shapes[0] = std::make_shared<Sphere>();

@@ -32,7 +32,7 @@ class Canvas {
          * @param[in] int y
          * @param[in] Color color
          */
-        void writePixel(const int& x, const int& y, Color * color);
+        void writePixel(const int& x, const int& y, const Color &color);
 
         /**
          * Get the value of the pixel situated at x and y coordinates.
@@ -41,7 +41,7 @@ class Canvas {
          * @param[in] int y
          * @return Color
          */
-        Color pixelAt(const int& x, const int& y) const;
+        Color pixelAt(const int& x, const int& y);
 
         /**
          * Scales the <code>Color</code> values from range(0, 1) to (0, colorDepth)

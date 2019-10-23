@@ -1,7 +1,5 @@
 #include "include/transform.h"
 
-#include <cmath>
-
 namespace raytracer {
 
 Transform::Transform()

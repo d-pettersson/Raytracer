@@ -75,7 +75,7 @@ TEST_F(RayFixture, Intersection2) {
     origin = raytracer::Point(0, 1, -5);
     direction = raytracer::Vector(0, 0, 1);
     * ray = raytracer::Ray(origin, direction);
-    * sphere = raytracer::Sphere();
+//    * sphere = raytracer::Sphere();
     sphere->intersect(* ray, xs);
     ASSERT_EQ(2, xs.size());
     ASSERT_EQ(5.0, xs[0].getDistance());

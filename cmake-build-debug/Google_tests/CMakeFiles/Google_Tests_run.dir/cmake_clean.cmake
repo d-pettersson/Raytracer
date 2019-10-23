@@ -1,12 +1,11 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Google_Tests_run.dir/CameraTest.cpp.o"
-  "CMakeFiles/Google_Tests_run.dir/GenTest.cpp.o"
+  "CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o"
   "CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o"
   "CMakeFiles/Google_Tests_run.dir/LightTest.cpp.o"
   "CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.o"
   "CMakeFiles/Google_Tests_run.dir/MatrixTest.cpp.o"
   "CMakeFiles/Google_Tests_run.dir/PatternTest.cpp.o"
-  "CMakeFiles/Google_Tests_run.dir/PlaneTest.cpp.o"
   "CMakeFiles/Google_Tests_run.dir/RayTest.cpp.o"
   "CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.o"
   "CMakeFiles/Google_Tests_run.dir/TransformTest.cpp.o"

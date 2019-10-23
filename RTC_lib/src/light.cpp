@@ -6,19 +6,19 @@
 #include <utility>
 
 namespace raytracer {
-Light::Light(Point position, Color intensity)
-    : position(std::move(position)), intensity(std::move(intensity)), uSteps(1), vSteps(1), samples(1)
+Light::Light(const Point &_position, const Color &_intensity)
+    : position(_position), intensity(_intensity), uSteps(1), vSteps(1), samples(1)
 {
 }
 
 Light::Light()
-    : uSteps(1), vSteps(1), samples(1)
+    : position(), intensity(), uSteps(1), vSteps(1), samples(1)
 {
 }
 
-void Light::setPointLight(const Point &pos, const Color &intens) {
-    this->position = pos;
-    this->intensity = intens;
+void Light::setPointLight(const Point &_position, const Color &_intensity) {
+    this->position  = _position;
+    this->intensity = _intensity;
 }
 
 /* Area light related
@@ -59,13 +59,18 @@ Point Light::pointOnLight(const double &u, const double &v) const {
 }
 */
 
-bool Light::operator==(const Light &rhs) const {
-    return intensity == rhs.intensity &&
-           position == rhs.position;
+bool Light::operator==(const Light &_light) const {
+    return this->intensity == _light.intensity &&
+           this->position == _light.position;
 }
 
-bool Light::operator!=(const Light &rhs) const {
-    return !(rhs == *this);
+bool Light::operator!=(const Light &_light) const {
+    return !(_light == * this);
+}
+
+std::ostream& operator<<(std::ostream& out, const Light &_light) {
+    out << _light.position << " " << _light.intensity;
+    return out;
 }
 
 } // namespace raytracer

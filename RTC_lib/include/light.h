@@ -13,9 +13,9 @@ class World;
 class Light {
 public:
     Light();
-    Light(Point position, Color intensity);
+    Light(const Point &_position, const Color &_intensity);
 
-    void setPointLight(const Point &position, const Color &intensity);
+    void setPointLight(const Point &_position, const Color &_intensity);
 //    void setAreaLight(const Point &corner, const Vector &fullUVec, const int &uSteps, const Vector &fullVVec, const int &vSteps, const Color &intensity);
 //
 //    Point pointOnLight(const double &u, const double &v) const;
@@ -31,9 +31,12 @@ public:
     int vSteps;
     int samples;
 
-    bool operator==(const Light &rhs) const;
-    bool operator!=(const Light &rhs) const;
+    bool operator==(const Light &_light) const;
+    bool operator!=(const Light &_light) const;
 };
+
+std::ostream& operator<<(std::ostream& out, const Light &_light);
+
 }
 
 
