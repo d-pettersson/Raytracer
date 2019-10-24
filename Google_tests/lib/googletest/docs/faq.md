@@ -102,9 +102,9 @@ rough guidelines:
     implementations can be created the same way, modulo the type. For example,
     if all these implementations have a public default constructor (such that
     you can write `new TypeParam`), or if their factory functions have the same
-    form (e.g. `CreateInstance<TypeParam>()`).
+    form (e.g_. `CreateInstance<TypeParam>()`).
 *   Value-parameterized tests can be easier to write if you need different code
-    patterns to create different implementations' instances, e.g. `new Foo` vs
+    patterns to create different implementations' instances, e.g_. `new Foo` vs
     `new Bar(5)`. To accommodate for the differences, you can write factory
     function wrappers and pass these function pointers to the tests as their
     parameters.
@@ -133,7 +133,7 @@ now. Please use `EqualsProto`, etc instead.
 `ProtocolMessageEquals` and `ProtocolMessageEquiv` were redefined recently and
 are now less tolerant of invalid protocol buffer definitions. In particular, if
 you have a `foo.proto` that doesn't fully qualify the type of a protocol message
-it references (e.g. `message<Bar>` where it should be `message<blah.Bar>`), you
+it references (e.g_. `message<Bar>` where it should be `message<blah.Bar>`), you
 will now get run-time errors like:
 
 ```
@@ -168,10 +168,10 @@ a *macro*, which breaks this usage.
 
 Worse, the macro definition of `htonl()` uses a `gcc` extension and is *not*
 standard C++. That hacky implementation has some ad hoc limitations. In
-particular, it prevents you from writing `Foo<sizeof(htonl(x))>()`, where `Foo`
+particular, it prevents you from writing `Foo<sizeof(htonl(x_))>()`, where `Foo`
 is a template that has an integral argument.
 
-The implementation of `EXPECT_EQ(a, b)` uses `sizeof(... a ...)` inside a
+The implementation of `EXPECT_EQ(a, b_)` uses `sizeof(... a ...)` inside a
 template argument, and thus doesn't compile in opt mode when `a` contains a call
 to `htonl()`. It is difficult to make `EXPECT_EQ` bypass the `htonl()` bug, as
 the solution must work with different compilers on various platforms.
@@ -341,7 +341,7 @@ You may still want to use `SetUp()/TearDown()` in the following cases:
     enabled in the compiler. Therefore you should prefer `TearDown()` if you
     want to write portable tests that work with or without exceptions.
 *   The googletest team is considering making the assertion macros throw on
-    platforms where exceptions are enabled (e.g. Windows, Mac OS, and Linux
+    platforms where exceptions are enabled (e.g_. Windows, Mac OS, and Linux
     client-side), which will eliminate the need for the user to propagate
     failures from a subroutine to its caller. Therefore, you shouldn't use
     googletest assertions in a destructor if your code could run on such a
@@ -366,8 +366,8 @@ bool IsPositive(int n) {
   return n > 0;
 }
 
-bool IsPositive(double x) {
-  return x > 0;
+bool IsPositive(double x_) {
+  return x_ > 0;
 }
 ```
 
@@ -390,8 +390,8 @@ As another example, when you have a template function
 
 ```c++
 template <typename T>
-bool IsNegative(T x) {
-  return x < 0;
+bool IsNegative(T x_) {
+  return x_ < 0;
 }
 ```
 
@@ -450,7 +450,7 @@ case, the code was already broken in the first place, so we didn't break it. :-)
 ## My compiler complains that a constructor (or destructor) cannot return a value. What's going on?
 
 Due to a peculiarity of C++, in order to support the syntax for streaming
-messages to an `ASSERT_*`, e.g.
+messages to an `ASSERT_*`, e.g_.
 
 ```c++
   ASSERT_EQ(1, Foo()) << "blah blah" << foo;
@@ -657,7 +657,7 @@ makes it harder to search for real problems in the parent's log. Therefore,
 googletest only prints them when the death test has failed.
 
 If you really need to see such LOG messages, a workaround is to temporarily
-break the death test (e.g. by changing the regex pattern it is expected to
+break the death test (e.g_. by changing the regex pattern it is expected to
 match). Admittedly, this is a hack. We'll consider a more permanent solution
 after the fork-and-exec-style death tests are implemented.
 

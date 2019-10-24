@@ -17,24 +17,21 @@ Intersection::Intersection(double d, std::shared_ptr<Shape const> s)
 {
 }
 
-std::shared_ptr<Shape const> Intersection::getObject() {
+std::shared_ptr<Shape const> Intersection::getObject() const {
     return shape;
 }
 
-double Intersection::getDistance() {
+double Intersection::getDistance() const {
     return distance;
 }
 
-
-
 Intersection hit(std::vector<Intersection>const &xs) {
-    for (auto i : xs) {
+    for (auto const &i : xs) {
         if (i.getDistance() > 0)
             return i;
     }
     return Intersection(0.f, nullptr);
 }
-
 
 bool Intersection::operator<(const raytracer::Intersection &rhs) const {
     return distance < rhs.distance;
@@ -53,32 +50,32 @@ bool Intersection::operator>=(const raytracer::Intersection &rhs) const {
 }
 
 IntersectionData Intersection::prepareComputations(const Ray &ray, const std::vector<Intersection> &xs) {
-    auto * intersectionData = new IntersectionData();
-    intersectionData->distance = this->getDistance();
-    intersectionData->object = this->getObject();
+    IntersectionData intersectionData;
+    intersectionData.distance = this->getDistance();
+    intersectionData.object = this->getObject();
 
-    intersectionData->point = ray.position(intersectionData->distance);
-    intersectionData->eye = -ray.getDirection();
-    intersectionData->normal = intersectionData->object->getNormal(intersectionData->point);
+    intersectionData.point = ray.position(intersectionData.distance);
+    intersectionData.eye = -ray.getDirection();
+    intersectionData.normal = intersectionData.object->getNormal(intersectionData.point);
 
-    if (dot(intersectionData->normal, intersectionData->eye) < 0) {
-        intersectionData->inside = true;
-        intersectionData->normal = -intersectionData->normal;
+    if (dot(intersectionData.normal, intersectionData.eye) < 0) {
+        intersectionData.inside = true;
+        intersectionData.normal = -intersectionData.normal;
     } else {
-        intersectionData->inside = false;
+        intersectionData.inside = false;
     }
-    intersectionData->overPoint = intersectionData->point + intersectionData->normal * EPSILON;
-    intersectionData->underPoint = intersectionData->point - intersectionData->normal * EPSILON;
-    intersectionData->reflect = reflect(ray.getDirection(), intersectionData->normal);
+    intersectionData.overPoint = intersectionData.point + intersectionData.normal * EPSILON;
+    intersectionData.underPoint = intersectionData.point - intersectionData.normal * EPSILON;
+    intersectionData.reflect = reflect(ray.getDirection(), intersectionData.normal);
 
     auto containers = std::vector<std::shared_ptr<Shape const> >();
 
-    for (auto i : xs) {
+    for (auto const &i : xs) {
         if (i == (* this)) {
             if (containers.empty()) {
-                intersectionData->n1 = 1.0;
+                intersectionData.n1 = 1.0;
             } else {
-                intersectionData->n1 = containers.back()->material.refractiveIndex;
+                intersectionData.n1 = containers.back()->material.refractiveIndex;
             }
         }
 
@@ -92,14 +89,14 @@ IntersectionData Intersection::prepareComputations(const Ray &ray, const std::ve
 
         if (i == (* this)) {
             if (containers.empty()) {
-                intersectionData->n2 = 1.0;
+                intersectionData.n2 = 1.0;
             } else {
-                intersectionData->n2 = containers.back()->material.refractiveIndex;
+                intersectionData.n2 = containers.back()->material.refractiveIndex;
             }
         }
     }
 
-    return * intersectionData;
+    return intersectionData;
 }
 
 bool Intersection::operator==(const Intersection &rhs) const {

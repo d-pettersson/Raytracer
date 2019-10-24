@@ -31,8 +31,8 @@ class Intersection {
         Intersection();
         Intersection(double distance, std::shared_ptr<Shape const> shape);
 
-        double getDistance();
-        std::shared_ptr<Shape const> getObject();
+        double getDistance() const;
+        std::shared_ptr<Shape const> getObject() const;
 
         IntersectionData prepareComputations(const Ray &ray, const std::vector<Intersection> &xs);
 

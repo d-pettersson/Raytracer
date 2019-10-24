@@ -62,7 +62,7 @@ Color TestPattern::patternAtShape(const std::shared_ptr<Shape const> &s, const P
 }
 
 Color TestPattern::patternAt(const Point &p) const {
-    return Color(p.x, p.y, p.z);
+    return Color(p.x_, p.y_, p.z_);
 }
 
 // Stripe pattern
@@ -82,7 +82,7 @@ StripePattern::StripePattern(const Color &c1, const Color& c2)
 }
 
 Color StripePattern::patternAt(const Point &p) const {
-    return (int)floor(p.x) % 2 == 0 ? this->c1 : this->c2;
+    return (int)floor(p.x_) % 2 == 0 ? this->c1 : this->c2;
 }
 
 Color StripePattern::patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const {
@@ -109,7 +109,7 @@ GradientPattern::GradientPattern(const Color &c1, const Color& c2)
 
 Color GradientPattern::patternAt(const Point &p) const {
     Color distance = this->c2 - this->c1;
-    double fraction = p.x - floor(p.x);
+    double fraction = p.x_ - floor(p.x_);
     return this->c1 + distance * fraction;
 }
 
@@ -136,7 +136,7 @@ RingPattern::RingPattern(const Color &c1, const Color& c2)
 }
 
 Color RingPattern::patternAt(const Point &p) const {
-    return (int)floor(sqrt(pow(p.x, 2) + pow(p.z, 2))) % 2 == 0 ? this->c1 : this->c2;
+    return (int)floor(sqrt(pow(p.x_, 2) + pow(p.z_, 2))) % 2 == 0 ? this->c1 : this->c2;
 }
 
 Color RingPattern::patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const {
@@ -168,7 +168,7 @@ Color CheckerPattern::patternAtShape(const std::shared_ptr<Shape const> &s, cons
 }
 
 Color CheckerPattern::patternAt(const Point &p) const {
-    return (int)floor(p.x) + (int)floor(p.y) + (int)floor(p.z) % 2 == 0 ? this->c1 : this->c2;
+    return (int)floor(p.x_) + (int)floor(p.y_) + (int)floor(p.z_) % 2 == 0 ? this->c1 : this->c2;
 }
 } // namespace raytracer
 

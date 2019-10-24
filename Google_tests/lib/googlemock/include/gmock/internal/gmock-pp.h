@@ -35,11 +35,11 @@ static_assert(
 
 // Evaluates to the number of arguments after expansion.
 //
-//   #define PAIR x, y
+//   #define PAIR x_, y_
 //
 //   GMOCK_PP_NARG() => 1
-//   GMOCK_PP_NARG(x) => 1
-//   GMOCK_PP_NARG(x, y) => 2
+//   GMOCK_PP_NARG(x_) => 1
+//   GMOCK_PP_NARG(x_, y_) => 2
 //   GMOCK_PP_NARG(PAIR) => 2
 //
 // Requires: the number of arguments after expansion is at most 15.
@@ -95,7 +95,7 @@ static_assert(
 // There is one case when it generates a compile error: if the argument is macro
 // that cannot be called with one argument.
 //
-//   #define M(a, b)  // it doesn't matter what it expands to
+//   #define M(a, b_)  // it doesn't matter what it expands to
 //
 //   // Expected: expands to `0`.
 //   // Actual: compile error.
@@ -124,11 +124,11 @@ static_assert(
 // Evaluates to the number of arguments after expansion. Identifies 'empty' as
 // 0.
 //
-//   #define PAIR x, y
+//   #define PAIR x_, y_
 //
 //   GMOCK_PP_NARG0() => 0
-//   GMOCK_PP_NARG0(x) => 1
-//   GMOCK_PP_NARG0(x, y) => 2
+//   GMOCK_PP_NARG0(x_) => 1
+//   GMOCK_PP_NARG0(x_, y_) => 2
 //   GMOCK_PP_NARG0(PAIR) => 2
 //
 // Requires: * the number of arguments after expansion is at most 15.

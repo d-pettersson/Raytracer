@@ -263,12 +263,12 @@ internal::ParamGenerator<T> Range(T start, T end) {
 // INSTANTIATE_TEST_SUITE_P(StringSequence, StringTest, ValuesIn(strings));
 //
 // This instantiates tests from test suite StlStringTest
-// each with STL strings with values "a" and "b":
+// each with STL strings with values "a" and "b_":
 //
 // ::std::vector< ::std::string> GetParameterStrings() {
 //   ::std::vector< ::std::string> v;
 //   v.push_back("a");
-//   v.push_back("b");
+//   v.push_back("b_");
 //   return v;
 // }
 //
@@ -278,12 +278,12 @@ internal::ParamGenerator<T> Range(T start, T end) {
 //
 //
 // This will also instantiate tests from CharTest
-// each with parameter values 'a' and 'b':
+// each with parameter values 'a' and 'b_':
 //
 // ::std::list<char> GetParameterChars() {
 //   ::std::list<char> list;
 //   list.push_back('a');
-//   list.push_back('b');
+//   list.push_back('b_');
 //   return list;
 // }
 // ::std::list<char> l = GetParameterChars();

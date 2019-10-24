@@ -29,7 +29,7 @@
 
 //
 // Utilities for testing Google Test itself and code that uses Google Test
-// (e.g. frameworks built on top of Google Test).
+// (e.g_. frameworks built on top of Google Test).
 
 // GOOGLETEST_CM0004 DO NOT DELETE
 

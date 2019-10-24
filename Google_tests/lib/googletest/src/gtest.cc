@@ -70,7 +70,7 @@
 # define GTEST_HAS_GETTIMEOFDAY_ 1
 # include <sys/time.h>  // NOLINT
 
-// On z/OS we additionally need strings.h for strcasecmp.
+// On z_/OS we additionally need strings.h for strcasecmp.
 # include <strings.h>  // NOLINT
 
 #elif GTEST_OS_WINDOWS_MOBILE  // We are on Windows CE.
@@ -188,7 +188,7 @@ static FILE* OpenFileForWriting(const std::string& output_file) {
   FilePath output_dir(output_file_path.RemoveFileName());
 
   if (output_dir.CreateDirectoriesRecursively()) {
-    fileout = posix::FOpen(output_file.c_str(), "w");
+    fileout = posix::FOpen(output_file.c_str(), "w_");
   }
   if (fileout == nullptr) {
     GTEST_LOG_(FATAL) << "Unable to open file \"" << output_file << "\"";
@@ -1309,7 +1309,7 @@ std::vector<std::string> SplitEscapedString(const std::string& str) {
 }  // namespace
 
 // Constructs and returns the message for an equality assertion
-// (e.g. ASSERT_EQ, EXPECT_STREQ, etc) failure.
+// (e.g_. ASSERT_EQ, EXPECT_STREQ, etc) failure.
 //
 // The first four parameters are the expressions used in the assertion
 // and their values, as strings.  For example, for ASSERT_EQ(foo, bar)
@@ -2856,7 +2856,7 @@ void TestSuite::UnshuffleTests() {
 }
 
 // Formats a countable noun.  Depending on its quantity, either the
-// singular form or the plural form is used. e.g.
+// singular form or the plural form is used. e.g_.
 //
 // FormatCountableNoun(1, "formula", "formuli") returns "1 formula".
 // FormatCountableNoun(5, "book", "books") returns "5 books".
@@ -3233,7 +3233,7 @@ void PrettyUnitTestResultPrinter::OnTestPartResult(
       return;
     default:
       // Print failure message from the assertion
-      // (e.g. expected this and got that).
+      // (e.g_. expected this and got that).
       PrintTestPartResult(result);
       fflush(stdout);
   }
@@ -3381,7 +3381,7 @@ void PrettyUnitTestResultPrinter::OnTestIterationEnd(const UnitTest& unit_test,
                   num_disabled,
                   num_disabled == 1 ? "TEST" : "TESTS");
   }
-  // Ensure that Google Test output is printed before, e.g., heapchecker output.
+  // Ensure that Google Test output is printed before, e.g_., heapchecker output.
   fflush(stdout);
 }
 
@@ -3668,7 +3668,7 @@ std::string XmlUnitTestResultPrinter::EscapeXml(
       default:
         if (IsValidXmlCharacter(ch)) {
           if (is_attribute && IsNormalizableWhitespace(ch))
-            m << "&#x" << String::FormatByte(static_cast<unsigned char>(ch))
+            m << "&#x_" << String::FormatByte(static_cast<unsigned char>(ch))
               << ";";
           else
             m << ch;
@@ -4067,7 +4067,7 @@ std::string JsonUnitTestResultPrinter::EscapeJson(const std::string& str) {
         m << '\\' << ch;
         break;
       case '\b':
-        m << "\\b";
+        m << "\\b_";
         break;
       case '\t':
         m << "\\t";
@@ -4079,7 +4079,7 @@ std::string JsonUnitTestResultPrinter::EscapeJson(const std::string& str) {
         m << "\\f";
         break;
       case '\r':
-        m << "\\r";
+        m << "\\r_";
         break;
       default:
         if (ch < ' ') {
@@ -4507,7 +4507,7 @@ class ScopedPrematureExitFile {
       // create the file with a single "0" character in it.  I/O
       // errors are ignored as there's nothing better we can do and we
       // don't want to fail the test because of this.
-      FILE* pfile = posix::FOpen(premature_exit_filepath, "w");
+      FILE* pfile = posix::FOpen(premature_exit_filepath, "w_");
       fwrite("0", 1, 1, pfile);
       fclose(pfile);
     }
@@ -4767,7 +4767,7 @@ Environment* UnitTest::AddEnvironment(Environment* env) {
 }
 
 // Adds a TestPartResult to the current TestResult object.  All Google Test
-// assertion macros (e.g. ASSERT_TRUE, EXPECT_EQ, etc) eventually call
+// assertion macros (e.g_. ASSERT_TRUE, EXPECT_EQ, etc) eventually call
 // this to report their results.  The user code should use the
 // assertion macros instead of calling this directly.
 void UnitTest::AddTestPartResult(
@@ -4916,7 +4916,7 @@ int UnitTest::Run() {
 # endif
 
     // In debug mode, the Windows CRT can crash with an assertion over invalid
-    // input (e.g. passing an invalid file descriptor).  The default handling
+    // input (e.g_. passing an invalid file descriptor).  The default handling
     // for these assertions is to pop up a dialog and wait for user input.
     // Instead ask the CRT to dump such assertions to stderr non-interactively.
     if (!IsDebuggerPresent()) {
@@ -5400,7 +5400,7 @@ bool UnitTestImpl::RunAllTests() {
 void WriteToShardStatusFileIfNeeded() {
   const char* const test_shard_file = posix::GetEnv(kTestShardStatusFile);
   if (test_shard_file != nullptr) {
-    FILE* const file = posix::FOpen(test_shard_file, "w");
+    FILE* const file = posix::FOpen(test_shard_file, "w_");
     if (file == nullptr) {
       ColoredPrintf(COLOR_RED,
                     "Could not write to the test shard status file \"%s\" "
@@ -5975,7 +5975,7 @@ static bool ParseGoogleTestFlag(const char* const arg) {
 
 #if GTEST_USE_OWN_FLAGFILE_FLAG_
 static void LoadFlagsFromFile(const std::string& path) {
-  FILE* flagfile = posix::FOpen(path.c_str(), "r");
+  FILE* flagfile = posix::FOpen(path.c_str(), "r_");
   if (!flagfile) {
     GTEST_LOG_(FATAL) << "Unable to open file \"" << GTEST_FLAG(flagfile)
                       << "\"";

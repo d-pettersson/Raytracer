@@ -189,7 +189,7 @@ void ExpectationBase::DescribeCallCountTo(::std::ostream* os) const
   *os << "\n           Actual: ";
   Cardinality::DescribeActualCallCountTo(call_count(), os);
 
-  // Describes the state of the expectation (e.g. is it satisfied?
+  // Describes the state of the expectation (e.g_. is it satisfied?
   // is it active?).
   *os << " - " << (IsOverSaturated() ? "over-saturated" :
                    IsSaturated() ? "saturated" :

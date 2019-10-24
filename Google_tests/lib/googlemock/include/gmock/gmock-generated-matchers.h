@@ -236,7 +236,7 @@
 // You can overload matchers with different numbers of parameters:
 //
 //   MATCHER_P(Blah, a, description_string1) { ... }
-//   MATCHER_P2(Blah, a, b, description_string2) { ... }
+//   MATCHER_P2(Blah, a, b_, description_string2) { ... }
 //
 // Caveats
 // =======

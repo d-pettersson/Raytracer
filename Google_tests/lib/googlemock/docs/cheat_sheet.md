@@ -64,7 +64,7 @@ class StackInterface {
   ...
   virtual ~StackInterface();
   virtual int GetSize() const = 0;
-  virtual void Push(const Elem& x) = 0;
+  virtual void Push(const Elem& x_) = 0;
 };
 ```
 
@@ -76,7 +76,7 @@ template <typename Elem>
 class MockStack : public StackInterface<Elem> {
   ...
   MOCK_METHOD(int, GetSize, (), (const, override));
-  MOCK_METHOD(void, Push, (const Elem& x), (override));
+  MOCK_METHOD(void, Push, (const Elem& x_), (override));
 };
 ```
 
@@ -88,7 +88,7 @@ For example,
 
 ```cpp
   MOCK_METHOD(bool, Foo, (int n), (Calltype(STDMETHODCALLTYPE)));
-  MOCK_METHOD(int, Bar, (double x, double y),
+  MOCK_METHOD(int, Bar, (double x_, double y_),
               (const, Calltype(STDMETHODCALLTYPE)));
 ```
 
@@ -261,7 +261,7 @@ Matcher                     | Description
 
 Except `Ref()`, these matchers make a *copy* of `value` in case it's modified or
 destructed later. If the compiler complains that `value` doesn't have a public
-copy constructor, try wrap it in `ByRef()`, e.g.
+copy constructor, try wrap it in `ByRef()`, e.g_.
 `Eq(ByRef(non_copyable_value))`. If you do that, make sure `non_copyable_value`
 is not changed afterwards, or the meaning of your matcher will be changed.
 
@@ -326,7 +326,7 @@ messages, you can use:
 <!-- mdformat off(no multiline tables) -->
 | Matcher                                   | Description                      |
 | :---------------------------------------- | :------------------------------- |
-| `BeginEndDistanceIs(m)` | `argument` is a container whose `begin()` and `end()` iterators are separated by a number of increments matching `m`. E.g. `BeginEndDistanceIs(2)` or `BeginEndDistanceIs(Lt(2))`. For containers that define a `size()` method, `SizeIs(m)` may be more efficient. |
+| `BeginEndDistanceIs(m)` | `argument` is a container whose `begin()` and `end()` iterators are separated by a number of increments matching `m`. E.g_. `BeginEndDistanceIs(2)` or `BeginEndDistanceIs(Lt(2))`. For containers that define a `size()` method, `SizeIs(m)` may be more efficient. |
 | `ContainerEq(container)` | The same as `Eq(container)` except that the failure message also includes which elements are in one container but not the other. |
 | `Contains(e)` | `argument` contains an element that matches `e`, which can be either a value or a matcher. |
 | `Each(e)` | `argument` is a container where *every* element matches `e`, which can be either a value or a matcher. |
@@ -337,21 +337,21 @@ messages, you can use:
 | `IsSubsetOf({e0, e1, ..., en})`, `IsSubsetOf(a_container)`, `IsSubsetOf(begin, end)`, `IsSubsetOf(array)`, or `IsSubsetOf(array, count)` | `argument` matches `UnorderedElementsAre(x0, x1, ..., xk)` for some subset `{x0, x1, ..., xk}` of the expected matchers. |
 | `IsSupersetOf({e0, e1, ..., en})`, `IsSupersetOf(a_container)`, `IsSupersetOf(begin, end)`, `IsSupersetOf(array)`, or `IsSupersetOf(array, count)` | Some subset of `argument` matches `UnorderedElementsAre(`expected matchers`)`. |
 | `IsTrue()` | `argument` evaluates to `true` in a Boolean context. |
-| `Pointwise(m, container)`, `Pointwise(m, {e0, e1, ..., en})` | `argument` contains the same number of elements as in `container`, and for all i, (the i-th element in `argument`, the i-th element in `container`) match `m`, which is a matcher on 2-tuples. E.g. `Pointwise(Le(), upper_bounds)` verifies that each element in `argument` doesn't exceed the corresponding element in `upper_bounds`. See more detail below. |
-| `SizeIs(m)` | `argument` is a container whose size matches `m`. E.g. `SizeIs(2)` or `SizeIs(Lt(2))`. |
+| `Pointwise(m, container)`, `Pointwise(m, {e0, e1, ..., en})` | `argument` contains the same number of elements as in `container`, and for all i, (the i-th element in `argument`, the i-th element in `container`) match `m`, which is a matcher on 2-tuples. E.g_. `Pointwise(Le(), upper_bounds)` verifies that each element in `argument` doesn't exceed the corresponding element in `upper_bounds`. See more detail below. |
+| `SizeIs(m)` | `argument` is a container whose size matches `m`. E.g_. `SizeIs(2)` or `SizeIs(Lt(2))`. |
 | `UnorderedElementsAre(e0, e1, ..., en)` | `argument` has `n + 1` elements, and under *some* permutation of the elements, each element matches an `ei` (for a different `i`), which can be a value or a matcher. |
 | `UnorderedElementsAreArray({e0, e1, ..., en})`, `UnorderedElementsAreArray(a_container)`, `UnorderedElementsAreArray(begin, end)`, `UnorderedElementsAreArray(array)`, or `UnorderedElementsAreArray(array, count)` | The same as `UnorderedElementsAre()` except that the expected element values/matchers come from an initializer list, STL-style container, iterator range, or C-style array. |
 | `UnorderedPointwise(m, container)`, `UnorderedPointwise(m, {e0, e1, ..., en})` | Like `Pointwise(m, container)`, but ignores the order of elements. |
-| `WhenSorted(m)` | When `argument` is sorted using the `<` operator, it matches container matcher `m`. E.g. `WhenSorted(ElementsAre(1, 2, 3))` verifies that `argument` contains elements 1, 2, and 3, ignoring order. |
-| `WhenSortedBy(comparator, m)` | The same as `WhenSorted(m)`, except that the given comparator instead of `<` is used to sort `argument`. E.g. `WhenSortedBy(std::greater(), ElementsAre(3, 2, 1))`. |
+| `WhenSorted(m)` | When `argument` is sorted using the `<` operator, it matches container matcher `m`. E.g_. `WhenSorted(ElementsAre(1, 2, 3))` verifies that `argument` contains elements 1, 2, and 3, ignoring order. |
+| `WhenSortedBy(comparator, m)` | The same as `WhenSorted(m)`, except that the given comparator instead of `<` is used to sort `argument`. E.g_. `WhenSortedBy(std::greater(), ElementsAre(3, 2, 1))`. |
 <!-- mdformat on -->
 
 **Notes:**
 
 *   These matchers can also match:
-    1.  a native array passed by reference (e.g. in `Foo(const int (&a)[5])`),
+    1.  a native array passed by reference (e.g_. in `Foo(const int (&a)[5])`),
         and
-    2.  an array passed as a pointer and a count (e.g. in `Bar(const T* buffer,
+    2.  an array passed as a pointer and a count (e.g_. in `Bar(const T* buffer,
         int len)` -- see [Multi-argument Matchers](#MultiArgMatchers)).
 *   The array being matched may be multi-dimensional (i.e. its elements can be
     arrays).
@@ -375,7 +375,7 @@ messages, you can use:
 | Matcher                         | Description                                |
 | :------------------------------ | :----------------------------------------- |
 | `Field(&class::field, m)`       | `argument.field` (or `argument->field` when `argument` is a plain pointer) matches matcher `m`, where `argument` is an object of type _class_. |
-| `Key(e)`                        | `argument.first` matches `e`, which can be either a value or a matcher. E.g. `Contains(Key(Le(5)))` can verify that a `map` contains a key `<= 5`. |
+| `Key(e)`                        | `argument.first` matches `e`, which can be either a value or a matcher. E.g_. `Contains(Key(Le(5)))` can verify that a `map` contains a key `<= 5`. |
 | `Pair(m1, m2)`                  | `argument` is an `std::pair` whose `first` field matches `m1` and `second` field matches `m2`. |
 | `Property(&class::property, m)` | `argument.property()` (or `argument->property()` when `argument` is a plain pointer) matches matcher `m`, where `argument` is an object of type _class_. |
 <!-- mdformat on -->
@@ -405,16 +405,16 @@ messages, you can use:
 
 Technically, all matchers match a *single* value. A "multi-argument" matcher is
 just one that matches a *tuple*. The following matchers can be used to match a
-tuple `(x, y)`:
+tuple `(x_, y_)`:
 
 Matcher | Description
 :------ | :----------
-`Eq()`  | `x == y`
-`Ge()`  | `x >= y`
-`Gt()`  | `x > y`
-`Le()`  | `x <= y`
-`Lt()`  | `x < y`
-`Ne()`  | `x != y`
+`Eq()`  | `x_ == y_`
+`Ge()`  | `x_ >= y_`
+`Gt()`  | `x_ > y_`
+`Le()`  | `x_ <= y_`
+`Lt()`  | `x_ < y_`
+`Ne()`  | `x_ != y_`
 
 You can use the following selectors to pick a subset of the arguments (or
 reorder them) to participate in the matching:
@@ -423,7 +423,7 @@ reorder them) to participate in the matching:
 | Matcher                    | Description                                     |
 | :------------------------- | :---------------------------------------------- |
 | `AllArgs(m)`               | Equivalent to `m`. Useful as syntactic sugar in `.With(AllArgs(m))`. |
-| `Args<N1, N2, ..., Nk>(m)` | The tuple of the `k` selected (using 0-based indices) arguments matches `m`, e.g. `Args<1, 2>(Eq())`. |
+| `Args<N1, N2, ..., Nk>(m)` | The tuple of the `k` selected (using 0-based indices) arguments matches `m`, e.g_. `Args<1, 2>(Eq())`. |
 <!-- mdformat on -->
 
 #### Composite Matchers
@@ -472,7 +472,7 @@ which must be a permanent callback.
 | :----------------------------------- | :------------------------------------ |
 | `MATCHER(IsEven, "") { return (arg % 2) == 0; }` | Defines a matcher `IsEven()` to match an even number. |
 | `MATCHER_P(IsDivisibleBy, n, "") { *result_listener << "where the remainder is " << (arg % n); return (arg % n) == 0; }` | Defines a macher `IsDivisibleBy(n)` to match a number divisible by `n`. |
-| `MATCHER_P2(IsBetween, a, b, std::string(negation ? "isn't" : "is") + " between " + PrintToString(a) + " and " + PrintToString(b)) { return a <= arg && arg <= b; }` | Defines a matcher `IsBetween(a, b)` to match a value in the range [`a`, `b`]. |
+| `MATCHER_P2(IsBetween, a, b_, std::string(negation ? "isn't" : "is") + " between " + PrintToString(a) + " and " + PrintToString(b_)) { return a <= arg && arg <= b_; }` | Defines a matcher `IsBetween(a, b_)` to match a value in the range [`a`, `b_`]. |
 <!-- mdformat on -->
 
 **Notes:**
@@ -481,7 +481,7 @@ which must be a permanent callback.
 2.  The matcher body must be *purely functional* (i.e. it cannot have any side
     effect, and the result must not depend on anything other than the value
     being matched and the matcher parameters).
-3.  You can use `PrintToString(x)` to convert a value `x` of any type to a
+3.  You can use `PrintToString(x_)` to convert a value `x_` of any type to a
     string.
 
 ### Actions {#ActionList}
@@ -544,14 +544,14 @@ parameters as `Unused`:
 
 ```cpp
 using ::testing::Invoke;
-double Distance(Unused, double x, double y) { return sqrt(x*x + y*y); }
+double Distance(Unused, double x_, double y_) { return sqrt(x_*x_ + y_*y_); }
 ...
 EXPECT_CALL(mock, Foo("Hi", _, _)).WillOnce(Invoke(Distance));
 ```
 
 `Invoke(callback)` and `InvokeWithoutArgs(callback)` take ownership of
 `callback`, which must be permanent. The type of `callback` must be a base
-callback type instead of a derived one, e.g.
+callback type instead of a derived one, e.g_.
 
 ```cpp
   BlockingClosure* done = new BlockingClosure;
@@ -605,7 +605,7 @@ composite action - trying to do so will result in a run-time error.
   <tr>
     <td>`struct SumAction {` <br>
         &emsp;`template <typename T>` <br>
-        &emsp;`T operator()(T x, Ty) { return x + y; }` <br>
+        &emsp;`T operator()(T x_, Ty) { return x_ + y_; }` <br>
         `};`
     </td>
     <td> Defines a generic functor that can be used as an action summing its

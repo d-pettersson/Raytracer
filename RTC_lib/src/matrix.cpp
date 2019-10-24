@@ -95,10 +95,10 @@ Matrix Matrix::operator*(const Matrix& m) {
 Tuple Matrix::operator*(const raytracer::Tuple& t) {
     Tuple output = Tuple();
     for (size_t i = 0; i < this->getRowSize(); i++) {
-        output(i) = matrixData[cols * i] * t.x +
-                    matrixData[cols * i + 1] * t.y +
-                    matrixData[cols * i + 2] * t.z +
-                    matrixData[cols * i + 3] * t.w;
+        output(i) = matrixData[cols * i] * t.x_ +
+                    matrixData[cols * i + 1] * t.y_ +
+                    matrixData[cols * i + 2] * t.z_ +
+                    matrixData[cols * i + 3] * t.w_;
     }
     return output;
 }
@@ -106,10 +106,10 @@ Tuple Matrix::operator*(const raytracer::Tuple& t) {
 Point Matrix::operator*(const raytracer::Point& t) {
     Point output = Point();
     for (size_t i = 0; i < this->getRowSize(); i++) {
-        output(i) = matrixData[cols * i] * t.x +
-                    matrixData[cols * i + 1] * t.y +
-                    matrixData[cols * i + 2] * t.z +
-                    matrixData[cols * i + 3] * t.w;
+        output(i) = matrixData[cols * i] * t.x_ +
+                    matrixData[cols * i + 1] * t.y_ +
+                    matrixData[cols * i + 2] * t.z_ +
+                    matrixData[cols * i + 3] * t.w_;
     }
     return output;
 }
@@ -117,10 +117,10 @@ Point Matrix::operator*(const raytracer::Point& t) {
 Vector Matrix::operator*(const raytracer::Vector& t) {
     Vector output = Vector();
     for (size_t i = 0; i < this->getRowSize(); i++) {
-        output(i) = matrixData[cols * i] * t.x +
-                    matrixData[cols * i + 1] * t.y +
-                    matrixData[cols * i + 2] * t.z +
-                    matrixData[cols * i + 3] * t.w;
+        output(i) = matrixData[cols * i] * t.x_ +
+                    matrixData[cols * i + 1] * t.y_ +
+                    matrixData[cols * i + 2] * t.z_ +
+                    matrixData[cols * i + 3] * t.w_;
     }
     return output;
 }

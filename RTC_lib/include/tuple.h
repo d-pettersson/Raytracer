@@ -43,7 +43,7 @@ class Tuple {
          */
         bool isVector();
 
-        double x, y, z, w;
+        double x_, y_, z_, w_;
 
         double& operator()(size_t index);
         double operator()(size_t index) const;
@@ -64,6 +64,8 @@ class Point : virtual public Tuple {
         Point operator-();
 };
 
+Point abs(const Point &p);
+
 /**
  * The <code>Vector</code> class inherits from the <code>Tuple</code> class.
  *
@@ -76,6 +78,8 @@ class Vector : virtual public Tuple {
         Vector(double x, double y, double z);
         Vector();
 };
+
+Vector abs(const Vector &v);
 
 /**
  * The <code>Color</code> class inherits from the <code>Tuple</code> class.
@@ -90,7 +94,7 @@ class Color : virtual public Tuple {
         Color(double r, double g, double b);
         Color();
 
-        double r, g, b;
+        double r_, g_, b_;
 };
 
 /**
@@ -135,7 +139,7 @@ Vector normalize(const Vector& v1);
  * @param[in] Tuple t1
  * @return Tuple
  */
-Tuple tupleAbs(Tuple *t1);
+Tuple abs(const Tuple &t1);
 
 /**
  * Return the magnitude(length) of a <code>Tuple</code>
@@ -194,6 +198,7 @@ bool isEqual(const Tuple& t1, const Tuple& t2);
 bool operator<(const Tuple& t1, const Tuple& t2);
 bool operator<(const Tuple& t1, const double& d1);
 bool operator==(const Tuple& t1, const Tuple& t2);
+bool operator!=(const Tuple& t1, const Tuple& t2);
 
 Tuple operator-(const Tuple& t1, const Tuple& t2);
 Tuple operator-(const Tuple& t1);
@@ -206,6 +211,7 @@ std::ostream& operator<<(std::ostream& out, const Tuple& t1);
 
 // Point operators
 bool operator==(const Point &p1, const Point &p2);
+bool operator!=(const Point &p1, const Point &p2);
 
 Point operator*(const Point& p1, const Point& p2);
 Point operator*(const Point& p1, const Vector& p2);
@@ -219,6 +225,7 @@ std::ostream& operator<<(std::ostream& out, const Point& p1);
 
 // Vector operators
 bool operator==(const Vector &v1, const Vector &v2);
+bool operator!=(const Vector &v1, const Vector &v2);
 
 Vector operator*(const Vector& v1, const double& scalar);
 Vector operator+(const Vector &v1, const Vector &v2);

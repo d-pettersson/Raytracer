@@ -32,7 +32,7 @@ class Canvas {
          * @param[in] int y
          * @param[in] Color color
          */
-        void writePixel(const int& x, const int& y, Color * color);
+        void writePixel(const int& x, const int& y, const Color &color);
 
         /**
          * Get the value of the pixel situated at x and y coordinates.

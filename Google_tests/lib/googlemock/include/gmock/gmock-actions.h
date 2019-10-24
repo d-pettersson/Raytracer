@@ -401,7 +401,7 @@ class Action {
 
 // The PolymorphicAction class template makes it easy to implement a
 // polymorphic action (i.e. an action that can be used in mock
-// functions of than one type, e.g. Return()).
+// functions of than one type, e.g_. Return()).
 //
 // To define a polymorphic action, a user first provides a COPYABLE
 // implementation class that has a Perform() method template:
@@ -463,7 +463,7 @@ Action<F> MakeAction(ActionInterface<F>* impl) {
 
 // Creates a polymorphic action from its implementation.  This is
 // easier to use than the PolymorphicAction<Impl> constructor as it
-// doesn't require you to explicitly write the template argument, e.g.
+// doesn't require you to explicitly write the template argument, e.g_.
 //
 //   MakePolymorphicAction(foo);
 // vs
@@ -483,8 +483,8 @@ struct ByMoveWrapper {
   T payload;
 };
 
-// Implements the polymorphic Return(x) action, which can be used in
-// any function that returns the type of x, regardless of the argument
+// Implements the polymorphic Return(x_) action, which can be used in
+// any function that returns the type of x_, regardless of the argument
 // types.
 //
 // Note: The value passed into Return must be converted into
@@ -495,11 +495,11 @@ struct ByMoveWrapper {
 // ...
 // {
 //   Foo foo;
-//   X x(&foo);
-//   EXPECT_CALL(mock, Method(_)).WillOnce(Return(x));
+//   X x_(&foo);
+//   EXPECT_CALL(mock, Method(_)).WillOnce(Return(x_));
 // }
 //
-// In the example above the variable x holds reference to foo which leaves
+// In the example above the variable x_ holds reference to foo which leaves
 // scope and gets destroyed.  If copying X just copies a reference to foo,
 // that copy will be left with a hanging reference.  If conversion to T
 // makes a copy of foo, the above code is safe. To support that scenario, we
@@ -518,8 +518,8 @@ class ReturnAction {
   // to allow Return("string literal") to compile.
   explicit ReturnAction(R value) : value_(new R(std::move(value))) {}
 
-  // This template type conversion operator allows Return(x) to be
-  // used in ANY function that returns x's type.
+  // This template type conversion operator allows Return(x_) to be
+  // used in ANY function that returns x_'s type.
   template <typename F>
   operator Action<F>() const {  // NOLINT
     // Assert statement belongs here because this is the best place to verify
@@ -540,7 +540,7 @@ class ReturnAction {
   }
 
  private:
-  // Implements the Return(x) action for a particular function type F.
+  // Implements the Return(x_) action for a particular function type F.
   template <typename R_, typename F>
   class Impl : public ActionInterface<F> {
    public:
@@ -548,7 +548,7 @@ class ReturnAction {
     typedef typename Function<F>::ArgumentTuple ArgumentTuple;
 
     // The implicit cast is necessary when Result has more than one
-    // single-argument constructor (e.g. Result is std::vector<int>) and R
+    // single-argument constructor (e.g_. Result is std::vector<int>) and R
     // has a type conversion operator template.  In that case, value_(value)
     // won't compile as the compiler doesn't known which constructor of
     // Result to call.  ImplicitCast_ forces the compiler to convert R to
@@ -623,8 +623,8 @@ class ReturnVoidAction {
   }
 };
 
-// Implements the polymorphic ReturnRef(x) action, which can be used
-// in any function that returns a reference to the type of x,
+// Implements the polymorphic ReturnRef(x_) action, which can be used
+// in any function that returns a reference to the type of x_,
 // regardless of the argument types.
 template <typename T>
 class ReturnRefAction {
@@ -632,13 +632,13 @@ class ReturnRefAction {
   // Constructs a ReturnRefAction object from the reference to be returned.
   explicit ReturnRefAction(T& ref) : ref_(ref) {}  // NOLINT
 
-  // This template type conversion operator allows ReturnRef(x) to be
-  // used in ANY function that returns a reference to x's type.
+  // This template type conversion operator allows ReturnRef(x_) to be
+  // used in ANY function that returns a reference to x_'s type.
   template <typename F>
   operator Action<F>() const {
     typedef typename Function<F>::Result Result;
     // Asserts that the function return type is a reference.  This
-    // catches the user error of using ReturnRef(x) when Return(x)
+    // catches the user error of using ReturnRef(x_) when Return(x_)
     // should be used, and generates some helpful error message.
     GTEST_COMPILE_ASSERT_(std::is_reference<Result>::value,
                           use_Return_instead_of_ReturnRef_to_return_a_value);
@@ -646,7 +646,7 @@ class ReturnRefAction {
   }
 
  private:
-  // Implements the ReturnRef(x) action for a particular function type F.
+  // Implements the ReturnRef(x_) action for a particular function type F.
   template <typename F>
   class Impl : public ActionInterface<F> {
    public:
@@ -668,8 +668,8 @@ class ReturnRefAction {
   GTEST_DISALLOW_ASSIGN_(ReturnRefAction);
 };
 
-// Implements the polymorphic ReturnRefOfCopy(x) action, which can be
-// used in any function that returns a reference to the type of x,
+// Implements the polymorphic ReturnRefOfCopy(x_) action, which can be
+// used in any function that returns a reference to the type of x_,
 // regardless of the argument types.
 template <typename T>
 class ReturnRefOfCopyAction {
@@ -678,13 +678,13 @@ class ReturnRefOfCopyAction {
   // be returned.
   explicit ReturnRefOfCopyAction(const T& value) : value_(value) {}  // NOLINT
 
-  // This template type conversion operator allows ReturnRefOfCopy(x) to be
-  // used in ANY function that returns a reference to x's type.
+  // This template type conversion operator allows ReturnRefOfCopy(x_) to be
+  // used in ANY function that returns a reference to x_'s type.
   template <typename F>
   operator Action<F>() const {
     typedef typename Function<F>::Result Result;
     // Asserts that the function return type is a reference.  This
-    // catches the user error of using ReturnRefOfCopy(x) when Return(x)
+    // catches the user error of using ReturnRefOfCopy(x_) when Return(x_)
     // should be used, and generates some helpful error message.
     GTEST_COMPILE_ASSERT_(
         std::is_reference<Result>::value,
@@ -693,7 +693,7 @@ class ReturnRefOfCopyAction {
   }
 
  private:
-  // Implements the ReturnRefOfCopy(x) action for a particular function type F.
+  // Implements the ReturnRefOfCopy(x_) action for a particular function type F.
   template <typename F>
   class Impl : public ActionInterface<F> {
    public:
@@ -768,8 +768,8 @@ class SetErrnoAndReturnAction {
 
 #endif  // !GTEST_OS_WINDOWS_MOBILE
 
-// Implements the SetArgumentPointee<N>(x) action for any function
-// whose N-th argument (0-based) is a pointer to x's type.
+// Implements the SetArgumentPointee<N>(x_) action for any function
+// whose N-th argument (0-based) is a pointer to x_'s type.
 template <size_t N, typename A, typename = void>
 struct SetArgumentPointeeAction {
   A value;
@@ -930,16 +930,16 @@ struct DoAllAction {
 // This is handy when defining actions that ignore some or all of the
 // mock function arguments.  For example, given
 //
-//   MOCK_METHOD3(Foo, double(const string& label, double x, double y));
-//   MOCK_METHOD3(Bar, double(int index, double x, double y));
+//   MOCK_METHOD3(Foo, double(const string& label, double x_, double y_));
+//   MOCK_METHOD3(Bar, double(int index, double x_, double y_));
 //
 // instead of
 //
-//   double DistanceToOriginWithLabel(const string& label, double x, double y) {
-//     return sqrt(x*x + y*y);
+//   double DistanceToOriginWithLabel(const string& label, double x_, double y_) {
+//     return sqrt(x_*x_ + y_*y_);
 //   }
-//   double DistanceToOriginWithIndex(int index, double x, double y) {
-//     return sqrt(x*x + y*y);
+//   double DistanceToOriginWithIndex(int index, double x_, double y_) {
+//     return sqrt(x_*x_ + y_*y_);
 //   }
 //   ...
 //   EXPECT_CALL(mock, Foo("abc", _, _))
@@ -950,8 +950,8 @@ struct DoAllAction {
 // you could write
 //
 //   // We can declare any uninteresting argument as Unused.
-//   double DistanceToOrigin(Unused, double x, double y) {
-//     return sqrt(x*x + y*y);
+//   double DistanceToOrigin(Unused, double x_, double y_) {
+//     return sqrt(x_*x_ + y_*y_);
 //   }
 //   ...
 //   EXPECT_CALL(mock, Foo("abc", _, _)).WillOnce(Invoke(DistanceToOrigin));

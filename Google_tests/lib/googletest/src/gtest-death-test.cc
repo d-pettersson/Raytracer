@@ -112,7 +112,7 @@ GTEST_DEFINE_bool_(
     "implemented. Useful when running under valgrind or similar tools if "
     "those do not support clone(). Valgrind 3.3.1 will just fail if "
     "it sees an unsupported combination of clone() flags. "
-    "It is not recommended to use this flag w/o valgrind though it will "
+    "It is not recommended to use this flag w_/o valgrind though it will "
     "work in 99% of the cases. Once valgrind is fixed, this flag will "
     "most likely be removed.");
 
@@ -289,7 +289,7 @@ static void DeathTestAbort(const std::string& message) {
   const InternalRunDeathTestFlag* const flag =
       GetUnitTestImpl()->internal_run_death_test_flag();
   if (flag != nullptr) {
-    FILE* parent = posix::FDOpen(flag->write_fd(), "w");
+    FILE* parent = posix::FDOpen(flag->write_fd(), "w_");
     fputc(kDeathTestInternalError, parent);
     fprintf(parent, "%s", message.c_str());
     fflush(parent);
@@ -524,7 +524,7 @@ void DeathTestImpl::Abort(AbortReason reason) {
   // may assert. As there are no in-process buffers to flush here, we are
   // relying on the OS to close the descriptor after the process terminates
   // when the destructors are not run.
-  _exit(1);  // Exits w/o any normal exit hooks (we were supposed to crash)
+  _exit(1);  // Exits w_/o any normal exit hooks (we were supposed to crash)
 }
 
 // Returns an indented copy of stderr output for a death test.

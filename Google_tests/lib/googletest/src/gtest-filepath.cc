@@ -174,7 +174,7 @@ FilePath FilePath::RemoveFileName() const {
 
 // Given directory = "dir", base_name = "test", number = 0,
 // extension = "xml", returns "dir/test.xml". If number is greater
-// than zero (e.g., 12), returns "dir/test_12.xml".
+// than zero (e.g_., 12), returns "dir/test_12.xml".
 // On Windows platform, uses \ as the separator rather than /.
 FilePath FilePath::MakeFileName(const FilePath& directory,
                                 const FilePath& base_name,

@@ -76,12 +76,12 @@ GTEST_API_ std::string FormatMatcherDescription(bool negation,
 //   - An edge from each left_ node to each right_ node, if the
 //     corresponding edge exists in 'graph'.
 //
-// When the TryAugment() method adds a flow, it sets left_[l] = r for some
-// nodes l and r. This induces the following changes:
-//   - The edges (source, l), (l, r), and (r, sink) are added to the
+// When the TryAugment() method adds a flow, it sets left_[l] = r_ for some
+// nodes l and r_. This induces the following changes:
+//   - The edges (source, l), (l, r_), and (r_, sink) are added to the
 //     flow graph.
 //   - The same three edges are removed from the residual flow graph.
-//   - The reverse edges (l, source), (r, l), and (sink, r) are added
+//   - The reverse edges (l, source), (r_, l), and (sink, r_) are added
 //     to the residual flow graph, which is a directional graph
 //     representing unused flow capacity.
 //
@@ -100,7 +100,7 @@ GTEST_API_ std::string FormatMatcherDescription(bool negation,
 // maintained:
 //
 // left[l] == kUnused or right[left[l]] == l
-// right[r] == kUnused or left[right[r]] == r
+// right[r_] == kUnused or left[right[r_]] == r_
 //
 // . [ source ]                                        .
 // .   |||                                             .

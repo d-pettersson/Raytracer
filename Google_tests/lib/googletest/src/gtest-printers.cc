@@ -122,9 +122,9 @@ namespace internal {
 
 // Depending on the value of a char (or wchar_t), we print it in one
 // of three formats:
-//   - as is if it's a printable ASCII (e.g. 'a', '2', ' '),
-//   - as a hexadecimal escape sequence (e.g. '\x7F'), or
-//   - as a special escape sequence (e.g. '\r', '\n').
+//   - as is if it's a printable ASCII (e.g_. 'a', '2', ' '),
+//   - as a hexadecimal escape sequence (e.g_. '\x7F'), or
+//   - as a special escape sequence (e.g_. '\r_', '\n').
 enum CharFormat {
   kAsIs,
   kHexEscape,
@@ -159,7 +159,7 @@ static CharFormat PrintAsCharLiteralTo(Char c, ostream* os) {
       *os << "\\a";
       break;
     case L'\b':
-      *os << "\\b";
+      *os << "\\b_";
       break;
     case L'\f':
       *os << "\\f";
@@ -168,7 +168,7 @@ static CharFormat PrintAsCharLiteralTo(Char c, ostream* os) {
       *os << "\\n";
       break;
     case L'\r':
-      *os << "\\r";
+      *os << "\\r_";
       break;
     case L'\t':
       *os << "\\t";
@@ -182,7 +182,7 @@ static CharFormat PrintAsCharLiteralTo(Char c, ostream* os) {
         return kAsIs;
       } else {
         ostream::fmtflags flags = os->flags();
-        *os << "\\x" << std::hex << std::uppercase
+        *os << "\\x_" << std::hex << std::uppercase
             << static_cast<int>(static_cast<UnsignedChar>(c));
         os->flags(flags);
         return kHexEscape;
@@ -232,7 +232,7 @@ void PrintCharAndCodeTo(Char c, ostream* os) {
   *os << " (" << static_cast<int>(c);
 
   // For more convenience, we print c's code again in hexadecimal,
-  // unless c was already printed in the form '\x##' or the code is in
+  // unless c was already printed in the form '\x_##' or the code is in
   // [1, 9].
   if (format == kHexEscape || (1 <= c && c <= 9)) {
     // Do nothing.
@@ -273,7 +273,7 @@ static CharFormat PrintCharsAsStringTo(
   for (size_t index = 0; index < len; ++index) {
     const CharType cur = begin[index];
     if (is_previous_hex && IsXDigit(cur)) {
-      // Previous character is of '\x..' form and this character can be
+      // Previous character is of '\x_..' form and this character can be
       // interpreted as another hexadecimal digit in its number. Break string to
       // disambiguate.
       *os << "\" " << kQuoteBegin;
@@ -309,7 +309,7 @@ static void UniversalPrintCharArray(
     return;
   }
 
-  // If, however, the last element in the array is not '\0', e.g.
+  // If, however, the last element in the array is not '\0', e.g_.
   //    const char kFoo[] = { 'f', 'o', 'o' };
   // we must print the entire array.  We also print a message to indicate
   // that the array is not NUL-terminated.

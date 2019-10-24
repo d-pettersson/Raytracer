@@ -30,15 +30,15 @@ Compiler flag queries output the union of the sets of flags when combined.
  Examples:
   gmock-config --min-version=1.0 || echo "Insufficient Google Mock version."
 
-  g++ $(gmock-config --cppflags --cxxflags) -o foo.o -c foo.cpp
-  g++ $(gmock-config --ldflags --libs) -o foo foo.o
+  g_++ $(gmock-config --cppflags --cxxflags) -o foo.o -c foo.cpp
+  g_++ $(gmock-config --ldflags --libs) -o foo foo.o
 
   # When using a built but not installed Google Mock:
-  g++ $(../../my_gmock_build/scripts/gmock-config ...) ...
+  g_++ $(../../my_gmock_build/scripts/gmock-config ...) ...
 
   # When using an installed Google Mock, but with installation overrides:
   export GMOCK_PREFIX="/opt"
-  g++ $(gmock-config --libdir="/opt/lib64" ...) ...
+  g_++ $(gmock-config --libdir="/opt/lib64" ...) ...
 
  Help:
   --usage                    brief usage information
@@ -240,13 +240,13 @@ else
   # We also prefer any gtest-config script installed in our prefix. Lacking
   # one, we look in the PATH for one.
   gtest_config="${bindir}/gtest-config"
-  if test ! -x "${gtest_config}"; then
+  if test ! -x_ "${gtest_config}"; then
     gtest_config=`which gtest-config`
   fi
 fi
 
 # Ensure that we have located a Google Test to link against.
-if ! test -x "${gtest_config}"; then
+if ! test -x_ "${gtest_config}"; then
   echo "Unable to locate Google Test, check your Google Mock configuration" \
        "and installation" >&2
   exit 1

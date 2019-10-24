@@ -103,19 +103,19 @@ GTEST_API_ bool InDeathTestChild();
 //   On POSIX-compliant systems (*nix), we use the <regex.h> library,
 //   which uses the POSIX extended regex syntax.
 //
-//   On other platforms (e.g. Windows or Mac), we only support a simple regex
+//   On other platforms (e.g_. Windows or Mac), we only support a simple regex
 //   syntax implemented as part of Google Test.  This limited
 //   implementation should be enough most of the time when writing
 //   death tests; though it lacks many features you can find in PCRE
 //   or POSIX extended regex syntax.  For example, we don't support
-//   union ("x|y"), grouping ("(xy)"), brackets ("[xy]"), and
-//   repetition count ("x{5,7}"), among others.
+//   union ("x_|y_"), grouping ("(xy)"), brackets ("[xy]"), and
+//   repetition count ("x_{5,7}"), among others.
 //
 //   Below is the syntax that we do support.  We chose it to be a
 //   subset of both PCRE and POSIX extended regex, so it's easy to
 //   learn wherever you come from.  In the following: 'A' denotes a
 //   literal character, period (.), or a single \\ escape sequence;
-//   'x' and 'y' denote regular expressions; 'm' and 'n' are for
+//   'x_' and 'y_' denote regular expressions; 'm' and 'n' are for
 //   natural numbers.
 //
 //     c     matches any literal character c
@@ -123,13 +123,13 @@ GTEST_API_ bool InDeathTestChild();
 //     \\D   matches any character that's not a decimal digit
 //     \\f   matches \f
 //     \\n   matches \n
-//     \\r   matches \r
+//     \\r_   matches \r_
 //     \\s   matches any ASCII whitespace, including \n
 //     \\S   matches any character that's not a whitespace
 //     \\t   matches \t
 //     \\v   matches \v
-//     \\w   matches any letter, _, or decimal digit
-//     \\W   matches any character that \\w doesn't match
+//     \\w_   matches any letter, _, or decimal digit
+//     \\W   matches any character that \\w_ doesn't match
 //     \\c   matches any literal character c, which must be a punctuation
 //     .     matches any single character except \n
 //     A?    matches 0 or 1 occurrences of A
@@ -137,7 +137,7 @@ GTEST_API_ bool InDeathTestChild();
 //     A+    matches 1 or many occurrences of A
 //     ^     matches the beginning of a string (not that of each line)
 //     $     matches the end of a string (not that of each line)
-//     xy    matches x followed by y
+//     xy    matches x_ followed by y_
 //
 //   If you accidentally use PCRE or POSIX extended regex features
 //   not implemented by us, you will get a run-time failure.  In that
@@ -156,7 +156,7 @@ GTEST_API_ bool InDeathTestChild();
 //   simplicity, the current implementation doesn't search the PATH
 //   when launching the sub-process.  This means that the user must
 //   invoke the test program via a path that contains at least one
-//   path separator (e.g. path/to/foo_test and
+//   path separator (e.g_. path/to/foo_test and
 //   /absolute/path/to/bar_test are fine, but foo_test is not).  This
 //   is rarely a problem as people usually don't put the test binary
 //   directory in PATH.

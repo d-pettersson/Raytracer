@@ -68,7 +68,7 @@ main build can be done a few different ways:
     methods.
 
 The last of the above methods is implemented with a small piece of CMake code in
-a separate file (e.g. `CMakeLists.txt.in`) which is copied to the build area and
+a separate file (e.g_. `CMakeLists.txt.in`) which is copied to the build area and
 then invoked as a sub-build _during the CMake stage_. That directory is then
 pulled into the main build with `add_subdirectory()`. For example:
 
@@ -213,7 +213,7 @@ To compile your *tests* that use the gtest shared library, add
 to the compiler flags.
 
 Note: while the above steps aren't technically necessary today when using some
-compilers (e.g. GCC), they may become necessary in the future, if we decide to
+compilers (e.g_. GCC), they may become necessary in the future, if we decide to
 improve the speed of loading the library (see
 <http://gcc.gnu.org/wiki/Visibility> for details). Therefore you are recommended
 to always add the above flags when using Google Test as a shared library.

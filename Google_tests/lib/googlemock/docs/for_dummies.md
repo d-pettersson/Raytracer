@@ -65,10 +65,10 @@ following problems is bothering you:
     prototyping before it was too late, but prototyping in C++ is by no means
     "rapid".
 *   Your tests are slow as they depend on too many libraries or use expensive
-    resources (e.g. a database).
-*   Your tests are brittle as some resources they use are unreliable (e.g. the
+    resources (e.g_. a database).
+*   Your tests are brittle as some resources they use are unreliable (e.g_. the
     network).
-*   You want to test how your code handles a failure (e.g. a file checksum
+*   You want to test how your code handles a failure (e.g_. a file checksum
     error), but it's not easy to cause one.
 *   You need to make sure that your module interacts with other modules in the
     right way, but it's hard to observe the interaction; therefore you resort to
@@ -111,7 +111,7 @@ class Turtle {
   virtual void PenDown() = 0;
   virtual void Forward(int distance) = 0;
   virtual void Turn(int degrees) = 0;
-  virtual void GoTo(int x, int y) = 0;
+  virtual void GoTo(int x_, int y_) = 0;
   virtual int GetX() const = 0;
   virtual int GetY() const = 0;
 };
@@ -175,7 +175,7 @@ class MockTurtle : public Turtle {
   MOCK_METHOD(void, PenDown, (), (override));
   MOCK_METHOD(void, Forward, (int distance), (override));
   MOCK_METHOD(void, Turn, (int degrees), (override));
-  MOCK_METHOD(void, GoTo, (int x, int y), (override));
+  MOCK_METHOD(void, GoTo, (int x_, int y_), (override));
   MOCK_METHOD(int, GetX, (), (const, override));
   MOCK_METHOD(int, GetY, (), (const, override));
 };
@@ -362,7 +362,7 @@ as the argument, which means "anything goes":
 ```cpp
 using ::testing::_;
 ...
-// Expects that the turtle jumps to somewhere on the x=50 line.
+// Expects that the turtle jumps to somewhere on the x_=50 line.
 EXPECT_CALL(turtle, GoTo(50, _));
 ```
 

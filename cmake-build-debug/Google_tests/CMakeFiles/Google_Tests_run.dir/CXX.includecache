@@ -300,6 +300,22 @@ cxxabi.h
 acxx_demangle.h
 -
 
+../RTC_lib/include/camera.h
+transform.h
+../RTC_lib/include/transform.h
+ray.h
+../RTC_lib/include/ray.h
+world.h
+../RTC_lib/include/world.h
+canvas.h
+../RTC_lib/include/canvas.h
+
+../RTC_lib/include/canvas.h
+tuple.h
+../RTC_lib/include/tuple.h
+vector
+-
+
 ../RTC_lib/include/constants.h
 
 ../RTC_lib/include/intersection.h
@@ -403,6 +419,44 @@ transform.h
 ../RTC_lib/include/transform.h
 intersection.h
 ../RTC_lib/include/intersection.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/CameraTest.cpp
+include/camera.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/camera.h
+include/ray.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/ray.h
+include/canvas.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/canvas.h
+include/world.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/world.h
+cmath
+-
+gtest/gtest.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/LightTest.cpp
+include/light.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/light.h
+include/world.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/world.h
+include/utils.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/utils.h
+gtest/gtest.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/MaterialTest.cpp
+include/material.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/material.h
+include/light.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/light.h
+include/world.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/world.h
+include/shape.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/shape.h
+cmath
+-
+gtest/gtest.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
 
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/WorldTest.cpp
 include/world.h

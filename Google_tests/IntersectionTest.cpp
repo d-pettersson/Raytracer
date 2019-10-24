@@ -139,8 +139,8 @@ TEST_F(IntersectionFixture, Hit4) {
 //    sphere->setTransform(transform->translate(0, 0, 1));
 //    * intersection = raytracer::Intersection(5, sphere);
 //    raytracer::IntersectionData intersectionData = intersection->prepareComputations(* ray);
-//    ASSERT_TRUE(intersectionData.overPoint.z < -EPSILON / 2);
-//    ASSERT_TRUE(intersectionData.point.z > intersectionData.overPoint.z);
+//    ASSERT_TRUE(intersectionData.overPoint.z_ < -EPSILON / 2);
+//    ASSERT_TRUE(intersectionData.point.z_ > intersectionData.overPoint.z_);
 //}
 //
 //TEST_F(IntersectionFixture, ComputeReflectVector) {
@@ -213,8 +213,8 @@ TEST_F(IntersectionFixture, UnderPointOffset) {
     * intersection = raytracer::Intersection(5, sphere);
     auto xs = intersections(* intersection);
     * intersectionData = intersection->prepareComputations(* ray, xs);
-    EXPECT_TRUE(intersectionData->underPoint.z > EPSILON / 2);
-    ASSERT_TRUE(intersectionData->point.z < intersectionData->underPoint.z);
+    EXPECT_TRUE(intersectionData->underPoint.z_ > EPSILON / 2);
+    ASSERT_TRUE(intersectionData->point.z_ < intersectionData->underPoint.z_);
 }
 
 

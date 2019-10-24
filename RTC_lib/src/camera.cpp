@@ -6,7 +6,7 @@
 
 namespace raytracer {
 Camera::Camera()
- : hsize(0), vsize(0), fieldOfView(0.0), transform(Transform()), pixelSize(0.0)
+    : hsize(0), vsize(0), fieldOfView(0.0), transform(Transform()), pixelSize(0.0)
 {
 
 }
@@ -44,16 +44,17 @@ Ray Camera::rayForPixel(const int &x, const int &y) {
 }
 
 Canvas Camera::render(World& world) {
-    auto * ray = new Ray();
-    auto * color = new Color();
-    auto * image = new Canvas(this->hsize, this->vsize);
+    Ray ray;
+    Color color;
+    Canvas image(this->hsize, this->vsize);
+
     for (int y = 0; y < this->vsize; y++) {
         for (int x = 0; x < this->hsize; x++) {
-            * ray = this->rayForPixel(x, y);
-            * color = world.colorAt(* ray);
-            image->writePixel(x, y, color);
+            ray = this->rayForPixel(x, y);
+            color = world.colorAt(ray);
+            image.writePixel(x, y, color);
         }
     }
-    return * image;
+    return image;
 }
 } // namespace raytracer

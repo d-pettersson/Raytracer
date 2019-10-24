@@ -38,7 +38,7 @@ Vector Sphere::getNormal(Point worldPoint) const {
     Point objectPoint = inverse(this->getTransform()) * worldPoint;
     Vector objectNormal = objectPoint - Point(0, 0, 0);
     Vector worldNormal = transpose(inverse(this->getTransform())) * objectNormal;
-    worldNormal.w = 0;
+    worldNormal.w_ = 0;
     return normalize(worldNormal);
 }
 

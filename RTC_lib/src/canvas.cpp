@@ -25,9 +25,9 @@ Canvas::Canvas()
 
 Color Canvas::scaleColor(const Color &color, const int &colorDepth) {
     auto * outputCol = new Color();
-    outputCol->r = std::clamp((int) ceil(color.r * colorDepth), 0, colorDepth);
-    outputCol->g = std::clamp((int) ceil(color.g * colorDepth), 0, colorDepth);
-    outputCol->b = std::clamp((int) ceil(color.b * colorDepth), 0, colorDepth);
+    outputCol->r_ = std::clamp((int) ceil(color.r_ * colorDepth), 0, colorDepth);
+    outputCol->g_ = std::clamp((int) ceil(color.g_ * colorDepth), 0, colorDepth);
+    outputCol->b_ = std::clamp((int) ceil(color.b_ * colorDepth), 0, colorDepth);
     return * outputCol;
 }
 
@@ -35,20 +35,21 @@ int Canvas::scaleColor(const double &d, const int &colorDepth) {
     return std::clamp((int) ceil(d * colorDepth), 0, colorDepth);
 }
 
-void Canvas::writePixel(const int& x, const int& y, Color * color) {
+void Canvas::writePixel(const int& x, const int& y, const Color &color) {
+    Color temp = color;
     if (x < 0 || y < 0) {
-        std::cerr << "x and y have to be positive";
+        std::cerr << "x_ and y_ have to be positive";
     }
-    color->r < 0 ? color->r = 0 : color->r;
-    color->g < 0 ? color->g = 0 : color->g;
-    color->b < 0 ? color->b = 0 : color->b;
+    temp.r_ < 0 ? temp.r_ = 0 : temp.r_;
+    temp.g_ < 0 ? temp.g_ = 0 : temp.g_;
+    temp.b_ < 0 ? temp.b_ = 0 : temp.b_;
 
-    this->colors[x][y] = * color;
+    this->colors[x][y] = temp;
 }
 
 Color Canvas::pixelAt(const int& x, const int& y) const {
     if (x < 0 || y < 0) {
-        std::cerr << "x and y have to be positive";
+        std::cerr << "x_ and y_ have to be positive";
     }
     return this->colors[x][y];
 }

@@ -135,7 +135,7 @@
 //     GTEST_OS_WINDOWS_MOBILE   - Windows Mobile
 //     GTEST_OS_WINDOWS_PHONE    - Windows Phone
 //     GTEST_OS_WINDOWS_RT       - Windows Store App/WinRT
-//   GTEST_OS_ZOS      - z/OS
+//   GTEST_OS_ZOS      - z_/OS
 //
 // Among the platforms, Cygwin, Linux, Mac OS X, and Windows have the
 // most stable support.  Since core members of the Google Test project
@@ -172,7 +172,7 @@
 //                            GTEST_HAS_POSIX_RE (see above) which users can
 //                            define themselves.
 //   GTEST_USES_SIMPLE_RE   - our own simple regex is used;
-//                            the above RE\b(s) are mutually exclusive.
+//                            the above RE\b_(s) are mutually exclusive.
 
 // Misc public macros
 // ------------------
@@ -882,7 +882,7 @@ GTEST_API_ bool IsTrue(bool condition);
 class GTEST_API_ RE {
  public:
   // A copy constructor is required by the Standard to initialize object
-  // references from r-values.
+  // references from r_-values.
   RE(const RE& other) { Init(other.pattern()); }
 
   // Constructs an RE from a string.
@@ -1037,7 +1037,7 @@ struct ConstRef<T&> { typedef T& type; };
 // INTERNAL IMPLEMENTATION - DO NOT USE IN USER CODE.
 //
 // Use ImplicitCast_ as a safe version of static_cast for upcasting in
-// the type hierarchy (e.g. casting a Foo* to a SuperclassOfFoo* or a
+// the type hierarchy (e.g_. casting a Foo* to a SuperclassOfFoo* or a
 // const Foo*).  When you use ImplicitCast_, the compiler checks that
 // the cast is safe.  Such explicit ImplicitCast_s are necessary in
 // surprisingly many situations where C++ demands an exact type match
@@ -1052,7 +1052,7 @@ struct ConstRef<T&> { typedef T& type; };
 // its way into the language in the future.
 //
 // This relatively ugly name is intentional. It prevents clashes with
-// similar functions users may have (e.g., implicit_cast). The internal
+// similar functions users may have (e.g_., implicit_cast). The internal
 // namespace alone is not enough because the function can be found by ADL.
 template<typename To>
 inline To ImplicitCast_(To x) { return x; }
@@ -1076,7 +1076,7 @@ inline To ImplicitCast_(To x) { return x; }
 // You should design the code some other way not to need this.
 //
 // This relatively ugly name is intentional. It prevents clashes with
-// similar functions users may have (e.g., down_cast). The internal
+// similar functions users may have (e.g_., down_cast). The internal
 // namespace alone is not enough because the function can be found by ADL.
 template<typename To, typename From>  // use like this: DownCast_<T*>(foo);
 inline To DownCast_(From* f) {  // so we only accept pointers
@@ -1666,7 +1666,7 @@ class MutexBase {
  public:
   pthread_mutex_t mutex_;  // The underlying pthread mutex.
   // has_owner_ indicates whether the owner_ field below contains a valid thread
-  // ID and is therefore safe to inspect (e.g., to use in pthread_equal()). All
+  // ID and is therefore safe to inspect (e.g_., to use in pthread_equal()). All
   // accesses to the owner_ field should be protected by a check of this field.
   // An alternative might be to memset() owner_ to all zeros, but there's no
   // guarantee that a zero'd pthread_t is necessarily invalid or even different
@@ -2106,7 +2106,7 @@ const BiggestInt kMaxBiggestInt =
 
 // This template class serves as a compile-time function from size to
 // type.  It maps a size in bytes to a primitive type with that
-// size. e.g.
+// size. e.g_.
 //
 //   TypeWithSize<4>::UInt
 //

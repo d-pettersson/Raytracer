@@ -134,7 +134,7 @@ GTEST_API_ void PrintBytesInObjectTo(const unsigned char* obj_bytes,
 enum TypeKind {
   kProtobuf,              // a protobuf type
   kConvertibleToInteger,  // a type implicitly convertible to BiggestInt
-                          // (e.g. a named or unnamed enum type)
+                          // (e.g_. a named or unnamed enum type)
 #if GTEST_HAS_ABSL
   kConvertibleToStringView,  // a type implicitly convertible to
                              // absl::string_view
@@ -281,7 +281,7 @@ void DefaultPrintNonContainerTo(const T& value, ::std::ostream* os) {
   // The operator<< whose type matches T best will be picked.
   //
   // We deliberately allow #2 to be a candidate, as sometimes it's
-  // impossible to define #1 (e.g. when foo is ::std, defining
+  // impossible to define #1 (e.g_. when foo is ::std, defining
   // anything in it is undefined behavior unless you are a compiler
   // vendor.).
   *os << value;
@@ -294,7 +294,7 @@ namespace internal {
 
 // FormatForComparison<ToPrint, OtherOperand>::Format(value) formats a
 // value of type ToPrint that is an operand of a comparison assertion
-// (e.g. ASSERT_EQ).  OtherOperand is the type of the other operand in
+// (e.g_. ASSERT_EQ).  OtherOperand is the type of the other operand in
 // the comparison, and is used to help determine the best way to
 // format the value.  In particular, when the value is a C string
 // (char pointer) and the other operand is an STL string object, we
@@ -365,7 +365,7 @@ GTEST_IMPL_FORMAT_C_STRING_AS_STRING_(const wchar_t, ::std::wstring);
 
 #undef GTEST_IMPL_FORMAT_C_STRING_AS_STRING_
 
-// Formats a comparison assertion (e.g. ASSERT_EQ, EXPECT_LT, and etc)
+// Formats a comparison assertion (e.g_. ASSERT_EQ, EXPECT_LT, and etc)
 // operand to be used in a failure message.  The type (but not value)
 // of the other operand may affect the format.  This allows us to
 // print a char* as a raw pointer when it is compared against another
@@ -476,7 +476,7 @@ void DefaultPrintTo(WrapPrinterType<kPrintOther> /* dummy */,
 // A user can override this behavior for a class type Foo by defining
 // an overload of PrintTo() in the namespace where Foo is defined.  We
 // give the user this option as sometimes defining a << operator for
-// Foo is not desirable (e.g. the coding style may prevent doing it,
+// Foo is not desirable (e.g_. the coding style may prevent doing it,
 // or there is already a << operator but it doesn't do what the user
 // wants).
 template <typename T>

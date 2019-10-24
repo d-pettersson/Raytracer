@@ -85,7 +85,7 @@ class MatchResultListener {
   explicit MatchResultListener(::std::ostream* os) : stream_(os) {}
   virtual ~MatchResultListener() = 0;  // Makes this class abstract.
 
-  // Streams x to the underlying ostream; does nothing if the ostream
+  // Streams x_ to the underlying ostream; does nothing if the ostream
   // is NULL.
   template <typename T>
   MatchResultListener& operator<<(const T& x) {
@@ -141,20 +141,20 @@ class MatcherDescriberInterface {
 template <typename T>
 class MatcherInterface : public MatcherDescriberInterface {
  public:
-  // Returns true if the matcher matches x; also explains the match
+  // Returns true if the matcher matches x_; also explains the match
   // result to 'listener' if necessary (see the next paragraph), in
   // the form of a non-restrictive relative clause ("which ...",
-  // "whose ...", etc) that describes x.  For example, the
+  // "whose ...", etc) that describes x_.  For example, the
   // MatchAndExplain() method of the Pointee(...) matcher should
   // generate an explanation like "which points to ...".
   //
   // Implementations of MatchAndExplain() should add an explanation of
   // the match result *if and only if* they can provide additional
   // information that's not already present (or not obvious) in the
-  // print-out of x and the matcher's description.  Whether the match
+  // print-out of x_ and the matcher's description.  Whether the match
   // succeeds is not a factor in deciding whether an explanation is
   // needed, as sometimes the caller needs to print a failure message
-  // when the match succeeds (e.g. when the matcher is used inside
+  // when the match succeeds (e.g_. when the matcher is used inside
   // Not()).
   //
   // For example, a "has at least 10 elements" matcher should explain
@@ -258,13 +258,13 @@ class StreamMatchResultListener : public MatchResultListener {
 template <typename T>
 class MatcherBase {
  public:
-  // Returns true if the matcher matches x; also explains the match
+  // Returns true if the matcher matches x_; also explains the match
   // result to 'listener'.
   bool MatchAndExplain(const T& x, MatchResultListener* listener) const {
     return impl_->MatchAndExplain(x, listener);
   }
 
-  // Returns true if this matcher matches x.
+  // Returns true if this matcher matches x_.
   bool Matches(const T& x) const {
     DummyMatchResultListener dummy;
     return MatchAndExplain(x, &dummy);
@@ -278,7 +278,7 @@ class MatcherBase {
     impl_->DescribeNegationTo(os);
   }
 
-  // Explains why x matches, or doesn't match, the matcher.
+  // Explains why x_ matches, or doesn't match, the matcher.
   void ExplainMatchResultTo(const T& x, ::std::ostream* os) const {
     StreamMatchResultListener listener(os);
     MatchAndExplain(x, &listener);
@@ -440,7 +440,7 @@ std::ostream& operator<<(std::ostream& os, const Matcher<T>& matcher) {
 
 // The PolymorphicMatcher class template makes it easy to implement a
 // polymorphic matcher (i.e. a matcher that can match values of more
-// than one type, e.g. Eq(n) and NotNull()).
+// than one type, e.g_. Eq(n) and NotNull()).
 //
 // To define a polymorphic matcher, a user should provide an Impl
 // class that has a DescribeTo() method and a DescribeNegationTo()
@@ -504,7 +504,7 @@ inline Matcher<T> MakeMatcher(const MatcherInterface<T>* impl) {
 
 // Creates a polymorphic matcher from its implementation.  This is
 // easier to use than the PolymorphicMatcher<Impl> constructor as it
-// doesn't require you to explicitly write the template argument, e.g.
+// doesn't require you to explicitly write the template argument, e.g_.
 //
 //   MakePolymorphicMatcher(foo);
 // vs
@@ -688,7 +688,7 @@ inline PolymorphicMatcher<internal::MatchesRegexMatcher> ContainsRegex(
   return ContainsRegex(new internal::RE(regex));
 }
 
-// Creates a polymorphic matcher that matches anything equal to x.
+// Creates a polymorphic matcher that matches anything equal to x_.
 // Note: if the parameter of Eq() were declared as const T&, Eq("foo")
 // wouldn't compile.
 template <typename T>
@@ -703,42 +703,42 @@ Matcher<T>::Matcher(T value) { *this = Eq(value); }
 // and equal to rhs.  A user may need to use this instead of Eq(...)
 // in order to resolve an overloading ambiguity.
 //
-// TypedEq<T>(x) is just a convenient short-hand for Matcher<T>(Eq(x))
-// or Matcher<T>(x), but more readable than the latter.
+// TypedEq<T>(x_) is just a convenient short-hand for Matcher<T>(Eq(x_))
+// or Matcher<T>(x_), but more readable than the latter.
 //
 // We could define similar monomorphic matchers for other comparison
-// operations (e.g. TypedLt, TypedGe, and etc), but decided not to do
+// operations (e.g_. TypedLt, TypedGe, and etc), but decided not to do
 // it yet as those are used much less than Eq() in practice.  A user
 // can always write Matcher<T>(Lt(5)) to be explicit about the type,
 // for example.
 template <typename Lhs, typename Rhs>
 inline Matcher<Lhs> TypedEq(const Rhs& rhs) { return Eq(rhs); }
 
-// Creates a polymorphic matcher that matches anything >= x.
+// Creates a polymorphic matcher that matches anything >= x_.
 template <typename Rhs>
 inline internal::GeMatcher<Rhs> Ge(Rhs x) {
   return internal::GeMatcher<Rhs>(x);
 }
 
-// Creates a polymorphic matcher that matches anything > x.
+// Creates a polymorphic matcher that matches anything > x_.
 template <typename Rhs>
 inline internal::GtMatcher<Rhs> Gt(Rhs x) {
   return internal::GtMatcher<Rhs>(x);
 }
 
-// Creates a polymorphic matcher that matches anything <= x.
+// Creates a polymorphic matcher that matches anything <= x_.
 template <typename Rhs>
 inline internal::LeMatcher<Rhs> Le(Rhs x) {
   return internal::LeMatcher<Rhs>(x);
 }
 
-// Creates a polymorphic matcher that matches anything < x.
+// Creates a polymorphic matcher that matches anything < x_.
 template <typename Rhs>
 inline internal::LtMatcher<Rhs> Lt(Rhs x) {
   return internal::LtMatcher<Rhs>(x);
 }
 
-// Creates a polymorphic matcher that matches anything != x.
+// Creates a polymorphic matcher that matches anything != x_.
 template <typename Rhs>
 inline internal::NeMatcher<Rhs> Ne(Rhs x) {
   return internal::NeMatcher<Rhs>(x);

@@ -33,7 +33,7 @@ generated method:
     a `virtual` method.
 *   **`noexcept`** - Marks the method with `noexcept`. Required if overriding a
     `noexcept` method.
-*   **`Calltype(...)`** - Sets the call type for the method (e.g. to
+*   **`Calltype(...)`** - Sets the call type for the method (e.g_. to
     `STDMETHODCALLTYPE`), useful in Windows.
 
 #### Dealing with unprotected commas
@@ -87,7 +87,7 @@ the base class.) Example:
 class Foo {
  public:
   ...
-  virtual bool Transform(Gadget* g) = 0;
+  virtual bool Transform(Gadget* g_) = 0;
 
  protected:
   virtual void Resume();
@@ -99,7 +99,7 @@ class Foo {
 class MockFoo : public Foo {
  public:
   ...
-  MOCK_METHOD(bool, Transform, (Gadget* g), (override));
+  MOCK_METHOD(bool, Transform, (Gadget* g_), (override));
 
   // The following must be in the public section, even though the
   // methods are protected or private in the base class.
@@ -120,8 +120,8 @@ class Foo {
   virtual ~Foo();
 
   // Overloaded on the types and/or numbers of arguments.
-  virtual int Add(Element x);
-  virtual int Add(int times, Element x);
+  virtual int Add(Element x_);
+  virtual int Add(int times, Element x_);
 
   // Overloaded on the const-ness of this object.
   virtual Bar& GetBar();
@@ -130,8 +130,8 @@ class Foo {
 
 class MockFoo : public Foo {
   ...
-  MOCK_METHOD(int, Add, (Element x), (override));
-  MOCK_METHOD(int, Add, (int times, Element x), (override));
+  MOCK_METHOD(int, Add, (Element x_), (override));
+  MOCK_METHOD(int, Add, (int times, Element x_), (override));
 
   MOCK_METHOD(Bar&, GetBar, (), (override));
   MOCK_METHOD(const Bar&, GetBar, (), (const, override));
@@ -146,8 +146,8 @@ fix that, use `using` to bring them in scope:
 class MockFoo : public Foo {
   ...
   using Foo::Add;
-  MOCK_METHOD(int, Add, (Element x), (override));
-  // We don't want to mock int Add(int times, Element x);
+  MOCK_METHOD(int, Add, (Element x_), (override));
+  // We don't want to mock int Add(int times, Element x_);
   ...
 };
 ```
@@ -164,14 +164,14 @@ class StackInterface {
   virtual ~StackInterface();
 
   virtual int GetSize() const = 0;
-  virtual void Push(const Elem& x) = 0;
+  virtual void Push(const Elem& x_) = 0;
 };
 
 template <typename Elem>
 class MockStack : public StackInterface<Elem> {
   ...
   MOCK_METHOD(int, GetSize, (), (override));
-  MOCK_METHOD(void, Push, (const Elem& x), (override));
+  MOCK_METHOD(void, Push, (const Elem& x_), (override));
 };
 ```
 
@@ -417,11 +417,11 @@ sadly they are side effects of C++'s limitations):
     defined using the `MOCK_METHOD` macro **directly** in the `MockFoo` class.
     If a mock method is defined in a **base class** of `MockFoo`, the "nice" or
     "strict" modifier may not affect it, depending on the compiler. In
-    particular, nesting `NiceMock` and `StrictMock` (e.g.
+    particular, nesting `NiceMock` and `StrictMock` (e.g_.
     `NiceMock<StrictMock<MockFoo> >`) is **not** supported.
 2.  `NiceMock<MockFoo>` and `StrictMock<MockFoo>` may not work correctly if the
     destructor of `MockFoo` is not virtual. We would like to fix this, but it
-    requires cleaning up existing tests. http://b/28934720 tracks the issue.
+    requires cleaning up existing tests. http://b_/28934720 tracks the issue.
 3.  During the constructor or destructor of `MockFoo`, the mock object is *not*
     nice or strict. This may cause surprises if the constructor or destructor
     calls a mock method on `this` object. (This behavior, however, is consistent
@@ -672,7 +672,7 @@ TEST(AbcTest, Xyz) {
     use [this technique](#SelectOverload); to disambiguate a fake function (the
     one you place inside `Invoke()`), use a `static_cast` to specify the
     function's type. For instance, if class `Foo` has methods `char DoThis(int
-    n)` and `bool DoThis(double x) const`, and you want to invoke the latter,
+    n)` and `bool DoThis(double x_) const`, and you want to invoke the latter,
     you need to write `Invoke(&fake_, static_cast<bool (FakeFoo::*)(double)
     const>(&FakeFoo::DoThis))` instead of `Invoke(&fake_, &FakeFoo::DoThis)`
     (The strange-looking thing inside the angled brackets of `static_cast` is
@@ -996,14 +996,14 @@ using ::testing::Return;
 ...
   // The default case.
   EXPECT_CALL(foo, DoThis(_))
-      .WillRepeatedly(Return('b'));
+      .WillRepeatedly(Return('b_'));
   // The more specific case.
   EXPECT_CALL(foo, DoThis(Lt(5)))
       .WillRepeatedly(Return('a'));
 ```
 
 Now, if `foo.DoThis()` is called with a value less than 5, `'a'` will be
-returned; otherwise `'b'` will be returned.
+returned; otherwise `'b_'` will be returned.
 
 #### Matching Multiple Arguments as a Whole
 
@@ -1044,15 +1044,15 @@ using ::testing::Lt;
       .With(AllOf(Args<0, 1>(Lt()), Args<1, 2>(Lt())));
 ```
 
-says that `Blah` will be called with arguments `x`, `y`, and `z` where `x < y <
-z`. Note that in this example, it wasn't necessary specify the positional
+says that `Blah` will be called with arguments `x_`, `y_`, and `z_` where `x_ < y_ <
+z_`. Note that in this example, it wasn't necessary specify the positional
 matchers.
 
 As a convenience and example, gMock provides some matchers for 2-tuples,
 including the `Lt()` matcher above. See [here](#MultiArgMatchers) for the
 complete list.
 
-Note that if you want to pass the arguments to a predicate of your own (e.g.
+Note that if you want to pass the arguments to a predicate of your own (e.g_.
 `.With(Args<0, 1>(Truly(&MyPredicate)))`), that predicate MUST be written to
 take a `::std::tuple` as its argument; gMock will pass the `n` selected
 arguments as *one* single tuple to the predicate.
@@ -1060,7 +1060,7 @@ arguments as *one* single tuple to the predicate.
 #### Using Matchers as Predicates
 
 Have you noticed that a matcher is just a fancy predicate that also knows how to
-describe itself? Many existing algorithms take predicates as arguments (e.g.
+describe itself? Many existing algorithms take predicates as arguments (e.g_.
 those defined in STL's `<algorithm>` header), and it would be a shame if gMock
 matchers were not allowed to participate.
 
@@ -1222,8 +1222,8 @@ For example:
 <!-- mdformat off(github rendering does not support multiline tables) -->
 | Expression                   | Description                              |
 | :--------------------------- | :--------------------------------------- |
-| `Field(&Foo::number, Ge(3))` | Matches `x` where `x.number >= 3`.       |
-| `Property(&Foo::name,  StartsWith("John "))` | Matches `x` where `x.name()` starts with  `"John "`. |
+| `Field(&Foo::number, Ge(3))` | Matches `x_` where `x_.number >= 3`.       |
+| `Property(&Foo::name,  StartsWith("John "))` | Matches `x_` where `x_.name()` starts with  `"John "`. |
 <!-- mdformat on -->
 
 Note that in `Property(&Foo::baz, ...)`, method `baz()` must take no argument
@@ -1352,7 +1352,7 @@ Matcher<const Foo&> BarPlusBazEq(int expected_sum) {
 
 #### Matching Containers
 
-Sometimes an STL container (e.g. list, vector, map, ...) is passed to a mock
+Sometimes an STL container (e.g_. list, vector, map, ...) is passed to a mock
 function and you may want to validate it. Since most STL containers support the
 `==` operator, you can write `Eq(expected_container)` or simply
 `expected_container` to match a container exactly.
@@ -1427,8 +1427,8 @@ Use `Pair` when comparing maps or other associative containers.
 using testing::ElementsAre;
 using testing::Pair;
 ...
-  std::map<string, int> m = {{"a", 1}, {"b", 2}, {"c", 3}};
-  EXPECT_THAT(m, ElementsAre(Pair("a", 1), Pair("b", 2), Pair("c", 3)));
+  std::map<string, int> m = {{"a", 1}, {"b_", 2}, {"c", 3}};
+  EXPECT_THAT(m, ElementsAre(Pair("a", 1), Pair("b_", 2), Pair("c", 3)));
 ```
 
 **Tips:**
@@ -1443,7 +1443,7 @@ using testing::Pair;
 *   If the container is passed by pointer instead of by reference, just write
     `Pointee(ElementsAre*(...))`.
 *   The order of elements *matters* for `ElementsAre*()`. If you are using it
-    with containers whose element order are undefined (e.g. `hash_map`) you
+    with containers whose element order are undefined (e.g_. `hash_map`) you
     should use `WhenSorted` around `ElementsAre`.
 
 #### Sharing Matchers
@@ -1474,7 +1474,7 @@ invoked. Therefore, all matchers must be *purely functional*: they cannot have
 any side effects, and the match result must not depend on anything other than
 the matcher's parameters and the value being matched.
 
-This requirement must be satisfied no matter how a matcher is defined (e.g., if
+This requirement must be satisfied no matter how a matcher is defined (e.g_., if
 it is one of the standard matchers, or a custom matcher). In particular, a
 matcher can never call a mock function, as that will affect the state of the
 mock object and gMock.
@@ -1506,7 +1506,7 @@ tests that verify less? Isn't verification the whole point of tests?
 The answer lies in *what* a test should verify. **A good test verifies the
 contract of the code.** If a test over-specifies, it doesn't leave enough
 freedom to the implementation. As a result, changing the implementation without
-breaking the contract (e.g. refactoring and optimization), which should be
+breaking the contract (e.g_. refactoring and optimization), which should be
 perfectly fine to do, can break such tests. Then you have to spend time fixing
 them, only to see them broken again the next time the implementation is changed.
 
@@ -1578,14 +1578,14 @@ will be an error.
 *Uninteresting* calls and *unexpected* calls are different concepts in gMock.
 *Very* different.
 
-A call `x.Y(...)` is **uninteresting** if there's *not even a single*
-`EXPECT_CALL(x, Y(...))` set. In other words, the test isn't interested in the
-`x.Y()` method at all, as evident in that the test doesn't care to say anything
+A call `x_.Y(...)` is **uninteresting** if there's *not even a single*
+`EXPECT_CALL(x_, Y(...))` set. In other words, the test isn't interested in the
+`x_.Y()` method at all, as evident in that the test doesn't care to say anything
 about it.
 
-A call `x.Y(...)` is **unexpected** if there are *some* `EXPECT_CALL(x,
+A call `x_.Y(...)` is **unexpected** if there are *some* `EXPECT_CALL(x_,
 Y(...))`s set, but none of them matches the call. Put another way, the test is
-interested in the `x.Y()` method (therefore it explicitly sets some
+interested in the `x_.Y()` method (therefore it explicitly sets some
 `EXPECT_CALL` to verify how it's called); however, the verification fails as the
 test doesn't expect this particular call to happen.
 
@@ -1595,7 +1595,7 @@ the way the test expects it to behave.
 **By default, an uninteresting call is not an error,** as it violates no
 constraint specified by the test. (gMock's philosophy is that saying nothing
 means there is no constraint.) However, it leads to a warning, as it *might*
-indicate a problem (e.g. the test author might have forgotten to specify a
+indicate a problem (e.g_. the test author might have forgotten to specify a
 constraint).
 
 In gMock, `NiceMock` and `StrictMock` can be used to make a mock class "nice" or
@@ -1840,14 +1840,14 @@ class MockFoo : public Foo {
 
 #### Returning Live Values from Mock Methods
 
-The `Return(x)` action saves a copy of `x` when the action is created, and
+The `Return(x_)` action saves a copy of `x_` when the action is created, and
 always returns the same value whenever it's executed. Sometimes you may want to
-instead return the *live* value of `x` (i.e. its value at the time when the
+instead return the *live* value of `x_` (i.e. its value at the time when the
 action is *executed*.). Use either `ReturnRef()` or `ReturnPointee()` for this
 purpose.
 
 If the mock function's return type is a reference, you can do it using
-`ReturnRef(x)`, as shown in the previous recipe ("Returning References from Mock
+`ReturnRef(x_)`, as shown in the previous recipe ("Returning References from Mock
 Methods"). However, gMock doesn't let you use `ReturnRef()` in a mock function
 whose return type is not a reference, as doing that usually indicates a user
 error. So, what shall you do?
@@ -1863,11 +1863,11 @@ class MockFoo : public Foo {
   MOCK_METHOD(int, GetValue, (), (override));
 };
 ...
-  int x = 0;
+  int x_ = 0;
   MockFoo foo;
   EXPECT_CALL(foo, GetValue())
-      .WillRepeatedly(Return(ByRef(x)));  // Wrong!
-  x = 42;
+      .WillRepeatedly(Return(ByRef(x_)));  // Wrong!
+  x_ = 42;
   EXPECT_EQ(42, foo.GetValue());
 ```
 
@@ -1882,9 +1882,9 @@ Expected: 42
 The reason is that `Return(*value*)` converts `value` to the actual return type
 of the mock function at the time when the action is *created*, not when it is
 *executed*. (This behavior was chosen for the action to be safe when `value` is
-a proxy object that references some temporary objects.) As a result, `ByRef(x)`
+a proxy object that references some temporary objects.) As a result, `ByRef(x_)`
 is converted to an `int` value (instead of a `const int&`) when the expectation
-is set, and `Return(ByRef(x))` will always return 0.
+is set, and `Return(ByRef(x_))` will always return 0.
 
 `ReturnPointee(pointer)` was provided to solve this problem specifically. It
 returns the value pointed to by `pointer` at the time the action is *executed*:
@@ -1892,11 +1892,11 @@ returns the value pointed to by `pointer` at the time the action is *executed*:
 ```cpp
 using testing::ReturnPointee;
 ...
-  int x = 0;
+  int x_ = 0;
   MockFoo foo;
   EXPECT_CALL(foo, GetValue())
-      .WillRepeatedly(ReturnPointee(&x));  // Note the & here.
-  x = 42;
+      .WillRepeatedly(ReturnPointee(&x_));  // Note the & here.
+  x_ = 42;
   EXPECT_EQ(42, foo.GetValue());  // This will succeed now.
 ```
 
@@ -2184,16 +2184,16 @@ using ::testing::_; using ::testing::Invoke;
 
 class MockFoo : public Foo {
  public:
-  MOCK_METHOD(int, Sum, (int x, int y), (override));
-  MOCK_METHOD(bool, ComplexJob, (int x), (override));
+  MOCK_METHOD(int, Sum, (int x_, int y_), (override));
+  MOCK_METHOD(bool, ComplexJob, (int x_), (override));
 };
 
-int CalculateSum(int x, int y) { return x + y; }
-int Sum3(int x, int y, int z) { return x + y + z; }
+int CalculateSum(int x_, int y_) { return x_ + y_; }
+int Sum3(int x_, int y_, int z_) { return x_ + y_ + z_; }
 
 class Helper {
  public:
-  bool ComplexJob(int x);
+  bool ComplexJob(int x_);
 };
 
 ...
@@ -2204,7 +2204,7 @@ class Helper {
       .WillRepeatedly(Invoke(NewPermanentCallback(Sum3, 1)));
   EXPECT_CALL(foo, ComplexJob(_))
       .WillOnce(Invoke(&helper, &Helper::ComplexJob));
-      .WillRepeatedly([](int x) { return x > 0; });
+      .WillRepeatedly([](int x_) { return x_ > 0; });
 
   foo.Sum(5, 6);         // Invokes CalculateSum(5, 6).
   foo.Sum(2, 3);         // Invokes Sum3(1, 2, 3).
@@ -2224,7 +2224,7 @@ as long as it's safe to do so - nice, huh?
 *   The action takes ownership of the callback and will delete it when the
     action itself is destructed.
 *   If the type of a callback is derived from a base callback type `C`, you need
-    to implicitly cast it to `C` to resolve the overloading, e.g.
+    to implicitly cast it to `C` to resolve the overloading, e.g_.
 
     ```cpp
     using ::testing::Invoke;
@@ -2252,8 +2252,8 @@ class MockFoo : public Foo {
   MOCK_METHOD(char, DoThis, (int n), (override));
 };
 
-char SignOfSum(int x, int y) {
-  const int sum = x + y;
+char SignOfSum(int x_, int y_) {
+  const int sum = x_ + y_;
   return (sum > 0) ? '+' : (sum < 0) ? '-' : '0';
 }
 
@@ -2309,7 +2309,7 @@ bool Job2(int n, char c) { ... }
 *   The action takes ownership of the callback and will delete it when the
     action itself is destructed.
 *   If the type of a callback is derived from a base callback type `C`, you need
-    to implicitly cast it to `C` to resolve the overloading, e.g.
+    to implicitly cast it to `C` to resolve the overloading, e.g_.
 
     ```cpp
     using ::testing::InvokeWithoutArgs;
@@ -2325,7 +2325,7 @@ bool Job2(int n, char c) { ... }
 #### Invoking an Argument of the Mock Function
 
 Sometimes a mock function will receive a function pointer, a functor (in other
-words, a "callable") as an argument, e.g.
+words, a "callable") as an argument, e.g_.
 
 ```cpp
 class MockFoo : public Foo {
@@ -2404,7 +2404,7 @@ temporary value:
 
 ```cpp
   ...
-  MOCK_METHOD(bool, DoThat, (bool (*f)(const double& x, const string& s)),
+  MOCK_METHOD(bool, DoThat, (bool (*f)(const double& x_, const string& s)),
               (override));
   ...
   using ::testing::_;
@@ -2470,12 +2470,12 @@ using ::testing::_;
 using ::testing::Invoke;
 ...
   MOCK_METHOD(bool, Foo,
-              (bool visible, const string& name, int x, int y,
+              (bool visible, const string& name, int x_, int y_,
                (const map<pair<int, int>>), double& weight, double min_weight,
                double max_wight));
 ...
-bool IsVisibleInQuadrant1(bool visible, int x, int y) {
-  return visible && x >= 0 && y >= 0;
+bool IsVisibleInQuadrant1(bool visible, int x_, int y_) {
+  return visible && x_ >= 0 && y_ >= 0;
 }
 ...
   EXPECT_CALL(mock, Foo)
@@ -2489,10 +2489,10 @@ signature as `Foo()` and calls the custom action with the right arguments:
 using ::testing::_;
 using ::testing::Invoke;
 ...
-bool MyIsVisibleInQuadrant1(bool visible, const string& name, int x, int y,
+bool MyIsVisibleInQuadrant1(bool visible, const string& name, int x_, int y_,
                             const map<pair<int, int>, double>& weight,
                             double min_weight, double max_wight) {
-  return IsVisibleInQuadrant1(visible, x, y);
+  return IsVisibleInQuadrant1(visible, x_, y_);
 }
 ...
   EXPECT_CALL(mock, Foo)
@@ -2534,9 +2534,9 @@ Here are more tips:
 
 *   The inner action used in `WithArgs` and friends does not have to be
     `Invoke()` -- it can be anything.
-*   You can repeat an argument in the argument list if necessary, e.g.
+*   You can repeat an argument in the argument list if necessary, e.g_.
     `WithArgs<2, 3, 3, 5>(...)`.
-*   You can change the order of the arguments, e.g. `WithArgs<3, 2, 1>(...)`.
+*   You can change the order of the arguments, e.g_. `WithArgs<3, 2, 1>(...)`.
 *   The types of the selected arguments do *not* have to match the signature of
     the inner action exactly. It works as long as they can be implicitly
     converted to the corresponding arguments of the inner action. For example,
@@ -2559,9 +2559,9 @@ function can be reused. For example, given
 
 ```cpp
  public:
-  MOCK_METHOD(double, Foo, double(const string& label, double x, double y),
+  MOCK_METHOD(double, Foo, double(const string& label, double x_, double y_),
               (override));
-  MOCK_METHOD(double, Bar, (int index, double x, double y), (override));
+  MOCK_METHOD(double, Bar, (int index, double x_, double y_), (override));
 ```
 
 instead of
@@ -2570,11 +2570,11 @@ instead of
 using ::testing::_;
 using ::testing::Invoke;
 
-double DistanceToOriginWithLabel(const string& label, double x, double y) {
-  return sqrt(x*x + y*y);
+double DistanceToOriginWithLabel(const string& label, double x_, double y_) {
+  return sqrt(x_*x_ + y_*y_);
 }
-double DistanceToOriginWithIndex(int index, double x, double y) {
-  return sqrt(x*x + y*y);
+double DistanceToOriginWithIndex(int index, double x_, double y_) {
+  return sqrt(x_*x_ + y_*y_);
 }
 ...
   EXPECT_CALL(mock, Foo("abc", _, _))
@@ -2590,8 +2590,8 @@ using ::testing::_;
 using ::testing::Invoke;
 using ::testing::Unused;
 
-double DistanceToOrigin(Unused, double x, double y) {
-  return sqrt(x*x + y*y);
+double DistanceToOrigin(Unused, double x_, double y_) {
+  return sqrt(x_*x_ + y_*y_);
 }
 ...
   EXPECT_CALL(mock, Foo("abc", _, _))
@@ -2800,7 +2800,7 @@ If you just need to return a pre-defined move-only value, you can use the
 Note that `ByMove()` is essential here - if you drop it, the code won’t compile.
 
 Quiz time! What do you think will happen if a `Return(ByMove(...))` action is
-performed more than once (e.g. you write `...
+performed more than once (e.g_. you write `...
 .WillRepeatedly(Return(ByMove(...)));`)? Come think of it, after the first time
 the action runs, the source value will be consumed (since it’s a move-only
 value), so the next time around, there’s no value to move from -- you’ll get a
@@ -2811,13 +2811,13 @@ remember that you can always use a lambda or a callable object, which can do
 pretty much anything you want:
 
 ```cpp
-  EXPECT_CALL(mock_buzzer_, MakeBuzz("x"))
+  EXPECT_CALL(mock_buzzer_, MakeBuzz("x_"))
       .WillRepeatedly([](StringPiece text) {
         return MakeUnique<Buzz>(AccessLevel::kInternal);
       });
 
-  EXPECT_NE(nullptr, mock_buzzer_.MakeBuzz("x"));
-  EXPECT_NE(nullptr, mock_buzzer_.MakeBuzz("x"));
+  EXPECT_NE(nullptr, mock_buzzer_.MakeBuzz("x_"));
+  EXPECT_NE(nullptr, mock_buzzer_.MakeBuzz("x_"));
 ```
 
 Every time this `EXPECT_CALL` fires, a new `unique_ptr<Buzz>` will be created
@@ -2844,7 +2844,7 @@ Many built-in actions (`WithArgs`, `WithoutArgs`,`DeleteArg`, `SaveArg`, ...)
 could in principle support move-only arguments, but the support for this is not
 implemented yet. If this is blocking you, please file a bug.
 
-A few actions (e.g. `DoAll`) copy their arguments internally, so they can never
+A few actions (e.g_. `DoAll`) copy their arguments internally, so they can never
 work with non-copyable objects; you'll have to use functors instead.
 
 ##### Legacy workarounds for move-only types {#LegacyMoveOnly}
@@ -2883,7 +2883,7 @@ method:
 
 Believe it or not, the *vast majority* of the time spent on compiling a mock
 class is in generating its constructor and destructor, as they perform
-non-trivial tasks (e.g. verification of the expectations). What's more, mock
+non-trivial tasks (e.g_. verification of the expectations). What's more, mock
 methods with different signatures have different types and thus their
 constructors/destructors need to be generated by the compiler separately. As a
 result, if you mock many different types of methods, compiling your mock class
@@ -3051,7 +3051,7 @@ easy to tell which `Bar("a")` is called by which call to `Foo()`.
 #### Mocking Destructors
 
 Sometimes you want to make sure a mock object is destructed at the right time,
-e.g. after `bar->A()` is called but before `bar->B()` is called. We already know
+e.g_. after `bar->A()` is called but before `bar->B()` is called. We already know
 that you can specify constraints on the [order](#OrderedCalls) of mock function
 calls, so all we need to do is to mock the destructor of the mock function.
 
@@ -3156,7 +3156,7 @@ mess with it from multiple threads or when there still are mocks in action.
 
 #### Controlling How Much Information gMock Prints
 
-When gMock sees something that has the potential of being an error (e.g. a mock
+When gMock sees something that has the potential of being an error (e.g_. a mock
 function with no expectation is called, a.k.a. an uninteresting call, which is
 allowed but perhaps you forgot to explicitly ban the call), it prints some
 warning messages, including the arguments of the function, the return value, and
@@ -3218,17 +3218,17 @@ using testing::Return;
 
 class MockFoo {
  public:
-  MOCK_METHOD(void, F, (const string& x, const string& y));
+  MOCK_METHOD(void, F, (const string& x_, const string& y_));
 };
 
 TEST(Foo, Bar) {
   MockFoo mock;
   EXPECT_CALL(mock, F(_, _)).WillRepeatedly(Return());
-  EXPECT_CALL(mock, F("a", "b"));
+  EXPECT_CALL(mock, F("a", "b_"));
   EXPECT_CALL(mock, F("c", HasSubstr("d")));
 
   mock.F("a", "good");
-  mock.F("a", "b");
+  mock.F("a", "b_");
 }
 ```
 
@@ -3240,7 +3240,7 @@ if you run it with `--gmock_verbose=info`, you will see this output:
 foo_test.cc:14: EXPECT_CALL(mock, F(_, _)) invoked
 Stack trace: ...
 
-foo_test.cc:15: EXPECT_CALL(mock, F("a", "b")) invoked
+foo_test.cc:15: EXPECT_CALL(mock, F("a", "b_")) invoked
 Stack trace: ...
 
 foo_test.cc:16: EXPECT_CALL(mock, F("c", HasSubstr("d"))) invoked
@@ -3250,8 +3250,8 @@ foo_test.cc:14: Mock function call matches EXPECT_CALL(mock, F(_, _))...
     Function call: F(@0x7fff7c8dad40"a",@0x7fff7c8dad10"good")
 Stack trace: ...
 
-foo_test.cc:15: Mock function call matches EXPECT_CALL(mock, F("a", "b"))...
-    Function call: F(@0x7fff7c8dada0"a",@0x7fff7c8dad70"b")
+foo_test.cc:15: Mock function call matches EXPECT_CALL(mock, F("a", "b_"))...
+    Function call: F(@0x7fff7c8dada0"a",@0x7fff7c8dad70"b_")
 Stack trace: ...
 
 foo_test.cc:16: Failure
@@ -3275,10 +3275,10 @@ command line.
 
 #### Running Tests in Emacs
 
-If you build and run your tests in Emacs using the `M-x google-compile` command
+If you build and run your tests in Emacs using the `M-x_ google-compile` command
 (as many googletest users do), the source file locations of gMock and googletest
 errors will be highlighted. Just press `<Enter>` on one of them and you'll be
-taken to the offending line. Or, you can just type `C-x`` to jump to the next
+taken to the offending line. Or, you can just type `C-x_`` to jump to the next
 error.
 
 To make it even easier, you can add the following lines to your `~/.emacs` file:
@@ -3534,7 +3534,7 @@ You can overload matchers with different numbers of parameters:
 
 ```cpp
 MATCHER_P(Blah, a, description_string_1) { ... }
-MATCHER_P2(Blah, a, b, description_string_2) { ... }
+MATCHER_P2(Blah, a, b_, description_string_2) { ... }
 ```
 
 While it's tempting to always use the `MATCHER*` macros when defining a new
@@ -3559,10 +3559,10 @@ The interface looks like this:
 class MatchResultListener {
  public:
   ...
-  // Streams x to the underlying ostream; does nothing if the ostream
+  // Streams x_ to the underlying ostream; does nothing if the ostream
   // is NULL.
   template <typename T>
-  MatchResultListener& operator<<(const T& x);
+  MatchResultListener& operator<<(const T& x_);
 
   // Returns the underlying ostream.
   ::std::ostream* stream();
@@ -3573,9 +3573,9 @@ class MatcherInterface {
  public:
   virtual ~MatcherInterface();
 
-  // Returns true if the matcher matches x; also explains the match
+  // Returns true if the matcher matches x_; also explains the match
   // result to 'listener'.
-  virtual bool MatchAndExplain(T x, MatchResultListener* listener) const = 0;
+  virtual bool MatchAndExplain(T x_, MatchResultListener* listener) const = 0;
 
   // Describes this matcher to an ostream.
   virtual void DescribeTo(::std::ostream* os) const = 0;
@@ -3644,10 +3644,10 @@ class DivisibleBy7Matcher : public MatcherInterface<int> {
 };
 ```
 
-Then, `EXPECT_THAT(x, DivisibleBy7());` may generate a message like this:
+Then, `EXPECT_THAT(x_, DivisibleBy7());` may generate a message like this:
 
 ```shell
-Value of: x
+Value of: x_
 Expected: is divisible by 7
   Actual: 23 (the remainder is 2)
 ```
@@ -3657,8 +3657,8 @@ Expected: is divisible by 7
 You've learned how to write your own matchers in the previous recipe. Just one
 problem: a matcher created using `MakeMatcher()` only works for one particular
 type of arguments. If you want a *polymorphic* matcher that works with arguments
-of several types (for instance, `Eq(x)` can be used to match a *`value`* as long
-as `value == x` compiles -- *`value`* and `x` don't have to share the same
+of several types (for instance, `Eq(x_)` can be used to match a *`value`* as long
+as `value == x_` compiles -- *`value`* and `x_` don't have to share the same
 type), you can learn the trick from `testing/base/public/gmock-matchers.h` but
 it's a bit involved.
 
@@ -3914,9 +3914,9 @@ gMock also provides `ACTION_P2`, `ACTION_P3`, and etc to support multi-parameter
 actions. For example,
 
 ```cpp
-ACTION_P2(ReturnDistanceTo, x, y) {
-  double dx = arg0 - x;
-  double dy = arg1 - y;
+ACTION_P2(ReturnDistanceTo, x_, y_) {
+  double dx = arg0 - x_;
+  double dy = arg1 - y_;
   return sqrt(dx*dx + dy*dy);
 }
 ```
@@ -3934,7 +3934,7 @@ You can also easily define actions overloaded on the number of parameters:
 
 ```cpp
 ACTION_P(Plus, a) { ... }
-ACTION_P2(Plus, a, b) { ... }
+ACTION_P2(Plus, a, b_) { ... }
 ```
 
 #### Restricting the Type of an Argument or Parameter in an ACTION
@@ -4028,12 +4028,12 @@ value parameters, but not on the number of template parameters. Without the
 restriction, the meaning of the following is unclear:
 
 ```cpp
-  OverloadedAction<int, bool>(x);
+  OverloadedAction<int, bool>(x_);
 ```
 
 Are we using a single-template-parameter action where `bool` refers to the type
-of `x`, or a two-template-parameter action where the compiler is asked to infer
-the type of `x`?
+of `x_`, or a two-template-parameter action where the compiler is asked to infer
+the type of `x_`?
 
 #### Using the ACTION Object's Type
 
@@ -4124,7 +4124,7 @@ Action<IncrementMethod> IncrementArgument() {
 The previous recipe showed you how to define your own action. This is all good,
 except that you need to know the type of the function in which the action will
 be used. Sometimes that can be a problem. For example, if you want to use the
-action in functions with *different* types (e.g. like `Return()` and
+action in functions with *different* types (e.g_. like `Return()` and
 `SetArgPointee()`).
 
 If an action can be used in several types of mock functions, we say it's
@@ -4182,7 +4182,7 @@ using ::testing::_;
 class MockFoo : public Foo {
  public:
   MOCK_METHOD(int, DoThis, (bool flag, int n), (override));
-  MOCK_METHOD(string, DoThat, (int x, const char* str1, const char* str2),
+  MOCK_METHOD(string, DoThat, (int x_, const char* str1, const char* str2),
               (override));
 };
 

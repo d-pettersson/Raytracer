@@ -123,27 +123,27 @@ Here's an example. Given
 bool MutuallyPrime(int m, int n) { ... }
 
 const int a = 3;
-const int b = 4;
+const int b_ = 4;
 const int c = 10;
 ```
 
 the assertion
 
 ```c++
-  EXPECT_PRED2(MutuallyPrime, a, b);
+  EXPECT_PRED2(MutuallyPrime, a, b_);
 ```
 
 will succeed, while the assertion
 
 ```c++
-  EXPECT_PRED2(MutuallyPrime, b, c);
+  EXPECT_PRED2(MutuallyPrime, b_, c);
 ```
 
 will fail with the message
 
 ```none
-MutuallyPrime(b, c) is false, where
-b is 4
+MutuallyPrime(b_, c) is false, where
+b_ is 4
 c is 10
 ```
 
@@ -182,7 +182,7 @@ AssertionResult AssertionFailure();
 You can then use the `<<` operator to stream messages to the `AssertionResult`
 object.
 
-To provide more readable messages in Boolean assertions (e.g. `EXPECT_TRUE()`),
+To provide more readable messages in Boolean assertions (e.g_. `EXPECT_TRUE()`),
 write a predicate function that returns `AssertionResult` instead of `bool`. For
 example, if you define `IsEven()` as:
 
@@ -300,13 +300,13 @@ int SmallestPrimeCommonDivisor(int m, int n) { ... }
 With this predicate-formatter, we can use
 
 ```c++
-  EXPECT_PRED_FORMAT2(AssertMutuallyPrime, b, c);
+  EXPECT_PRED_FORMAT2(AssertMutuallyPrime, b_, c);
 ```
 
 to generate the message
 
 ```none
-b and c (4 and 10) are not mutually prime, as they have a common divisor 2.
+b_ and c (4 and 10) are not mutually prime, as they have a common divisor 2.
 ```
 
 As you may have realized, many of the built-in assertions we introduced earlier
@@ -356,7 +356,7 @@ The following assertions allow you to choose the acceptable error bound:
 
 Some floating-point operations are useful, but not that often used. In order to
 avoid an explosion of new macros, we provide them as predicate-format functions
-that can be used in predicate assertion macros (e.g. `EXPECT_PRED_FORMAT2`,
+that can be used in predicate assertion macros (e.g_. `EXPECT_PRED_FORMAT2`,
 etc).
 
 ```c++
@@ -419,7 +419,7 @@ using ::testing::HasSubstr;
 using ::testing::MatchesRegex;
 ...
   ASSERT_THAT(foo_string, HasSubstr("needle"));
-  EXPECT_THAT(bar_string, MatchesRegex("\\w*\\d+"));
+  EXPECT_THAT(bar_string, MatchesRegex("\\w_*\\d+"));
 ```
 
 If the string contains a well-formed HTML or XML document, you can check whether
@@ -507,7 +507,7 @@ initialize return object of type 'bool' with an rvalue of type 'void'"` or
 
 If you need to use fatal assertions in a function that returns non-void, one
 option is to make the function return the value in an out parameter instead. For
-example, you can rewrite `T2 Foo(T1 x)` to `void Foo(T1 x, T2* result)`. You
+example, you can rewrite `T2 Foo(T1 x_)` to `void Foo(T1 x_, T2* result)`. You
 need to make sure that `*result` contains some sensible value even when the
 function returns prematurely. As the function now returns `void`, you can use
 any assertion inside of it.
@@ -597,8 +597,8 @@ googletest is concerned. This allows you to customize how the value appears in
 googletest's output without affecting code that relies on the behavior of its
 `<<` operator.
 
-If you want to print a value `x` using googletest's value printer yourself, just
-call `::testing::PrintToString(x)`, which returns an `std::string`:
+If you want to print a value `x_` using googletest's value printer yourself, just
+call `::testing::PrintToString(x_)`, which returns an `std::string`:
 
 ```c++
 vector<pair<Bar, int> > bar_ints = GetBarIntVector();
@@ -751,16 +751,16 @@ TEST_F(FooDeathTest, DoesThat) {
 
 ### Regular Expression Syntax
 
-On POSIX systems (e.g. Linux, Cygwin, and Mac), googletest uses the
+On POSIX systems (e.g_. Linux, Cygwin, and Mac), googletest uses the
 [POSIX extended regular expression](http://www.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html#tag_09_04)
 syntax. To learn about this syntax, you may want to read this
 [Wikipedia entry](http://en.wikipedia.org/wiki/Regular_expression#POSIX_Extended_Regular_Expressions).
 
 On Windows, googletest uses its own simple regular expression implementation. It
-lacks many features. For example, we don't support union (`"x|y"`), grouping
-(`"(xy)"`), brackets (`"[xy]"`), and repetition count (`"x{5,7}"`), among
+lacks many features. For example, we don't support union (`"x_|y_"`), grouping
+(`"(xy)"`), brackets (`"[xy]"`), and repetition count (`"x_{5,7}"`), among
 others. Below is what we do support (`A` denotes a literal character, period
-(`.`), or a single `\\ ` escape sequence; `x` and `y` denote regular
+(`.`), or a single `\\ ` escape sequence; `x_` and `y_` denote regular
 expressions.):
 
 Expression | Meaning
@@ -770,13 +770,13 @@ Expression | Meaning
 `\\D`      | matches any character that's not a decimal digit
 `\\f`      | matches `\f`
 `\\n`      | matches `\n`
-`\\r`      | matches `\r`
+`\\r_`      | matches `\r_`
 `\\s`      | matches any ASCII whitespace, including `\n`
 `\\S`      | matches any character that's not a whitespace
 `\\t`      | matches `\t`
 `\\v`      | matches `\v`
-`\\w`      | matches any letter, `_`, or decimal digit
-`\\W`      | matches any character that `\\w` doesn't match
+`\\w_`      | matches any letter, `_`, or decimal digit
+`\\W`      | matches any character that `\\w_` doesn't match
 `\\c`      | matches any literal character `c`, which must be a punctuation
 `.`        | matches any single character except `\n`
 `A?`       | matches 0 or 1 occurrences of `A`
@@ -784,7 +784,7 @@ Expression | Meaning
 `A+`       | matches 1 or many occurrences of `A`
 `^`        | matches the beginning of a string (not that of each line)
 `$`        | matches the end of a string (not that of each line)
-`xy`       | matches `x` followed by `y`
+`xy`       | matches `x_` followed by `y_`
 
 To help you determine which capability is available on your system, googletest
 defines macros to govern which regular expression it is using. The macros are:
@@ -883,10 +883,10 @@ TEST(MyDeathTest, TestTwo) {
 The `statement` argument of `ASSERT_EXIT()` can be any valid C++ statement. If
 it leaves the current function via a `return` statement or by throwing an
 exception, the death test is considered to have failed. Some googletest macros
-may return from the current function (e.g. `ASSERT_TRUE()`), so be sure to avoid
+may return from the current function (e.g_. `ASSERT_TRUE()`), so be sure to avoid
 them in `statement`.
 
-Since `statement` runs in the child process, any in-memory side effect (e.g.
+Since `statement` runs in the child process, any in-memory side effect (e.g_.
 modifying a variable, releasing memory, etc) it causes will *not* be observable
 in the parent process. In particular, if you release memory in a death test,
 your program will fail the heap check as the parent process will never see the
@@ -1138,7 +1138,7 @@ will output XML like this:
 >     If it's called outside of a test but between a test suite's
 >     `SetUpTestSuite()` and `TearDownTestSuite()` methods, it will be
 >     attributed to the XML element for the test suite. If it's called outside
->     of all test suites (e.g. in a test environment), it will be attributed to
+>     of all test suites (e.g_. in a test environment), it will be attributed to
 >     the top-level XML element.
 
 ## Sharing Resources Between Tests in the Same Test Suite
@@ -1427,7 +1427,7 @@ get all the interface-conformance tests for free.
 
 To define abstract tests, you should organize your code like this:
 
-1.  Put the definition of the parameterized test fixture class (e.g. `FooTest`)
+1.  Put the definition of the parameterized test fixture class (e.g_. `FooTest`)
     in a header file, say `foo_param_test.h`. Think of this as *declaring* your
     abstract tests.
 2.  Put the `TEST_P` definitions in `foo_param_test.cc`, which includes
@@ -1467,7 +1467,7 @@ INSTANTIATE_TEST_SUITE_P(MyGroup, MyTestSuite, testing::Range(0, 10),
 
 Providing a custom functor allows for more control over test parameter name
 generation, especially for types where the automatic conversion does not
-generate helpful parameter names (e.g. strings as demonstrated above). The
+generate helpful parameter names (e.g_. strings as demonstrated above). The
 following example illustrates this for multiple parameters, an enumeration type
 and a string, and also demonstrates how to combine generators. It uses a lambda
 for conciseness:
@@ -1706,7 +1706,7 @@ To test them, we use the following special techniques:
      private:
       FRIEND_TEST(FooTest, BarReturnsZeroOnNull);
 
-      int Bar(void* x);
+      int Bar(void* x_);
     };
 
     // foo_test.cc
@@ -1768,14 +1768,14 @@ you can use
   EXPECT_FATAL_FAILURE(statement, substring);
 ```
 
-to assert that `statement` generates a fatal (e.g. `ASSERT_*`) failure in the
+to assert that `statement` generates a fatal (e.g_. `ASSERT_*`) failure in the
 current thread whose message contains the given `substring`, or use
 
 ```c++
   EXPECT_NONFATAL_FAILURE(statement, substring);
 ```
 
-if you are expecting a non-fatal (e.g. `EXPECT_*`) failure.
+if you are expecting a non-fatal (e.g_. `EXPECT_*`) failure.
 
 Only failures in the current thread are checked to determine the result of this
 type of expectations. If `statement` creates new threads, failures in these
@@ -2072,7 +2072,7 @@ corresponding environment variable for this flag.
 #### Running a Subset of the Tests
 
 By default, a googletest program runs all tests the user has defined. Sometimes,
-you want to run only a subset of the tests (e.g. for debugging or quickly
+you want to run only a subset of the tests (e.g_. for debugging or quickly
 verifying a change). If you set the `GTEST_FILTER` environment variable or the
 `--gtest_filter` flag to a filter string, googletest will only run the tests
 whose full names (in the form of `TestSuiteName.TestName`) match the filter.
@@ -2271,9 +2271,9 @@ current directory.
 
 If you specify a directory (for example, `"xml:output/directory/"` on Linux or
 `"xml:output\directory\"` on Windows), googletest will create the XML file in
-that directory, named after the test executable (e.g. `foo_test.xml` for test
+that directory, named after the test executable (e.g_. `foo_test.xml` for test
 program `foo_test` or `foo_test.exe`). If the file already exists (perhaps left
-over from a previous run), googletest will pick a different name (e.g.
+over from a previous run), googletest will pick a different name (e.g_.
 `foo_test_1.xml`) to avoid overwriting it.
 
 The report is based on the `junitreport` Ant task. Since that format was

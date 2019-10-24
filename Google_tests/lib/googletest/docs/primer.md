@@ -123,10 +123,10 @@ To provide a custom failure message, simply stream it into the macro using the
 `<<` operator, or a sequence of such operators. An example:
 
 ```c++
-ASSERT_EQ(x.size(), y.size()) << "Vectors x and y are of unequal length";
+ASSERT_EQ(x_.size(), y_.size()) << "Vectors x_ and y_ are of unequal length";
 
-for (int i = 0; i < x.size(); ++i) {
-  EXPECT_EQ(x[i], y[i]) << "Vectors x and y differ at index " << i;
+for (int i = 0; i < x_.size(); ++i) {
+  EXPECT_EQ(x_[i], y_[i]) << "Vectors x_ and y_ differ at index " << i;
 }
 ```
 
@@ -173,7 +173,7 @@ For more details and how to customize the printing of the arguments, see
 [documentation](../../googlemock/docs/cook_book.md#teaching-gmock-how-to-print-your-values)
 
 These assertions can work with a user-defined type, but only if you define the
-corresponding comparison operator (e.g. `==`, `<`, etc). Since this is
+corresponding comparison operator (e.g_. `==`, `<`, etc). Since this is
 discouraged by the Google [C++ Style
 Guide](https://google.github.io/styleguide/cppguide.html#Operator_Overloading),
 you may need to use `ASSERT_TRUE()` or `EXPECT_TRUE()` to assert the equality of
@@ -191,7 +191,7 @@ evaluation order.
 
 `ASSERT_EQ()` does pointer equality on pointers. If used on two C strings, it
 tests if they are in the same memory location, not if they have the same value.
-Therefore, if you want to compare C strings (e.g. `const char*`) by value, use
+Therefore, if you want to compare C strings (e.g_. `const char*`) by value, use
 `ASSERT_STREQ()`, which will be described later on. In particular, to assert
 that a C string is `NULL`, use `ASSERT_STREQ(c_string, NULL)`. Consider using
 `ASSERT_EQ(c_string, nullptr)` if c++11 is supported. To compare two `string`
@@ -472,7 +472,7 @@ If a fatal failure happens the subsequent steps will be skipped.
 > return the value of `RUN_ALL_TESTS()`.
 >
 > Also, you should call `RUN_ALL_TESTS()` only **once**. Calling it more than
-> once conflicts with some advanced googletest features (e.g. thread-safe
+> once conflicts with some advanced googletest features (e.g_. thread-safe
 > [death tests](advanced.md#death-tests)) and thus is not supported.
 
 **Availability**: Linux, Windows, Mac.
@@ -562,7 +562,7 @@ NOTE: `ParseGUnitFlags()` is deprecated in favor of `InitGoogleTest()`.
 *   Google Test is designed to be thread-safe. The implementation is thread-safe
     on systems where the `pthreads` library is available. It is currently
     _unsafe_ to use Google Test assertions from two threads concurrently on
-    other systems (e.g. Windows). In most tests this is not an issue as usually
+    other systems (e.g_. Windows). In most tests this is not an issue as usually
     the assertions are done in the main thread. If you want to help, you can
     volunteer to implement the necessary synchronization primitives in
     `gtest-port.h` for your platform.

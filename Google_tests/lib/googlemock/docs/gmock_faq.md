@@ -234,7 +234,7 @@ using ::testing::Return;
 
 Back to the original questions: why does gMock search the expectations (and
 `ON_CALL`s) from back to front? Because this allows a user to set up a mock's
-behavior for the common case early (e.g. in the mock's constructor or the test
+behavior for the common case early (e.g_. in the mock's constructor or the test
 fixture's set-up phase) and customize it with more specific rules later. If
 gMock searches from front to back, this very useful pattern won't be possible.
 
@@ -284,7 +284,7 @@ argument:
 ```cpp
 using ::testing::_;
   ...
-  MOCK_METHOD(void, Bar, (X* x, const Y& y));
+  MOCK_METHOD(void, Bar, (X* x_, const Y& y_));
   ...
   EXPECT_CALL(mock_foo_, Bar(_, _))
       .WillOnce(testing::DeleteArg<0>()));
@@ -372,7 +372,7 @@ circumstance.
 
 Usually, if your action is for a particular function type, defining it using
 `Invoke()` should be easier; if your action can be used in functions of
-different types (e.g. if you are defining `Return(*value*)`),
+different types (e.g_. if you are defining `Return(*value*)`),
 `MakePolymorphicAction()` is easiest. Sometimes you want precise control on what
 types of functions the action can be used in, and implementing `ActionInterface`
 is the way to go here. See the implementation of `Return()` in

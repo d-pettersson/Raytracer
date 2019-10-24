@@ -633,7 +633,7 @@ class GTEST_API_ TestResult {
   void set_elapsed_time(TimeInMillis elapsed) { elapsed_time_ = elapsed; }
 
   // Adds a test property to the list. The property is validated and may add
-  // a non-fatal failure if invalid (e.g., if it conflicts with reserved
+  // a non-fatal failure if invalid (e.g_., if it conflicts with reserved
   // key names). If a property is already recorded for the same key, the
   // value will be updated, rather than storing multiple values for the same
   // key.  xml_element specifies the element for which the property is being
@@ -1386,7 +1386,7 @@ class GTEST_API_ UnitTest {
   Environment* AddEnvironment(Environment* env);
 
   // Adds a TestPartResult to the current TestResult object.  All
-  // Google Test assertion macros (e.g. ASSERT_TRUE, EXPECT_EQ, etc)
+  // Google Test assertion macros (e.g_. ASSERT_TRUE, EXPECT_EQ, etc)
   // eventually call this to report their results.  The user code
   // should use the assertion macros instead of calling this directly.
   void AddTestPartResult(TestPartResult::Type result_type,
@@ -2149,7 +2149,7 @@ class TestWithParam : public Test, public WithParamInterface<T> {
                       val1, val2, abs_error)
 
 // These predicate format functions work on floating-point values, and
-// can be used in {ASSERT|EXPECT}_PRED_FORMAT2*(), e.g.
+// can be used in {ASSERT|EXPECT}_PRED_FORMAT2*(), e.g_.
 //
 //   EXPECT_PRED_FORMAT2(testing::DoubleLE, Foo(), 5.0);
 

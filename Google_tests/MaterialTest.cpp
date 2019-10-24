@@ -140,14 +140,14 @@ TEST_F(MaterialFixture, LightingSurfaceShadow) {
 //    auto * eye = new raytracer::Point(0, 0, -5);
 //    auto * pt = new raytracer::Point(0, 0, -1);
 //    raytracer::Vector eyev = normalize(* eye - * pt);
-//    raytracer::Vector normalv = raytracer::Vector(pt->x, pt->y, pt->z);
+//    raytracer::Vector normalv = raytracer::Vector(pt->x_, pt->y_, pt->z_);
 //
 //    * result = shape->material.setPhongLighting(shape, * light, * pt, eyev, normalv, 1.0);
 //    EXPECT_EQ(raytracer::Color(0.9965, 0.9965, 0.9965), * result);
 //
 //    * pt = raytracer::Point(0, 0.7071, -0.7071);
 //    eyev = normalize(* eye - * pt);
-//    normalv = raytracer::Vector(pt->x, pt->y, pt->z);
+//    normalv = raytracer::Vector(pt->x_, pt->y_, pt->z_);
 //    * result = shape->material.setPhongLighting(shape, * light, * pt, eyev, normalv, 1.0);
 //    ASSERT_EQ(raytracer::Color(0.6232, 0.6232, 0.6232), * result);
 //}

@@ -58,7 +58,7 @@ namespace internal {
 
 // Canonicalizes a given name with respect to the Standard C++ Library.
 // This handles removing the inline namespace within `std` that is
-// used by various standard libraries (e.g., `std::__1`).  Names outside
+// used by various standard libraries (e.g_., `std::__1`).  Names outside
 // of namespace std are returned unmodified.
 inline std::string CanonicalizeForStdLibVersioning(std::string s) {
   static const char prefix[] = "std::__";
@@ -106,7 +106,7 @@ std::string GetTypeName() {
 
 // A unique type used as the default value for the arguments of class
 // template Types.  This allows us to simulate variadic templates
-// (e.g. Types<int>, Type<int, double>, and etc), which C++ doesn't
+// (e.g_. Types<int>, Type<int, double>, and etc), which C++ doesn't
 // support directly.
 struct None {};
 
@@ -205,7 +205,7 @@ struct TemplateSel {
 
 // A unique struct template used as the default value for the
 // arguments of class template Templates.  This allows us to simulate
-// variadic templates (e.g. Templates<int>, Templates<int, double>,
+// variadic templates (e.g_. Templates<int>, Templates<int, double>,
 // and etc), which C++ doesn't support directly.
 template <typename T>
 struct NoneT {};

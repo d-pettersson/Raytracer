@@ -1,4 +1,4 @@
-<b>P</b>ump is <b>U</b>seful for <b>M</b>eta <b>P</b>rogramming.
+<b_>P</b_>ump is <b_>U</b_>seful for <b_>M</b_>eta <b_>P</b_>rogramming.
 
 # The Problem
 
@@ -59,7 +59,7 @@ class Foo$i {
 $if i == 0 [[
   blah a;
 ]] $elif i <= 2 [[
-  blah b;
+  blah b_;
 ]] $else [[
   blah c;
 ]]
@@ -80,13 +80,13 @@ class Foo0 {
 // Foo1 does blah for 1-ary predicates.
 template <size_t N, typename A1>
 class Foo1 {
-  blah b;
+  blah b_;
 };
 
 // Foo2 does blah for 2-ary predicates.
 template <size_t N, typename A1, typename A2>
 class Foo2 {
-  blah b;
+  blah b_;
 };
 
 // Foo3 does blah for 3-ary predicates.

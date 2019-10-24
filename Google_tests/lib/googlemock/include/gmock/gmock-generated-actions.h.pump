@@ -168,7 +168,7 @@ $template
 // You can also overload actions with different numbers of parameters:
 //
 //   ACTION_P(Plus, a) { ... }
-//   ACTION_P2(Plus, a, b) { ... }
+//   ACTION_P2(Plus, a, b_) { ... }
 //
 // While it's tempting to always use the ACTION* macros when defining
 // a new action, you should also consider implementing ActionInterface
@@ -184,7 +184,7 @@ $template
 //
 // ACTION*() can only be used in a namespace scope as templates cannot be
 // declared inside of a local class.
-// Users can, however, define any local functors (e.g. a lambda) that
+// Users can, however, define any local functors (e.g_. a lambda) that
 // can be used as actions.
 //
 // MORE INFORMATION:
@@ -251,11 +251,11 @@ $for k [[, \
 // parameters.  Without the restriction, the meaning of the following
 // is unclear:
 //
-//   OverloadedAction<int, bool>(x);
+//   OverloadedAction<int, bool>(x_);
 //
 // Are we using a single-template-parameter action where 'bool' refers
-// to the type of x, or are we using a two-template-parameter action
-// where the compiler is asked to infer the type of x?
+// to the type of x_, or are we using a two-template-parameter action
+// where the compiler is asked to infer the type of x_?
 //
 // Implementation notes:
 //

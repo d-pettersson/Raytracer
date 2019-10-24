@@ -38,7 +38,11 @@ Color World::colorAt(const Ray &ray, int remaining) {
     if (intersection.getObject() == nullptr && intersection.getDistance() == 0.f) {
         return Color(0, 0, 0);
     }
-    return this->shadeHit(intersection.prepareComputations(ray, * xs), remaining);
+    Color output = this->shadeHit(intersection.prepareComputations(ray, * xs), remaining);
+    
+    delete xs;
+    
+    return output;
 }
 
 void World::addObject(const std::shared_ptr<Shape> &shape) {
@@ -81,9 +85,10 @@ bool World::isShadowed(const Point &point) const {
     auto ray = Ray(point, direction);
     auto * xs = new std::vector<Intersection>();
     intersectWorld(ray, xs);
-    auto * h = new Intersection();
+    std::unique_ptr<Intersection> h(new Intersection());
+//    auto * h = new Intersection();
     * h = hit(* xs);
-
+    delete xs;
     return h->getObject() != nullptr && h->getDistance() < distance;
 }
 

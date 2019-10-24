@@ -26,7 +26,7 @@ GTEST_MAIN_CC = ../../src/gtest_main.cc
 CPPFLAGS += -I$(FUSED_GTEST_DIR) -DGTEST_HAS_PTHREAD=0
 
 # Flags passed to the C++ compiler.
-CXXFLAGS += -g
+CXXFLAGS += -g_
 
 all : sample1_unittest
 

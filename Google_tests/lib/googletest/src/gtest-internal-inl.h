@@ -252,7 +252,7 @@ void WriteToShardStatusFileIfNeeded();
 
 // Checks whether sharding is enabled by examining the relevant
 // environment variable values. If the variables are present,
-// but inconsistent (e.g., shard_index >= total_shards), prints
+// but inconsistent (e.g_., shard_index >= total_shards), prints
 // an error and exits. If in_subprocess_for_death_test, sharding is
 // disabled because it must only be applied to the original test
 // process. Otherwise, we could filter out death tests we intended to execute.
@@ -367,7 +367,7 @@ class TestPropertyKeyIs {
 // specifies when running the tests.  It has only static members.
 //
 // In most cases, the user can specify an option using either an
-// environment variable or a command line flag.  E.g. you can set the
+// environment variable or a command line flag.  E.g_. you can set the
 // test filter using either GTEST_FILTER or --gtest_filter.  If both
 // the variable and the flag are present, the latter overrides the
 // former.

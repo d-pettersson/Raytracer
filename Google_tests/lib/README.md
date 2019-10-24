@@ -7,21 +7,21 @@
 
 ### Future Plans
 
-#### 1.8.x Release:
+#### 1.8.x_ Release:
 
-[the 1.8.x](https://github.com/google/googletest/releases/tag/release-1.8.1) is
-the last release that works with pre-C++11 compilers. The 1.8.x will not accept
+[the 1.8.x_](https://github.com/google/googletest/releases/tag/release-1.8.1) is
+the last release that works with pre-C++11 compilers. The 1.8.x_ will not accept
 any requests for any new features and any bugfix requests will only be accepted
 if proven "critical"
 
-#### Post 1.8.x:
+#### Post 1.8.x_:
 
 On-going work to improve/cleanup/pay technical debt. When this work is completed
-there will be a 1.9.x tagged release
+there will be a 1.9.x_ tagged release
 
-#### Post 1.9.x
+#### Post 1.9.x_
 
-Post 1.9.x googletest will follow
+Post 1.9.x_ googletest will follow
 [Abseil Live at Head philosophy](https://abseil.io/about/philosophy)
 
 ## Welcome to **Google Test**, Google's C++ test framework!

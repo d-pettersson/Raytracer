@@ -169,7 +169,7 @@ class MatcherCastImpl {
   // only fall back to the polymorphic Eq() matcher afterwards because the
   // latter calls bool operator==(const Lhs& lhs, const Rhs& rhs) in the end
   // which might be undefined even when Rhs is implicitly convertible to Lhs
-  // (e.g. std::pair<const int, int> vs. std::pair<int, int>).
+  // (e.g_. std::pair<const int, int> vs. std::pair<int, int>).
   //
   // We don't define this method inline as we need the declaration of Eq().
   static Matcher<T> CastImpl(const M& value,
@@ -488,7 +488,7 @@ OutIter TransformTupleValues(Func f, const Tuple& t, OutIter out) {
 template <typename T>
 class AnyMatcherImpl : public MatcherInterface<const T&> {
  public:
-  bool MatchAndExplain(const T& /* x */,
+  bool MatchAndExplain(const T& /* x_ */,
                        MatchResultListener* /* listener */) const override {
     return true;
   }
@@ -549,7 +549,7 @@ class NotNullMatcher {
 //
 // The RefMatcher template class implements Ref(variable).  It can
 // only be instantiated with a reference type.  This prevents a user
-// from mistakenly using Ref(x) to match a non-reference function
+// from mistakenly using Ref(x_) to match a non-reference function
 // argument.  For example, the following will righteously cause a
 // compiler error:
 //
@@ -1036,7 +1036,7 @@ class AllOfMatcherImpl : public MatcherInterface<const T&> {
 
   bool MatchAndExplain(const T& x,
                        MatchResultListener* listener) const override {
-    // If either matcher1_ or matcher2_ doesn't match x, we only need
+    // If either matcher1_ or matcher2_ doesn't match x_, we only need
     // to explain why one of them fails.
     std::string all_match_result;
 
@@ -1144,7 +1144,7 @@ class AnyOfMatcherImpl : public MatcherInterface<const T&> {
                        MatchResultListener* listener) const override {
     std::string no_match_result;
 
-    // If either matcher1_ or matcher2_ matches x, we just need to
+    // If either matcher1_ or matcher2_ matches x_, we just need to
     // explain why *one* of them matches.
     for (size_t i = 0; i < matchers_.size(); ++i) {
       StringMatchResultListener slistener;
@@ -1227,8 +1227,8 @@ class TrulyMatcher {
     // Without the if-statement, MSVC sometimes warns about converting
     // a value to bool (warning 4800).
     //
-    // We cannot write 'return !!predicate_(x);' as that doesn't work
-    // when predicate_(x) returns a class convertible to bool but
+    // We cannot write 'return !!predicate_(x_);' as that doesn't work
+    // when predicate_(x_) returns a class convertible to bool but
     // having no operator!().
     if (predicate_(x))
       return true;
@@ -1259,22 +1259,22 @@ class MatcherAsPredicate {
   // This template operator() allows Matches(m) to be used as a
   // predicate on type T where m is a matcher on type T.
   //
-  // The argument x is passed by reference instead of by value, as
-  // some matcher may be interested in its address (e.g. as in
-  // Matches(Ref(n))(x)).
+  // The argument x_ is passed by reference instead of by value, as
+  // some matcher may be interested in its address (e.g_. as in
+  // Matches(Ref(n))(x_)).
   template <typename T>
   bool operator()(const T& x) const {
     // We let matcher_ commit to a particular type here instead of
     // when the MatcherAsPredicate object was constructed.  This
     // allows us to write Matches(m) where m is a polymorphic matcher
-    // (e.g. Eq(5)).
+    // (e.g_. Eq(5)).
     //
-    // If we write Matcher<T>(matcher_).Matches(x) here, it won't
+    // If we write Matcher<T>(matcher_).Matches(x_) here, it won't
     // compile when matcher_ has type Matcher<const T&>; if we write
-    // Matcher<const T&>(matcher_).Matches(x) here, it won't compile
+    // Matcher<const T&>(matcher_).Matches(x_) here, it won't compile
     // when matcher_ has type Matcher<T>; if we just write
-    // matcher_.Matches(x), it won't compile when matcher_ is
-    // polymorphic, e.g. Eq(5).
+    // matcher_.Matches(x_), it won't compile when matcher_ is
+    // polymorphic, e.g_. Eq(5).
     //
     // MatcherCast<const T&>() is necessary for making the code work
     // in all of the above situations.
@@ -1301,13 +1301,13 @@ class PredicateFormatterFromMatcher {
   AssertionResult operator()(const char* value_text, const T& x) const {
     // We convert matcher_ to a Matcher<const T&> *now* instead of
     // when the PredicateFormatterFromMatcher object was constructed,
-    // as matcher_ may be polymorphic (e.g. NotNull()) and we won't
+    // as matcher_ may be polymorphic (e.g_. NotNull()) and we won't
     // know which type to instantiate it to until we actually see the
-    // type of x here.
+    // type of x_ here.
     //
     // We write SafeMatcherCast<const T&>(matcher_) instead of
     // Matcher<const T&>(matcher_), as the latter won't compile when
-    // matcher_ has type Matcher<T> (e.g. An<int>()).
+    // matcher_ has type Matcher<T> (e.g_. An<int>()).
     // We don't write MatcherCast<const T&> either, as that allows
     // potentially unsafe downcasting of the matcher argument.
     const Matcher<const T&> matcher = SafeMatcherCast<const T&>(matcher_);
@@ -1507,9 +1507,9 @@ class FloatingEqMatcher {
 };
 
 // A 2-tuple ("binary") wrapper around FloatingEqMatcher:
-// FloatingEq2Matcher() matches (x, y) by matching FloatingEqMatcher(x, false)
-// against y, and FloatingEq2Matcher(e) matches FloatingEqMatcher(x, false, e)
-// against y. The former implements "Eq", the latter "Near". At present, there
+// FloatingEq2Matcher() matches (x_, y_) by matching FloatingEqMatcher(x_, false)
+// against y_, and FloatingEq2Matcher(e) matches FloatingEqMatcher(x_, false, e)
+// against y_. The former implements "Eq", the latter "Near". At present, there
 // is no version that compares NaNs as equal.
 template <typename FloatType>
 class FloatingEq2Matcher {
@@ -1921,7 +1921,7 @@ class ResultOfMatcher {
       // Cannot pass the return value directly to MatchPrintAndExplain, which
       // takes a non-const reference as argument.
       // Also, specifying template argument explicitly is needed because T could
-      // be a non-const reference (e.g. Matcher<Uncopyable&>).
+      // be a non-const reference (e.g_. Matcher<Uncopyable&>).
       ResultType result =
           CallableTraits<Callable>::template Invoke<T>(callable_, obj);
       return MatchPrintAndExplain(result, matcher_, listener);
@@ -2292,8 +2292,8 @@ class PointwiseMatcher {
     }
     void DescribeNegationTo(::std::ostream* os) const override {
       *os << "doesn't contain exactly " << rhs_.size()
-          << " values, or contains a value x at some index i"
-          << " where x and the i-th value of ";
+          << " values, or contains a value x_ at some index i"
+          << " where x_ and the i-th value of ";
       UniversalPrint(rhs_, os);
       *os << " ";
       mono_tuple_matcher_.DescribeNegationTo(os);
@@ -2315,7 +2315,7 @@ class PointwiseMatcher {
           StringMatchResultListener inner_listener;
           // Create InnerMatcherArg as a temporarily object to avoid it outlives
           // *left and *right. Dereference or the conversion to `const T&` may
-          // return temp objects, e.g for vector<bool>.
+          // return temp objects, e.g_ for vector<bool>.
           if (!mono_tuple_matcher_.MatchAndExplain(
                   InnerMatcherArg(ImplicitCast_<const LhsValue&>(*left),
                                   ImplicitCast_<const RhsValue&>(*right)),
@@ -2881,7 +2881,7 @@ class GTEST_API_ MatchMatrix {
 typedef ::std::pair<size_t, size_t> ElementMatcherPair;
 typedef ::std::vector<ElementMatcherPair> ElementMatcherPairs;
 
-// Returns a maximum bipartite matching for the specified graph 'g'.
+// Returns a maximum bipartite matching for the specified graph 'g_'.
 // The matching is represented as a vector of {element, matcher} pairs.
 GTEST_API_ ElementMatcherPairs
 FindMaxBipartiteMatching(const MatchMatrix& g);
@@ -3149,8 +3149,8 @@ class ElementsAreArrayMatcher {
 
 // Given a 2-tuple matcher tm of type Tuple2Matcher and a value second
 // of type Second, BoundSecondMatcher<Tuple2Matcher, Second>(tm,
-// second) is a polymorphic matcher that matches a value x if tm
-// matches tuple (x, second).  Useful for implementing
+// second) is a polymorphic matcher that matches a value x_ if tm
+// matches tuple (x_, second).  Useful for implementing
 // UnorderedPointwise() in terms of UnorderedElementsAreArray().
 //
 // BoundSecondMatcher is copyable and assignable, as we need to put
@@ -3214,7 +3214,7 @@ class BoundSecondMatcher {
 
 // Given a 2-tuple matcher tm and a value second,
 // MatcherBindSecond(tm, second) returns a matcher that matches a
-// value x if tm matches tuple (x, second).  Useful for implementing
+// value x_ if tm matches tuple (x_, second).  Useful for implementing
 // UnorderedPointwise() in terms of UnorderedElementsAreArray().
 template <typename Tuple2Matcher, typename Second>
 BoundSecondMatcher<Tuple2Matcher, Second> MatcherBindSecond(
@@ -3618,7 +3618,7 @@ inline PolymorphicMatcher<internal::NotNullMatcher > NotNull() {
 }
 
 // Creates a polymorphic matcher that matches any argument that
-// references variable x.
+// references variable x_.
 template <typename T>
 inline internal::RefMatcher<T&> Ref(T& x) {  // NOLINT
   return internal::RefMatcher<T&>(x);
@@ -3706,7 +3706,7 @@ WhenDynamicCastTo(const Matcher<To>& inner_matcher) {
 // Creates a matcher that matches an object whose given field matches
 // 'matcher'.  For example,
 //   Field(&Foo::number, Ge(5))
-// matches a Foo object x if x.number >= 5.
+// matches a Foo object x_ if x_.number >= 5.
 template <typename Class, typename FieldType, typename FieldMatcher>
 inline PolymorphicMatcher<
   internal::FieldMatcher<Class, FieldType> > Field(
@@ -3733,7 +3733,7 @@ inline PolymorphicMatcher<internal::FieldMatcher<Class, FieldType> > Field(
 // Creates a matcher that matches an object whose given property
 // matches 'matcher'.  For example,
 //   Property(&Foo::str, StartsWith("hi"))
-// matches a Foo object x if x.str() starts with "hi".
+// matches a Foo object x_ if x_.str() starts with "hi".
 template <typename Class, typename PropertyType, typename PropertyMatcher>
 inline PolymorphicMatcher<internal::PropertyMatcher<
     Class, PropertyType, PropertyType (Class::*)() const> >
@@ -3789,10 +3789,10 @@ Property(const std::string& property_name,
 }
 
 // Creates a matcher that matches an object if the result of applying
-// a callable to x matches 'matcher'.
+// a callable to x_ matches 'matcher'.
 // For example,
 //   ResultOf(f, StartsWith("hi"))
-// matches a Foo object x if f(x) starts with "hi".
+// matches a Foo object x_ if f(x_) starts with "hi".
 // `callable` parameter can be a function, function pointer, or a functor. It is
 // required to keep no state affecting the results of the calls on it and make
 // no assumptions about how many calls will be made. Any state it keeps must be
@@ -4071,7 +4071,7 @@ inline internal::PointwiseMatcher<TupleMatcher,
                                   typename std::remove_const<Container>::type>
 Pointwise(const TupleMatcher& tuple_matcher, const Container& rhs) {
   // This following line is for working around a bug in MSVC 8.0,
-  // which causes Container to be a const type sometimes (e.g. when
+  // which causes Container to be a const type sometimes (e.g_. when
   // rhs is a const int[])..
   typedef typename std::remove_const<Container>::type RawContainer;
   return internal::PointwiseMatcher<TupleMatcher, RawContainer>(
@@ -4079,7 +4079,7 @@ Pointwise(const TupleMatcher& tuple_matcher, const Container& rhs) {
 }
 
 
-// Supports the Pointwise(m, {a, b, c}) syntax.
+// Supports the Pointwise(m, {a, b_, c}) syntax.
 template <typename TupleMatcher, typename T>
 inline internal::PointwiseMatcher<TupleMatcher, std::vector<T> > Pointwise(
     const TupleMatcher& tuple_matcher, std::initializer_list<T> rhs) {
@@ -4107,7 +4107,7 @@ inline internal::UnorderedElementsAreArrayMatcher<
 UnorderedPointwise(const Tuple2Matcher& tuple2_matcher,
                    const RhsContainer& rhs_container) {
   // This following line is for working around a bug in MSVC 8.0,
-  // which causes RhsContainer to be a const type sometimes (e.g. when
+  // which causes RhsContainer to be a const type sometimes (e.g_. when
   // rhs_container is a const int[]).
   typedef typename std::remove_const<RhsContainer>::type RawRhsContainer;
 
@@ -4132,7 +4132,7 @@ UnorderedPointwise(const Tuple2Matcher& tuple2_matcher,
 }
 
 
-// Supports the UnorderedPointwise(m, {a, b, c}) syntax.
+// Supports the UnorderedPointwise(m, {a, b_, c}) syntax.
 template <typename Tuple2Matcher, typename T>
 inline internal::UnorderedElementsAreArrayMatcher<
     typename internal::BoundSecondMatcher<Tuple2Matcher, T> >
@@ -4363,8 +4363,8 @@ inline bool ExplainMatchResult(
 // MATCHER_P(XAndYThat, matcher,
 //           "X that " + DescribeMatcher<int>(matcher, negation) +
 //               " and Y that " + DescribeMatcher<double>(matcher, negation)) {
-//   return ExplainMatchResult(matcher, arg.x(), result_listener) &&
-//          ExplainMatchResult(matcher, arg.y(), result_listener);
+//   return ExplainMatchResult(matcher, arg.x_(), result_listener) &&
+//          ExplainMatchResult(matcher, arg.y_(), result_listener);
 // }
 template <typename T, typename M>
 std::string DescribeMatcher(const M& matcher, bool negation = false) {

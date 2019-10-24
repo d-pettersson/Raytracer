@@ -646,7 +646,7 @@ class GTEST_API_ Sequence {
 // create an InSequence object on the stack.
 //
 // The sole purpose for this class is to support easy definition of
-// sequential expectations, e.g.
+// sequential expectations, e.g_.
 //
 //   {
 //     InSequence dummy;  // The name of the object doesn't matter.
@@ -655,7 +655,7 @@ class GTEST_API_ Sequence {
 //     EXPECT_CALL(a, Bar())...;
 //     EXPECT_CALL(a, Baz())...;
 //     ...
-//     EXPECT_CALL(b, Xyz())...;
+//     EXPECT_CALL(b_, Xyz())...;
 //   }
 //
 // You can create InSequence objects in multiple threads, as long as
@@ -686,7 +686,7 @@ GTEST_API_ extern ThreadLocal<Sequence*> g_gmock_implicit_sequence;
 // Expectation:
 //
 //   1. We need to store collections of expectations of different
-//   types (e.g. all pre-requisites of a particular expectation, all
+//   types (e.g_. all pre-requisites of a particular expectation, all
 //   expectations in a sequence).  Therefore these expectation objects
 //   must share a common base class.
 //
@@ -1100,7 +1100,7 @@ class TypedExpectation : public ExpectationBase {
     g_gmock_mutex.AssertHeld();
 
     // In case the action count wasn't checked when the expectation
-    // was defined (e.g. if this expectation has no WillRepeatedly()
+    // was defined (e.g_. if this expectation has no WillRepeatedly()
     // or RetiresOnSaturation() clause), we check it when the
     // expectation is used for the first time.
     CheckActionCountIfNotDone();
@@ -1880,9 +1880,9 @@ class MockFunction<R(Args...)> {
 // handle it if we define MockSpec in ::testing.
 using internal::MockSpec;
 
-// Const(x) is a convenient function for obtaining a const reference
-// to x.  This is useful for setting expectations on an overloaded
-// const mock method, e.g.
+// Const(x_) is a convenient function for obtaining a const reference
+// to x_.  This is useful for setting expectations on an overloaded
+// const mock method, e.g_.
 //
 //   class MockFoo : public FooInterface {
 //    public:

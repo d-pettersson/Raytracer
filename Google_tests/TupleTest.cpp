@@ -37,8 +37,6 @@ protected:
     raytracer::Color * color;
     raytracer::Color c1;
     raytracer::Color c2;
-    raytracer::Color colorResult;
-    raytracer::Color colorDif;
 
     double scalar;
     double doubleResult;
@@ -72,16 +70,6 @@ TEST_F(TupleFixture, CreateVector2) {
     ASSERT_TRUE(vector.isVector());
 }
 
-//TEST_F(TupleFixture, VerifyEquality1) {
-//    tuplePoint = raytracer::createPoint(1.0, 1.0, 1.0);
-//    ASSERT_TRUE(isEqual(tuplePoint, tuplePoint));
-//}
-//
-//TEST_F(TupleFixture, VerifyEquality2) {
-//    point = raytracer::Point(1.0, 1.0, 1.0);
-//    ASSERT_TRUE(isEqual(point, point));
-//}
-
 TEST_F(TupleFixture, VerifyEquality1) {
     tuplePoint = raytracer::createPoint(1.0, 1.0, 1.0);
     ASSERT_TRUE(tuplePoint == tuplePoint);
@@ -89,7 +77,7 @@ TEST_F(TupleFixture, VerifyEquality1) {
 
 TEST_F(TupleFixture, VerifyEquality2) {
     point = raytracer::Point(1.0, 1.0, 1.0);
-    ASSERT_TRUE(tuplePoint == tuplePoint);
+    ASSERT_TRUE(point == point);
 }
 
 TEST_F(TupleFixture, TupleAddition) {
@@ -109,7 +97,7 @@ TEST_F(TupleFixture, PointSubstraction1) {
 TEST_F(TupleFixture, PointSubstraction2) {
     p1 = raytracer::Point(3, 2, 1);
     p2 = raytracer::Point(5, 6, 7);
-    difference = p1 - p2;
+    auto difference = p1 - p2;
     std::cout << difference;
     ASSERT_TRUE(difference.isVector());
 }
@@ -124,7 +112,7 @@ TEST_F(TupleFixture, VectorPointSubstraction1) {
 TEST_F(TupleFixture, VectorPointSubstraction2) {
     p1 = raytracer::Point(3, 2, 1);
     v2 = raytracer::Vector(5, 6, 7);
-    difference = p1 - v2;
+    auto difference = p1 - v2;
     ASSERT_TRUE(difference.isPoint());
 }
 
@@ -138,7 +126,7 @@ TEST_F(TupleFixture, VectorSubstraction1) {
 TEST_F(TupleFixture, VectorSubstraction2) {
     v1 = raytracer::Vector(3, 2, 1);
     v2 = raytracer::Vector(5, 6, 7);
-    difference = v1 - v2;
+    auto difference = v1 - v2;
     ASSERT_TRUE(difference.isVector());
 }
 
@@ -153,7 +141,7 @@ TEST_F(TupleFixture, ZeroVectorSubstraction1) {
 TEST_F(TupleFixture, ZeroVectorSubstraction2) {
     v1 = raytracer::Vector(0, 0, 0);
     v2 = raytracer::Vector(1, -2, 3);
-    difference = v1 - v2;
+    auto difference = v1 - v2;
     result = raytracer::createVector(-1, 2, -3);
     ASSERT_EQ(result, difference);
 }
@@ -287,10 +275,10 @@ TEST_F(TupleFixture, CrossProduct4) {
 }
 
 TEST_F(TupleFixture, SimpleColorTest) {
-    color = new raytracer::Color(-0.5, 0.4, 1.7);
-    ASSERT_EQ(-0.5, color->r);
-    ASSERT_EQ(0.4, color->g);
-    ASSERT_EQ(1.7, color->b);
+    * color = raytracer::Color(-0.5, 0.4, 1.7);
+    ASSERT_EQ(-0.5, color->r_);
+    ASSERT_EQ(0.4, color->g_);
+    ASSERT_EQ(1.7, color->b_);
 }
 
 TEST_F(TupleFixture, ColorEquality) {

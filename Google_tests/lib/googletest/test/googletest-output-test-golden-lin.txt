@@ -71,21 +71,21 @@ Stack trace: (omitted)
 [0;31m[  FAILED  ] [mNonfatalFailureTest.DiffForLongStrings
 [0;32m[----------] [m3 tests from FatalFailureTest
 [0;32m[ RUN      ] [mFatalFailureTest.FatalFailureInSubroutine
-(expecting a failure that x should be 1)
+(expecting a failure that x_ should be 1)
 googletest-output-test_.cc:#: Failure
 Expected equality of these values:
   1
-  x
+  x_
     Which is: 2
 Stack trace: (omitted)
 
 [0;31m[  FAILED  ] [mFatalFailureTest.FatalFailureInSubroutine
 [0;32m[ RUN      ] [mFatalFailureTest.FatalFailureInNestedSubroutine
-(expecting a failure that x should be 1)
+(expecting a failure that x_ should be 1)
 googletest-output-test_.cc:#: Failure
 Expected equality of these values:
   1
-  x
+  x_
     Which is: 2
 Stack trace: (omitted)
 
@@ -975,7 +975,7 @@ Stack trace: (omitted)
 [0;32m[ RUN      ] [mPrintingStrings/ParamTest.Failure/a
 googletest-output-test_.cc:#: Failure
 Expected equality of these values:
-  "b"
+  "b_"
   GetParam()
     Which is: "a"
 Expected failure
@@ -1061,21 +1061,21 @@ Stack trace: (omitted)
 [----------] Global test environment set-up.
 [----------] 3 tests from FatalFailureTest
 [ RUN      ] FatalFailureTest.FatalFailureInSubroutine
-(expecting a failure that x should be 1)
+(expecting a failure that x_ should be 1)
 googletest-output-test_.cc:#: Failure
 Expected equality of these values:
   1
-  x
+  x_
     Which is: 2
 Stack trace: (omitted)
 
 [  FAILED  ] FatalFailureTest.FatalFailureInSubroutine (? ms)
 [ RUN      ] FatalFailureTest.FatalFailureInNestedSubroutine
-(expecting a failure that x should be 1)
+(expecting a failure that x_ should be 1)
 googletest-output-test_.cc:#: Failure
 Expected equality of these values:
   1
-  x
+  x_
     Which is: 2
 Stack trace: (omitted)
 

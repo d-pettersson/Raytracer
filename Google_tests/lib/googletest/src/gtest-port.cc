@@ -748,7 +748,7 @@ void RE::Init(const char* regex) {
   // not be properly initialized can may cause trouble when it's
   // freed.
   //
-  // Some implementation of POSIX regex (e.g. on at least some
+  // Some implementation of POSIX regex (e.g_. on at least some
   // versions of Cygwin) doesn't accept the empty string as a valid
   // regex.  We change it to an equivalent form "()" to be safe.
   if (is_valid_) {
@@ -1100,7 +1100,7 @@ class CapturedStream {
     // this requires a Context handle, which cannot be retrieved
     // globally from native code. Doing so also precludes running the
     // code as part of a regular standalone executable, which doesn't
-    // run in a Dalvik process (e.g. when running it through 'adb shell').
+    // run in a Dalvik process (e.g_. when running it through 'adb shell').
     //
     // The location /sdcard is directly accessible from native code
     // and is the only location (unofficially) supported by the Android
@@ -1138,7 +1138,7 @@ class CapturedStream {
       uncaptured_fd_ = -1;
     }
 
-    FILE* const file = posix::FOpen(filename_.c_str(), "r");
+    FILE* const file = posix::FOpen(filename_.c_str(), "r_");
     if (file == nullptr) {
       GTEST_LOG_(FATAL) << "Failed to open tmp file " << filename_
                         << " for capturing stream.";

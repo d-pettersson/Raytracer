@@ -178,7 +178,7 @@ GTEST_API_ std::string DiffStrings(const std::string& left,
                                    size_t* total_line_count);
 
 // Constructs and returns the message for an equality assertion
-// (e.g. ASSERT_EQ, EXPECT_STREQ, etc) failure.
+// (e.g_. ASSERT_EQ, EXPECT_STREQ, etc) failure.
 //
 // The first four parameters are the expressions used in the assertion
 // and their values, as strings.  For example, for ASSERT_EQ(foo, bar)
@@ -282,7 +282,7 @@ class FloatingPoint {
   // On an Intel CPU, passing a non-normalized NAN (Not a Number)
   // around may change its bits, although the new value is guaranteed
   // to be also a NAN.  Therefore, don't expect this constructor to
-  // preserve the bits in x when x is a NAN.
+  // preserve the bits in x_ when x_ is a NAN.
   explicit FloatingPoint(const RawType& x) { u_.value_ = x; }
 
   // Static methods
@@ -349,8 +349,8 @@ class FloatingPoint {
 
   // Converts an integer from the sign-and-magnitude representation to
   // the biased representation.  More precisely, let N be 2 to the
-  // power of (kBitCount - 1), an integer x is represented by the
-  // unsigned number x + N.
+  // power of (kBitCount - 1), an integer x_ is represented by the
+  // unsigned number x_ + N.
   //
   // For instance,
   //
@@ -408,7 +408,7 @@ template <typename T>
 class TypeIdHelper {
  public:
   // dummy_ must not have a const type.  Otherwise an overly eager
-  // compiler (e.g. MSVC 7.1 & 8.0) may try to merge
+  // compiler (e.g_. MSVC 7.1 & 8.0) may try to merge
   // TypeIdHelper<T>::dummy_ for different Ts as an "optimization".
   static bool dummy_;
 };
@@ -897,7 +897,7 @@ struct IsAProtocolMessage
 //
 // For pre-C++11 that we look for both C::iterator and C::const_iterator.
 // The reason is that C++ injects the name of a class as a member of the
-// class itself (e.g. you can refer to class iterator as either
+// class itself (e.g_. you can refer to class iterator as either
 // 'iterator' or 'iterator::iterator').  If we look for C::iterator
 // only, for example, we would mistakenly think that a class named
 // iterator is an STL container.

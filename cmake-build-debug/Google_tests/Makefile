@@ -198,32 +198,32 @@ CameraTest.cpp.s:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CameraTest.cpp.s
 .PHONY : CameraTest.cpp.s
 
-GenTest.o: GenTest.cpp.o
+CanvasTest.o: CanvasTest.cpp.o
 
-.PHONY : GenTest.o
+.PHONY : CanvasTest.o
 
 # target to build an object file
-GenTest.cpp.o:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/GenTest.cpp.o
-.PHONY : GenTest.cpp.o
+CanvasTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o
+.PHONY : CanvasTest.cpp.o
 
-GenTest.i: GenTest.cpp.i
+CanvasTest.i: CanvasTest.cpp.i
 
-.PHONY : GenTest.i
+.PHONY : CanvasTest.i
 
 # target to preprocess a source file
-GenTest.cpp.i:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/GenTest.cpp.i
-.PHONY : GenTest.cpp.i
+CanvasTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.i
+.PHONY : CanvasTest.cpp.i
 
-GenTest.s: GenTest.cpp.s
+CanvasTest.s: CanvasTest.cpp.s
 
-.PHONY : GenTest.s
+.PHONY : CanvasTest.s
 
 # target to generate assembly for a file
-GenTest.cpp.s:
-	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/GenTest.cpp.s
-.PHONY : GenTest.cpp.s
+CanvasTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.s
+.PHONY : CanvasTest.cpp.s
 
 IntersectionTest.o: IntersectionTest.cpp.o
 
@@ -538,9 +538,9 @@ help:
 	@echo "... CameraTest.o"
 	@echo "... CameraTest.i"
 	@echo "... CameraTest.s"
-	@echo "... GenTest.o"
-	@echo "... GenTest.i"
-	@echo "... GenTest.s"
+	@echo "... CanvasTest.o"
+	@echo "... CanvasTest.i"
+	@echo "... CanvasTest.s"
 	@echo "... IntersectionTest.o"
 	@echo "... IntersectionTest.i"
 	@echo "... IntersectionTest.s"
