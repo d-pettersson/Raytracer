@@ -28,9 +28,9 @@ class Material {
 
         Color setPhongLighting(const std::shared_ptr<Shape const> &s,
                                const Light& light,
-                               const Point& position,
-                               const Vector& eye,
-                               const Vector& normal,
+                               const Tuple& position,
+                               const Tuple& eye,
+                               const Tuple& normal,
                                const bool &isShadowed) const;
 
         Color color;

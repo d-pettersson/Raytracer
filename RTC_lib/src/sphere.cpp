@@ -17,8 +17,8 @@ void Sphere::intersect(const Ray& ray, std::vector<Intersection>& xs) const {
     Transform invertedTransform = inverse(sphereTransform);
     Ray newRay = transform(ray, invertedTransform);
 
-    Point center = Point(0, 0, 0);
-    Vector sphereToRay = newRay.getOrigin() - center;
+    Tuple center = createPoint(0, 0, 0);
+    Tuple sphereToRay = newRay.getOrigin() - center;
 
     double a = dot(newRay.getDirection(), newRay.getDirection());
     double b = 2 * dot(newRay.getDirection(), sphereToRay);
@@ -34,10 +34,10 @@ void Sphere::intersect(const Ray& ray, std::vector<Intersection>& xs) const {
     }
 }
 
-Vector Sphere::getNormal(Point worldPoint) const {
-    Point objectPoint = inverse(this->getTransform()) * worldPoint;
-    Vector objectNormal = objectPoint - Point(0, 0, 0);
-    Vector worldNormal = transpose(inverse(this->getTransform())) * objectNormal;
+Tuple Sphere::getNormal(Tuple worldPoint) const {
+    Tuple objectPoint = inverse(this->getTransform()) * worldPoint;
+    Tuple objectNormal = objectPoint - createPoint(0, 0, 0);
+    Tuple worldNormal = transpose(inverse(this->getTransform())) * objectNormal;
     worldNormal.w_ = 0;
     return normalize(worldNormal);
 }

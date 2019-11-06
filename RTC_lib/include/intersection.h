@@ -14,12 +14,12 @@ class Shape;
 struct IntersectionData {
     double distance = 0.0;
     std::shared_ptr<Shape const> object;
-    Point point;
-    Point overPoint;
-    Point underPoint;
-    Vector eye;
-    Vector normal;
-    Vector reflect;
+    Tuple point;
+    Tuple overPoint;
+    Tuple underPoint;
+    Tuple eye;
+    Tuple normal;
+    Tuple reflect;
     bool inside;
     double n1;
     double n2;

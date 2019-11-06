@@ -89,7 +89,7 @@ class Transform : public virtual Matrix {
 
 };
 
-Transform viewTransform(const Point &from, const Point &to, const Vector &up);
+Transform viewTransform(const Tuple &from, const Tuple &to, const Tuple &up);
 
 } // namespace raytracer
 

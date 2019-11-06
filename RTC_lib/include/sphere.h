@@ -12,7 +12,7 @@ class Sphere : public Shape {
         void createGlass() override;
 
         void intersect(const Ray &ray, std::vector<Intersection>& xs) const override;
-        Vector getNormal(Point worldPoint) const override;
+        Tuple getNormal(Tuple worldPoint) const override;
     };
 
     bool operator==(const Sphere& s1, const Sphere& s2);

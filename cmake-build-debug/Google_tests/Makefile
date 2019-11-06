@@ -198,6 +198,60 @@ MatrixTest.cpp.s:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/MatrixTest.cpp.s
 .PHONY : MatrixTest.cpp.s
 
+RayTest.o: RayTest.cpp.o
+
+.PHONY : RayTest.o
+
+# target to build an object file
+RayTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/RayTest.cpp.o
+.PHONY : RayTest.cpp.o
+
+RayTest.i: RayTest.cpp.i
+
+.PHONY : RayTest.i
+
+# target to preprocess a source file
+RayTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/RayTest.cpp.i
+.PHONY : RayTest.cpp.i
+
+RayTest.s: RayTest.cpp.s
+
+.PHONY : RayTest.s
+
+# target to generate assembly for a file
+RayTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/RayTest.cpp.s
+.PHONY : RayTest.cpp.s
+
+TransformTest.o: TransformTest.cpp.o
+
+.PHONY : TransformTest.o
+
+# target to build an object file
+TransformTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/TransformTest.cpp.o
+.PHONY : TransformTest.cpp.o
+
+TransformTest.i: TransformTest.cpp.i
+
+.PHONY : TransformTest.i
+
+# target to preprocess a source file
+TransformTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/TransformTest.cpp.i
+.PHONY : TransformTest.cpp.i
+
+TransformTest.s: TransformTest.cpp.s
+
+.PHONY : TransformTest.s
+
+# target to generate assembly for a file
+TransformTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/TransformTest.cpp.s
+.PHONY : TransformTest.cpp.s
+
 TupleTest.o: TupleTest.cpp.o
 
 .PHONY : TupleTest.o
@@ -241,6 +295,12 @@ help:
 	@echo "... MatrixTest.o"
 	@echo "... MatrixTest.i"
 	@echo "... MatrixTest.s"
+	@echo "... RayTest.o"
+	@echo "... RayTest.i"
+	@echo "... RayTest.s"
+	@echo "... TransformTest.o"
+	@echo "... TransformTest.i"
+	@echo "... TransformTest.s"
 	@echo "... TupleTest.o"
 	@echo "... TupleTest.i"
 	@echo "... TupleTest.s"

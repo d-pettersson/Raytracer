@@ -36,9 +36,9 @@ Ray Camera::rayForPixel(const int &x, const int &y) {
 
     auto inverseTransform = inverse(this->transform);
 
-    Point pixel = inverseTransform * Point(worldX, worldY, -1);
-    Point origin = inverseTransform * Point(0, 0, 0);
-    Vector direction = normalize(pixel - origin);
+    auto pixel = inverseTransform * createPoint(worldX, worldY, -1);
+    auto origin = inverseTransform * createPoint(0, 0, 0);
+    auto direction = normalize(pixel - origin);
     
     return Ray(origin, direction);
 

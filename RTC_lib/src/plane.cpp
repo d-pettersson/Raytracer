@@ -27,8 +27,8 @@ void Plane::intersect(const Ray &ray, std::vector<Intersection> &xs) const {
     xs.emplace_back(Intersection(distance,shared_from_this()));
 }
 
-Vector Plane::getNormal(Point worldPoint) const {
-    return Vector(0, 1, 0);
+Tuple Plane::getNormal(Tuple worldPoint) const {
+    return createVector(0, 1, 0);
 }
 
 

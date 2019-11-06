@@ -11,24 +11,24 @@ namespace raytracer {
 class Ray {
     public:
         Ray();
-        Ray(Point origin, Vector direction);
+        Ray(Tuple origin, Tuple direction);
 
-        void setDirection(const Vector& vector);
-        Vector getDirection() const;
-        Vector& getDirection();
+        void setDirection(const Tuple& vector);
+        Tuple getDirection() const;
+        Tuple& getDirection();
 
-        void setOrigin(const Point& point);
-        Point getOrigin() const;
-        Point& getOrigin();
+        void setOrigin(const Tuple& point);
+        Tuple getOrigin() const;
+        Tuple& getOrigin();
 
-        Point position(const double& t) const;
+        Tuple position(const double& t) const;
 
     private:
-        Point origin;
-        Vector direction;
+        Tuple origin_;
+        Tuple direction_;
 };
 
-Ray transform(const Ray& ray, Transform& t);
+Ray transform(const Ray& ray, Transform& transform);
 
 } // namespace raytracer
 

@@ -25,7 +25,7 @@ class World {
         Color reflectedColor(const IntersectionData &comps, int remaining = 5);
         Color refractedColor(const IntersectionData &comps, int remaining = 5);
 //        bool isShadowed(const Point &lightPosition, const Point& point) const;
-        bool isShadowed(const Point& point) const;
+        bool isShadowed(const Tuple &point) const;
 
 
         void addObject(const std::shared_ptr<Shape>& shape);

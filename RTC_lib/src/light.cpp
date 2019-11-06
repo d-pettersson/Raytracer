@@ -6,7 +6,7 @@
 #include <utility>
 
 namespace raytracer {
-Light::Light(Point position, Color intensity)
+Light::Light(Tuple position, Color intensity)
     : position_(std::move(position)), intensity_(std::move(intensity)), uSteps_(1), vSteps_(1), samples_(1)
 {
 }
@@ -16,7 +16,7 @@ Light::Light()
 {
 }
 
-void Light::setPointLight(const Point &position, const Color &intensity) {
+void Light::setPointLight(const Tuple &position, const Color &intensity) {
     this->position_ = position;
     this->intensity_ = intensity;
 }

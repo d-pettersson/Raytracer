@@ -16,7 +16,7 @@ Transform::Transform(const Matrix& m)
 }
 
 Transform& Transform::translate(const double &x, const double &y, const double &z) {
-    Point p = Point(x, y, z);
+    Tuple p = createPoint(x, y, z);
     for (int i = 0; i < this->getRowSize() - 1; i++) {
         (* this)(i, this->getRowSize() - 1) = p(i);
     }
@@ -24,7 +24,7 @@ Transform& Transform::translate(const double &x, const double &y, const double &
 }
 
 Transform& Transform::scale(const double &x, const double &y, const double &z) {
-    Point p = Point(x, y, z);
+    Tuple p = createPoint(x, y, z);
     for (int i = 0; i < this->getRowSize() - 1; i++) {
         (* this)(i, i) = p(i);
     }
@@ -67,8 +67,8 @@ Transform& Transform::shear(const double &xy, const double &xz,
     return * this;
 }
 
-Transform viewTransform(const Point &from, const Point &to, const Vector &up) {
-    Vector forward, left, trueUp;
+Transform viewTransform(const Tuple &from, const Tuple &to, const Tuple &up) {
+    Tuple forward, left, trueUp;
     auto * orientationData = new std::vector<double>(16);
     auto * orientationMatrix = new Matrix(4, 4);
     Transform transform;
@@ -76,10 +76,10 @@ Transform viewTransform(const Point &from, const Point &to, const Vector &up) {
     forward = normalize(to - from);
     left = cross(forward, normalize(up));
     trueUp = cross(left, forward);
-    * orientationData = std::vector<double>{left.x_, left.y_, left.z_, 0,
-                                            trueUp.x_, trueUp.y_, trueUp.z_, 0,
-                                            -forward.x_, -forward.y_, -forward.z_, 0,
-                                            0, 0, 0, 1};
+    * orientationData = std::vector<double>{left.x_,        left.y_,        left.z_,        0,
+                                            trueUp.x_,      trueUp.y_,      trueUp.z_,      0,
+                                            -forward.x_,    -forward.y_,    -forward.z_,    0,
+                                            0,              0,              0,              1};
     orientationMatrix->setMatrixData(* orientationData);
     auto orientation = raytracer::Transform(* orientationMatrix);
     

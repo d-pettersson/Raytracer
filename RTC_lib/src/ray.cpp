@@ -3,46 +3,44 @@
 #include <utility>
 
 namespace raytracer {
-Ray::Ray()
+Ray::Ray() = default;
+
+Ray::Ray(Tuple origin, Tuple direction)
+        : origin_(origin), direction_(direction)
 {
 }
 
-Ray::Ray(raytracer::Point ori, raytracer::Vector dir)
-        : origin(std::move(ori)), direction(std::move(dir))
-{
+
+void Ray::setDirection(const Tuple &vector) {
+    direction_ = vector;
 }
 
-
-void Ray::setDirection(const Vector& vector) {
-    direction = vector;
+Tuple Ray::getDirection() const {
+    return (* this).direction_;
 }
 
-Vector Ray::getDirection() const {
-    return (* this).direction;
+Tuple& Ray::getDirection() {
+    return (* this).direction_;
 }
 
-Vector& Ray::getDirection() {
-    return (* this).direction;
+void Ray::setOrigin(const Tuple &point) {
+    origin_ = point;
 }
 
-void Ray::setOrigin(const Point& point) {
-    origin = point;
+Tuple Ray::getOrigin() const {
+    return (* this).origin_;
 }
 
-Point Ray::getOrigin() const {
-    return (* this).origin;
+Tuple& Ray::getOrigin() {
+    return (* this).origin_;
 }
 
-Point& Ray::getOrigin() {
-    return (* this).origin;
+Tuple Ray::position(const double& t) const {
+    return (* this).origin_ + (* this).direction_ * t;
 }
 
-Point Ray::position(const double& t) const {
-    return (* this).origin + (* this).direction * t;
-}
-
-Ray transform(const Ray& ray, Transform& t) {
-    return Ray(t * ray.getOrigin() , t * ray.getDirection());
+Ray transform(const Ray &ray, Transform &transform) {
+    return Ray(transform * ray.getOrigin() , transform * ray.getDirection());
 }
 
 } // namespace raytracer

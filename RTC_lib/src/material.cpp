@@ -97,7 +97,7 @@ Color Material::setPhongLighting(const std::shared_ptr<Shape const> &s, const Li
 }
 */
 
-Color Material::setPhongLighting(const std::shared_ptr<Shape const> &s, const Light &light, const Point &position, const Vector &eye, const Vector &normal, const bool &isShadowed) const {
+Color Material::setPhongLighting(const std::shared_ptr<Shape const> &s, const Light &light, const Tuple &position, const Tuple &eye, const Tuple &normal, const bool &isShadowed) const {
     Color amb, dif, spec, effectiveColor, newColor;
 
     if (this->pattern->hasPattern) {
@@ -109,7 +109,7 @@ Color Material::setPhongLighting(const std::shared_ptr<Shape const> &s, const Li
 
     amb = effectiveColor * this->ambient;
 
-    Vector lightVector = normalize(light.position_ - position);
+    Tuple lightVector = normalize(light.position_ - position);
 
     double lightDotNormal = dot(lightVector, normal);
     if (lightDotNormal < 0) {
@@ -117,7 +117,7 @@ Color Material::setPhongLighting(const std::shared_ptr<Shape const> &s, const Li
         spec = black;
     } else {
         dif = effectiveColor * this->diffuse * lightDotNormal;
-        Vector reflectVector = reflect(-lightVector, normal);
+        Tuple reflectVector = reflect(-lightVector, normal);
         double reflectDotEye = dot(reflectVector, eye);
         if (reflectDotEye <= 0) {
             spec = black;

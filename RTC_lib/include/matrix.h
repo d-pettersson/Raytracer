@@ -112,7 +112,7 @@ double determinant(const Matrix& m1);
  * @param[in] int c
  * @return double
  */
-Matrix submatrix(const Matrix& m1, const int& r, const int& c);
+Matrix submatrix(const Matrix& m, const int& r, const int& c);
 
 /**
  * Returns the minor of selected submatrix
@@ -122,7 +122,7 @@ Matrix submatrix(const Matrix& m1, const int& r, const int& c);
  * @param[in] int c
  * @return Matrix
  */
-double minor(const Matrix& m1, const int& r, const int& c);
+double minor(const Matrix& m, const int& r, const int& c);
 
 /**
  * Returns the cofactor of the selected submatrix
@@ -132,7 +132,7 @@ double minor(const Matrix& m1, const int& r, const int& c);
  * @param[in] int c
  * @return double
  */
-double cofactor(const Matrix& m1, const int& r, const int& c);
+double cofactor(const Matrix& m, const int& r, const int& c);
 
 /**
  * Returns the inverse of the <code>Matrix</code>
@@ -140,7 +140,7 @@ double cofactor(const Matrix& m1, const int& r, const int& c);
  * @param[in] Matrix m1
  * @return Matrix
  */
-Matrix inverse(const Matrix& m1);
+Matrix inverse(const Matrix& m);
 
 /**
  * Generates an identity <code>Matrix</code>

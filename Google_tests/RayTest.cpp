@@ -11,7 +11,10 @@ protected:
     virtual void SetUp()
     {
         ray = new raytracer::Ray();
-        ray2 = new raytracer::Ray();
+        r2 = new raytracer::Ray();
+        origin = new raytracer::Tuple();
+        direction = new raytracer::Tuple();
+        xs = new std::vector<raytracer::Intersection>(2);
         transformation = new raytracer::Transform();
         translate = new raytracer::Transform();
         scale = new raytracer::Transform();
@@ -19,120 +22,118 @@ protected:
 
     virtual void TearDown() {
         delete ray;
-        delete ray2;
+        delete r2;
+        delete origin;
+        delete direction;
+        delete xs;
         delete transformation;
         delete translate;
         delete scale;
     }
 
     raytracer::Ray * ray;
-    raytracer::Ray * ray2;
+    raytracer::Ray * r2;
     std::shared_ptr<raytracer::Shape> sphere = std::make_shared<raytracer::Sphere>();
-    raytracer::Point origin;
-    raytracer::Vector direction;
-    std::vector<raytracer::Intersection> xs;
+    std::shared_ptr<raytracer::Shape> s1 = std::make_shared<raytracer::Sphere>();
+    std::shared_ptr<raytracer::Shape> s2 = std::make_shared<raytracer::Sphere>();
+    raytracer::Tuple * origin;
+    raytracer::Tuple * direction;
+    std::vector<raytracer::Intersection> * xs;
     raytracer::Transform * transformation;
     raytracer::Transform * translate;
     raytracer::Transform * scale;
 };
 
 TEST_F(RayFixture, RayCreationAndQuery) {
-    origin = raytracer::Point(1, 2, 3);
-    direction = raytracer::Vector(4, 5, 6);
-    * ray = raytracer::Ray(origin, direction);
-    ASSERT_EQ(ray->getOrigin(), origin);
-    ASSERT_EQ(ray->getDirection(), direction);
+    * origin = raytracer::createPoint(1, 2, 3);
+    * direction = raytracer::createVector(4, 5, 6);
+    * ray = raytracer::Ray(* origin, * direction);
+    EXPECT_EQ(ray->getOrigin(), * origin);
+    ASSERT_EQ(ray->getDirection(), * direction);
 }
 
 TEST_F(RayFixture, PointComputing) {
-    origin = raytracer::Point(2, 3, 4);
-    direction = raytracer::Vector(1, 0, 0);
-    * ray = raytracer::Ray(origin, direction);
-    ASSERT_EQ(raytracer::Point(2, 3, 4), ray->position(0.0));
-    ASSERT_EQ(raytracer::Point(3, 3, 4), ray->position(1));
-    ASSERT_EQ(raytracer::Point(1, 3, 4), ray->position(-1));
-    ASSERT_EQ(raytracer::Point(4.5, 3, 4), ray->position(2.5));
+    * origin = raytracer::createPoint(2, 3, 4);
+    * direction = raytracer::createVector(1, 0, 0);
+    * ray = raytracer::Ray(* origin, * direction);
+    EXPECT_EQ(raytracer::createPoint(2, 3, 4), ray->position(0.0));
+    EXPECT_EQ(raytracer::createPoint(3, 3, 4), ray->position(1));
+    EXPECT_EQ(raytracer::createPoint(1, 3, 4), ray->position(-1));
+    ASSERT_EQ(raytracer::createPoint(4.5, 3, 4), ray->position(2.5));
 }
 
 TEST_F(RayFixture, UniqueID) {
-    raytracer::Sphere s1 = raytracer::Sphere();
-    raytracer::Sphere s2 = raytracer::Sphere();
-    ASSERT_NE(s1.id, s2.id);
+    ASSERT_NE(s1->id, s2->id);
 }
 
 TEST_F(RayFixture, Intersection1) {
-    origin = raytracer::Point(0, 0, -5);
-    direction = raytracer::Vector(0, 0, 1);
-    * ray = raytracer::Ray(origin, direction);
-//    * sphere = raytracer::Sphere();
-    sphere->intersect(* ray, xs);
-    ASSERT_EQ(2, xs.size());
-//    ASSERT_EQ(4.0, sphere->getIntersects(0));
+    * origin = raytracer::createPoint(0, 0, -5);
+    * direction = raytracer::createVector(0, 0, 1);
+    * ray = raytracer::Ray(* origin, * direction);
+    sphere->intersect(* ray, * xs);
+    EXPECT_EQ(2, xs->size());
+//    EXPECT_EQ(4.0, sphere->getIntersects(0));
 //    ASSERT_EQ(6.0, sphere->getIntersects(1));
 }
 
 TEST_F(RayFixture, Intersection2) {
-    origin = raytracer::Point(0, 1, -5);
-    direction = raytracer::Vector(0, 0, 1);
-    * ray = raytracer::Ray(origin, direction);
-    * sphere = raytracer::Sphere();
-    sphere->intersect(* ray, xs);
-    ASSERT_EQ(2, xs.size());
-    ASSERT_EQ(5.0, xs[0].getDistance());
-    ASSERT_EQ(5.0, xs[1].getDistance());
+    * origin = raytracer::createPoint(0, 1, -5);
+    * direction = raytracer::createVector(0, 0, 1);
+    * ray = raytracer::Ray(* origin, * direction);
+    sphere->intersect(* ray, * xs);
+    EXPECT_EQ(2, xs->size());
+    EXPECT_EQ(5.0, xs[0][0].getDistance());
+    ASSERT_EQ(5.0, xs[1][0].getDistance());
 }
 
 TEST_F(RayFixture, Intersection3) {
-    origin = raytracer::Point(0, 2, -5);
-    direction = raytracer::Vector(0, 0, 1);
-    * ray = raytracer::Ray(origin, direction);
-//    * sphere = raytracer::Sphere();
-    sphere->intersect(* ray, xs);
-    ASSERT_EQ(0, xs.size());
+    * origin = raytracer::createPoint(0, 2, -5);
+    * direction = raytracer::createVector(0, 0, 1);
+    * ray = raytracer::Ray(* origin, * direction);
+    sphere->intersect(* ray, * xs);
+    ASSERT_EQ(0, xs->size());
 }
 
 TEST_F(RayFixture, Intersection4) {
-    origin = raytracer::Point(0, 0, 0);
-    direction = raytracer::Vector(0, 0, 1);
-    * ray = raytracer::Ray(origin, direction);
-//    * sphere = raytracer::Sphere();
-    sphere->intersect(* ray, xs);
-    ASSERT_EQ(2, xs.size());
-    ASSERT_EQ(-1.0, xs[0].getDistance());
-    ASSERT_EQ(1.0, xs[1].getDistance());
+    * origin = raytracer::createPoint(0, 0, 0);
+    * direction = raytracer::createVector(0, 0, 1);
+    * ray = raytracer::Ray(* origin, * direction);
+    sphere->intersect(* ray, * xs);
+    EXPECT_EQ(2, xs->size());
+    EXPECT_EQ(-1.0, xs[0][0].getDistance());
+    ASSERT_EQ(1.0, xs[1][0].getDistance());
 }
 
 TEST_F(RayFixture, Intersection5) {
-    origin = raytracer::Point(0, 0, 5);
-    direction = raytracer::Vector(0, 0, 1);
-    * ray = raytracer::Ray(origin, direction);
-//    * sphere = raytracer::Sphere();
-    sphere->intersect(* ray, xs);
-    ASSERT_EQ(2, xs.size());
-    ASSERT_EQ(-6.0, xs[0].getDistance());
-    ASSERT_EQ(-4.0, xs[1].getDistance());
+    * origin = raytracer::createPoint(0, 0, 5);
+    * direction = raytracer::createVector(0, 0, 1);
+    * ray = raytracer::Ray(* origin, * direction);
+    sphere->intersect(* ray, * xs);
+    EXPECT_EQ(2, xs->size());
+    EXPECT_EQ(-6.0, xs[0][0].getDistance());
+    ASSERT_EQ(-4.0, xs[1][0].getDistance());
 }
 
 TEST_F(RayFixture, IntersectObject) {
-    * ray = raytracer::Ray(raytracer::Point(0, 0, -5), raytracer::Vector(0, 0, 1));
-    sphere->intersect(* ray, xs);
-    ASSERT_EQ(2, xs.size());
-    ASSERT_EQ(sphere, xs[0].getObject());
-    ASSERT_EQ(sphere, xs[1].getObject());
+    * ray = raytracer::Ray(raytracer::createPoint(0, 0, -5), raytracer::createVector(0, 0, 1));
+    sphere->intersect(* ray, * xs);
+    EXPECT_EQ(2, xs->size());
+    EXPECT_EQ(sphere, xs[0][0].getObject());
+    ASSERT_EQ(sphere, xs[1][0].getObject());
 }
 
 TEST_F(RayFixture, RayTranslation) {
-    * ray = raytracer::Ray(raytracer::Point(1, 2, 3), raytracer::Vector(0, 1, 0));
+    * ray = raytracer::Ray(raytracer::createPoint(1, 2, 3), raytracer::createVector(0, 1, 0));
     translate->translate(3, 4, 5);
-    * ray2 = transform(* ray, * translate);
-    ASSERT_EQ(ray2->getOrigin(), raytracer::Point(4, 6, 8));
-    ASSERT_EQ(ray2->getDirection(), raytracer::Vector(0, 1, 0));
+    * r2 = transform(* ray, * translate);
+    EXPECT_EQ(r2->getOrigin(), raytracer::createPoint(4, 6, 8));
+    ASSERT_EQ(r2->getDirection(), raytracer::createVector(0, 1, 0));
 }
 
 TEST_F(RayFixture, RayScaling) {
-    * ray = raytracer::Ray(raytracer::Point(1, 2, 3), raytracer::Vector(0, 1, 0));
+    * ray = raytracer::Ray(raytracer::createPoint(1, 2, 3), raytracer::createVector(0, 1, 0));
     scale->scale(2, 3, 4);
-    * ray2 = transform(* ray, * scale);
-    ASSERT_EQ(ray2->getOrigin(), raytracer::Point(2, 6, 12));
-    ASSERT_EQ(ray2->getDirection(), raytracer::Vector(0, 3, 0));
+    * r2 = transform(* ray, * scale);
+    ASSERT_EQ(r2->getOrigin(), raytracer::createPoint(2, 6, 12));
+    ASSERT_EQ(r2->getDirection(), raytracer::createVector(0, 3, 0));
 }

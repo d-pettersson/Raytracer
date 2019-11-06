@@ -13,21 +13,21 @@ class World;
 class Light {
 public:
     Light();
-    Light(Point position, Color intensity);
+    Light(Tuple position, Color intensity);
 
-    void setPointLight(const Point &position, const Color &intensity);
+    void setPointLight(const Tuple &position, const Color &intensity);
 //    void setAreaLight(const Point &corner, const Vector &fullUVec, const int &uSteps, const Vector &fullVVec, const int &vSteps, const Color &intensity);
 //
 //    Point pointOnLight(const double &u, const double &v) const;
 //    float intensityAt(const Point &point, const World &world);
 
     Color intensity_;
-    Point position_;
+    Tuple position_;
 
-    Point corner_;
-    Vector uVec_;
+    Tuple corner_;
+    Tuple uVec_;
     int uSteps_;
-    Vector vVec_;
+    Tuple vVec_;
     int vSteps_;
     int samples_;
 

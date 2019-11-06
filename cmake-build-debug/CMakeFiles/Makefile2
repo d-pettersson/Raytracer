@@ -82,7 +82,7 @@ preinstall: Google_tests/preinstall
 CMakeFiles/RTC_run.dir/all:
 	$(MAKE) -f CMakeFiles/RTC_run.dir/build.make CMakeFiles/RTC_run.dir/depend
 	$(MAKE) -f CMakeFiles/RTC_run.dir/build.make CMakeFiles/RTC_run.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=7,8 "Built target RTC_run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=21,22 "Built target RTC_run"
 .PHONY : CMakeFiles/RTC_run.dir/all
 
 # Build rule for subdir invocation for target.
@@ -127,12 +127,12 @@ RTC_lib/preinstall:
 RTC_lib/CMakeFiles/RTC_lib.dir/all:
 	$(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/depend
 	$(MAKE) -f RTC_lib/CMakeFiles/RTC_lib.dir/build.make RTC_lib/CMakeFiles/RTC_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=4,5,6 "Built target RTC_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 "Built target RTC_lib"
 .PHONY : RTC_lib/CMakeFiles/RTC_lib.dir/all
 
 # Build rule for subdir invocation for target.
 RTC_lib/CMakeFiles/RTC_lib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" 3
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" 15
 	$(MAKE) -f CMakeFiles/Makefile2 RTC_lib/CMakeFiles/RTC_lib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" 0
 .PHONY : RTC_lib/CMakeFiles/RTC_lib.dir/rule
@@ -172,12 +172,12 @@ apps/preinstall:
 apps/CMakeFiles/plane.dir/all: RTC_lib/CMakeFiles/RTC_lib.dir/all
 	$(MAKE) -f apps/CMakeFiles/plane.dir/build.make apps/CMakeFiles/plane.dir/depend
 	$(MAKE) -f apps/CMakeFiles/plane.dir/build.make apps/CMakeFiles/plane.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=17,18 "Built target plane"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=31,32 "Built target plane"
 .PHONY : apps/CMakeFiles/plane.dir/all
 
 # Build rule for subdir invocation for target.
 apps/CMakeFiles/plane.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" 5
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" 17
 	$(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/plane.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" 0
 .PHONY : apps/CMakeFiles/plane.dir/rule
@@ -216,17 +216,17 @@ Google_tests/preinstall: Google_tests/lib/preinstall
 # Target rules for target Google_tests/CMakeFiles/Google_Tests_run.dir
 
 # All Build rule for target.
+Google_tests/CMakeFiles/Google_Tests_run.dir/all: RTC_lib/CMakeFiles/RTC_lib.dir/all
 Google_tests/CMakeFiles/Google_Tests_run.dir/all: Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/all
 Google_tests/CMakeFiles/Google_Tests_run.dir/all: Google_tests/lib/googletest/CMakeFiles/gtest.dir/all
-Google_tests/CMakeFiles/Google_Tests_run.dir/all: RTC_lib/CMakeFiles/RTC_lib.dir/all
 	$(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/depend
 	$(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=1,2,3 "Built target Google_Tests_run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=1,2,3,4,5 "Built target Google_Tests_run"
 .PHONY : Google_tests/CMakeFiles/Google_Tests_run.dir/all
 
 # Build rule for subdir invocation for target.
 Google_tests/CMakeFiles/Google_Tests_run.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" 10
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" 24
 	$(MAKE) -f CMakeFiles/Makefile2 Google_tests/CMakeFiles/Google_Tests_run.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" 0
 .PHONY : Google_tests/CMakeFiles/Google_Tests_run.dir/rule
@@ -288,7 +288,7 @@ Google_tests/lib/googlemock/preinstall: Google_tests/lib/googletest/preinstall
 Google_tests/lib/googlemock/CMakeFiles/gmock.dir/all: Google_tests/lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f Google_tests/lib/googlemock/CMakeFiles/gmock.dir/build.make Google_tests/lib/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f Google_tests/lib/googlemock/CMakeFiles/gmock.dir/build.make Google_tests/lib/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=9,10 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=23,24 "Built target gmock"
 .PHONY : Google_tests/lib/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -312,11 +312,11 @@ Google_tests/lib/googlemock/CMakeFiles/gmock.dir/clean:
 # Target rules for target Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir
 
 # All Build rule for target.
-Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/all: Google_tests/lib/googletest/CMakeFiles/gtest.dir/all
 Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/all: Google_tests/lib/googlemock/CMakeFiles/gmock.dir/all
+Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/all: Google_tests/lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/build.make Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/build.make Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=11,12 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=25,26 "Built target gmock_main"
 .PHONY : Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -363,7 +363,7 @@ Google_tests/lib/googletest/preinstall:
 Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/all: Google_tests/lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/build.make Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/build.make Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=15,16 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=29,30 "Built target gtest_main"
 .PHONY : Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -390,7 +390,7 @@ Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/clean:
 Google_tests/lib/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f Google_tests/lib/googletest/CMakeFiles/gtest.dir/build.make Google_tests/lib/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f Google_tests/lib/googletest/CMakeFiles/gtest.dir/build.make Google_tests/lib/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=13,14 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=27,28 "Built target gtest"
 .PHONY : Google_tests/lib/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.

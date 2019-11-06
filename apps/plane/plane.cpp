@@ -64,14 +64,14 @@ int main() {
     world->addObject(left);
 
 //    light_->setAreaLight(raytracer::Point(-2, 10, -10), raytracer::Vector(2, 0, 0), 2, raytracer::Vector(0, 2, 0), 2, raytracer::Color(1, 1, 1));
-    light->setPointLight(raytracer::Point(-2, 10, -10), raytracer::Color(1, 1, 1));
+    light->setPointLight(raytracer::createPoint(-2, 10, -10), raytracer::Color(1, 1, 1));
     world->light_ = * light;
 
     auto start = std::chrono::high_resolution_clock::now();
 
     // camera
     * camera = raytracer::Camera(500, 250, PI/3);
-    * transform = viewTransform(raytracer::Point(1.f, 1.5, -5.f), raytracer::Point(0.f, 1.f, 0.f), raytracer::Vector(0.f, 1.f, 0.f));
+    * transform = viewTransform(raytracer::createPoint(1.f, 1.5, -5.f), raytracer::createPoint(0.f, 1.f, 0.f), raytracer::createVector(0.f, 1.f, 0.f));
     camera->transform = * transform;
     canvas = camera->render(* world);
     canvas.saveToFile();

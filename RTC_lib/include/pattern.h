@@ -17,8 +17,8 @@ class Pattern : public std::enable_shared_from_this<Pattern>{
         virtual ~Pattern();
         Pattern(Color c1, Color  c2);
 
-        virtual Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const = 0;
-        virtual Color patternAt(const Point &p) const = 0;
+        virtual Color patternAtShape(const std::shared_ptr<Shape const> &s, const Tuple &p) const = 0;
+        virtual Color patternAt(const Tuple &p) const = 0;
 
         void setPatternTransform(const Transform &t);
         Transform getPatternTransform() const;
@@ -38,8 +38,8 @@ class TestPattern : public Pattern {
         TestPattern();
         ~TestPattern() override;
 
-        Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const override;
-        Color patternAt(const Point &p) const override;
+        Color patternAtShape(const std::shared_ptr<Shape const> &s, const Tuple &p) const override;
+        Color patternAt(const Tuple &p) const override;
 };
 
 class NoPattern : public Pattern {
@@ -47,8 +47,8 @@ class NoPattern : public Pattern {
         NoPattern();
         ~NoPattern() override;
 
-        Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const override;
-        Color patternAt(const Point &p) const override;
+        Color patternAtShape(const std::shared_ptr<Shape const> &s, const Tuple &p) const override;
+        Color patternAt(const Tuple &p) const override;
 };
 
 class StripePattern : public Pattern {
@@ -57,8 +57,8 @@ class StripePattern : public Pattern {
         ~StripePattern() override;
         StripePattern(const Color &c1, const Color& c2);
 
-        Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const override;
-        Color patternAt(const Point &p) const override;
+        Color patternAtShape(const std::shared_ptr<Shape const> &s, const Tuple &p) const override;
+        Color patternAt(const Tuple &p) const override;
 };
 
 class GradientPattern : public Pattern {
@@ -67,8 +67,8 @@ class GradientPattern : public Pattern {
         ~GradientPattern() override;
         GradientPattern(const Color &c1, const Color& c2);
 
-        Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const override;
-        Color patternAt(const Point &p) const override;
+        Color patternAtShape(const std::shared_ptr<Shape const> &s, const Tuple &p) const override;
+        Color patternAt(const Tuple &p) const override;
 };
 
 class RingPattern : public Pattern {
@@ -77,8 +77,8 @@ class RingPattern : public Pattern {
         ~RingPattern() override;
         RingPattern(const Color &c1, const Color& c2);
 
-        Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const override;
-        Color patternAt(const Point &p) const override;
+        Color patternAtShape(const std::shared_ptr<Shape const> &s, const Tuple &p) const override;
+        Color patternAt(const Tuple &p) const override;
 };
 
 class CheckerPattern : public Pattern {
@@ -87,8 +87,8 @@ class CheckerPattern : public Pattern {
         ~CheckerPattern() override;
         CheckerPattern(const Color &c1, const Color &c2);
 
-        Color patternAtShape(const std::shared_ptr<Shape const> &s, const Point &p) const override;
-        Color patternAt(const Point &p) const override;
+        Color patternAtShape(const std::shared_ptr<Shape const> &s, const Tuple &p) const override;
+        Color patternAt(const Tuple &p) const override;
 };
 
 } // namespace raytracer

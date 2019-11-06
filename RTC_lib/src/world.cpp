@@ -53,7 +53,7 @@ void World::addObject(const std::shared_ptr<Shape> &shape) {
 }
 
 void World::defaultWorld() {
-    this->light_ = Light(Point(-10.0, 10.0, -10.0), Color(1, 1, 1));
+    this->light_ = Light(createPoint(-10.0, 10.0, -10.0), Color(1, 1, 1));
 
     this->shapes_ = std::vector<std::shared_ptr<Shape> >{2};
     shapes_[0] = std::make_shared<Sphere>();
@@ -80,7 +80,7 @@ void World::defaultWorld() {
 //    return h->getObject() != nullptr && h->getDistance() < distance;
 //}
 
-bool World::isShadowed(const Point &point) const {
+bool World::isShadowed(const Tuple &point) const {
     auto vector = this->light_.position_ - point;
     auto distance = magnitude(vector);
     auto direction = normalize(vector);
