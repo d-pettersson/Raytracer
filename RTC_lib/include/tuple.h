@@ -69,9 +69,9 @@ class Color : virtual public Tuple {
 /**
  * Creates a point from coordinates(x, y, z)
  *
- * @param[in] double x
- * @param[in] double y
- * @param[in] double z
+ * @param[in] const double &x
+ * @param[in] const double &y
+ * @param[in] const double &z
  * @return Tuple{x, y, z, 1.0}
  */
 Tuple createPoint(const double &x, const double &y, const double &z);
@@ -79,70 +79,60 @@ Tuple createPoint(const double &x, const double &y, const double &z);
 /**
  * Creates a vector from coordinates(x, y, z)
  *
- * @param[in] double x
- * @param[in] double y
- * @param[in] double z
+ * @param[in] const double &x
+ * @param[in] const double &y
+ * @param[in] const double &z
  * @return Tuple{x, y, z, 0.0}
  */
 Tuple createVector(const double &x, const double &y, const double &z);
 
 /**
- * Creates a vector from coordinates(x, y, z)
- *
- * @param[in] const double &r
- * @param[in] const double &g
- * @param[in] const double &b
- * @return Tuple{x, y, z, 0.0}
- */
-Tuple createColor(const double &r, const double &g, const double &b);
-
-/**
  * Normalizes the <code>Tuple</code> coordinates
  *
- * @param[in] Tuple t1
+ * @param[in] const Tuple &t
  * @return Tuple
  */
-Tuple normalize(const Tuple& t1);
+Tuple normalize(const Tuple& t);
 
 /**
  * Return the absolute value of a <code>Tuples</code>
  *
- * @param[in] Tuple t1
+ * @param[in] const Tuple &t
  * @return Tuple
  */
-Tuple abs(const Tuple &t1);
+Tuple abs(const Tuple &t);
 
 /**
  * Return the magnitude(length) of a <code>Tuple</code>
  *
- * @param Tuple t1
+ * @param const Tuple &v
  * @return double
  */
-double magnitude(const Tuple& t1);
+double magnitude(const Tuple& v);
 
 /**
- * Return the dot product from t1 . t2
+ * Return the dot product from v1 . v2
  *
- * @param[in] Tuple t1
- * @param[in] Tuple t2
+ * @param[in] const Tuple &v1
+ * @param[in] const Tuple &v2
  * @return double
  */
-double dot(const Tuple& t1, const Tuple& t2);
+double dot(const Tuple& v1, const Tuple& v2);
 
 /**
- * Return the cross product of t1 X t2
+ * Return the cross product of v1 X v2
  *
- * @param[in] Tuple t1
- * @param[in] Tuple t2
+ * @param[in] const Tuple &v1
+ * @param[in] const Tuple &v2
  * @return Tuple
  */
-Tuple cross(const Tuple& t1, const Tuple& t2);
+Tuple cross(const Tuple &v1, const Tuple &v2);
 
 /**
  * Return the reflect vector of v
  *
- * @param[in] Tuple v
- * @param[in] Tuple n
+ * @param[in] const Tuple &v
+ * @param[in] const Tuple &n
  * @return Tuple
  */
 Tuple reflect(const Tuple& v, const Tuple& n);

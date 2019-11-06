@@ -80,27 +80,27 @@ Tuple createColor(const double &r, const double &g, const double &b) {
     return {r, g, b, 0.0};
 }
 
-Tuple normalize(const Tuple &t1) {
-    return {t1.x_ / magnitude(t1), t1.y_ / magnitude(t1), t1.z_ / magnitude(t1), t1.w_ / magnitude(t1)};
+Tuple normalize(const Tuple &t) {
+    return {t.x_ / magnitude(t), t.y_ / magnitude(t), t.z_ / magnitude(t), t.w_ / magnitude(t)};
 }
 
-Tuple abs(const Tuple &t1) {
-    return {fabs(t1.x_), fabs(t1.y_), fabs(t1.z_), fabs(t1.w_)};
+Tuple abs(const Tuple &t) {
+    return {fabs(t.x_), fabs(t.y_), fabs(t.z_), fabs(t.w_)};
 }
 
-double magnitude(const Tuple& t1) {
-    return sqrt(t1.x_ * t1.x_ + t1.y_ * t1.y_ + t1.z_ * t1.z_ + t1.w_ * t1.w_);
+double magnitude(const Tuple& v) {
+    return sqrt(v.x_ * v.x_ + v.y_ * v.y_ + v.z_ * v.z_ + v.w_ * v.w_);
 }
 
-double dot(const Tuple& t1, const Tuple& t2) {
-    return t1.x_ * t2.x_ + t1.y_ * t2.y_ + t1.z_ * t2.z_ + t1.w_ * t2.w_;
+double dot(const Tuple& v1, const Tuple& v2) {
+    return v1.x_ * v2.x_ + v1.y_ * v2.y_ + v1.z_ * v2.z_ + v1.w_ * v2.w_;
 }
 
-Tuple cross(const Tuple& t1, const Tuple& t2) {
+Tuple cross(const Tuple& v1, const Tuple& v2) {
     Tuple result = raytracer::createVector(
-            t1.y_ * t2.z_ - t1.z_ * t2.y_,
-            t1.z_ * t2.x_ - t1.x_ * t2.z_,
-            t1.x_ * t2.y_ - t1.y_ * t2.x_);
+            v1.y_ * v2.z_ - v1.z_ * v2.y_,
+            v1.z_ * v2.x_ - v1.x_ * v2.z_,
+            v1.x_ * v2.y_ - v1.y_ * v2.x_);
     return result;
 }
 
