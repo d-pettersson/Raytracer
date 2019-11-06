@@ -139,7 +139,7 @@ INSTANTIATE_TEST_SUITE_P(AnotherInstantiationName, FooTest, ValuesIn(pets));
 // give the user a chance to inspect the generated tests with Google Test
 // reflection API before RUN_ALL_TESTS() is executed.
 //
-// You can see samples/sample7_unittest.cc and samples/sample8_unittest.cc
+// You can see samples_/sample7_unittest.cc and samples_/sample8_unittest.cc
 // for more examples.
 //
 // In the future, we plan to publish the API for defining new parameter

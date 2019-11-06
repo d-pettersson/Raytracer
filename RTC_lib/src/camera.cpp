@@ -39,6 +39,7 @@ Ray Camera::rayForPixel(const int &x, const int &y) {
     Point pixel = inverseTransform * Point(worldX, worldY, -1);
     Point origin = inverseTransform * Point(0, 0, 0);
     Vector direction = normalize(pixel - origin);
+    
     return Ray(origin, direction);
 
 }
@@ -55,6 +56,7 @@ Canvas Camera::render(World& world) {
             image.writePixel(x, y, color);
         }
     }
+    
     return image;
 }
 } // namespace raytracer

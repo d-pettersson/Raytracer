@@ -31,10 +31,10 @@ bool Material::operator!=(const Material &rhs) const {
     return !(rhs == *this);
 }
 
-//    Color Material::setPhongLighting(const Light &light, const Point &point, const Vector &eye, const Vector &normal, const float &intensity) const {
+//    Color Material::setPhongLighting(const Light &light_, const Point &point, const Vector &eye, const Vector &normal, const float &intensity_) const {
 //        raytracer::Color dif, spec;
-//        raytracer::Color effectiveColor = this->color * light.intensity;
-//        raytracer::Vector lightVector = normalize(light.position - point);
+//        raytracer::Color effectiveColor = this->color * light_.intensity_;
+//        raytracer::Vector lightVector = normalize(light_.position_ - point);
 //        raytracer::Color amb = effectiveColor * this->ambient;
 //        double lightDotNormal = dot(lightVector, normal);
 //        if (lightDotNormal < 0) {
@@ -48,21 +48,21 @@ bool Material::operator!=(const Material &rhs) const {
 //                spec = black;
 //            } else {
 //                double factor = pow(reflectDotEye, this->shininess);
-//                spec = light.intensity * this->specular * factor;
+//                spec = light_.intensity_ * this->specular * factor;
 //            }
 //        }
-//        return raytracer::Color(amb + (dif * intensity) + (spec * intensity));
+//        return raytracer::Color(amb + (dif * intensity_) + (spec * intensity_));
 //    }
 
-/* Area light related
-Color Material::setPhongLighting(const std::shared_ptr<Shape const> &s, const Light &light, const Point &position, const Vector &eye, const Vector &normal, const float &intensity) const {
+/* Area light_ related
+Color Material::setPhongLighting(const std::shared_ptr<Shape const> &s, const Light &light_, const Point &position_, const Vector &eye, const Vector &normal, const float &intensity_) const {
     Color amb, dif, spec, sum, effectiveColor, newColor;
 
     if (this->pattern->hasPattern) {
-        newColor = this->pattern->patternAtShape(s, position);
-        effectiveColor = newColor * light.intensity;
+        newColor = this->pattern->patternAtShape(s, position_);
+        effectiveColor = newColor * light_.intensity_;
     } else {
-        effectiveColor = this->color * light.intensity;
+        effectiveColor = this->color * light_.intensity_;
     }
 
     amb = effectiveColor * this->ambient;
@@ -72,8 +72,8 @@ Color Material::setPhongLighting(const std::shared_ptr<Shape const> &s, const Li
 
     sum = black;
 
-    for (int i = 0; i < light.samples; i++) {
-        * lightVector = normalize(light.pointOnLight(i % light.uSteps, i / light.vSteps) - position);
+    for (int i = 0; i < light_.samples_; i++) {
+        * lightVector = normalize(light_.pointOnLight(i % light_.uSteps_, i / light_.vSteps_) - position_);
         lightDotNormal = dot(* lightVector, normal);
         if (lightDotNormal < 0) {
             dif = black;
@@ -86,14 +86,14 @@ Color Material::setPhongLighting(const std::shared_ptr<Shape const> &s, const Li
                 spec = black;
             } else {
                 double factor = pow(reflectDotEye, this->shininess);
-                spec = light.intensity * this->specular * factor;
+                spec = light_.intensity_ * this->specular * factor;
             }
         }
         sum = sum + dif;
         sum = sum + spec;
     }
 
-    return amb + (sum / (double)light.samples) * intensity;
+    return amb + (sum / (double)light_.samples_) * intensity_;
 }
 */
 
@@ -102,14 +102,14 @@ Color Material::setPhongLighting(const std::shared_ptr<Shape const> &s, const Li
 
     if (this->pattern->hasPattern) {
         newColor = this->pattern->patternAtShape(s, position);
-        effectiveColor = newColor * light.intensity;
+        effectiveColor = newColor * light.intensity_;
     } else {
-        effectiveColor = this->color * light.intensity;
+        effectiveColor = this->color * light.intensity_;
     }
 
     amb = effectiveColor * this->ambient;
 
-    Vector lightVector = normalize(light.position - position);
+    Vector lightVector = normalize(light.position_ - position);
 
     double lightDotNormal = dot(lightVector, normal);
     if (lightDotNormal < 0) {
@@ -123,7 +123,7 @@ Color Material::setPhongLighting(const std::shared_ptr<Shape const> &s, const Li
             spec = black;
         } else {
             double factor = pow(reflectDotEye, this->shininess);
-            spec = light.intensity * this->specular * factor;
+            spec = light.intensity_ * this->specular * factor;
         }
     }
     return isShadowed ? amb : amb + dif + spec;

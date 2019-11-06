@@ -30,9 +30,9 @@ class World {
 
         void addObject(const std::shared_ptr<Shape>& shape);
 
-        Light light;
-        std::vector<std::shared_ptr<Shape> > shapes;
-        Transform transform;
+        Light light_;
+        std::vector<std::shared_ptr<Shape> > shapes_;
+        Transform transform_;
     };
 } // namespace raytracer
 

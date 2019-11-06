@@ -23,6 +23,20 @@ RTC_lib/CMakeFiles/RTC_lib.dir/src/canvas.cpp.o: ../RTC_lib/include/constants.h
 RTC_lib/CMakeFiles/RTC_lib.dir/src/canvas.cpp.o: ../RTC_lib/include/tuple.h
 RTC_lib/CMakeFiles/RTC_lib.dir/src/canvas.cpp.o: ../RTC_lib/src/canvas.cpp
 
+RTC_lib/CMakeFiles/RTC_lib.dir/src/cube.cpp.o: ../RTC_lib/include/constants.h
+RTC_lib/CMakeFiles/RTC_lib.dir/src/cube.cpp.o: ../RTC_lib/include/cube.h
+RTC_lib/CMakeFiles/RTC_lib.dir/src/cube.cpp.o: ../RTC_lib/include/intersection.h
+RTC_lib/CMakeFiles/RTC_lib.dir/src/cube.cpp.o: ../RTC_lib/include/light.h
+RTC_lib/CMakeFiles/RTC_lib.dir/src/cube.cpp.o: ../RTC_lib/include/material.h
+RTC_lib/CMakeFiles/RTC_lib.dir/src/cube.cpp.o: ../RTC_lib/include/matrix.h
+RTC_lib/CMakeFiles/RTC_lib.dir/src/cube.cpp.o: ../RTC_lib/include/pattern.h
+RTC_lib/CMakeFiles/RTC_lib.dir/src/cube.cpp.o: ../RTC_lib/include/ray.h
+RTC_lib/CMakeFiles/RTC_lib.dir/src/cube.cpp.o: ../RTC_lib/include/shape.h
+RTC_lib/CMakeFiles/RTC_lib.dir/src/cube.cpp.o: ../RTC_lib/include/transform.h
+RTC_lib/CMakeFiles/RTC_lib.dir/src/cube.cpp.o: ../RTC_lib/include/tuple.h
+RTC_lib/CMakeFiles/RTC_lib.dir/src/cube.cpp.o: ../RTC_lib/include/utils.h
+RTC_lib/CMakeFiles/RTC_lib.dir/src/cube.cpp.o: ../RTC_lib/src/cube.cpp
+
 RTC_lib/CMakeFiles/RTC_lib.dir/src/intersection.cpp.o: ../RTC_lib/include/constants.h
 RTC_lib/CMakeFiles/RTC_lib.dir/src/intersection.cpp.o: ../RTC_lib/include/intersection.h
 RTC_lib/CMakeFiles/RTC_lib.dir/src/intersection.cpp.o: ../RTC_lib/include/light.h

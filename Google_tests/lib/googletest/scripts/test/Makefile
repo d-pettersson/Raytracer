@@ -15,7 +15,7 @@ FUSED_GTEST_H = $(FUSED_GTEST_DIR)/gtest/gtest.h
 FUSED_GTEST_ALL_CC = $(FUSED_GTEST_DIR)/gtest/gtest-all.cc
 
 # Where to find the sample test.
-SAMPLE_DIR = ../../samples
+SAMPLE_DIR = ../../samples_
 
 # Where to find gtest_main.cc.
 GTEST_MAIN_CC = ../../src/gtest_main.cc

@@ -16,7 +16,7 @@ int main() {
     auto * camera = new raytracer::Camera();
     
     auto * world = new raytracer::World();
-    auto canvas = raytracer::Canvas();
+    raytracer::Canvas canvas;
 
     auto * transform = new raytracer::Transform();
     auto * translation = new raytracer::Transform();
@@ -26,7 +26,7 @@ int main() {
     
     // floor
     world->addObject(floor);
-//    floor->material.pattern = std::make_shared<raytracer::StripePattern>(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
+    floor->material.pattern = std::make_shared<raytracer::StripePattern>(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
     floor->material.color = raytracer::Color(1, 1, 1);
     floor->material.reflection = 0.5;
 
@@ -34,8 +34,11 @@ int main() {
     translation->translate(-0.5, 1, 0.5);
     middle->setTransform(* translation);
     middle->material.color = raytracer::Color(0.1, 1, 0.5);
-    middle->material.diffuse = 0.7;
+    middle->material.diffuse = 0.1;
     middle->material.specular = 0.3;
+    middle->material.transparency = 0.9;
+    middle->material.reflection = 0.9;
+    middle->material.refractiveIndex = 1.52;
     world->addObject(middle);
 
     // right sphere
@@ -60,9 +63,9 @@ int main() {
 //    left->material.pattern = std::make_shared<raytracer::StripePattern>(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
     world->addObject(left);
 
-//    light->setAreaLight(raytracer::Point(-2, 10, -10), raytracer::Vector(2, 0, 0), 2, raytracer::Vector(0, 2, 0), 2, raytracer::Color(1, 1, 1));
+//    light_->setAreaLight(raytracer::Point(-2, 10, -10), raytracer::Vector(2, 0, 0), 2, raytracer::Vector(0, 2, 0), 2, raytracer::Color(1, 1, 1));
     light->setPointLight(raytracer::Point(-2, 10, -10), raytracer::Color(1, 1, 1));
-    world->light = * light;
+    world->light_ = * light;
 
     auto start = std::chrono::high_resolution_clock::now();
 

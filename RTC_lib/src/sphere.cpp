@@ -51,5 +51,9 @@ bool operator==(const Sphere& s1, const Sphere& s2) {
     return typeid(s1) == typeid(s2);
 }
 
+bool operator!=(const Sphere& s1, const Sphere& s2) {
+    return !(s1 == s2);
+}
+
 } // namespace raytracer
 

@@ -2971,7 +2971,7 @@ static WORD GetNewColor(GTestColor color, WORD old_color_attrs) {
 
   if (((new_color & background_mask) >> bg_bitOffset) ==
       ((new_color & foreground_mask) >> fg_bitOffset)) {
-    new_color ^= FOREGROUND_INTENSITY;  // invert intensity
+    new_color ^= FOREGROUND_INTENSITY;  // invert intensity_
   }
   return new_color;
 }

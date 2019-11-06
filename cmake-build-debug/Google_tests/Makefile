@@ -225,6 +225,33 @@ CanvasTest.cpp.s:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.s
 .PHONY : CanvasTest.cpp.s
 
+CubeTest.o: CubeTest.cpp.o
+
+.PHONY : CubeTest.o
+
+# target to build an object file
+CubeTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CubeTest.cpp.o
+.PHONY : CubeTest.cpp.o
+
+CubeTest.i: CubeTest.cpp.i
+
+.PHONY : CubeTest.i
+
+# target to preprocess a source file
+CubeTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CubeTest.cpp.i
+.PHONY : CubeTest.cpp.i
+
+CubeTest.s: CubeTest.cpp.s
+
+.PHONY : CubeTest.s
+
+# target to generate assembly for a file
+CubeTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CubeTest.cpp.s
+.PHONY : CubeTest.cpp.s
+
 IntersectionTest.o: IntersectionTest.cpp.o
 
 .PHONY : IntersectionTest.o
@@ -541,6 +568,9 @@ help:
 	@echo "... CanvasTest.o"
 	@echo "... CanvasTest.i"
 	@echo "... CanvasTest.s"
+	@echo "... CubeTest.o"
+	@echo "... CubeTest.i"
+	@echo "... CubeTest.s"
 	@echo "... IntersectionTest.o"
 	@echo "... IntersectionTest.i"
 	@echo "... IntersectionTest.s"

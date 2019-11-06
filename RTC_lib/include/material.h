@@ -20,11 +20,11 @@ class Material {
         Material();
 
 //        Color setPhongLighting(const std::shared_ptr<Shape const> &s,
-//                               const Light& light,
-//                               const Point& position,
+//                               const Light& light_,
+//                               const Point& position_,
 //                               const Vector& eye,
 //                               const Vector& normal,
-//                               const float &intensity) const;
+//                               const float &intensity_) const;
 
         Color setPhongLighting(const std::shared_ptr<Shape const> &s,
                                const Light& light,

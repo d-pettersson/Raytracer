@@ -8,6 +8,10 @@
 
 ../RTC_lib/include/constants.h
 
+../RTC_lib/include/cube.h
+shape.h
+../RTC_lib/include/shape.h
+
 ../RTC_lib/include/intersection.h
 tuple.h
 ../RTC_lib/include/tuple.h
@@ -76,10 +80,6 @@ vector
 memory
 -
 
-../RTC_lib/include/sphere.h
-shape.h
-../RTC_lib/include/shape.h
-
 ../RTC_lib/include/transform.h
 matrix.h
 ../RTC_lib/include/matrix.h
@@ -94,23 +94,9 @@ iostream
 vector
 -
 
-../RTC_lib/include/world.h
-light.h
-../RTC_lib/include/light.h
-sphere.h
-../RTC_lib/include/sphere.h
-tuple.h
-../RTC_lib/include/tuple.h
-transform.h
-../RTC_lib/include/transform.h
-intersection.h
-../RTC_lib/include/intersection.h
-
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/world.cpp
-include/world.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/world.h
-memory
--
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/cube.cpp
+include/cube.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/cube.h
 cmath
 -
 

@@ -21,15 +21,15 @@ public:
 //    Point pointOnLight(const double &u, const double &v) const;
 //    float intensityAt(const Point &point, const World &world);
 
-    Color intensity;
-    Point position;
+    Color intensity_;
+    Point position_;
 
-    Point corner;
-    Vector uVec;
-    int uSteps;
-    Vector vVec;
-    int vSteps;
-    int samples;
+    Point corner_;
+    Vector uVec_;
+    int uSteps_;
+    Vector vVec_;
+    int vSteps_;
+    int samples_;
 
     bool operator==(const Light &rhs) const;
     bool operator!=(const Light &rhs) const;

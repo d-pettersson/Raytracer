@@ -1,8 +1,8 @@
-# Googletest Samples {#samples}
+# Googletest Samples {#samples_}
 
 If you're like us, you'd like to look at
-[googletest samples.](https://github.com/google/googletest/tree/master/googletest/samples)
-The sample directory has a number of well-commented samples showing how to use a
+[googletest samples_.](https://github.com/google/googletest/tree/master/googletest/samples_)
+The sample directory has a number of well-commented samples_ showing how to use a
 variety of googletest features.
 
 *   Sample #1 shows the basic steps of using googletest to test C++ functions.

@@ -12,7 +12,7 @@ Pkg-config is a standardised plain-text format containing
 
 All current build systems support pkg-config in one way or another. For all
 examples here we assume you want to compile the sample
-`samples/sample3_unittest.cc`.
+`samples_/sample3_unittest.cc`.
 
 ### CMake
 
@@ -27,7 +27,7 @@ project(my_gtest_pkgconfig VERSION 0.0.1 LANGUAGES CXX)
 find_package(PkgConfig)
 pkg_search_module(GTEST REQUIRED gtest_main)
 
-add_executable(testapp samples/sample3_unittest.cc)
+add_executable(testapp samples_/sample3_unittest.cc)
 target_link_libraries(testapp ${GTEST_LDFLAGS})
 target_compile_options(testapp PUBLIC ${GTEST_CFLAGS})
 
@@ -54,7 +54,7 @@ In your `configure.ac`:
 ```
 AC_PREREQ([2.69])
 AC_INIT([my_gtest_pkgconfig], [0.0.1])
-AC_CONFIG_SRCDIR([samples/sample3_unittest.cc])
+AC_CONFIG_SRCDIR([samples_/sample3_unittest.cc])
 AC_PROG_CXX
 
 PKG_CHECK_MODULES([GTEST], [gtest_main])
@@ -70,7 +70,7 @@ and in your `Makefile.am`:
 check_PROGRAMS = testapp
 TESTS = $(check_PROGRAMS)
 
-testapp_SOURCES = samples/sample3_unittest.cc
+testapp_SOURCES = samples_/sample3_unittest.cc
 testapp_CXXFLAGS = $(GTEST_CFLAGS)
 testapp_LDADD = $(GTEST_LIBS)
 ```
@@ -86,7 +86,7 @@ gtest_dep = dependency('gtest_main')
 
 testapp = executable(
   'testapp',
-  files(['samples/sample3_unittest.cc']),
+  files(['samples_/sample3_unittest.cc']),
   dependencies : gtest_dep,
   install : false)
 
@@ -112,7 +112,7 @@ all: testapp
 testapp: testapp.o
   $(CXX) $(CXXFLAGS) $(LDFLAGS) $< -o $@ $(GTEST_LIBS)
 
-testapp.o: samples/sample3_unittest.cc
+testapp.o: samples_/sample3_unittest.cc
   $(CXX) $(CPPFLAGS) $(CXXFLAGS) $< -c -o $@ $(GTEST_CFLAGS)
 ```
 

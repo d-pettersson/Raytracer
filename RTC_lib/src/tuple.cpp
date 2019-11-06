@@ -182,6 +182,10 @@ Point operator-(const Point& p1, const Vector& v2) {
     return {p1.x_ - v2.x_, p1.y_ - v2.y_, p1.z_ - v2.z_};
 }
 
+Point operator-(const Point& p1, const double &scalar) {
+    return {scalar - p1.x_, scalar - p1.y_, scalar - p1.z_};
+}
+
 Vector operator-(const Point& p1, const Point& p2) {
     return {p1.x_ - p2.x_, p1.y_ - p2.y_, p1.z_ - p2.z_};
 }

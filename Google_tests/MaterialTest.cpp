@@ -37,7 +37,7 @@ protected:
     raytracer::Vector * normal;
     raytracer::Light * light;
     raytracer::Color * result;
-    float intensity = false;
+    bool intensity = false;
     raytracer::World * world;
     std::shared_ptr<raytracer::Shape> shape = std::make_shared<raytracer::Sphere>();
     std::shared_ptr<raytracer::Pattern> pattern;
@@ -110,29 +110,29 @@ TEST_F(MaterialFixture, LightingSurfaceShadow) {
 
 //TEST_F(MaterialFixture, LightIntensityShadow) {
 //    world->defaultWorld();
-//    world->light = raytracer::Light(raytracer::Point(0, 0, -10), raytracer::Color(1, 1, 1));
-//    world->shapes[0]->material.ambient = 0.1;
-//    world->shapes[0]->material.diffuse = 0.9;
-//    world->shapes[0]->material.specular = 0;
-//    world->shapes[0]->material.color = raytracer::Color(1, 1, 1);
+//    world->light_ = raytracer::Light(raytracer::Point(0, 0, -10), raytracer::Color(1, 1, 1));
+//    world->shapes_[0]->material.ambient = 0.1;
+//    world->shapes_[0]->material.diffuse = 0.9;
+//    world->shapes_[0]->material.specular = 0;
+//    world->shapes_[0]->material.color = raytracer::Color(1, 1, 1);
 //    raytracer::Point point = raytracer::Point(0, 0, -1);
 //    raytracer::Vector eye = raytracer::Vector(0, 0, -1);
 //    raytracer::Vector normal = raytracer::Vector(0, 0, -1);
-//    * result = world->shapes[0]->material.setPhongLighting(shape, world->light, point, eye, normal, 1.0);
+//    * result = world->shapes_[0]->material.setPhongLighting(shape, world->light_, point, eye, normal, 1.0);
 //    ASSERT_EQ(raytracer::Color(1, 1, 1), * result);
-//    * result = world->shapes[0]->material.setPhongLighting(shape, world->light, point, eye, normal, 0.5);
+//    * result = world->shapes_[0]->material.setPhongLighting(shape, world->light_, point, eye, normal, 0.5);
 //    ASSERT_EQ(raytracer::Color(0.55, 0.55, 0.55), * result);
-//    * result = world->shapes[0]->material.setPhongLighting(shape, world->light, point, eye, normal, 0.0);
+//    * result = world->shapes_[0]->material.setPhongLighting(shape, world->light_, point, eye, normal, 0.0);
 //    ASSERT_EQ(raytracer::Color(0.1, 0.1, 0.1), * result);
 //}
 
 // this test doesn't work as the sampled points for the shadows != sampled points for the lighting
 
 //TEST_F(MaterialFixture, NewPhongLighting) {
-//    auto * corner = new raytracer::Point(-0.5, -0.5, -5);
+//    auto * corner_ = new raytracer::Point(-0.5, -0.5, -5);
 //    auto * v1 = new raytracer::Vector(1, 0, 0);
 //    auto * v2 = new raytracer::Vector(0, 1, 0);
-//    light->setAreaLight(* corner, * v1, 2, * v2, 2, raytracer::Color(1, 1, 1));
+//    light_->setAreaLight(* corner_, * v1, 2, * v2, 2, raytracer::Color(1, 1, 1));
 //    shape->material.ambient = 0.1;
 //    shape->material.diffuse = 0.9;
 //    shape->material.specular = 0;
@@ -142,13 +142,13 @@ TEST_F(MaterialFixture, LightingSurfaceShadow) {
 //    raytracer::Vector eyev = normalize(* eye - * pt);
 //    raytracer::Vector normalv = raytracer::Vector(pt->x_, pt->y_, pt->z_);
 //
-//    * result = shape->material.setPhongLighting(shape, * light, * pt, eyev, normalv, 1.0);
+//    * result = shape->material.setPhongLighting(shape, * light_, * pt, eyev, normalv, 1.0);
 //    EXPECT_EQ(raytracer::Color(0.9965, 0.9965, 0.9965), * result);
 //
 //    * pt = raytracer::Point(0, 0.7071, -0.7071);
 //    eyev = normalize(* eye - * pt);
 //    normalv = raytracer::Vector(pt->x_, pt->y_, pt->z_);
-//    * result = shape->material.setPhongLighting(shape, * light, * pt, eyev, normalv, 1.0);
+//    * result = shape->material.setPhongLighting(shape, * light_, * pt, eyev, normalv, 1.0);
 //    ASSERT_EQ(raytracer::Color(0.6232, 0.6232, 0.6232), * result);
 //}
 

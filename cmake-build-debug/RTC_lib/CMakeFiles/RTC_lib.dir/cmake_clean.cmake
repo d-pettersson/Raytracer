@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/RTC_lib.dir/src/camera.cpp.o"
   "CMakeFiles/RTC_lib.dir/src/canvas.cpp.o"
+  "CMakeFiles/RTC_lib.dir/src/cube.cpp.o"
   "CMakeFiles/RTC_lib.dir/src/intersection.cpp.o"
   "CMakeFiles/RTC_lib.dir/src/light.cpp.o"
   "CMakeFiles/RTC_lib.dir/src/material.cpp.o"

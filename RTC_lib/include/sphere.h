@@ -16,6 +16,7 @@ class Sphere : public Shape {
     };
 
     bool operator==(const Sphere& s1, const Sphere& s2);
+    bool operator!=(const Sphere& s1, const Sphere& s2);
 }
 
 #endif //RTC_SPHERE_H

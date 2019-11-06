@@ -4,6 +4,7 @@
 
 #include <utility>
 #include <algorithm>
+#include <cmath>
 
 namespace raytracer {
 
@@ -109,4 +110,22 @@ bool Intersection::operator!=(const Intersection &rhs) const {
 }
 
 
+double IntersectionData::schlick() const {
+    auto cos = dot(this->eye, this->normal);
+
+    if (this->n1 > this->n2) {
+        auto n = this->n1 / this->n2;
+        auto sin2T = pow(n, 2) * (1.0 - pow(cos, 2));
+
+        if (sin2T > 1.0) {
+            return 1.0;
+        }
+
+        auto cosT = sqrt(1.0 - sin2T);
+        cos = cosT;
+    }
+    auto r0 = pow((this->n1 - this->n2) / (this->n1 + this->n2), 2);
+
+    return r0 + (1 - r0) * pow((1 - cos), 5);
+}
 } // namespace raytracer

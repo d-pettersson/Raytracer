@@ -136,7 +136,7 @@ TEST_F(IntersectionFixture, Hit4) {
 //
 //TEST_F(IntersectionFixture, PointOffset) {
 //    * ray = raytracer::Ray(raytracer::Point(0, 0, -5), raytracer::Vector(0, 0, 1));
-//    sphere->setTransform(transform->translate(0, 0, 1));
+//    sphere->setTransform(transform_->translate(0, 0, 1));
 //    * intersection = raytracer::Intersection(5, sphere);
 //    raytracer::IntersectionData intersectionData = intersection->prepareComputations(* ray);
 //    ASSERT_TRUE(intersectionData.overPoint.z_ < -EPSILON / 2);
@@ -206,15 +206,48 @@ TEST_F(IntersectionFixture, FindingN1N2VariousIntersections) {
 
 TEST_F(IntersectionFixture, UnderPointOffset) {
     * ray = raytracer::Ray(raytracer::Point(0, 0, -5), raytracer::Vector(0, 0, 1));
-    auto sphere = std::make_shared<raytracer::Sphere>();
     sphere->createGlass();
     transform->translate(0, 0, 1);
     sphere->setTransform(* transform);
     * intersection = raytracer::Intersection(5, sphere);
-    auto xs = intersections(* intersection);
-    * intersectionData = intersection->prepareComputations(* ray, xs);
+    * xs = intersections(* intersection);
+    * intersectionData = intersection->prepareComputations(* ray, * xs);
     EXPECT_TRUE(intersectionData->underPoint.z_ > EPSILON / 2);
     ASSERT_TRUE(intersectionData->point.z_ < intersectionData->underPoint.z_);
+}
+
+TEST_F(IntersectionFixture, SchlickApproximationUnderTotalInternalReflection) {
+    sphere->createGlass();
+    * ray = raytracer::Ray(raytracer::Point(0, 0, sqrt(2)/2), raytracer::Vector(0, 1, 0));
+    * intersection = raytracer::Intersection(-sqrt(2)/2, sphere);
+    * intersection2 = raytracer::Intersection(sqrt(2)/2, sphere);
+    * xs = intersections(* intersection, * intersection2);
+    * intersectionData = intersection2->prepareComputations(* ray, * xs);
+    auto reflectance = intersectionData->schlick();
+    ASSERT_EQ(1.0, reflectance);
+}
+
+TEST_F(IntersectionFixture, SchlickApproximationWithPerpendicularViewAngle) {
+    sphere->createGlass();
+    * ray = raytracer::Ray(raytracer::Point(0, 0, 0), raytracer::Vector(0, 1, 0));
+    * intersection = raytracer::Intersection(-1, sphere);
+    * intersection2 = raytracer::Intersection(1, sphere);
+    * xs = intersections(* intersection, * intersection2);
+    * intersectionData = intersection2->prepareComputations(* ray, * xs);
+    auto reflectance = intersectionData->schlick();
+    ASSERT_FLOAT_EQ(0.04, reflectance);
+}
+
+// Test is failing due to floating point precision (0.48873001 != 0.48873082)
+
+TEST_F(IntersectionFixture, SchlickApproximationWithSmallAngle) {
+    sphere->createGlass();
+    * ray = raytracer::Ray(raytracer::Point(0, 0.99, -2), raytracer::Vector(0, 0, 1));
+    * intersection = raytracer::Intersection(1.8589, sphere);
+    * xs = intersections(* intersection);
+    * intersectionData = intersection->prepareComputations(* ray, * xs);
+    auto reflectance = intersectionData->schlick();
+    ASSERT_FLOAT_EQ(0.48873, reflectance);
 }
 
 

@@ -960,7 +960,7 @@ bool MatchRegexAnywhere(const char* regex, const char* str) {
 // Implements the RE class.
 
 RE::~RE() {
-  free(const_cast<char*>(pattern_));
+  free(const_cast<char*>(pattern));
   free(const_cast<char*>(full_pattern_));
 }
 
@@ -972,14 +972,14 @@ bool RE::FullMatch(const char* str, const RE& re) {
 // Returns true if regular expression re matches a substring of str
 // (including str itself).
 bool RE::PartialMatch(const char* str, const RE& re) {
-  return re.is_valid_ && MatchRegexAnywhere(re.pattern_, str);
+  return re.is_valid_ && MatchRegexAnywhere(re.pattern, str);
 }
 
 // Initializes an RE from its string representation.
 void RE::Init(const char* regex) {
-  pattern_ = full_pattern_ = nullptr;
+  pattern = full_pattern_ = nullptr;
   if (regex != nullptr) {
-    pattern_ = posix::StrDup(regex);
+    pattern = posix::StrDup(regex);
   }
 
   is_valid_ = ValidateRegex(regex);

@@ -28,7 +28,7 @@ with:
     cd mybuild
     cmake ${GTEST_DIR}  # Generate native build scripts.
 
-If you want to build Google Test's samples, you should replace the last command
+If you want to build Google Test's samples_, you should replace the last command
 with
 
     cmake -Dgtest_build_samples=ON ${GTEST_DIR}

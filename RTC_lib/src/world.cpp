@@ -5,12 +5,12 @@
 
 namespace raytracer {
 World::World()
-    : light(Light()), shapes(std::vector<std::shared_ptr<Shape> >())
+    : light_(Light()), shapes_(std::vector<std::shared_ptr<Shape> >())
 {
 }
 
 void World::intersectWorld(const raytracer::Ray &ray, std::vector<Intersection> * xs) const {
-    for (const auto& shape : shapes) {
+    for (const auto& shape : shapes_) {
         shape->intersect(ray, * xs);
     }
     std::sort(xs->begin(), xs->end());
@@ -18,16 +18,19 @@ void World::intersectWorld(const raytracer::Ray &ray, std::vector<Intersection> 
 
 Color World::shadeHit(const IntersectionData &comps, int remaining) {
     bool shadowed = this->isShadowed(comps.overPoint);
-//    float shadowed = this->light.intensityAt(comps.overPoint, * this); // area light related
+//    float shadowed = this->light_.intensityAt(comps.overPoint, * this); // area light_ related
 
-    return comps.object->material.setPhongLighting(comps.object,
-                                                   this->light,
-                                                   comps.overPoint,
-                                                   comps.eye,
-                                                   comps.normal,
-                                                   shadowed)
-                                                   + this->reflectedColor(comps, remaining)
-                                                   + this->refractedColor(comps, remaining);
+    auto surface = comps.object->material.setPhongLighting(comps.object, this->light_, comps.overPoint, comps.eye, comps.normal, shadowed);
+    auto reflected = this->reflectedColor(comps, remaining);
+    auto refracted = this->refractedColor(comps, remaining);
+
+    auto material = comps.object->material;
+    if (material.reflection > 0 && material.transparency > 0) {
+        auto reflectance = comps.schlick();
+        return surface + reflected * reflectance + refracted * (1 - reflectance);
+    } else {
+        return surface + reflected + refracted;
+    }
 }
 
 Color World::colorAt(const Ray &ray, int remaining) {
@@ -39,28 +42,28 @@ Color World::colorAt(const Ray &ray, int remaining) {
         return Color(0, 0, 0);
     }
     Color output = this->shadeHit(intersection.prepareComputations(ray, * xs), remaining);
-    
+
     delete xs;
-    
+
     return output;
 }
 
 void World::addObject(const std::shared_ptr<Shape> &shape) {
-    shapes.emplace_back(shape);
+    shapes_.emplace_back(shape);
 }
 
 void World::defaultWorld() {
-    this->light = Light(Point(-10.0, 10.0, -10.0), Color(1, 1, 1));
+    this->light_ = Light(Point(-10.0, 10.0, -10.0), Color(1, 1, 1));
 
-    this->shapes = std::vector<std::shared_ptr<Shape> >{2};
-    shapes[0] = std::make_shared<Sphere>();
-    shapes[1] = std::make_shared<Sphere>();
+    this->shapes_ = std::vector<std::shared_ptr<Shape> >{2};
+    shapes_[0] = std::make_shared<Sphere>();
+    shapes_[1] = std::make_shared<Sphere>();
 
-    shapes[0]->material.color = Color(0.8, 1.0, 0.6);
-    shapes[0]->material.diffuse = 0.7;
-    shapes[0]->material.specular = 0.2;
+    shapes_[0]->material.color = Color(0.8, 1.0, 0.6);
+    shapes_[0]->material.diffuse = 0.7;
+    shapes_[0]->material.specular = 0.2;
 
-    shapes[1]->setTransform(transform.scale(0.5, 0.5, 0.5));
+    shapes_[1]->setTransform(transform_.scale(0.5, 0.5, 0.5));
 }
 
 //bool World::isShadowed(const Point &lightPosition, const Point &point) const {
@@ -78,7 +81,7 @@ void World::defaultWorld() {
 //}
 
 bool World::isShadowed(const Point &point) const {
-    auto vector = this->light.position - point;
+    auto vector = this->light_.position_ - point;
     auto distance = magnitude(vector);
     auto direction = normalize(vector);
 
@@ -86,9 +89,11 @@ bool World::isShadowed(const Point &point) const {
     auto * xs = new std::vector<Intersection>();
     intersectWorld(ray, xs);
     std::unique_ptr<Intersection> h(new Intersection());
-//    auto * h = new Intersection();
+
     * h = hit(* xs);
+
     delete xs;
+
     return h->getObject() != nullptr && h->getDistance() < distance;
 }
 

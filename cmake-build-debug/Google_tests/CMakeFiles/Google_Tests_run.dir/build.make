@@ -135,9 +135,22 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.s"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/SphereTest.cpp" -o CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.s
 
+Google_tests/CMakeFiles/Google_Tests_run.dir/CubeTest.cpp.o: Google_tests/CMakeFiles/Google_Tests_run.dir/flags.make
+Google_tests/CMakeFiles/Google_Tests_run.dir/CubeTest.cpp.o: ../Google_tests/CubeTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/CubeTest.cpp.o"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Google_Tests_run.dir/CubeTest.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/CubeTest.cpp"
+
+Google_tests/CMakeFiles/Google_Tests_run.dir/CubeTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Google_Tests_run.dir/CubeTest.cpp.i"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/CubeTest.cpp" > CMakeFiles/Google_Tests_run.dir/CubeTest.cpp.i
+
+Google_tests/CMakeFiles/Google_Tests_run.dir/CubeTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Google_Tests_run.dir/CubeTest.cpp.s"
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/CubeTest.cpp" -o CMakeFiles/Google_Tests_run.dir/CubeTest.cpp.s
+
 Google_tests/CMakeFiles/Google_Tests_run.dir/LightTest.cpp.o: Google_tests/CMakeFiles/Google_Tests_run.dir/flags.make
 Google_tests/CMakeFiles/Google_Tests_run.dir/LightTest.cpp.o: ../Google_tests/LightTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/LightTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/LightTest.cpp.o"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Google_Tests_run.dir/LightTest.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/LightTest.cpp"
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/LightTest.cpp.i: cmake_force
@@ -150,7 +163,7 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/LightTest.cpp.s: cmake_force
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.o: Google_tests/CMakeFiles/Google_Tests_run.dir/flags.make
 Google_tests/CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.o: ../Google_tests/MaterialTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.o"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/MaterialTest.cpp"
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.i: cmake_force
@@ -163,7 +176,7 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.s: cmake_force
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o: Google_tests/CMakeFiles/Google_Tests_run.dir/flags.make
 Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o: ../Google_tests/WorldTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/WorldTest.cpp"
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.i: cmake_force
@@ -176,7 +189,7 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.s: cmake_force
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/CameraTest.cpp.o: Google_tests/CMakeFiles/Google_Tests_run.dir/flags.make
 Google_tests/CMakeFiles/Google_Tests_run.dir/CameraTest.cpp.o: ../Google_tests/CameraTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/CameraTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/CameraTest.cpp.o"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Google_Tests_run.dir/CameraTest.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/CameraTest.cpp"
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/CameraTest.cpp.i: cmake_force
@@ -189,7 +202,7 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/CameraTest.cpp.s: cmake_force
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o: Google_tests/CMakeFiles/Google_Tests_run.dir/flags.make
 Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o: ../Google_tests/CanvasTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/CanvasTest.cpp"
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.i: cmake_force
@@ -202,7 +215,7 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.s: cmake_force
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/PlaneTest.cpp.o: Google_tests/CMakeFiles/Google_Tests_run.dir/flags.make
 Google_tests/CMakeFiles/Google_Tests_run.dir/PlaneTest.cpp.o: ../Google_tests/PlaneTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/PlaneTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/PlaneTest.cpp.o"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Google_Tests_run.dir/PlaneTest.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/PlaneTest.cpp"
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/PlaneTest.cpp.i: cmake_force
@@ -215,7 +228,7 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/PlaneTest.cpp.s: cmake_force
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/PatternTest.cpp.o: Google_tests/CMakeFiles/Google_Tests_run.dir/flags.make
 Google_tests/CMakeFiles/Google_Tests_run.dir/PatternTest.cpp.o: ../Google_tests/PatternTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/PatternTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object Google_tests/CMakeFiles/Google_Tests_run.dir/PatternTest.cpp.o"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && /usr/local/Cellar/gcc/8.2.0/bin/c++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Google_Tests_run.dir/PatternTest.cpp.o -c "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/PatternTest.cpp"
 
 Google_tests/CMakeFiles/Google_Tests_run.dir/PatternTest.cpp.i: cmake_force
@@ -234,6 +247,7 @@ Google_Tests_run_OBJECTS = \
 "CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o" \
 "CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o" \
 "CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.o" \
+"CMakeFiles/Google_Tests_run.dir/CubeTest.cpp.o" \
 "CMakeFiles/Google_Tests_run.dir/LightTest.cpp.o" \
 "CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.o" \
 "CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o" \
@@ -251,6 +265,7 @@ Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/RayT
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.o
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.o
+Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/CubeTest.cpp.o
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/LightTest.cpp.o
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.o
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o
@@ -264,7 +279,7 @@ Google_tests/Google_Tests_run: lib/libgtestd.a
 Google_tests/Google_Tests_run: lib/libgtest_maind.a
 Google_tests/Google_Tests_run: lib/libgtestd.a
 Google_tests/Google_Tests_run: Google_tests/CMakeFiles/Google_Tests_run.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable Google_Tests_run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable Google_Tests_run"
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug/Google_tests" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Google_Tests_run.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

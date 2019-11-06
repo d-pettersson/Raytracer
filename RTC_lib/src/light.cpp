@@ -7,47 +7,47 @@
 
 namespace raytracer {
 Light::Light(Point position, Color intensity)
-    : position(std::move(position)), intensity(std::move(intensity)), uSteps(1), vSteps(1), samples(1)
+    : position_(std::move(position)), intensity_(std::move(intensity)), uSteps_(1), vSteps_(1), samples_(1)
 {
 }
 
 Light::Light()
-    : uSteps(1), vSteps(1), samples(1)
+    : uSteps_(1), vSteps_(1), samples_(1)
 {
 }
 
-void Light::setPointLight(const Point &pos, const Color &intens) {
-    this->position = pos;
-    this->intensity = intens;
+void Light::setPointLight(const Point &position, const Color &intensity) {
+    this->position_ = position;
+    this->intensity_ = intensity;
 }
 
-/* Area light related
-void Light::setPointLight(const raytracer::Point &pos, const raytracer::Color &intens) {
-    this->setAreaLight(pos, Vector(1, 0, 0), 1, Vector(0, 1, 0), 1, intens);
+/* Area light_ related
+void Light::setPointLight(const raytracer::Point &position, const raytracer::Color &intensity) {
+    this->setAreaLight(position, Vector(1, 0, 0), 1, Vector(0, 1, 0), 1, intensity);
 }
 
 
-void Light::setAreaLight(const Point &corn, const Vector &fullUVec, const int &uSt, const Vector &fullVVec, const int &vSt, const Color &intens) {
-    this->corner = corn;
-    this->uSteps = uSt;
-    this->vSteps = vSt;
-    this->uVec = fullUVec / uSt;
-    this->vVec = fullVVec / vSt;
-    this->samples = uSteps * vSteps;
-    this->intensity = intens;
-    this->position = raytracer::Point(1, 0, 0.5);
+void Light::setAreaLight(const Point &corn, const Vector &fullUVec, const int &uSt, const Vector &fullVVec, const int &vSt, const Color &intensity) {
+    this->corner_ = corn;
+    this->uSteps_ = uSt;
+    this->vSteps_ = vSt;
+    this->uVec_ = fullUVec / uSt;
+    this->vVec_ = fullVVec / vSt;
+    this->samples_ = uSteps_ * vSteps_;
+    this->intensity_ = intensity;
+    this->position_ = Point(1, 0, 0.5);
 }
 
 float Light::intensityAt(const Point &point, const World &world) {
     float total = 0.0;
-    for (int v = 0; v < this->vSteps; v++) {
-        for (int u = 0; u < this->uSteps; u++) {
+    for (int v = 0; v < this->vSteps_; v++) {
+        for (int u = 0; u < this->uSteps_; u++) {
             if (!world.isShadowed(this->pointOnLight(u, v), point)) {
                 total++;
             }
         }
     }
-    return total / (float)this->samples;
+    return total / (float)this->samples_;
 }
 
 Point Light::pointOnLight(const double &u, const double &v) const {
@@ -55,13 +55,13 @@ Point Light::pointOnLight(const double &u, const double &v) const {
     std::mt19937 rng(dev());
     std::uniform_int_distribution<std::mt19937::result_type> dist(0,10);
 
-    return this->corner + this->uVec * (u + (double)dist(rng) * 0.1) + this->vVec * (v + (double)dist(rng) * 0.1);;
+    return this->corner_ + this->uVec_ * (u + (double)dist(rng) * 0.1) + this->vVec_ * (v + (double)dist(rng) * 0.1);;
 }
 */
 
 bool Light::operator==(const Light &rhs) const {
-    return intensity == rhs.intensity &&
-           position == rhs.position;
+    return intensity_ == rhs.intensity_ &&
+           position_ == rhs.position_;
 }
 
 bool Light::operator!=(const Light &rhs) const {

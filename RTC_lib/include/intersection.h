@@ -21,9 +21,10 @@ struct IntersectionData {
     Vector normal;
     Vector reflect;
     bool inside;
-    bool inShadow = false;
     double n1;
     double n2;
+
+    double schlick() const;
 };
 
 class Intersection {

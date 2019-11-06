@@ -25,9 +25,11 @@ Canvas::Canvas()
 
 Color Canvas::scaleColor(const Color &color, const int &colorDepth) {
     auto * outputCol = new Color();
+    
     outputCol->r_ = std::clamp((int) ceil(color.r_ * colorDepth), 0, colorDepth);
     outputCol->g_ = std::clamp((int) ceil(color.g_ * colorDepth), 0, colorDepth);
     outputCol->b_ = std::clamp((int) ceil(color.b_ * colorDepth), 0, colorDepth);
+    
     return * outputCol;
 }
 
@@ -51,6 +53,7 @@ Color Canvas::pixelAt(const int& x, const int& y) const {
     if (x < 0 || y < 0) {
         std::cerr << "x_ and y_ have to be positive";
     }
+    
     return this->colors[x][y];
 }
 
@@ -106,7 +109,7 @@ void Canvas::saveToFile() {
     for (size_t py = 0; py < this->height; py++) {
         first ? os << "" : os << '\n';
         counter = 0;
-        for (int px = 0; px < this->width; px++) {
+        for (size_t px = 0; px < this->width; px++) {
             pixelVal = this->pixelAt(px, py);
             for (int rgb = 0; rgb < 3; rgb++) {
                 counter += 4;
@@ -132,6 +135,7 @@ std::ostream& operator<<(std::ostream& out, const Canvas& canvas) {
         }
         out << '\n';
     }
+    
     return out;
 }
 

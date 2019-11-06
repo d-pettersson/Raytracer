@@ -574,7 +574,7 @@ class RefMatcher<T&> {
 
   template <typename Super>
   operator Matcher<Super&>() const {
-    // By passing object_ (type T&) to Impl(), which expects a Super&,
+    // By passing object (type T&) to Impl(), which expects a Super&,
     // we make sure that Super is a super type of T.  In particular,
     // this catches using Ref(const_value) as a matcher for a
     // non-const reference, as you cannot implicitly convert a const
