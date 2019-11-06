@@ -16,30 +16,6 @@ Tuple::Tuple()
 
 //----------------------------------------------------------------
 
-Point::Point(double x, double y, double z)
-    : Tuple{x, y, z, 1.0}
-{
-}
-
-Point::Point()
-    : Tuple()
-{
-}
-
-//----------------------------------------------------------------
-
-Vector::Vector(double x, double y, double z)
-    : Tuple{x, y, z, 0.0}
-{
-}
-
-Vector::Vector()
-    : Tuple()
-{
-}
-
-//----------------------------------------------------------------
-
 Color::Color(double r, double g, double b)
     : Tuple(r, g, b, 0.0), r_(x_), g_(y_), b_(z_)
 {
@@ -88,6 +64,10 @@ bool Tuple::isVector() {
     return w_ == 0.0;
 }
 
+Tuple Tuple::operator-() {
+    return {-x_, -y_, -z_, -w_};
+}
+
 Tuple createPoint(const double &x, const double &y, const double &z) {
     return {x, y, z, 1.0};
 }
@@ -96,12 +76,12 @@ Tuple createVector(const double &x, const double &y, const double &z) {
     return {x, y, z, 0.0};
 }
 
-Tuple normalize(const Tuple &t1) {
-    return {t1.x_ / magnitude(t1), t1.y_ / magnitude(t1), t1.z_ / magnitude(t1), t1.w_ / magnitude(t1)};
+Tuple createColor(const double &r, const double &g, const double &b) {
+    return {r, g, b, 0.0};
 }
 
-Vector normalize(const Vector &v1) {
-    return {v1.x_ / magnitude(v1), v1.y_ / magnitude(v1), v1.z_ / magnitude(v1)};
+Tuple normalize(const Tuple &t1) {
+    return {t1.x_ / magnitude(t1), t1.y_ / magnitude(t1), t1.z_ / magnitude(t1), t1.w_ / magnitude(t1)};
 }
 
 Tuple abs(const Tuple &t1) {
@@ -124,111 +104,9 @@ Tuple cross(const Tuple& t1, const Tuple& t2) {
     return result;
 }
 
-Vector cross(const Vector &v1, const Vector &v2) {
-    return raytracer::Vector(v1.y_ * v2.z_ - v1.z_ * v2.y_,
-                             v1.z_ * v2.x_ - v1.x_ * v2.z_,
-                             v1.x_ * v2.y_ - v1.y_ * v2.x_);
-}
-
-
-Vector reflect(const Vector& v, const Vector& n) {
+Tuple reflect(const Tuple &v, const Tuple &n) {
     return v - n * 2 * dot(v, n);
 }
-
-// Point operator
-std::ostream& operator<<(std::ostream& out, const Point& p1) {
-    out << '[' << p1.x_ << ", " << p1.y_ << ", " << p1.z_ << ']';
-    return out;
-}
-
-Point abs(const Point &p) {
-    return {fabs(p.x_), fabs(p.y_), fabs(p.z_)};
-}
-
-bool operator==(const Point &p1, const Point &p2) {
-    auto difference = p1 - p2;
-    return abs(difference) < EPSILON;
-}
-
-bool operator!=(const Point &p1, const Point &p2) {
-    return !(p1 == p2);
-}
-
-Point Point::operator-() {
-    return {-(* this).x_, -(* this).y_, -(* this).z_};
-}
-
-Point operator*(const Point& p1, const Point& p2) {
-    return {p1.x_ * p2.x_, p1.y_ * p2.y_, p1.z_ * p2.z_};
-}
-
-Point operator*(const Point& p1, const Vector& p2) {
-    return {p1.x_ * p2.x_, p1.y_ * p2.y_, p1.z_ * p2.z_};
-}
-
-Point operator*(const Point& p1, const double& scalar) {
-    return {p1.x_ * scalar, p1.y_ * scalar, p1.z_ * scalar};
-}
-
-Point operator+(const Point& p1, const Point& p2) {
-    return {p1.x_ + p2.x_, p1.y_ + p2.y_, p1.z_ + p2.z_};
-}
-
-Point operator+(const Point& p1, const Vector& v2) {
-    return {p1.x_ + v2.x_, p1.y_ + v2.y_, p1.z_ + v2.z_};
-}
-
-Point operator-(const Point& p1, const Vector& v2) {
-    return {p1.x_ - v2.x_, p1.y_ - v2.y_, p1.z_ - v2.z_};
-}
-
-Point operator-(const Point& p1, const double &scalar) {
-    return {scalar - p1.x_, scalar - p1.y_, scalar - p1.z_};
-}
-
-Vector operator-(const Point& p1, const Point& p2) {
-    return {p1.x_ - p2.x_, p1.y_ - p2.y_, p1.z_ - p2.z_};
-}
-
-// Vector operators
-Vector abs(const Vector &v) {
-    return {fabs(v.x_), fabs(v.y_), fabs(v.z_)};
-}
-
-bool operator==(const Vector &v1, const Vector &v2) {
-    auto difference = v1 - v2;
-    return abs(difference) < EPSILON;
-}
-
-bool operator!=(const Vector &v1, const Vector &v2) {
-    return !(v1 == v2);
-}
-
-Vector operator*(const Vector& v1, const double& scalar) {
-    return {v1.x_ * scalar, v1.y_ * scalar, v1.z_ * scalar};
-}
-
-Vector operator+(const Vector &v1, const Vector &v2) {
-    return {v1.x_ + v2.x_, v1.y_ + v2.y_, v1.z_ + v2.z_};
-}
-
-Vector operator-(const Vector& v1, const Vector& v2) {
-    return {v1.x_ - v2.x_, v1.y_ - v2.y_, v1.z_ - v2.z_};
-}
-
-Vector operator-(const Vector& v1) {
-    return {-v1.x_, -v1.y_, -v1.z_};
-}
-
-Vector operator/(const Vector& v1, const double& scalar) {
-    return {v1.x_ / scalar, v1.y_ / scalar, v1.z_ / scalar};
-}
-
-std::ostream& operator<<(std::ostream& out, const Vector& v1) {
-    out << '[' << v1.x_ << ", " << v1.y_ << ", " << v1.z_ << ']';
-    return out;
-}
-
 
 // Tuple operators
 bool operator<(const Tuple& t1, const Tuple& t2) {

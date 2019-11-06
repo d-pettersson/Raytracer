@@ -30,14 +30,14 @@ class Tuple {
         Tuple();
 
         /**
-         * Checks if <code>Tuple</code> is a Point
+         * Checks if <code>Tuple</code> is a point
          *
          * @return bool
          */
         bool isPoint();
 
         /**
-         * Checks if <code>Tuple</code> is a Vector
+         * Checks if <code>Tuple</code> is a vector
          *
          * @return bool
          */
@@ -47,40 +47,9 @@ class Tuple {
 
         double& operator()(size_t index);
         double operator()(size_t index) const;
+        Tuple operator-();
 };
-
-/**
- * The <code>Point</code> class inherits from the <code>Tuple</code> class.
- *
- * @param[in] double x
- * @param[in] double y
- * @param[in] double z
- */
-class Point : virtual public Tuple {
-    public:
-        Point(double x, double y, double z);
-        Point();
-
-        Point operator-();
-};
-
-Point abs(const Point &p);
-
-/**
- * The <code>Vector</code> class inherits from the <code>Tuple</code> class.
- *
- * @param[in] double x
- * @param[in] double y
- * @param[in] double z
- */
-class Vector : virtual public Tuple {
-    public:
-        Vector(double x, double y, double z);
-        Vector();
-};
-
-Vector abs(const Vector &v);
-
+//
 /**
  * The <code>Color</code> class inherits from the <code>Tuple</code> class.
  * Its @param w is hidden from view
@@ -98,24 +67,34 @@ class Color : virtual public Tuple {
 };
 
 /**
- * Creates a <code>Point</code> from coordinates(x, y, z)
+ * Creates a point from coordinates(x, y, z)
  *
  * @param[in] double x
  * @param[in] double y
  * @param[in] double z
- * @return Tuple{x, y, z, 1.0f}
+ * @return Tuple{x, y, z, 1.0}
  */
 Tuple createPoint(const double &x, const double &y, const double &z);
 
 /**
- * Creates a <code>Vector</code> from coordinates(x, y, z)
+ * Creates a vector from coordinates(x, y, z)
  *
  * @param[in] double x
  * @param[in] double y
  * @param[in] double z
- * @return Tuple{x, y, z, 0.0f}
+ * @return Tuple{x, y, z, 0.0}
  */
 Tuple createVector(const double &x, const double &y, const double &z);
+
+/**
+ * Creates a vector from coordinates(x, y, z)
+ *
+ * @param[in] const double &r
+ * @param[in] const double &g
+ * @param[in] const double &b
+ * @return Tuple{x, y, z, 0.0}
+ */
+Tuple createColor(const double &r, const double &g, const double &b);
 
 /**
  * Normalizes the <code>Tuple</code> coordinates
@@ -126,14 +105,6 @@ Tuple createVector(const double &x, const double &y, const double &z);
 Tuple normalize(const Tuple& t1);
 
 /**
- * Normalizes the <code>Vector</code> coordinates
- *
- * @param[in] Vector v1
- * @return Vector
- */
-Vector normalize(const Vector& v1);
-
-    /**
  * Return the absolute value of a <code>Tuples</code>
  *
  * @param[in] Tuple t1
@@ -168,31 +139,13 @@ double dot(const Tuple& t1, const Tuple& t2);
 Tuple cross(const Tuple& t1, const Tuple& t2);
 
 /**
- * Return the cross product of v1 X v2
- *
- * @param[in] Vector v1
- * @param[in] Vector v2
- * @return Vector
- */
-Vector cross(const Vector &v1, const Vector &v2);
-
-/**
  * Return the reflect vector of v
  *
- * @param[in] Vector v
- * @param[in] Vector n
- * @return Vector
+ * @param[in] Tuple v
+ * @param[in] Tuple n
+ * @return Tuple
  */
-Vector reflect(const Vector& v, const Vector& n);
-
-/**
- * Compares two <code>Tuple</code> for equality
- *
- * @param[in] Tuple t1
- * @param[in] Tuple t2
- * @return bool
- */
-bool isEqual(const Tuple& t1, const Tuple& t2);
+Tuple reflect(const Tuple& v, const Tuple& n);
 
 // Tuple operators
 bool operator<(const Tuple& t1, const Tuple& t2);
@@ -208,34 +161,6 @@ Tuple operator*(const Tuple& t1, const Tuple& t2);
 Tuple operator/(const Tuple& t1, const double& scalar);
 
 std::ostream& operator<<(std::ostream& out, const Tuple& t1);
-
-// Point operators
-bool operator==(const Point &p1, const Point &p2);
-bool operator!=(const Point &p1, const Point &p2);
-
-Point operator*(const Point& p1, const Point& p2);
-Point operator*(const Point& p1, const Vector& p2);
-Point operator*(const Point& p1, const double& scalar);
-Point operator+(const Point& p1, const Point& p2);
-Point operator+(const Point& p1, const Vector& p2);
-Point operator-(const Point& p1, const Vector& p2);
-Point operator-(const Point& p1, const double &scalar);
-Vector operator-(const Point& p1, const Point& p2);
-
-std::ostream& operator<<(std::ostream& out, const Point& p1);
-
-// Vector operators
-bool operator==(const Vector &v1, const Vector &v2);
-bool operator!=(const Vector &v1, const Vector &v2);
-
-Vector operator*(const Vector& v1, const double& scalar);
-Vector operator+(const Vector &v1, const Vector &v2);
-Vector operator-(const Vector& v1, const Vector& v2);
-Vector operator-(const Vector& v1);
-Vector operator/(const Vector& v1, const double& scalar);
-
-std::ostream& operator<<(std::ostream& out, const Vector& v1);
-
 
 // Color operators
 bool operator==(const Color& c1, const Color& c2);
