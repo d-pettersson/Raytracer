@@ -58,9 +58,9 @@ class Matrix {
         /**
          * Sets the data inside of <code>Matrix</code>
          *
-         * @param[in] std::vector<data>
+         * @param[in] const std::vector<double> &data
          */
-        void setMatrixData(const std::vector<double>& data);
+        void setMatrixData(const std::vector<double> &data);
 
         /**
          * Compares two <code>Matrix</code> for equality.
@@ -68,15 +68,13 @@ class Matrix {
          * @param[in] Matrix m1
          * @return bool
          */
-        bool isEqual(const Matrix& m1) const;
+        bool isEqual(const Matrix &m) const;
         bool isEmpty() const;
 
-        Matrix operator*(const Matrix& m);
-        raytracer::Tuple operator*(const raytracer::Tuple& t);
-        raytracer::Point operator*(const raytracer::Point& t);
-        raytracer::Vector operator*(const raytracer::Vector& t);
+        Matrix operator*(const Matrix &m);
+        Tuple operator*(const raytracer::Tuple &t);
 
-        Matrix& operator=(const Matrix& m1);
+        Matrix& operator=(const Matrix &m);
 
         double& operator()(size_t row, size_t col);
         double operator()(size_t row, size_t col) const;
@@ -85,9 +83,9 @@ class Matrix {
         double operator[](size_t index) const;
 
 private:
-        size_t rows;
-        size_t cols;
-        std::vector<double> matrixData;
+        size_t rows_;
+        size_t cols_;
+        std::vector<double> data_;
 };
 
 /**

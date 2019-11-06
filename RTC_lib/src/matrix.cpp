@@ -6,45 +6,44 @@
 namespace raytracer {
 
 Matrix::Matrix(size_t r, size_t c)
-    :rows{r}, cols{c}, matrixData(r * c)
+    : rows_{r}, cols_{c}, data_(r * c)
 {
 }
 
 Matrix::Matrix()
-    :rows{0}, cols{0}
+    : rows_{0}, cols_{0}
 {
 }
 
 Matrix::Matrix(const Matrix &copy)
-    :rows{copy.rows}, cols{copy.cols}, matrixData{copy.matrixData}
+    : rows_{copy.rows_}, cols_{copy.cols_}, data_{copy.data_}
 {
 }
 
 int Matrix::getMatrixSize() const {
-    return matrixData.size();
+    return data_.size();
 }
 
 int Matrix::getRowSize() const {
-    return rows;
+    return rows_;
 }
 
 int Matrix::getColSize() const {
-    return cols;
+    return cols_;
 }
 
 std::vector<double> Matrix::getMatrixData() const {
-    return matrixData;
+    return data_;
 }
 
 void Matrix::setMatrixData(const std::vector<double>& data) {
-    matrixData = data;
+    data_ = data;
 }
 
-bool Matrix::isEqual(const Matrix& m2) const {
-    const double epsilon = 0.0001;
+bool Matrix::isEqual(const Matrix& m) const {
     for (int i = 0; i < this->getRowSize(); i++) {
         for (int j = 0; j < this->getColSize(); j++) {
-            if (fabs(matrixData[cols * i + j] - m2(i, j)) > epsilon) {
+            if (fabs(data_[cols_ * i + j] - m(i, j)) > EPSILON) {
                 return false;
             }
         };
@@ -55,7 +54,7 @@ bool Matrix::isEqual(const Matrix& m2) const {
 bool Matrix::isEmpty() const {
     for (int i = 0; i < this->getRowSize(); i++) {
         for (int j = 0; j < this->getColSize(); j++) {
-            if ((*this)(i, j) == 0.0) {
+            if ((* this)(i, j) == 0.0) {
                 return true;
             }
         };
@@ -64,29 +63,29 @@ bool Matrix::isEmpty() const {
 }
 
 double& Matrix::operator()(size_t row, size_t col) {
-    return matrixData[cols * row + col];
+    return data_[cols_ * row + col];
 }
 
 double Matrix::operator()(size_t row, size_t col) const {
-    return matrixData[cols * row + col];
+    return data_[cols_ * row + col];
 }
 
 double& Matrix::operator[](size_t index) {
-    return matrixData[index];
+    return data_[index];
 }
 
 double Matrix::operator[](size_t index) const {
-    return matrixData[index];
+    return data_[index];
 }
 
 Matrix Matrix::operator*(const Matrix& m) {
-    Matrix output = Matrix(rows, cols);
+    Matrix output = Matrix(rows_, cols_);
     for (int i = 0; i < this->getRowSize(); i++) {
         for (int j = 0; j < this->getColSize(); j++) {
-            output(i, j) = matrixData[cols * i] * m(0, j) +
-                           matrixData[cols * i + 1] * m(1, j) +
-                           matrixData[cols * i + 2] * m(2, j) +
-                           matrixData[cols * i + 3] * m(3, j);
+            output(i, j) = data_[cols_ * i] * m(0, j) +
+                           data_[cols_ * i + 1] * m(1, j) +
+                           data_[cols_ * i + 2] * m(2, j) +
+                           data_[cols_ * i + 3] * m(3, j);
         }
     }
     return output;
@@ -95,37 +94,15 @@ Matrix Matrix::operator*(const Matrix& m) {
 Tuple Matrix::operator*(const raytracer::Tuple& t) {
     Tuple output = Tuple();
     for (size_t i = 0; i < this->getRowSize(); i++) {
-        output(i) = matrixData[cols * i] * t.x_ +
-                    matrixData[cols * i + 1] * t.y_ +
-                    matrixData[cols * i + 2] * t.z_ +
-                    matrixData[cols * i + 3] * t.w_;
+        output(i) = data_[cols_ * i] * t.x_ +
+                    data_[cols_ * i + 1] * t.y_ +
+                    data_[cols_ * i + 2] * t.z_ +
+                    data_[cols_ * i + 3] * t.w_;
     }
     return output;
 }
 
-Point Matrix::operator*(const raytracer::Point& t) {
-    Point output = Point();
-    for (size_t i = 0; i < this->getRowSize(); i++) {
-        output(i) = matrixData[cols * i] * t.x_ +
-                    matrixData[cols * i + 1] * t.y_ +
-                    matrixData[cols * i + 2] * t.z_ +
-                    matrixData[cols * i + 3] * t.w_;
-    }
-    return output;
-}
-
-Vector Matrix::operator*(const raytracer::Vector& t) {
-    Vector output = Vector();
-    for (size_t i = 0; i < this->getRowSize(); i++) {
-        output(i) = matrixData[cols * i] * t.x_ +
-                    matrixData[cols * i + 1] * t.y_ +
-                    matrixData[cols * i + 2] * t.z_ +
-                    matrixData[cols * i + 3] * t.w_;
-    }
-    return output;
-}
-
-Matrix& Matrix::operator=(const Matrix& m1) = default;
+Matrix& Matrix::operator=(const Matrix& m) = default;
 
 Matrix transpose(const Matrix& m1) {
     Matrix output(m1.getRowSize(), m1.getColSize());

@@ -302,17 +302,21 @@ acxx_demangle.h
 
 ../RTC_lib/include/constants.h
 
+../RTC_lib/include/matrix.h
+tuple.h
+../RTC_lib/include/tuple.h
+vector
+-
+
 ../RTC_lib/include/tuple.h
 include/constants.h
 ../RTC_lib/include/include/constants.h
 iostream
 -
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TupleTest.cpp
-include/tuple.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/tuple.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/MatrixTest.cpp
+include/matrix.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/matrix.h
 gtest/gtest.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
-cmath
--
 

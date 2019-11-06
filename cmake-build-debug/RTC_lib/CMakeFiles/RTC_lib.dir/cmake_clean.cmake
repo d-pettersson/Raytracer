@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/RTC_lib.dir/src/matrix.cpp.o"
   "CMakeFiles/RTC_lib.dir/src/tuple.cpp.o"
   "libRTC_lib.a"
   "libRTC_lib.pdb"

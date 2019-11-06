@@ -8,15 +8,23 @@
 
 ../RTC_lib/include/constants.h
 
+../RTC_lib/include/matrix.h
+tuple.h
+../RTC_lib/include/tuple.h
+vector
+-
+
 ../RTC_lib/include/tuple.h
 include/constants.h
 ../RTC_lib/include/include/constants.h
 iostream
 -
 
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/tuple.cpp
-include/tuple.h
-/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/tuple.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/matrix.cpp
+include/matrix.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/matrix.h
+iostream
+-
 cmath
 -
 

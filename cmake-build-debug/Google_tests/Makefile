@@ -171,6 +171,33 @@ Google_Tests_run/fast:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/build
 .PHONY : Google_Tests_run/fast
 
+MatrixTest.o: MatrixTest.cpp.o
+
+.PHONY : MatrixTest.o
+
+# target to build an object file
+MatrixTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/MatrixTest.cpp.o
+.PHONY : MatrixTest.cpp.o
+
+MatrixTest.i: MatrixTest.cpp.i
+
+.PHONY : MatrixTest.i
+
+# target to preprocess a source file
+MatrixTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/MatrixTest.cpp.i
+.PHONY : MatrixTest.cpp.i
+
+MatrixTest.s: MatrixTest.cpp.s
+
+.PHONY : MatrixTest.s
+
+# target to generate assembly for a file
+MatrixTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/MatrixTest.cpp.s
+.PHONY : MatrixTest.cpp.s
+
 TupleTest.o: TupleTest.cpp.o
 
 .PHONY : TupleTest.o
@@ -211,6 +238,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Google_Tests_run"
+	@echo "... MatrixTest.o"
+	@echo "... MatrixTest.i"
+	@echo "... MatrixTest.s"
 	@echo "... TupleTest.o"
 	@echo "... TupleTest.i"
 	@echo "... TupleTest.s"
