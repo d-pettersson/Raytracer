@@ -43,7 +43,7 @@ class Tuple {
          */
         bool isVector();
 
-        double x_, y_, z_, w_;
+        double x, y, z, w;
 
         double& operator()(size_t index);
         double operator()(size_t index) const;
@@ -63,7 +63,7 @@ class Color : virtual public Tuple {
         Color(double r, double g, double b);
         Color();
 
-        double r_, g_, b_;
+        double r, g, b;
 };
 
 /**

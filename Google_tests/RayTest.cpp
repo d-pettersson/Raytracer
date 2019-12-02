@@ -83,7 +83,7 @@ TEST_F(RayFixture, Intersection2) {
     sphere->intersect(* ray, * xs);
     EXPECT_EQ(2, xs->size());
     EXPECT_EQ(5.0, xs[0][0].getDistance());
-    ASSERT_EQ(5.0, xs[1][0].getDistance());
+    ASSERT_EQ(5.0, xs[0][1].getDistance());
 }
 
 TEST_F(RayFixture, Intersection3) {

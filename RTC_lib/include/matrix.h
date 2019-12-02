@@ -17,7 +17,7 @@ namespace raytracer {
 class Matrix {
     public:
         /**
-         * Returns a <code>Matrix</code> object from the components
+         * Create a <code>Matrix</code> object from the components
          *
          * @param[in] int rows
          * @param[in] int cols
@@ -49,14 +49,14 @@ class Matrix {
         int getColSize() const;
 
         /**
-         * Return the data inside of <code>Matrix</code>
+         * Return data member of <code>Matrix</code>
          *
          * @return std::vector<double>
          */
         std::vector<double> getMatrixData() const;
 
         /**
-         * Sets the data inside of <code>Matrix</code>
+         * Set data member of <code>Matrix</code>
          *
          * @param[in] const std::vector<double> &data
          */
@@ -65,7 +65,7 @@ class Matrix {
         /**
          * Compares two <code>Matrix</code> for equality.
          *
-         * @param[in] Matrix m1
+         * @param[in] const Matrix& m1
          * @return bool
          */
         bool isEqual(const Matrix &m) const;
@@ -91,7 +91,7 @@ private:
 /**
  * Returns the transpose of <code>Matrix</code>
  *
- * @param[in] Matrix m1
+ * @param[in] const Matrix& m1
  * @return Matrix
  */
 Matrix transpose(const Matrix& m1);
@@ -99,7 +99,7 @@ Matrix transpose(const Matrix& m1);
 /**
  * Returns the determinant of <code>Matrix</code>
  *
- * @param[in] Matrix m1
+ * @param[in] const Matrix& m1
  * @return double
  */
 double determinant(const Matrix& m1);
@@ -107,9 +107,9 @@ double determinant(const Matrix& m1);
 /**
  * Returns a submatrix of <code>Matrix</code>
  *
- * @param[in] Matrix m1
- * @param[in] int r
- * @param[in] int c
+ * @param[in] const Matrix& m1
+ * @param[in] const int& r
+ * @param[in] const int& c
  * @return double
  */
 Matrix submatrix(const Matrix& m, const int& r, const int& c);
@@ -117,9 +117,9 @@ Matrix submatrix(const Matrix& m, const int& r, const int& c);
 /**
  * Returns the minor of selected submatrix
  *
- * @param[in] Matrix m1
- * @param[in] int r
- * @param[in] int c
+ * @param[in] const Matrix& m1
+ * @param[in] const int& r
+ * @param[in] const int& c
  * @return Matrix
  */
 double minor(const Matrix& m, const int& r, const int& c);
@@ -127,9 +127,9 @@ double minor(const Matrix& m, const int& r, const int& c);
 /**
  * Returns the cofactor of the selected submatrix
  *
- * @param[in] Matrix m1
- * @param[in] int r
- * @param[in] int c
+ * @param[in] const Matrix& m1
+ * @param[in] const int& r
+ * @param[in] const int& c
  * @return double
  */
 double cofactor(const Matrix& m, const int& r, const int& c);
@@ -137,7 +137,7 @@ double cofactor(const Matrix& m, const int& r, const int& c);
 /**
  * Returns the inverse of the <code>Matrix</code>
  *
- * @param[in] Matrix m1
+ * @param[in] const Matrix& m1
  * @return Matrix
  */
 Matrix inverse(const Matrix& m);
@@ -145,8 +145,8 @@ Matrix inverse(const Matrix& m);
 /**
  * Generates an identity <code>Matrix</code>
  *
- * @param[in] r
- * @param[in] c
+ * @param[in] const int& r
+ * @param[in] const int& c
  * @return Matrix
  */
 Matrix generateIdentity(const int& r, const int& c);
@@ -155,7 +155,6 @@ bool operator==(const Matrix& m1, const Matrix& m2);
 bool operator!=(const Matrix& m1, const Matrix& m2);
 
 std::ostream& operator<<(std::ostream& os, const Matrix& m);
-
 
 } // namespace raytracer
 

@@ -251,7 +251,7 @@ TEST_F(TransformFixture, ArbitraryViewTransformation) {
     * trans = viewTransform(* from, * to, * up);
     std::vector<double> data{-0.50709, 0.50709, 0.67612, -2.36643, 0.76772, 0.60609, 0.12122, -2.82843, -0.35857, 0.59761, -0.71714, 0.00000, 0.00000, 0.00000, 0.00000, 1.00000};
     matrix->setMatrixData(data);
-    transA = new raytracer::Transform(* matrix);
+    * transA = raytracer::Transform(* matrix);
     ASSERT_EQ(* trans, * transA);
 }
 

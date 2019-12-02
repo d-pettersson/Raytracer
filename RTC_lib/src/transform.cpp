@@ -69,24 +69,21 @@ Transform& Transform::shear(const double &xy, const double &xz,
 
 Transform viewTransform(const Tuple &from, const Tuple &to, const Tuple &up) {
     Tuple forward, left, trueUp;
-    auto * orientationData = new std::vector<double>(16);
-    auto * orientationMatrix = new Matrix(4, 4);
+    auto orientationData = std::vector<double>(16);
+    auto orientationMatrix = Matrix(4, 4);
     Transform transform;
 
     forward = normalize(to - from);
     left = cross(forward, normalize(up));
     trueUp = cross(left, forward);
-    * orientationData = std::vector<double>{left.x_,        left.y_,        left.z_,        0,
-                                            trueUp.x_,      trueUp.y_,      trueUp.z_,      0,
-                                            -forward.x_,    -forward.y_,    -forward.z_,    0,
-                                            0,              0,              0,              1};
-    orientationMatrix->setMatrixData(* orientationData);
-    auto orientation = raytracer::Transform(* orientationMatrix);
-    
-    delete orientationData;
-    delete orientationMatrix;
-    
-    return orientation * transform.translate(-from.x_, -from.y_, -from.z_);
+    orientationData = std::vector<double>{left.x,       left.y,         left.z,     0,
+                                          trueUp.x,     trueUp.y,       trueUp.z,   0,
+                                          -forward.x,   -forward.y,     -forward.z, 0,
+                                          0,            0,              0,          1};
+    orientationMatrix.setMatrixData(orientationData);
+
+    auto orientation = raytracer::Transform(orientationMatrix);
+    return orientation * transform.translate(-from.x, -from.y, -from.z);
 }
 
 

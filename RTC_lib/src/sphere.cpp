@@ -38,7 +38,7 @@ Tuple Sphere::getNormal(Tuple worldPoint) const {
     Tuple objectPoint = inverse(this->getTransform()) * worldPoint;
     Tuple objectNormal = objectPoint - createPoint(0, 0, 0);
     Tuple worldNormal = transpose(inverse(this->getTransform())) * objectNormal;
-    worldNormal.w_ = 0;
+    worldNormal.w = 0;
     return normalize(worldNormal);
 }
 

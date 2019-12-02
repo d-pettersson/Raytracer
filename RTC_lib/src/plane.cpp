@@ -18,11 +18,11 @@ void Plane::createGlass() {
 }
 
 void Plane::intersect(const Ray &ray, std::vector<Intersection> &xs) const {
-    if (std::abs(ray.getDirection().y_) < EPSILON) {
+    if (std::abs(ray.getDirection().y) < EPSILON) {
         return;
     }
 
-    double distance = -ray.getOrigin().y_ / ray.getDirection().y_;
+    double distance = -ray.getOrigin().y / ray.getDirection().y;
 
     xs.emplace_back(Intersection(distance,shared_from_this()));
 }

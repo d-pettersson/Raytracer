@@ -5,10 +5,9 @@
 namespace raytracer {
 
 Shape::Shape()
-    : shapePtr(), transformMat()
+    : shapePtr(), transformMat(generateIdentity(4, 4))
 {
     id = ++nextId;
-    transformMat = generateIdentity(4, 4);
 }
 
 Shape::~Shape() = default;

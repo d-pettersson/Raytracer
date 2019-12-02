@@ -1,3 +1,10 @@
+/**
+ * The <code>Light</code> class allows the creation of light to illuminate our scene, and the objects present inside the scene
+ *
+ * @param[in] Tuple position
+ * @param[in] Color intensity
+ */
+
 #ifndef RTC_LIGHT_H
 #define RTC_LIGHT_H
 
@@ -15,11 +22,29 @@ public:
     Light();
     Light(Tuple position, Color intensity);
 
+    /**
+     * Create a Point Light which is a single source of light
+     *
+     * @param[in] const Tuple& position
+     * @param[in] const Color& intensity
+     */
     void setPointLight(const Tuple &position, const Color &intensity);
-//    void setAreaLight(const Point &corner, const Vector &fullUVec, const int &uSteps, const Vector &fullVVec, const int &vSteps, const Color &intensity);
-//
-//    Point pointOnLight(const double &u, const double &v) const;
-//    float intensityAt(const Point &point, const World &world);
+
+    /**
+     * Create an Area Light which is composed of multiple light sources
+     * in a rectangular shape
+     *
+     * @param[in] const Tuple& corner
+     * @param[in] const Tuple& fullUvec
+     * @param[in] const int& uSteps
+     * @param[in] const Tuple& fullVVec
+     * @param[in] const int& vSteps
+     * @param[in] const Color& intensity
+     */
+    void setAreaLight(const Tuple &corner, const Tuple &fullUVec, const int &uSteps, const Tuple &fullVVec, const int &vSteps, const Color &intensity);
+
+    Tuple pointOnLight(const double &u, const double &v) const;
+    float intensityAt(const Tuple &point, const World &world);
 
     Color intensity_;
     Tuple position_;

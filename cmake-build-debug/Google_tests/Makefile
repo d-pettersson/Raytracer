@@ -171,6 +171,114 @@ Google_Tests_run/fast:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/build
 .PHONY : Google_Tests_run/fast
 
+CameraTest.o: CameraTest.cpp.o
+
+.PHONY : CameraTest.o
+
+# target to build an object file
+CameraTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CameraTest.cpp.o
+.PHONY : CameraTest.cpp.o
+
+CameraTest.i: CameraTest.cpp.i
+
+.PHONY : CameraTest.i
+
+# target to preprocess a source file
+CameraTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CameraTest.cpp.i
+.PHONY : CameraTest.cpp.i
+
+CameraTest.s: CameraTest.cpp.s
+
+.PHONY : CameraTest.s
+
+# target to generate assembly for a file
+CameraTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CameraTest.cpp.s
+.PHONY : CameraTest.cpp.s
+
+CanvasTest.o: CanvasTest.cpp.o
+
+.PHONY : CanvasTest.o
+
+# target to build an object file
+CanvasTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.o
+.PHONY : CanvasTest.cpp.o
+
+CanvasTest.i: CanvasTest.cpp.i
+
+.PHONY : CanvasTest.i
+
+# target to preprocess a source file
+CanvasTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.i
+.PHONY : CanvasTest.cpp.i
+
+CanvasTest.s: CanvasTest.cpp.s
+
+.PHONY : CanvasTest.s
+
+# target to generate assembly for a file
+CanvasTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/CanvasTest.cpp.s
+.PHONY : CanvasTest.cpp.s
+
+IntersectionTest.o: IntersectionTest.cpp.o
+
+.PHONY : IntersectionTest.o
+
+# target to build an object file
+IntersectionTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.o
+.PHONY : IntersectionTest.cpp.o
+
+IntersectionTest.i: IntersectionTest.cpp.i
+
+.PHONY : IntersectionTest.i
+
+# target to preprocess a source file
+IntersectionTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.i
+.PHONY : IntersectionTest.cpp.i
+
+IntersectionTest.s: IntersectionTest.cpp.s
+
+.PHONY : IntersectionTest.s
+
+# target to generate assembly for a file
+IntersectionTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/IntersectionTest.cpp.s
+.PHONY : IntersectionTest.cpp.s
+
+MaterialTest.o: MaterialTest.cpp.o
+
+.PHONY : MaterialTest.o
+
+# target to build an object file
+MaterialTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.o
+.PHONY : MaterialTest.cpp.o
+
+MaterialTest.i: MaterialTest.cpp.i
+
+.PHONY : MaterialTest.i
+
+# target to preprocess a source file
+MaterialTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.i
+.PHONY : MaterialTest.cpp.i
+
+MaterialTest.s: MaterialTest.cpp.s
+
+.PHONY : MaterialTest.s
+
+# target to generate assembly for a file
+MaterialTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/MaterialTest.cpp.s
+.PHONY : MaterialTest.cpp.s
+
 MatrixTest.o: MatrixTest.cpp.o
 
 .PHONY : MatrixTest.o
@@ -198,6 +306,33 @@ MatrixTest.cpp.s:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/MatrixTest.cpp.s
 .PHONY : MatrixTest.cpp.s
 
+PlaneTest.o: PlaneTest.cpp.o
+
+.PHONY : PlaneTest.o
+
+# target to build an object file
+PlaneTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/PlaneTest.cpp.o
+.PHONY : PlaneTest.cpp.o
+
+PlaneTest.i: PlaneTest.cpp.i
+
+.PHONY : PlaneTest.i
+
+# target to preprocess a source file
+PlaneTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/PlaneTest.cpp.i
+.PHONY : PlaneTest.cpp.i
+
+PlaneTest.s: PlaneTest.cpp.s
+
+.PHONY : PlaneTest.s
+
+# target to generate assembly for a file
+PlaneTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/PlaneTest.cpp.s
+.PHONY : PlaneTest.cpp.s
+
 RayTest.o: RayTest.cpp.o
 
 .PHONY : RayTest.o
@@ -224,6 +359,33 @@ RayTest.s: RayTest.cpp.s
 RayTest.cpp.s:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/RayTest.cpp.s
 .PHONY : RayTest.cpp.s
+
+SphereTest.o: SphereTest.cpp.o
+
+.PHONY : SphereTest.o
+
+# target to build an object file
+SphereTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.o
+.PHONY : SphereTest.cpp.o
+
+SphereTest.i: SphereTest.cpp.i
+
+.PHONY : SphereTest.i
+
+# target to preprocess a source file
+SphereTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.i
+.PHONY : SphereTest.cpp.i
+
+SphereTest.s: SphereTest.cpp.s
+
+.PHONY : SphereTest.s
+
+# target to generate assembly for a file
+SphereTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/SphereTest.cpp.s
+.PHONY : SphereTest.cpp.s
 
 TransformTest.o: TransformTest.cpp.o
 
@@ -279,6 +441,33 @@ TupleTest.cpp.s:
 	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/TupleTest.cpp.s
 .PHONY : TupleTest.cpp.s
 
+WorldTest.o: WorldTest.cpp.o
+
+.PHONY : WorldTest.o
+
+# target to build an object file
+WorldTest.cpp.o:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.o
+.PHONY : WorldTest.cpp.o
+
+WorldTest.i: WorldTest.cpp.i
+
+.PHONY : WorldTest.i
+
+# target to preprocess a source file
+WorldTest.cpp.i:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.i
+.PHONY : WorldTest.cpp.i
+
+WorldTest.s: WorldTest.cpp.s
+
+.PHONY : WorldTest.s
+
+# target to generate assembly for a file
+WorldTest.cpp.s:
+	cd "/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/cmake-build-debug" && $(MAKE) -f Google_tests/CMakeFiles/Google_Tests_run.dir/build.make Google_tests/CMakeFiles/Google_Tests_run.dir/WorldTest.cpp.s
+.PHONY : WorldTest.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -292,18 +481,39 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Google_Tests_run"
+	@echo "... CameraTest.o"
+	@echo "... CameraTest.i"
+	@echo "... CameraTest.s"
+	@echo "... CanvasTest.o"
+	@echo "... CanvasTest.i"
+	@echo "... CanvasTest.s"
+	@echo "... IntersectionTest.o"
+	@echo "... IntersectionTest.i"
+	@echo "... IntersectionTest.s"
+	@echo "... MaterialTest.o"
+	@echo "... MaterialTest.i"
+	@echo "... MaterialTest.s"
 	@echo "... MatrixTest.o"
 	@echo "... MatrixTest.i"
 	@echo "... MatrixTest.s"
+	@echo "... PlaneTest.o"
+	@echo "... PlaneTest.i"
+	@echo "... PlaneTest.s"
 	@echo "... RayTest.o"
 	@echo "... RayTest.i"
 	@echo "... RayTest.s"
+	@echo "... SphereTest.o"
+	@echo "... SphereTest.i"
+	@echo "... SphereTest.s"
 	@echo "... TransformTest.o"
 	@echo "... TransformTest.i"
 	@echo "... TransformTest.s"
 	@echo "... TupleTest.o"
 	@echo "... TupleTest.i"
 	@echo "... TupleTest.s"
+	@echo "... WorldTest.o"
+	@echo "... WorldTest.i"
+	@echo "... WorldTest.s"
 .PHONY : help
 
 

@@ -7,38 +7,49 @@
 #include <chrono>
 
 int main() {
-    auto floor = std::make_shared<raytracer::Plane>();
-    auto middle = std::make_shared<raytracer::Sphere>();
+
     auto right = std::make_shared<raytracer::Sphere>();
     auto left = std::make_shared<raytracer::Sphere>();
     
-    auto * light = new raytracer::Light();
+    auto light = raytracer::Light();
     auto * camera = new raytracer::Camera();
     
-    auto * world = new raytracer::World();
-    raytracer::Canvas canvas;
 
-    auto * transform = new raytracer::Transform();
+    auto * canvas = new raytracer::Canvas();
+
+    //auto * transform = new raytracer::Transform();
     auto * translation = new raytracer::Transform();
     auto * rotationY = new raytracer::Transform();
     auto * rotationX = new raytracer::Transform();
     auto * scaling = new raytracer::Transform();
     
     // floor
+    auto const floor = [] {
+        auto floor = std::make_shared<raytracer::Plane>();
+        floor->material.pattern = std::make_shared<raytracer::StripePattern>(raytracer::Color(1, 1, 1),
+                                                                             raytracer::Color(0, 0, 0));
+        floor->material.color = raytracer::Color(1, 1, 1);
+        floor->material.reflection = 0.5;
+        return floor;
+    }();
+
+
+
+
+    auto * world = new raytracer::World();
     world->addObject(floor);
-    floor->material.pattern = std::make_shared<raytracer::StripePattern>(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
-    floor->material.color = raytracer::Color(1, 1, 1);
-    floor->material.reflection = 0.5;
 
     // middle sphere
-    translation->translate(-0.5, 1, 0.5);
-    middle->setTransform(* translation);
-    middle->material.color = raytracer::Color(0.1, 1, 0.5);
-    middle->material.diffuse = 0.1;
-    middle->material.specular = 0.3;
-    middle->material.transparency = 0.9;
-    middle->material.reflection = 0.9;
-    middle->material.refractiveIndex = 1.52;
+    auto middle = std::make_shared<raytracer::Sphere>();
+        //translation->translate(-0.5, 1, 0.5);
+        //middle->setTransform(* translation);
+        middle->setTransform(Transform().translation(-0.5,1.0, 0.5));
+        middle->material.color = raytracer::Color(0.1, 1, 0.5);
+        middle->material.diffuse = 0.1;
+        middle->material.specular = 0.3;
+        middle->material.transparency = 0.9;
+        middle->material.reflection = 0.9;
+        middle->material.refractiveIndex = 1.52;
     world->addObject(middle);
 
     // right sphere
@@ -63,8 +74,8 @@ int main() {
 //    left->material.pattern = std::make_shared<raytracer::StripePattern>(raytracer::Color(1, 1, 1), raytracer::Color(0, 0, 0));
     world->addObject(left);
 
-//    light_->setAreaLight(raytracer::Point(-2, 10, -10), raytracer::Vector(2, 0, 0), 2, raytracer::Vector(0, 2, 0), 2, raytracer::Color(1, 1, 1));
-    light->setPointLight(raytracer::createPoint(-2, 10, -10), raytracer::Color(1, 1, 1));
+    light->setAreaLight(raytracer::createPoint(-2, 10, 0), raytracer::createVector(2, 0, 0), 2, raytracer::createVector(0, 2, 0), 2, raytracer::Color(1, 1, 1));
+//    light->setPointLight(raytracer::createPoint(-2, 10, -10), raytracer::Color(1, 1, 1));
     world->light_ = * light;
 
     auto start = std::chrono::high_resolution_clock::now();
@@ -72,14 +83,14 @@ int main() {
     // camera
     * camera = raytracer::Camera(500, 250, PI/3);
     * transform = viewTransform(raytracer::createPoint(1.f, 1.5, -5.f), raytracer::createPoint(0.f, 1.f, 0.f), raytracer::createVector(0.f, 1.f, 0.f));
-    camera->transform = * transform;
-    canvas = camera->render(* world);
-    canvas.saveToFile();
+    camera->transform_ = * transform;
+    * canvas = camera->render(world);
+    canvas->saveToFile();
 
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
 
-    std::cout << "Time of render: " << duration.count() << " s" << '\n';
+    std::cout << "Time of render: " << duration.count() << "s" << '\n';
 
     delete light;
     delete camera;
@@ -89,6 +100,7 @@ int main() {
     delete rotationX;
     delete rotationY;
     delete scaling;
+    delete canvas;
 
     std::cout << "Image rendered successfully.";
 

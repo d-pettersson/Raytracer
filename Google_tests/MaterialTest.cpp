@@ -13,9 +13,9 @@ protected:
     virtual void SetUp()
     {
         material = new raytracer::Material();
-        position = new raytracer::Point();
-        eye = new raytracer::Vector();
-        normal = new raytracer::Vector();
+        position = new raytracer::Tuple();
+        eye = new raytracer::Tuple();
+        normal = new raytracer::Tuple();
         light = new raytracer::Light();
         result = new raytracer::Color();
         world = new raytracer::World();
@@ -32,9 +32,9 @@ protected:
     }
 
     raytracer::Material * material;
-    raytracer::Point * position;
-    raytracer::Vector * eye;
-    raytracer::Vector * normal;
+    raytracer::Tuple * position;
+    raytracer::Tuple * eye;
+    raytracer::Tuple * normal;
     raytracer::Light * light;
     raytracer::Color * result;
     bool intensity = false;
@@ -54,55 +54,55 @@ TEST_F(MaterialFixture, MemberAccess) {
 }
 
 TEST_F(MaterialFixture, EyeBetweenLightAndSurface) {
-    * position = raytracer::Point(0, 0, 0);
-    * eye = raytracer::Vector(0, 0, -1);
-    * normal = raytracer::Vector(0, 0, -1);
-    light->setPointLight(raytracer::Point(0, 0, -10), raytracer::Color(1, 1, 1));
+    * position = raytracer::createPoint(0, 0, 0);
+    * eye = raytracer::createVector(0, 0, -1);
+    * normal = raytracer::createVector(0, 0, -1);
+    light->setPointLight(raytracer::createPoint(0, 0, -10), raytracer::Color(1, 1, 1));
     * result = material->setPhongLighting(shape, * light, * position, * eye, * normal, intensity);
     ASSERT_EQ(* result, raytracer::Color(1.9, 1.9, 1.9));
 }
 
 TEST_F(MaterialFixture, EyeBetweenLightAndSurfaceOffset) {
-    * position = raytracer::Point(0, 0, 0);
-    * eye = raytracer::Vector(0, sqrt(2)/2, -sqrt(2)/2);
-    * normal = raytracer::Vector(0, 0, -1);
-    light->setPointLight(raytracer::Point(0, 0, -10), raytracer::Color(1, 1, 1));
+    * position = raytracer::createPoint(0, 0, 0);
+    * eye = raytracer::createVector(0, sqrt(2)/2, -sqrt(2)/2);
+    * normal = raytracer::createVector(0, 0, -1);
+    light->setPointLight(raytracer::createPoint(0, 0, -10), raytracer::Color(1, 1, 1));
     * result = material->setPhongLighting(shape, * light, * position, * eye, * normal, intensity);
     ASSERT_EQ(* result, raytracer::Color(1.0, 1.0, 1.0));
 }
 
 TEST_F(MaterialFixture, EyeOppositeSurfaceOffset) {
-    * position = raytracer::Point(0, 0, 0);
-    * eye = raytracer::Vector(0, 0, -1);
-    * normal = raytracer::Vector(0, 0, -1);
-    light->setPointLight(raytracer::Point(0, 10, -10), raytracer::Color(1, 1, 1));
+    * position = raytracer::createPoint(0, 0, 0);
+    * eye = raytracer::createVector(0, 0, -1);
+    * normal = raytracer::createVector(0, 0, -1);
+    light->setPointLight(raytracer::createPoint(0, 10, -10), raytracer::Color(1, 1, 1));
     * result = material->setPhongLighting(shape, * light, * position, * eye, * normal, intensity);
     ASSERT_EQ(* result, raytracer::Color(0.7364, 0.7364, 0.7364));
 }
 
 TEST_F(MaterialFixture, EyeInPathReflection) {
-    * position = raytracer::Point(0, 0, 0);
-    * eye = raytracer::Vector(0, -sqrt(2)/2, -sqrt(2)/2);
-    * normal = raytracer::Vector(0, 0, -1);
-    light->setPointLight(raytracer::Point(0, 10, -10), raytracer::Color(1, 1, 1));
+    * position = raytracer::createPoint(0, 0, 0);
+    * eye = raytracer::createVector(0, -sqrt(2)/2, -sqrt(2)/2);
+    * normal = raytracer::createVector(0, 0, -1);
+    light->setPointLight(raytracer::createPoint(0, 10, -10), raytracer::Color(1, 1, 1));
     * result = material->setPhongLighting(shape, * light, * position, * eye, * normal, intensity);
     ASSERT_EQ(* result, raytracer::Color(1.63644, 1.6364, 1.6364));
 }
 
 TEST_F(MaterialFixture, LightingBehindSurface) {
-    * position = raytracer::Point(0, 0, 0);
-    * eye = raytracer::Vector(0, 0, -1);
-    * normal = raytracer::Vector(0, 0, -1);
-    light->setPointLight(raytracer::Point(0, 0, 10), raytracer::Color(1, 1, 1));
+    * position = raytracer::createPoint(0, 0, 0);
+    * eye = raytracer::createVector(0, 0, -1);
+    * normal = raytracer::createVector(0, 0, -1);
+    light->setPointLight(raytracer::createPoint(0, 0, 10), raytracer::Color(1, 1, 1));
     * result = material->setPhongLighting(shape, * light, * position, * eye, * normal, intensity);
     ASSERT_EQ(* result, raytracer::Color(0.1, 0.1, 0.1));
 }
 
 TEST_F(MaterialFixture, LightingSurfaceShadow) {
-    * position = raytracer::Point(0, 0, 0);
-    * eye = raytracer::Vector(0, 0, -1);
-    * normal = raytracer::Vector(0, 0, -1);
-    light->setPointLight(raytracer::Point(0, 0, -10), raytracer::Color(1, 1, 1));
+    * position = raytracer::createPoint(0, 0, 0);
+    * eye = raytracer::createVector(0, 0, -1);
+    * normal = raytracer::createVector(0, 0, -1);
+    light->setPointLight(raytracer::createPoint(0, 0, -10), raytracer::Color(1, 1, 1));
     intensity = true;
     * result = material->setPhongLighting(shape, * light, * position, * eye, * normal, intensity);
     ASSERT_EQ(* result, raytracer::Color(0.1, 0.1, 0.1));
@@ -157,11 +157,11 @@ TEST_F(MaterialFixture, LightingWithPattern) {
     material->ambient = 1;
     material->diffuse = 0;
     material->specular = 0;
-    * eye = raytracer::Vector(0, 0, -1);
-    * normal = raytracer::Vector(0, 0, -1);
-    light->setPointLight(raytracer::Point(0, 0, -10), raytracer::Color(1, 1, 1));
-    raytracer::Color c1 = material->setPhongLighting(shape, * light, raytracer::Point(0.9, 0, 0), * eye, * normal, false);
-    raytracer::Color c2 = material->setPhongLighting(shape, * light, raytracer::Point(1.1, 0, 0), * eye, * normal, false);
+    * eye = raytracer::createVector(0, 0, -1);
+    * normal = raytracer::createVector(0, 0, -1);
+    light->setPointLight(raytracer::createPoint(0, 0, -10), raytracer::Color(1, 1, 1));
+    raytracer::Color c1 = material->setPhongLighting(shape, * light, raytracer::createPoint(0.9, 0, 0), * eye, * normal, false);
+    raytracer::Color c2 = material->setPhongLighting(shape, * light, raytracer::createPoint(1.1, 0, 0), * eye, * normal, false);
     EXPECT_EQ(c1, raytracer::Color(1, 1, 1));
     ASSERT_EQ(c2, raytracer::Color(0, 0, 0));
 }

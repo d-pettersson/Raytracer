@@ -300,6 +300,22 @@ cxxabi.h
 acxx_demangle.h
 -
 
+../RTC_lib/include/camera.h
+transform.h
+../RTC_lib/include/transform.h
+ray.h
+../RTC_lib/include/ray.h
+world.h
+../RTC_lib/include/world.h
+canvas.h
+../RTC_lib/include/canvas.h
+
+../RTC_lib/include/canvas.h
+tuple.h
+../RTC_lib/include/tuple.h
+vector
+-
+
 ../RTC_lib/include/constants.h
 
 ../RTC_lib/include/intersection.h
@@ -343,6 +359,10 @@ include/transform.h
 ../RTC_lib/include/include/transform.h
 memory
 -
+
+../RTC_lib/include/plane.h
+shape.h
+../RTC_lib/include/shape.h
 
 ../RTC_lib/include/ray.h
 tuple.h
@@ -388,6 +408,80 @@ iostream
 vector
 -
 
+../RTC_lib/include/world.h
+light.h
+../RTC_lib/include/light.h
+sphere.h
+../RTC_lib/include/sphere.h
+tuple.h
+../RTC_lib/include/tuple.h
+transform.h
+../RTC_lib/include/transform.h
+intersection.h
+../RTC_lib/include/intersection.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/CameraTest.cpp
+include/camera.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/camera.h
+include/ray.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/ray.h
+include/canvas.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/canvas.h
+include/world.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/world.h
+cmath
+-
+gtest/gtest.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/CanvasTest.cpp
+include/canvas.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/canvas.h
+gtest/gtest.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/IntersectionTest.cpp
+include/ray.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/ray.h
+include/sphere.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/sphere.h
+include/plane.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/plane.h
+include/intersection.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/intersection.h
+memory
+-
+cmath
+-
+gtest/gtest.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/MaterialTest.cpp
+include/material.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/material.h
+include/light.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/light.h
+include/world.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/world.h
+include/shape.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/shape.h
+cmath
+-
+gtest/gtest.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/PlaneTest.cpp
+include/ray.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/ray.h
+include/plane.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/plane.h
+include/tuple.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/tuple.h
+include/transform.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/transform.h
+gtest/gtest.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
+
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/RayTest.cpp
 include/ray.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/ray.h
@@ -399,4 +493,40 @@ include/transform.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/transform.h
 gtest/gtest.h
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/SphereTest.cpp
+include/ray.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/ray.h
+include/sphere.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/sphere.h
+include/tuple.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/tuple.h
+include/transform.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/transform.h
+include/matrix.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/matrix.h
+gtest/gtest.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
+cmath
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/TransformTest.cpp
+include/transform.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/transform.h
+cmath
+-
+gtest/gtest.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/WorldTest.cpp
+include/world.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/world.h
+include/intersection.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/intersection.h
+include/plane.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/include/plane.h
+gtest/gtest.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/Google_tests/gtest/gtest.h
+cmath
+-
 

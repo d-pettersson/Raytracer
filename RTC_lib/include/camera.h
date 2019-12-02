@@ -25,21 +25,21 @@ public:
     /**
     * Renders the <code>World</class> into a Canvas
     *
-    * @param[in] World &world
+    * @param[in] World * world
     * @return Canvas
     */
-    Canvas render(World &world);
+    Canvas render(World * world);
 
-    int hsize;
-    int vsize;
+    int hsize_;
+    int vsize_;
 
-    double fieldOfView;
+    double fieldOfView_;
 
-    Transform transform;
+    Transform transform_;
 
-    double pixelSize;
-    double halfWidth;
-    double halfHeight;
+    double pixelSize_;
+    double halfWidth_;
+    double halfHeight_;
 };
 } // namespace raytracer
 

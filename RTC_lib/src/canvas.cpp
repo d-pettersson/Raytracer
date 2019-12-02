@@ -24,13 +24,13 @@ Canvas::Canvas()
 }
 
 Color Canvas::scaleColor(const Color &color, const int &colorDepth) {
-    auto * outputCol = new Color();
+    auto outputCol = Color();
     
-    outputCol->r_ = std::clamp((int) ceil(color.r_ * colorDepth), 0, colorDepth);
-    outputCol->g_ = std::clamp((int) ceil(color.g_ * colorDepth), 0, colorDepth);
-    outputCol->b_ = std::clamp((int) ceil(color.b_ * colorDepth), 0, colorDepth);
+    outputCol.r = std::clamp((int) ceil(color.r * colorDepth), 0, colorDepth);
+    outputCol.g = std::clamp((int) ceil(color.g * colorDepth), 0, colorDepth);
+    outputCol.b = std::clamp((int) ceil(color.b * colorDepth), 0, colorDepth);
     
-    return * outputCol;
+    return outputCol;
 }
 
 int Canvas::scaleColor(const double &d, const int &colorDepth) {
@@ -42,9 +42,9 @@ void Canvas::writePixel(const int& x, const int& y, const Color &color) {
     if (x < 0 || y < 0) {
         std::cerr << "x_ and y_ have to be positive";
     }
-    temp.r_ < 0 ? temp.r_ = 0 : temp.r_;
-    temp.g_ < 0 ? temp.g_ = 0 : temp.g_;
-    temp.b_ < 0 ? temp.b_ = 0 : temp.b_;
+    temp.r < 0 ? temp.r = 0 : temp.r;
+    temp.g < 0 ? temp.g = 0 : temp.g;
+    temp.b < 0 ? temp.b = 0 : temp.b;
 
     this->colors[x][y] = temp;
 }

@@ -6,18 +6,140 @@
 
 #IncludeRegexTransform: 
 
+../RTC_lib/include/camera.h
+transform.h
+../RTC_lib/include/transform.h
+ray.h
+../RTC_lib/include/ray.h
+world.h
+../RTC_lib/include/world.h
+canvas.h
+../RTC_lib/include/canvas.h
+
 ../RTC_lib/include/canvas.h
 tuple.h
 ../RTC_lib/include/tuple.h
 vector
 -
 
+../RTC_lib/include/common.h
+tuple.h
+../RTC_lib/include/tuple.h
+iostream
+-
+functional
+-
+map
+-
+
 ../RTC_lib/include/constants.h
+
+../RTC_lib/include/intersection.h
+tuple.h
+../RTC_lib/include/tuple.h
+ray.h
+../RTC_lib/include/ray.h
+memory
+-
+vector
+-
+algorithm
+-
+
+../RTC_lib/include/light.h
+tuple.h
+../RTC_lib/include/tuple.h
+utils.h
+../RTC_lib/include/utils.h
+vector
+-
+
+../RTC_lib/include/material.h
+include/tuple.h
+../RTC_lib/include/include/tuple.h
+include/light.h
+../RTC_lib/include/include/light.h
+include/pattern.h
+../RTC_lib/include/include/pattern.h
+
+../RTC_lib/include/matrix.h
+tuple.h
+../RTC_lib/include/tuple.h
+vector
+-
+
+../RTC_lib/include/pattern.h
+include/tuple.h
+../RTC_lib/include/include/tuple.h
+include/transform.h
+../RTC_lib/include/include/transform.h
+memory
+-
+
+../RTC_lib/include/plane.h
+shape.h
+../RTC_lib/include/shape.h
+
+../RTC_lib/include/ray.h
+tuple.h
+../RTC_lib/include/tuple.h
+transform.h
+../RTC_lib/include/transform.h
+vector
+-
+ostream
+-
+
+../RTC_lib/include/shape.h
+ray.h
+../RTC_lib/include/ray.h
+transform.h
+../RTC_lib/include/transform.h
+intersection.h
+../RTC_lib/include/intersection.h
+material.h
+../RTC_lib/include/material.h
+iostream
+-
+vector
+-
+memory
+-
+
+../RTC_lib/include/sphere.h
+shape.h
+../RTC_lib/include/shape.h
+
+../RTC_lib/include/transform.h
+matrix.h
+../RTC_lib/include/matrix.h
 
 ../RTC_lib/include/tuple.h
 include/constants.h
 ../RTC_lib/include/include/constants.h
 iostream
+-
+
+../RTC_lib/include/utils.h
+vector
+-
+
+../RTC_lib/include/world.h
+light.h
+../RTC_lib/include/light.h
+sphere.h
+../RTC_lib/include/sphere.h
+tuple.h
+../RTC_lib/include/tuple.h
+transform.h
+../RTC_lib/include/transform.h
+intersection.h
+../RTC_lib/include/intersection.h
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/camera.cpp
+include/camera.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/camera.h
+cmath
 -
 
 /Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/canvas.cpp
@@ -36,6 +158,90 @@ sstream
 fstream
 -
 algorithm
+-
+cmath
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/intersection.cpp
+include/intersection.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/intersection.h
+include/ray.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/ray.h
+include/shape.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/shape.h
+utility
+-
+algorithm
+-
+cmath
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/light.cpp
+include/light.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/light.h
+include/world.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/world.h
+random
+-
+memory
+-
+utility
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/material.cpp
+include/material.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/material.h
+include/common.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/common.h
+cmath
+-
+utility
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/pattern.cpp
+include/pattern.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/pattern.h
+include/shape.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/shape.h
+cmath
+-
+utility
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/plane.cpp
+include/plane.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/plane.h
+cmath
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/ray.cpp
+include/ray.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/ray.h
+utility
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/shape.cpp
+include/shape.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/shape.h
+cmath
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/sphere.cpp
+include/sphere.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/sphere.h
+cmath
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/transform.cpp
+include/transform.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/transform.h
+cmath
+-
+
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/world.cpp
+include/world.h
+/Users/davidp/Desktop/CODE/OSSU/Raytracer challenge/RTC/RTC_lib/src/include/world.h
+memory
 -
 cmath
 -

@@ -2,21 +2,23 @@
 
 #include <iostream>
 #include <cmath>
+#include <omp.h>
+#include <algorithm>
 
 namespace raytracer {
 
 Matrix::Matrix(size_t r, size_t c)
-    : rows_{r}, cols_{c}, data_(r * c)
+    : rows_(r), cols_(c), data_(r * c)
 {
 }
 
 Matrix::Matrix()
-    : rows_{0}, cols_{0}
+    : rows_(0), cols_(0)
 {
 }
 
 Matrix::Matrix(const Matrix &copy)
-    : rows_{copy.rows_}, cols_{copy.cols_}, data_{copy.data_}
+    : rows_(copy.rows_), cols_(copy.cols_), data_(copy.data_)
 {
 }
 
@@ -41,25 +43,16 @@ void Matrix::setMatrixData(const std::vector<double> &data) {
 }
 
 bool Matrix::isEqual(const Matrix &m) const {
-    for (int i = 0; i < this->getRowSize(); i++) {
-        for (int j = 0; j < this->getColSize(); j++) {
-            if (fabs(data_[cols_ * i + j] - m(i, j)) > EPSILON) {
-                return false;
-            }
-        };
+    for(size_t i = 0; i < data_.size(); ++i) {
+        if(fabs(data_[i] - m.data_[i]) > EPSILON) {
+            return false;
+        }
     }
     return true;
 }
 
 bool Matrix::isEmpty() const {
-    for (int i = 0; i < this->getRowSize(); i++) {
-        for (int j = 0; j < this->getColSize(); j++) {
-            if ((* this)(i, j) == 0.0) {
-                return true;
-            }
-        };
-    }
-    return false;
+    return std::all_of(data_.begin(), data_.end(), [](double d) { return d == 0.0; });
 }
 
 double& Matrix::operator()(size_t row, size_t col) {
@@ -94,10 +87,10 @@ Matrix Matrix::operator*(const Matrix& m) {
 Tuple Matrix::operator*(const raytracer::Tuple& t) {
     Tuple output;
     for (int i = 0; i < this->getRowSize(); i++) {
-        output(i) = data_[cols_ * i] * t.x_ +
-                    data_[cols_ * i + 1] * t.y_ +
-                    data_[cols_ * i + 2] * t.z_ +
-                    data_[cols_ * i + 3] * t.w_;
+        output(i) = data_[cols_ * i] * t.x +
+                    data_[cols_ * i + 1] * t.y +
+                    data_[cols_ * i + 2] * t.z +
+                    data_[cols_ * i + 3] * t.w;
     }
     return output;
 }
@@ -144,14 +137,13 @@ double minor(const Matrix &m, const int& r, const int& c) {
 }
 
 double cofactor(const Matrix &m, const int &r, const int &c) {
-    double output = minor(m, r, c);
+    auto output = minor(m, r, c);
     return (r + c) % 2 != 0 ? -output : output;
 }
 
 Matrix inverse(const Matrix &m) {
     Matrix output(m.getRowSize(), m.getColSize());
-    double co = 0.0;
-    double det = determinant(m);
+    double co, det = determinant(m);
     if (det != 0) {
         for (int i = 0; i < m.getRowSize(); i++) {
             for (int j = 0; j < m.getColSize(); j++) {

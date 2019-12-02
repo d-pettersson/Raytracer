@@ -1,40 +1,38 @@
 #include "include/camera.h"
 
-#include <utility>
 #include <cmath>
-#include <omp.h>
 
 namespace raytracer {
 Camera::Camera()
-    : hsize(0), vsize(0), fieldOfView(0.0), transform(Transform()), pixelSize(0.0)
+    : hsize_(0), vsize_(0), fieldOfView_(0.0), transform_(Transform()), pixelSize_(0.0)
 {
 
 }
 
 
 Camera::Camera(int hsize, int vsize, double fieldOfView)
-    : hsize(hsize), vsize(vsize), fieldOfView(fieldOfView), transform(Transform())
+    : hsize_(hsize), vsize_(vsize), fieldOfView_(fieldOfView), transform_(Transform())
 {
-    double halfView = tan(this->fieldOfView / 2);
-    double aspect = (double)this->hsize / (double)this->vsize;
+    double halfView = tan(this->fieldOfView_ / 2);
+    double aspect = (double)this->hsize_ / (double)this->vsize_;
     if (aspect >= 1) {
-        this->halfWidth = halfView;
-        this->halfHeight = halfView / aspect;
+        this->halfWidth_ = halfView;
+        this->halfHeight_ = halfView / aspect;
     } else {
-        this->halfWidth = halfView * aspect;
-        this->halfHeight = halfView;
+        this->halfWidth_ = halfView * aspect;
+        this->halfHeight_ = halfView;
     }
-    this->pixelSize = (this->halfWidth * 2) / (double)this->hsize;
+    this->pixelSize_ = (this->halfWidth_ * 2) / (double)this->hsize_;
 }
 
 Ray Camera::rayForPixel(const int &x, const int &y) {
-    double xOffset = (x + 0.5) * this->pixelSize;
-    double yOffset = (y + 0.5) * this->pixelSize;
+    double xOffset = (x + 0.5) * this->pixelSize_;
+    double yOffset = (y + 0.5) * this->pixelSize_;
 
-    double worldX = this->halfWidth - xOffset;
-    double worldY = this->halfHeight - yOffset;
+    double worldX = this->halfWidth_ - xOffset;
+    double worldY = this->halfHeight_ - yOffset;
 
-    auto inverseTransform = inverse(this->transform);
+    auto inverseTransform = inverse(this->transform_);
 
     auto pixel = inverseTransform * createPoint(worldX, worldY, -1);
     auto origin = inverseTransform * createPoint(0, 0, 0);
@@ -44,15 +42,15 @@ Ray Camera::rayForPixel(const int &x, const int &y) {
 
 }
 
-Canvas Camera::render(World& world) {
+Canvas Camera::render(World * world) {
     Ray ray;
     Color color;
-    Canvas image(this->hsize, this->vsize);
+    Canvas image(this->hsize_, this->vsize_);
 
-    for (int y = 0; y < this->vsize; y++) {
-        for (int x = 0; x < this->hsize; x++) {
+    for (int y = 0; y < this->vsize_; y++) {
+        for (int x = 0; x < this->hsize_; x++) {
             ray = this->rayForPixel(x, y);
-            color = world.colorAt(ray);
+            color = world->colorAt(ray);
             image.writePixel(x, y, color);
         }
     }

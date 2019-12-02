@@ -27,21 +27,21 @@ protected:
 };
 
 TEST_F(CanvasFixture, TestCanvasSize) {
-    canvas = new raytracer::Canvas(10, 20);
+    * canvas = raytracer::Canvas(10, 20);
     ASSERT_EQ(canvas->width, 10);
     ASSERT_EQ(canvas->height, 20);
 }
 
 // bool operator== had to be created first, else test passes with any value
 
-//TEST_F(CanvasFixture, TestCanvasColor) {
-//    canvas = new raytracer::Canvas(10, 20);
-//    for (size_t w = 0; w < canvas->width; w++) {
-//        for (size_t h = 0; h < canvas->height; h++) {
-//            ASSERT_EQ(raytracer::Color(0., 0., 0.), canvas->colors[w + h * canvas->width]);
-//        }
-//    }
-//}
+TEST_F(CanvasFixture, TestCanvasColor) {
+    * canvas = raytracer::Canvas(10, 20);
+    for (size_t w = 0; w < canvas->width; w++) {
+        for (size_t h = 0; h < canvas->height; h++) {
+            ASSERT_EQ(raytracer::Color(0., 0., 0.), canvas->colors[0][w + h * canvas->width]);
+        }
+    }
+}
 
 TEST_F(CanvasFixture, WritingPixelCanvas1) {
     * canvas = raytracer::Canvas(10, 20);
@@ -64,22 +64,24 @@ TEST_F(CanvasFixture, WritingPixelCanvas3) {
     ASSERT_EQ(* c1, canvas->pixelAt(2, 1));
 }
 
-TEST_F(CanvasFixture, PPMHeaderCheck) {
-    * canvas = raytracer::Canvas(5, 3);
-    std::string header = canvas->createPPMHeader();
-    ASSERT_EQ("P3\n5 3\n255", header);
-}
+// Format related tests
 
-TEST_F(CanvasFixture, ScaleColorTest) {
-    std::stringstream ss;
-    * canvas = raytracer::Canvas(5, 3);
-    * c1 = raytracer::Color(1.5, 0.0, 0.0);
-    canvas->writePixel(0, 0, * c1);
-    * c2 = canvas->scaleColor(* c1, 255);
-    ss << * c2;
-    std::string output = ss.str();
-    ASSERT_EQ(("255 0 0"), output);
-}
+//TEST_F(CanvasFixture, PPMHeaderCheck) {
+//    * canvas = raytracer::Canvas(5, 3);
+//    std::string header = canvas->createPPMHeader();
+//    ASSERT_EQ("P3\n5 3\n255", header);
+//}
+//
+//TEST_F(CanvasFixture, ScaleColorTest) {
+//    std::stringstream ss;
+//    * canvas = raytracer::Canvas(5, 3);
+//    * c1 = raytracer::Color(1.5, 0.0, 0.0);
+//    canvas->writePixel(0, 0, * c1);
+//    * c2 = canvas->scaleColor(* c1, 255);
+//    ss << * c2;
+//    std::string output = ss.str();
+//    ASSERT_EQ(("255 0 0"), output);
+//}
 //
 //TEST_F(CanvasFixture, PPMPixelData) {
 //    canvas = new raytracer::Canvas(5, 3);
